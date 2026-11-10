@@ -1,0 +1,495 @@
+% =====================================================================
+\chapter{Aplicações das derivadas}
+
+Com as regras de derivação em mãos, passamos às suas consequências. A derivada responde a
+perguntas muito diferentes: com que rapidez uma grandeza varia quando outra varia (taxas
+relacionadas), qual é o maior ou o menor valor de uma função (otimização), qual é a forma de
+um gráfico, como calcular limites difíceis (regra de L'Hôpital) e como aproximar raízes de
+equações (método de Newton). Terminamos com o caminho inverso, as antiderivadas, que abrem
+as portas para o capítulo de integração.
+
+% ---------------------------------------------------------------------
+\section{Taxas relacionadas}
+
+Quando duas grandezas estão ligadas por uma equação e ambas variam com o tempo, suas taxas
+de variação também ficam ligadas. Derivando a equação em relação a $t$ (implicitamente),
+obtemos uma relação entre as taxas.
+
+\begin{estrategia}{taxas relacionadas}
+\begin{enumerate}[label=\arabic*.]
+\item Faça um desenho e dê nome às variáveis, indicando quais dependem do tempo.
+\item Anote as taxas conhecidas e a taxa pedida, como derivadas em relação a $t$.
+\item Escreva uma equação que relacione as variáveis (geometria, física etc.).
+\item Derive a equação em relação a $t$, usando a regra da cadeia.
+\item Só então substitua os valores do instante pedido e isole a taxa desejada.
+\end{enumerate}
+\end{estrategia}
+
+\begin{nota}
+Substitua os valores numéricos \emph{depois} de derivar. Se você substituir antes,
+grandezas que variam viram constantes e suas derivadas somem indevidamente.
+\end{nota}
+
+\begin{exemplo}{4.1}{Enchendo um balão}
+Um balão esférico é inflado a $3$ cm$^3$/s. Com que rapidez o raio cresce quando $r=8$ cm?
+\solucao
+$V=\frac43\pi r^3\Rightarrow\frac{dV}{dt}=4\pi r^2\frac{dr}{dt}$. Com $\frac{dV}{dt}=3$ e
+$r=8$: $\frac{dr}{dt}=\frac{3}{256\pi}\approx0{,}0037$ cm/s. Quanto maior o balão, mais devagar
+o raio cresce para a mesma vazão.
+\end{exemplo}
+
+\begin{exemplo}{4.2}{A escada que escorrega}
+Uma escada de 10 m está apoiada numa parede. A base se afasta da parede a 1 m/s. Com que
+rapidez o topo desce quando a base está a 6 m da parede?
+\solucao
+\figtikz{\begin{tikzpicture}[scale=0.42]
+\fill[cinza!25] (-0.4,0) rectangle (0,9); \draw[thick] (0,0) -- (0,9); \draw[thick] (0,0) -- (9,0);
+\draw[azul,line width=2pt] (0,8) -- (6,0);
+\draw[<->,laranja] (0,-0.7) -- node[below,font=\small]{$x$} (6,-0.7);
+\draw[<->,laranja] (-1,0) -- node[left,font=\small]{$y$} (-1,8);
+\node[azul,font=\small] at (3.8,4.6) {10 m};
+\draw[-{Stealth},thick] (6.3,0.4) -- (8,0.4); \draw[-{Stealth},thick] (0.4,8.3) -- (0.4,6.8);
+\end{tikzpicture}}{A escada: $x^2+y^2=100$.}
+Seja $x$ a distância da base à parede e $y$ a altura do topo: $x^2+y^2=100$. Derivando,
+$2x\frac{dx}{dt}+2y\frac{dy}{dt}=0$. Quando $x=6$, $y=8$; com $\frac{dx}{dt}=1$:
+$\frac{dy}{dt}=-\frac{6\cdot1}{8}=-\frac34$ m/s. O topo desce a $0{,}75$ m/s.
+\end{exemplo}
+
+\begin{exemplo}{4.3}{Enchendo um tanque cônico}
+Um tanque em forma de cone invertido tem 4 m de altura e raio do topo de 2 m. Entra água a
+$2$ m$^3$/min. Com que rapidez o nível sobe quando a água tem 3 m de profundidade?
+\solucao
+Por semelhança de triângulos, $r=\frac h2$. Então $V=\frac13\pi r^2h=\frac{\pi h^3}{12}$ e
+$\frac{dV}{dt}=\frac{\pi h^2}{4}\frac{dh}{dt}$. Com $h=3$: $2=\frac{9\pi}{4}\frac{dh}{dt}$, logo
+$\frac{dh}{dt}=\frac{8}{9\pi}\approx0{,}28$ m/min.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Aproximações lineares e diferenciais}
+
+Perto do ponto de tangência, o gráfico de uma função derivável é quase indistinguível de
+sua reta tangente. A \textbf{aproximação linear} (ou linearização) de $f$ em $a$ é
+\[
+L(x)=f(a)+f'(a)(x-a),\qquad f(x)\approx L(x)\ \text{ para } x \text{ perto de } a .
+\]
+
+\begin{exemplo}{4.4}{Linearizações úteis}
+(a) Para $f(x)=\sqrt x$ em $a=9$: $L(x)=3+\frac16(x-9)$, logo
+$\sqrt{9{,}1}\approx3+\frac{0{,}1}6\approx3{,}0167$ (o valor exato é $3{,}01662\ldots$).
+
+(b) Para $f(x)=\sin x$ em $a=0$: $L(x)=x$. É a aproximação $\sin x\approx x$ para ângulos
+pequenos, usada, por exemplo, no estudo do pêndulo.
+
+(c) Para $f(x)=(1+x)^n$ em $a=0$: $(1+x)^n\approx1+nx$. Assim, $\sqrt[3]{1{,}03}\approx1{,}01$.
+\end{exemplo}
+
+\textbf{Diferenciais.} Se $y=f(x)$, a \textbf{diferencial} $dy=f'(x)\,dx$ aproxima a variação
+real $\Delta y=f(x+dx)-f(x)$. Na prática, as diferenciais estimam como um erro de medida se
+propaga.
+
+\begin{exemplo}{4.5}{Propagação de erro}
+A aresta de um cubo mede $5$ cm, com erro possível de $\pm0{,}1$ cm. Estime o erro no volume.
+\solucao
+$V=x^3$, $dV=3x^2\,dx=3(25)(0{,}1)=7{,}5$ cm$^3$. O volume é $125\pm7{,}5$ cm$^3$. O erro
+relativo é $\frac{dV}V=\frac{7{,}5}{125}=6\%$, o triplo do erro relativo da aresta ($2\%$),
+como sugere $\frac{dV}{V}=3\frac{dx}{x}$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Máximos e mínimos}
+
+\begin{definicao}
+$f$ tem um \textbf{máximo absoluto} em $c$ se $f(c)\ge f(x)$ para todo $x$ do domínio, e um
+\textbf{mínimo absoluto} se $f(c)\le f(x)$ para todo $x$. Tem um \textbf{máximo local}
+(ou relativo) em $c$ se $f(c)\ge f(x)$ para todo $x$ em algum intervalo aberto contendo $c$;
+analogamente para \textbf{mínimo local}. Esses valores são os \textbf{extremos} de $f$.
+\end{definicao}
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=10cm,height=5cm,xmin=-0.2,xmax=6.3,ymin=-1.5,ymax=3.8,xtick=\empty,ytick=\empty]
+\addplot[domain=0.3:6,samples=200]{0.18*(x-0.3)*(x-2.4)*(x-4.6)*(x-5.6)+1.2};
+\fill[laranja] (axis cs:0.3,1.2) circle (2pt);
+\fill[laranja] (axis cs:6,{0.18*(5.7)*(3.6)*(1.4)*(0.4)+1.2}) circle (2pt) node[left,font=\scriptsize]{máx. absoluto};
+\node[font=\scriptsize] at (axis cs:1.35,3.1) {máx. local};
+\node[font=\scriptsize] at (axis cs:3.55,-1.15) {mín. absoluto (e local)};
+\node[font=\scriptsize] at (axis cs:5.15,1.9) {máx. local};
+\end{axis}\end{tikzpicture}}{Extremos locais e absolutos de uma função contínua em um
+intervalo fechado. Os extremos absolutos podem ocorrer nas extremidades.}
+
+\begin{teorema}[Teorema do Valor Extremo]{4.1}
+Se $f$ é contínua em um intervalo fechado e limitado $[a,b]$, então $f$ tem máximo e mínimo
+absolutos em $[a,b]$.
+\end{teorema}
+
+As duas hipóteses importam: $f(x)=x$ em $(0,1)$ não tem máximo nem mínimo (o intervalo é
+aberto), e $f(x)=1/x$ em $[-1,1]\setminus\{0\}$ também não (falta continuidade).
+
+\begin{teorema}[Teorema de Fermat]{4.2}
+Se $f$ tem um extremo local em $c$ e $f$ é derivável em $c$, então $f'(c)=0$.
+\end{teorema}
+
+Um \textbf{ponto crítico} de $f$ é um ponto $c$ do domínio em que $f'(c)=0$ ou $f'(c)$ não
+existe. Pelo teorema de Fermat, \emph{extremos locais só ocorrem em pontos críticos}. A
+recíproca é falsa: $f(x)=x^3$ tem $f'(0)=0$ e nenhum extremo em $0$.
+
+\begin{estrategia}{extremos absolutos em $[a,b]$ (método do intervalo fechado)}
+\begin{enumerate}[label=\arabic*.]
+\item Calcule $f$ nas extremidades $a$ e $b$.
+\item Encontre os pontos críticos em $(a,b)$ e calcule $f$ neles.
+\item O maior desses valores é o máximo absoluto; o menor, o mínimo absoluto.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{4.6}{Extremos absolutos}
+Encontre os extremos absolutos de $f(x)=x^2-3x^{2/3}$ em $[0,2]$.
+\solucao
+$f'(x)=2x-2x^{-1/3}=\dfrac{2(x^{4/3}-1)}{x^{1/3}}$. Pontos críticos: $f'(x)=0$ em $x=1$, e
+$f'$ não existe em $x=0$ (que é também uma extremidade). Valores: $f(0)=0$, $f(1)=-2$ e
+$f(2)=4-3\sqrt[3]4\approx-0{,}76$. Máximo absoluto $0$ em $x=0$; mínimo absoluto $-2$ em $x=1$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{O Teorema do Valor Médio}
+
+\begin{teorema}[Teorema de Rolle]{4.3}
+Se $f$ é contínua em $[a,b]$, derivável em $(a,b)$ e $f(a)=f(b)$, então existe $c\in(a,b)$ com
+$f'(c)=0$.
+\end{teorema}
+\emph{Ideia da prova.} Pelo Teorema do Valor Extremo, $f$ tem máximo e mínimo em $[a,b]$. Se
+ambos ocorrem nas extremidades, $f$ é constante e $f'\equiv0$. Caso contrário, um deles
+ocorre em um ponto interior $c$, e pelo teorema de Fermat $f'(c)=0$. $\square$
+
+\begin{teorema}[Teorema do Valor Médio]{4.4}
+Se $f$ é contínua em $[a,b]$ e derivável em $(a,b)$, então existe $c\in(a,b)$ tal que
+\[
+f'(c)=\frac{f(b)-f(a)}{b-a}.
+\]
+\end{teorema}
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=8cm,height=5.4cm,xmin=0,xmax=5,ymin=0,ymax=4.5,xtick={0.6,4.4},xticklabels={$a$,$b$},ytick=\empty]
+\addplot[domain=0.3:4.7]{0.5+0.9*x-0.08*x^2+0.6*sin(deg(1.4*x))};
+\pgfmathsetmacro{\fa}{0.5+0.9*0.6-0.08*0.36+0.6*sin(deg(0.84))}
+\pgfmathsetmacro{\fb}{0.5+0.9*4.4-0.08*19.36+0.6*sin(deg(6.16))}
+\pgfmathsetmacro{\m}{(\fb-\fa)/3.8}
+\addplot[laranja,domain=0.6:4.4]{\fa+\m*(x-0.6)};
+\fill[laranja] (axis cs:0.6,\fa) circle (2pt); \fill[laranja] (axis cs:4.4,\fb) circle (2pt);
+\addplot[verde,dashed,domain=1.6:4.6]{0.5+0.9*3.17-0.08*3.17^2+0.6*sin(deg(1.4*3.17))+\m*(x-3.17)};
+\fill[verde] (axis cs:3.17,{0.5+0.9*3.17-0.08*3.17^2+0.6*sin(deg(1.4*3.17))}) circle (2pt) node[below,font=\scriptsize]{$c$};
+\end{axis}\end{tikzpicture}}{Teorema do Valor Médio: existe um ponto $c$ em que a tangente
+(verde) é paralela à secante entre as extremidades (laranja).}
+
+Em termos físicos: se um carro percorre 200 km em 2 horas, em algum instante sua velocidade
+foi exatamente 100 km/h.
+
+\begin{exemplo}{4.7}{Verificando o TVM}
+Para $f(x)=\sqrt x$ em $[0,9]$: $f$ é contínua em $[0,9]$ e derivável em $(0,9)$. A
+inclinação média é $\frac{3-0}{9}=\frac13$, e $f'(c)=\frac1{2\sqrt c}=\frac13$ dá
+$c=\frac94\in(0,9)$.
+\end{exemplo}
+
+O TVM é a ponte entre o sinal da derivada e o comportamento da função:
+
+\begin{teorema}[Consequências do TVM]{4.5}
+Seja $f$ derivável em um intervalo $I$.
+\begin{enumerate}[label=(\roman*)]
+\item Se $f'(x)=0$ para todo $x\in I$, então $f$ é constante em $I$.
+\item Se $f'(x)=g'(x)$ para todo $x\in I$, então $f(x)=g(x)+C$ para alguma constante $C$.
+\item Se $f'>0$ em $I$, $f$ é crescente em $I$; se $f'<0$, $f$ é decrescente.
+\end{enumerate}
+\end{teorema}
+\emph{Prova de (iii).} Se $x_1<x_2$ em $I$, o TVM dá $c$ com
+$f(x_2)-f(x_1)=f'(c)(x_2-x_1)>0$. $\square$
+
+% ---------------------------------------------------------------------
+\section{Derivadas e a forma do gráfico}
+
+\begin{teorema}[Teste da primeira derivada]{4.6}
+Seja $c$ um ponto crítico de $f$, contínua em um intervalo aberto contendo $c$.
+\begin{itemize}
+\item Se $f'$ muda de positiva para negativa em $c$, $f$ tem um máximo local em $c$.
+\item Se $f'$ muda de negativa para positiva em $c$, $f$ tem um mínimo local em $c$.
+\item Se $f'$ não muda de sinal em $c$, não há extremo local em $c$.
+\end{itemize}
+\end{teorema}
+
+\textbf{Concavidade.} Se $f'$ é crescente em $I$, o gráfico de $f$ se curva para cima, e
+dizemos que $f$ é \textbf{côncava para cima} em $I$. Se $f'$ é decrescente, $f$ é
+\textbf{côncava para baixo}. Um \textbf{ponto de inflexão} é um ponto do gráfico em que a
+concavidade muda.
+
+\begin{teorema}[Teste da concavidade]{4.7}
+Se $f''>0$ em $I$, $f$ é côncava para cima em $I$; se $f''<0$, côncava para baixo.
+\end{teorema}
+
+\begin{teorema}[Teste da segunda derivada]{4.8}
+Suponha $f'(c)=0$ e $f''$ contínua perto de $c$. Se $f''(c)>0$, $f$ tem mínimo local em $c$;
+se $f''(c)<0$, máximo local. Se $f''(c)=0$, o teste é inconclusivo.
+\end{teorema}
+
+\begin{exemplo}{4.8}{Análise completa de um polinômio}
+Estude $f(x)=x^3-3x^2-9x+1$.
+\solucao
+$f'(x)=3x^2-6x-9=3(x-3)(x+1)$: crescente em $(-\infty,-1)$ e $(3,\infty)$, decrescente em
+$(-1,3)$. Máximo local $f(-1)=6$; mínimo local $f(3)=-26$.
+$f''(x)=6x-6$: côncava para baixo em $(-\infty,1)$ e para cima em $(1,\infty)$; inflexão em
+$(1,-10)$. Pelo teste da segunda derivada, $f''(-1)=-12<0$ confirma o máximo e $f''(3)=12>0$,
+o mínimo.
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=8cm,height=5.4cm,xmin=-3,xmax=5.5,ymin=-32,ymax=14,xtick={-1,1,3},ytick={-26,-10,6}]
+\addplot[domain=-3:1,samples=120]{x^3-3*x^2-9*x+1};
+\addplot[laranja,domain=1:5.3,samples=120]{x^3-3*x^2-9*x+1};
+\fill[black] (axis cs:-1,6) circle (2pt); \fill[black] (axis cs:3,-26) circle (2pt);
+\fill[verde] (axis cs:1,-10) circle (2.2pt);
+\node[font=\scriptsize,azul] at (axis cs:-2.1,-14) {côncava p/ baixo};
+\node[font=\scriptsize,laranja] at (axis cs:4.2,-10) {côncava p/ cima};
+\end{axis}\end{tikzpicture}}{$f(x)=x^3-3x^2-9x+1$: extremos locais (pretos) e ponto de
+inflexão (verde). A cor indica a concavidade.}
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Limites no infinito e assíntotas}
+
+Escrevemos $\lim_{x\to\infty}f(x)=L$ se $f(x)$ fica arbitrariamente perto de $L$ para $x$
+suficientemente grande; analogamente para $x\to-\infty$. Nesse caso, a reta $y=L$ é uma
+\textbf{assíntota horizontal}. As propriedades dos limites continuam valendo, e o limite
+básico é $\lim_{x\to\pm\infty}\frac1{x^n}=0$ para $n>0$.
+
+\textbf{Funções racionais.} Dividimos numerador e denominador pela maior potência de $x$ do
+denominador. Por exemplo,
+\[
+\lim_{x\to\infty}\frac{3x^2+5}{2x^2-x}=\lim_{x\to\infty}\frac{3+5/x^2}{2-1/x}=\frac32 .
+\]
+Em geral, para $\frac{p(x)}{q(x)}$: se $\operatorname{grau}p<\operatorname{grau}q$, o limite
+é $0$; se os graus são iguais, é a razão dos coeficientes dominantes; se
+$\operatorname{grau}p>\operatorname{grau}q$, o limite é $\pm\infty$. Quando
+$\operatorname{grau}p=\operatorname{grau}q+1$, a divisão de polinômios dá uma
+\textbf{assíntota oblíqua}: $\frac{p(x)}{q(x)}=mx+b+\frac{r(x)}{q(x)}$, com
+$\frac{r}{q}\to0$.
+
+\begin{nota}
+Cuidado com raízes quando $x\to-\infty$: $\sqrt{x^2}=|x|=-x$. Assim,
+$\lim_{x\to\infty}\frac{\sqrt{x^2+1}}{x}=1$, mas $\lim_{x\to-\infty}\frac{\sqrt{x^2+1}}{x}=-1$.
+\end{nota}
+
+Comportamentos transcendentes a lembrar: $e^x\to\infty$ e $e^{-x}\to0$ quando $x\to\infty$;
+$\ln x\to\infty$ (devagar); $\tan^{-1}x\to\pm\frac\pi2$ quando $x\to\pm\infty$.
+
+\begin{estrategia}{esboço do gráfico de uma função}
+\begin{enumerate}[label=\arabic*.]
+\item Domínio, interceptos e simetria.
+\item Assíntotas verticais (limites infinitos) e horizontais/oblíquas (limites no infinito).
+\item $f'$: intervalos de crescimento e extremos locais.
+\item $f''$: concavidade e pontos de inflexão.
+\item Junte tudo num esboço.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{4.9}{Esboço com assíntota oblíqua}
+Esboce $f(x)=\dfrac{x^2}{x-1}$.
+\solucao
+\emph{Domínio:} $x\neq1$; intercepto $(0,0)$. \emph{Assíntotas:} vertical $x=1$
+($-\infty$ pela esquerda, $+\infty$ pela direita); como $\frac{x^2}{x-1}=x+1+\frac1{x-1}$, a
+reta $y=x+1$ é assíntota oblíqua. \emph{Primeira derivada:}
+$f'(x)=\frac{x(x-2)}{(x-1)^2}$: máximo local $f(0)=0$, mínimo local $f(2)=4$.
+\emph{Segunda derivada:} $f''(x)=\frac2{(x-1)^3}$: côncava para baixo em $x<1$, para cima em
+$x>1$, sem inflexão (que exigiria $x=1$, fora do domínio).
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7.5cm,height=6cm,xmin=-4,xmax=6,ymin=-8,ymax=11,xtick={1,2},ytick={4}]
+\addplot[domain=-4:0.85,samples=200]{x^2/(x-1)}; \addplot[domain=1.12:6,samples=200]{x^2/(x-1)};
+\addplot[laranja,dashed,domain=-4:6]{x+1}; \draw[laranja,dashed] (axis cs:1,-8) -- (axis cs:1,11);
+\fill[black] (axis cs:0,0) circle (2pt); \fill[black] (axis cs:2,4) circle (2pt);
+\end{axis}\end{tikzpicture}}{$f(x)=x^2/(x-1)$, com assíntotas $x=1$ e $y=x+1$.}
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Otimização}
+
+Muitos problemas práticos pedem o maior ou o menor valor de uma grandeza: área máxima, custo
+mínimo, tempo mínimo. A estratégia combina modelagem com o método do intervalo fechado ou com
+o teste da primeira derivada.
+
+\begin{estrategia}{problemas de otimização}
+\begin{enumerate}[label=\arabic*.]
+\item Faça um desenho e nomeie as variáveis.
+\item Escreva a grandeza a otimizar em função das variáveis.
+\item Use as restrições do problema para reduzir a uma função de \emph{uma} variável, e
+  determine o intervalo de valores possíveis.
+\item Encontre os pontos críticos e compare os valores (extremidades incluídas), ou use o
+  teste da primeira ou da segunda derivada.
+\item Responda à pergunta, com unidades.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{4.10}{A caixa de volume máximo}
+De uma folha de $24\times36$ cm cortam-se quadrados de lado $x$ nos cantos e dobram-se as
+abas para formar uma caixa sem tampa. Qual $x$ maximiza o volume?
+\solucao
+$V(x)=x(36-2x)(24-2x)=4x^3-120x^2+864x$, com $0\le x\le12$. Então
+$V'(x)=12x^2-240x+864=12(x^2-20x+72)=0$ dá $x=10\pm\sqrt{28}$; só $x=10-2\sqrt7\approx4{,}71$
+está em $[0,12]$. Como $V(0)=V(12)=0$, o máximo é $V(4{,}71)\approx1825$ cm$^3$.
+\end{exemplo}
+
+\begin{exemplo}{4.11}{A lata mais econômica}
+Uma lata cilíndrica fechada deve ter volume $V$. Que proporção entre altura e raio minimiza a
+área de material?
+\solucao
+$V=\pi r^2h\Rightarrow h=\frac V{\pi r^2}$. A área é
+$A(r)=2\pi r^2+2\pi rh=2\pi r^2+\frac{2V}r$, para $r>0$. $A'(r)=4\pi r-\frac{2V}{r^2}=0$ dá
+$r^3=\frac V{2\pi}$. Como $A''(r)=4\pi+\frac{4V}{r^3}>0$, é mínimo. Nesse caso
+$h=\frac{V}{\pi r^2}=\frac{2\pi r^3}{\pi r^2}=2r$: a lata ótima tem \emph{altura igual ao
+diâmetro}.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{A regra de L'Hôpital}
+
+\begin{teorema}[Regra de L'Hôpital]{4.9}
+Sejam $f$ e $g$ deriváveis perto de $a$ (exceto possivelmente em $a$), com $g'(x)\neq0$
+perto de $a$. Se $\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0$, ou se ambos são $\pm\infty$, então
+\[
+\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)},
+\]
+desde que o limite da direita exista (ou seja $\pm\infty$). O mesmo vale para $x\to\pm\infty$ e
+para limites laterais.
+\end{teorema}
+
+\begin{nota}
+Deriva-se numerador e denominador \emph{separadamente}; não se usa a regra do quociente. E
+a regra só vale para as formas $\frac00$ e $\frac\infty\infty$: por exemplo,
+$\lim_{x\to0}\frac{x+1}{x+2}=\frac12$, enquanto ``aplicar L'Hôpital'' daria, erradamente, 1.
+\end{nota}
+
+\begin{exemplo}{4.12}{As formas $\frac00$ e $\frac\infty\infty$}
+(a) $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}=\lim_{x\to0}\frac{\sin x}{2x}=\frac12$.\qquad
+(b) $\displaystyle\lim_{x\to\infty}\frac{e^x}{x^2}=\lim_{x\to\infty}\frac{e^x}{2x}
+=\lim_{x\to\infty}\frac{e^x}{2}=\infty$.
+\end{exemplo}
+
+\textbf{Outras formas indeterminadas.} As formas $0\cdot\infty$ e $\infty-\infty$ são
+reescritas como quocientes; as formas $1^\infty$, $0^0$ e $\infty^0$ são tratadas com
+logaritmo: se $y=f(x)^{g(x)}$, calculamos $\lim\ln y=\lim g(x)\ln f(x)$ e depois
+exponenciamos.
+
+\begin{exemplo}{4.13}{Formas indeterminadas diversas}
+(a) $0\cdot\infty$: $\displaystyle\lim_{x\to0^+}x\ln x=\lim_{x\to0^+}\frac{\ln x}{1/x}
+=\lim_{x\to0^+}\frac{1/x}{-1/x^2}=\lim_{x\to0^+}(-x)=0$.
+
+(b) $\infty-\infty$: $\displaystyle\lim_{x\to0^+}\Big(\frac1x-\frac1{\sin x}\Big)
+=\lim_{x\to0^+}\frac{\sin x-x}{x\sin x}=\lim_{x\to0^+}\frac{\cos x-1}{\sin x+x\cos x}
+=\lim_{x\to0^+}\frac{-\sin x}{2\cos x-x\sin x}=0$.
+
+(c) $1^\infty$: para $y=\big(1+\frac1x\big)^x$, $\ln y=x\ln\big(1+\frac1x\big)
+=\frac{\ln(1+1/x)}{1/x}\to1$ (por L'Hôpital). Logo $\lim_{x\to\infty}\big(1+\frac1x\big)^x=e$.
+
+(d) $0^0$: para $y=x^x$, $\ln y=x\ln x\to0$ por (a). Logo $\lim_{x\to0^+}x^x=e^0=1$.
+\end{exemplo}
+
+\textbf{Taxas de crescimento.} Aplicando L'Hôpital repetidamente: para todo $p>0$,
+$\frac{\ln x}{x^p}\to0$ e $\frac{x^p}{e^x}\to0$ quando $x\to\infty$. Ou seja, no infinito,
+\emph{o logaritmo cresce mais devagar que qualquer potência, e toda potência cresce mais
+devagar que a exponencial}.
+
+% ---------------------------------------------------------------------
+\section{O método de Newton}
+
+Para aproximar uma raiz de $f(x)=0$, partimos de um palpite $x_0$ e trocamos a curva pela
+tangente em $(x_0,f(x_0))$. O ponto em que a tangente corta o eixo $x$ é o novo palpite:
+\[
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)} .
+\]
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=8cm,height=5.2cm,xmin=0.8,xmax=3.2,ymin=-1.5,ymax=7.5,xtick={3,1.8333,1.4621},xticklabels={$x_0$,$x_1$,$x_2$},ytick=\empty,
+  x tick label style={font=\scriptsize}]
+\addplot[domain=0.8:3.2]{x^2-2};
+\addplot[laranja,domain=1.7:3.2]{7+6*(x-3)};
+\addplot[laranja!70,domain=1.35:2.3]{1.3611+3.6667*(x-1.8333)};
+\draw[cinza,dotted] (axis cs:3,0) -- (axis cs:3,7); \draw[cinza,dotted] (axis cs:1.8333,0) -- (axis cs:1.8333,1.3611);
+\fill[verde] (axis cs:1.4142,0) circle (2pt) node[below left,font=\scriptsize]{$\sqrt2$};
+\end{axis}\end{tikzpicture}}{Método de Newton para $f(x)=x^2-2$: cada tangente leva a um
+palpite mais próximo da raiz $\sqrt2$.}
+
+\begin{exemplo}{4.14}{Calculando $\sqrt2$}
+Para $f(x)=x^2-2$, a iteração é $x_{n+1}=x_n-\frac{x_n^2-2}{2x_n}=\frac12\Big(x_n+\frac2{x_n}\Big)$.
+Com $x_0=1$: $x_1=1{,}5$; $x_2\approx1{,}416667$; $x_3\approx1{,}414216$; $x_4\approx1{,}4142136$.
+O número de casas corretas praticamente dobra a cada passo.
+\end{exemplo}
+
+\textbf{Quando falha.} Se $f'(x_n)=0$, a tangente é horizontal e o método para. Ele também
+pode oscilar: para $f(x)=x^3-2x+2$ com $x_0=0$, obtemos $x_1=1$, $x_2=0$, $x_3=1,\dots$, sem
+convergir. Por isso convém escolher $x_0$ perto da raiz, por exemplo com o auxílio de um
+gráfico ou do Teorema do Valor Intermediário.
+
+% ---------------------------------------------------------------------
+\section{Antiderivadas}
+
+\begin{definicao}
+$F$ é uma \textbf{antiderivada} (ou primitiva) de $f$ em um intervalo $I$ se $F'(x)=f(x)$ para
+todo $x\in I$.
+\end{definicao}
+
+Pela consequência (ii) do TVM, se $F$ é uma antiderivada de $f$, então \emph{todas} as
+antiderivadas são da forma $F(x)+C$. Escrevemos a \textbf{integral indefinida}
+\[
+\int f(x)\,dx=F(x)+C .
+\]
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=6.5cm,height=5cm,xmin=-2.3,xmax=2.3,ymin=-2.5,ymax=5,xtick=\empty,ytick=\empty]
+\foreach \c/\o in {-2/40,-1/55,0/100,1/55,2/40}{\edef\tmp{\noexpand\addplot[azul!\o!white,domain=-2.3:2.3]{x^2+\c};}\tmp}
+\end{axis}\end{tikzpicture}}{A família $x^2+C$: todas as antiderivadas de $2x$ diferem por
+uma translação vertical.}
+
+Cada regra de derivação, lida ao contrário, dá uma regra de antiderivação:
+\[
+\int x^n\,dx=\frac{x^{n+1}}{n+1}+C\ (n\neq-1),\qquad
+\int\frac1x\,dx=\ln|x|+C,\qquad \int e^x\,dx=e^x+C,
+\]
+\[
+\int\cos x\,dx=\sin x+C,\quad \int\sin x\,dx=-\cos x+C,\quad \int\sec^2x\,dx=\tan x+C,\quad
+\int\frac{dx}{1+x^2}=\tan^{-1}x+C .
+\]
+Além disso, $\int\big(kf\pm g\big)\,dx=k\int f\,dx\pm\int g\,dx$. Uma antiderivada sempre pode
+ser conferida derivando.
+
+\begin{exemplo}{4.15}{Calculando integrais indefinidas}
+$\displaystyle\int\Big(5x^3-\frac{7}{x^2}+4\sqrt x\Big)dx
+=\frac{5x^4}4+\frac7x+\frac{8}{3}x^{3/2}+C$
+\quad e\quad
+$\displaystyle\int\frac{x^2+1}{x}\,dx=\int\Big(x+\frac1x\Big)dx=\frac{x^2}2+\ln|x|+C$.
+\end{exemplo}
+
+\textbf{Problemas de valor inicial.} Uma condição como $F(a)=b$ fixa a constante $C$.
+
+\begin{exemplo}{4.16}{Um carro freando}
+Um carro a 30 m/s freia com desaceleração constante de 6 m/s$^2$. Que distância percorre até
+parar?
+\solucao
+$a(t)=-6\Rightarrow v(t)=-6t+C_1$, e $v(0)=30$ dá $v(t)=30-6t$. Então
+$s(t)=30t-3t^2+C_2$, com $s(0)=0$. O carro para quando $v=0$, em $t=5$ s, tendo percorrido
+$s(5)=150-75=75$ m.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section*{Resumo do capítulo}
+\addcontentsline{toc}{section}{Resumo do capítulo}
+\begin{itemize}
+\item Taxas relacionadas: derive a equação que liga as variáveis em relação a $t$; substitua
+  os valores só depois.
+\item Linearização $L(x)=f(a)+f'(a)(x-a)$; diferencial $dy=f'(x)\,dx$ estima variações e
+  erros.
+\item Extremos locais ocorrem em pontos críticos ($f'=0$ ou $\nexists$). Em $[a,b]$ com $f$
+  contínua, compare $f$ nos pontos críticos e nas extremidades.
+\item TVM: $f'(c)=\frac{f(b)-f(a)}{b-a}$. Consequências: $f'=0\Rightarrow f$ constante; sinal
+  de $f'$ dá crescimento.
+\item Testes da 1ª e da 2ª derivada; $f''$ dá a concavidade; inflexão onde ela muda.
+\item Assíntotas horizontais e oblíquas via limites no infinito; roteiro de esboço.
+\item Otimização: modele, reduza a uma variável, encontre e compare pontos críticos.
+\item L'Hôpital para $\frac00$ e $\frac\infty\infty$; as demais formas se reduzem a essas.
+  $\ln x\ll x^p\ll e^x$.
+\item Newton: $x_{n+1}=x_n-f(x_n)/f'(x_n)$.
+\item Antiderivadas: $\int f\,dx=F+C$; problemas de valor inicial fixam $C$.
+\end{itemize}
+
+\input{exercicios_cap4}

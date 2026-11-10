@@ -16,7 +16,7 @@ respostas. Os marcados com ★ têm solução completa e animação do gráfico 
 | 1 | Funções e gráficos | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap1/README.md) |
 | 2 | Limites | ✅ | [65 exercícios, 12 resolvidos](exercicios/cap2/README.md) |
 | 3 | Derivadas | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap3/README.md) |
-| 4 | Aplicações das derivadas | em produção | — |
+| 4 | Aplicações das derivadas | ✅ | [65 exercícios, 12 resolvidos](exercicios/cap4/README.md) |
 | 5 | Integração | em produção | — |
 | 6 | Aplicações da integração | em produção | — |
 
