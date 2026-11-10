@@ -6,163 +6,163 @@ Muitos enunciados são adaptados de *Calculus Volume 1* (OpenStax, CC BY-NC-SA 4
 
 ## Lista
 
-`•` **1.1** Para $f(x)=3x^2+2x-1$, calcule $f(-2)$, $f(0)$ e $f(a+1)$.
+`•` **1.1** Esboce o gráfico de $f(x)=|x-2|-1$, indicando o vértice, os zeros e o intercepto $y$.
 
 <details><summary>Resposta</summary>
 
-$7$; $-1$; $3a^2+8a+4$.
+Vértice $(2,-1)$; zeros $x=1$ e $x=3$; intercepto $(0,1)$.
 
 </details>
 
-`•` **1.2** Determine o domínio e a imagem de $f(x)=\sqrt{6x+5}$.
+`•` **1.2** Determine domínio, imagem, zeros e intercepto $y$ de $f(x)=\sqrt{x+3}-1$ e esboce o gráfico a partir de $y=\sqrt x$.
 
 <details><summary>Resposta</summary>
 
-Domínio $[-\tfrac56,\infty)$; imagem $[0,\infty)$.
+Domínio $[-3,\infty)$; imagem $[-1,\infty)$; zero $x=-2$; intercepto $(0,\sqrt3-1)$; translação de 3 para a esquerda e 1 para baixo.
 
 </details>
 
-`•` **1.3** Determine o domínio e a imagem de $g(x)=\dfrac{3}{x-4}$.
+`•` **1.3** Determine o domínio de $f(x)=\sqrt{x^2-5x+6}$ por estudo de sinais.
 
 <details><summary>Resposta</summary>
 
-Domínio $\lbrace x\mid x\neq4\rbrace $; imagem $\lbrace y\mid y\neq0\rbrace $.
+$(-\infty,2]\cup[3,\infty)$.
 
 </details>
 
-`•` **1.4** Determine o domínio de $f(x)=\dfrac{x}{x^2-16}$.
+`•` **1.4** Determine o domínio e a imagem de $f(x)=\ln(4-x^2)$.
 
 <details><summary>Resposta</summary>
 
-$\lbrace x\mid x\neq\pm4\rbrace $.
+Domínio $(-2,2)$; imagem $(-\infty,\ln4]$.
 
 </details>
 
-`•` **1.5** Determine o domínio e a imagem de $f(x)=|x-7|+8$.
+`•` **1.5** Esboce $f(x)=\begin{cases}-x,&x<0\\x^2,&0\le x\le2\\6-x,&x>2\end{cases}$. Qual é a imagem? Quantas soluções tem $f(x)=3$?
 
 <details><summary>Resposta</summary>
 
-Domínio $\mathbb R$; imagem $[8,\infty)$.
+Imagem $\mathbb R$; três soluções: $x=-3$, $\sqrt3$ e $3$.
 
 </details>
 
-`•` **1.6** Encontre os zeros e o intercepto $y$ de $f(x)=x^3-5x^2+6x$.
+`•` **1.6** Encontre os zeros de $f(x)=x^3-5x^2+6x$, faça o estudo de sinais e esboce o gráfico.
 
 <details><summary>Resposta</summary>
 
-Zeros $0$, $2$ e $3$; intercepto $(0,0)$.
+Zeros $0$, $2$, $3$; $f>0$ em $(0,2)\cup(3,\infty)$ e $f<0$ em $(-\infty,0)\cup(2,3)$.
 
 </details>
 
-`•` **1.7** Calcule a inclinação da reta que passa por $(-1,4)$ e $(3,-1)$.
+`•` **1.7** Encontre a reta que passa por $(-1,4)$ e é perpendicular a $2x-3y=6$.
 
 <details><summary>Resposta</summary>
 
-$m=-\tfrac54$.
+$y=-\tfrac32x+\tfrac52$.
 
 </details>
 
-`•` **1.8** Escreva a equação reduzida da reta de inclinação $-6$ que passa por $(1,3)$.
+`•` **1.8** Complete o quadrado em $f(x)=2x^2-8x+5$, dê o vértice e os zeros e esboce a parábola.
 
 <details><summary>Resposta</summary>
 
-$y=-6x+9$.
+$f(x)=2(x-2)^2-3$; vértice $(2,-3)$; zeros $2\pm\sqrt{3/2}$.
 
 </details>
 
-`•` **1.9** Escreva a equação da reta com intercepto $x$ igual a 5 e intercepto $y$ igual a $-3$.
+`•` **1.9** Classifique como par, ímpar ou nenhuma: (a) $x^2\cos x$; (b) $x\sin x$; (c) $\dfrac{x}{x^2+1}$; (d) $e^x-e^{-x}$; (e) $x^2+x$.
 
 <details><summary>Resposta</summary>
 
-$y=\tfrac35x-3$.
+(a) par; (b) par; (c) ímpar; (d) ímpar; (e) nenhuma.
 
 </details>
 
-`•` **1.10** Classifique como par, ímpar ou nenhuma das duas: (a) $x^4-3x^2$; (b) $x^3+x$; (c) $x^2+x$.
+`•` **1.10** Sejam $f(x)=x^2+1$ e $g(x)=\sqrt{x-1}$. Encontre $f\circ g$ e $g\circ f$ com os domínios. Por que as fórmulas são ``quase'' inversas?
 
 <details><summary>Resposta</summary>
 
-(a) par; (b) ímpar; (c) nenhuma.
+$(f\circ g)(x)=x$, $x\ge1$; $(g\circ f)(x)=|x|$, $x\in\mathbb R$.
 
 </details>
 
-`•` **1.11** Converta para radianos: $240^\circ$, $-60^\circ$ e $330^\circ$.
+`•` **1.11** Escreva $h(x)=\sqrt{1+\cos^2x}$ como composição de três funções mais simples.
 
 <details><summary>Resposta</summary>
 
-$\tfrac{4\pi}3$, $-\tfrac\pi3$ e $\tfrac{11\pi}6$.
+$h=f\circ g\circ k$, com $k(x)=\cos x$, $g(u)=1+u^2$, $f(v)=\sqrt v$ (há outras).
 
 </details>
 
-`•` **1.12** Converta para graus: $\tfrac{7\pi}{6}$, $\tfrac{11\pi}{2}$ e $-\tfrac{5\pi}{4}$.
+`•` **1.12** Resolva $|2x-3|\le5$ e $|x+1|>2$, escrevendo as soluções em notação de intervalos.
 
 <details><summary>Resposta</summary>
 
-$210^\circ$, $990^\circ$ e $-225^\circ$.
+$[-1,4]$; $(-\infty,-3)\cup(1,\infty)$.
 
 </details>
 
-`•` **1.13** Calcule o valor exato de $\sin\tfrac{2\pi}3$, $\cos\!\big(-\tfrac\pi4\big)$ e $\tan\tfrac{5\pi}6$.
+`•` **1.13** Encontre todos os $\theta\in[0,2\pi)$ com $\cos\theta=-\tfrac12$ e todos com $\tan\theta=\sqrt3$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac{\sqrt3}2$, $\tfrac{\sqrt2}2$ e $-\tfrac{\sqrt3}3$.
+$\tfrac{2\pi}3,\tfrac{4\pi}3$; $\tfrac\pi3,\tfrac{4\pi}3$.
 
 </details>
 
-`•` **1.14** Dê a amplitude, o período e o deslocamento vertical de $y=3\sin(2x)+1$.
+`•` **1.14** Esboce um período de $y=2\sin\!\big(x-\tfrac\pi4\big)$, marcando amplitude, período, zeros e máximos.
 
 <details><summary>Resposta</summary>
 
-Amplitude 3; período $\pi$; deslocamento 1 para cima.
+Amplitude 2, período $2\pi$; zeros $\tfrac\pi4,\tfrac{5\pi}4,\tfrac{9\pi}4$; máximo em $x=\tfrac{3\pi}4$.
 
 </details>
 
-`•` **1.15** Encontre a inversa de $f(x)=5x-7$ e verifique que $f^{-1}(f(x))=x$.
+`•` **1.15** Encontre a inversa de $f(x)=\dfrac{x+1}{x-2}$, com domínio e imagem, e confira que $f(f^{-1}(x))=x$.
 
 <details><summary>Resposta</summary>
 
-$f^{-1}(x)=\tfrac{x+7}5$.
+$f^{-1}(x)=\dfrac{2x+1}{x-1}$; $\operatorname{Dom}f^{-1}=\lbrace x\neq1\rbrace $, $\operatorname{Im}f^{-1}=\lbrace y\neq2\rbrace $.
 
 </details>
 
-`•` **1.16** Calcule $\sin^{-1}\tfrac12$, $\cos^{-1}(-1)$ e $\tan^{-1}\sqrt3$.
+`•` **1.16** Calcule, desenhando um triângulo retângulo: $\sin\!\big(\cos^{-1}\tfrac35\big)$, $\tan\!\big(\sin^{-1}(-\tfrac12)\big)$ e $\cos(\tan^{-1}2)$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac\pi6$, $\pi$ e $\tfrac\pi3$.
+$\tfrac45$, $-\tfrac{\sqrt3}3$ e $\tfrac1{\sqrt5}$.
 
 </details>
 
-`•` **1.17** Calcule $5^3$, $5^{1/2}$ e $(0{,}3)^{-1}$.
+`•` **1.17** Simplifique (a) $\ln\!\big(e^2\sqrt e\big)$; (b) $\log_2\dfrac{8}{\sqrt2}$; (c) $e^{2\ln3-\ln2}$.
 
 <details><summary>Resposta</summary>
 
-$125$, $\sqrt5$ e $\tfrac{10}3$.
+(a) $\tfrac52$; (b) $\tfrac52$; (c) $\tfrac92$.
 
 </details>
 
-`•` **1.18** Calcule $\log_2 32$, $\ln e^3$ e $\log_{10}0{,}001$.
+`•` **1.18** Resolva (a) $3^{2x-1}=27$; (b) $\log_3(x+1)=2$; (c) $5^x=2\cdot3^x$.
 
 <details><summary>Resposta</summary>
 
-$5$, $3$ e $-3$.
+(a) $x=2$; (b) $x=8$; (c) $x=\dfrac{\ln2}{\ln5-\ln3}\approx1{,}357$.
 
 </details>
 
-`•` **1.19** Resolva (a) $2^x=16$; (b) $e^x=7$.
+`•` **1.19** Esboce $y=2^{-x}+1$ a partir de $y=2^x$, indicando a assíntota, o intercepto $y$ e a imagem.
 
 <details><summary>Resposta</summary>
 
-(a) $x=4$; (b) $x=\ln7$.
+Reflexão no eixo $y$ e translação de 1 para cima; assíntota $y=1$; intercepto $(0,2)$; imagem $(1,\infty)$.
 
 </details>
 
-`•` **1.20** Calcule $\cosh0$, $\sinh0$ e $\tanh0$.
+`•` **1.20** Esboce $y=-\ln(x-1)$ a partir de $y=\ln x$, indicando domínio, assíntota e zero.
 
 <details><summary>Resposta</summary>
 
-$1$, $0$ e $0$.
+Domínio $(1,\infty)$; assíntota $x=1$; zero $x=2$; é decrescente.
 
 </details>
 
@@ -174,19 +174,19 @@ $(f\circ g)(x)=\dfrac{3x}{x+4}$, com $x\neq0,-4$;\quad $(g\circ f)(x)=\dfrac{2(2
 
 </details>
 
-`••` **1.22** Sejam $f(x)=\sqrt x$ e $g(x)=x-2$. Encontre $f\circ g$ e $g\circ f$, com seus domínios.
+`••` **1.22** Sejam $f(x)=\dfrac1{x-1}$ e $g(x)=\dfrac{x+1}{x}$. Encontre $f\circ g$ e seu domínio. O resultado surpreende?
 
 <details><summary>Resposta</summary>
 
-$(f\circ g)(x)=\sqrt{x-2}$, $x\ge2$; $(g\circ f)(x)=\sqrt x-2$, $x\ge0$.
+$(f\circ g)(x)=x$, com domínio $x\neq0$ (a fórmula simplificada esconde a restrição).
 
 </details>
 
-`••` **1.23** Para $f(x)=\begin{cases}x^2-3,&x<0\\4x-3,&x\ge0\end{cases}$, calcule $f(-4)$, $f(0)$ e $f(2)$.
+`••` **1.23** Esboce $f(x)=x|x|$. Mostre que $f$ é ímpar e injetora e encontre $f^{-1}$.
 
 <details><summary>Resposta</summary>
 
-$13$, $-3$ e $5$.
+$f(x)=x^2$ para $x\ge0$ e $-x^2$ para $x<0$; $f^{-1}(x)=\sqrt x$ se $x\ge0$ e $-\sqrt{-x}$ se $x<0$.
 
 </details>
 
@@ -286,11 +286,11 @@ $x=\dfrac1{e-1}\approx0{,}582$.
 
 </details>
 
-`••` **1.36** Simplifique (a) $e^{3\ln2}$; (b) $\log_3(9^x)$; (c) $\ln\sqrt e$.
+`••` **1.36** Mostre que $f(x)=x^3+x$ é estritamente crescente (logo injetora) e calcule $f^{-1}(2)$ e $f^{-1}(10)$ sem achar a fórmula da inversa.
 
 <details><summary>Resposta</summary>
 
-(a) $8$; (b) $2x$; (c) $\tfrac12$.
+$f^{-1}(2)=1$ e $f^{-1}(10)=2$.
 
 </details>
 
@@ -318,11 +318,11 @@ $10^{3{,}4}\approx2512$ vezes.
 
 </details>
 
-`••` **1.40** Use a mudança de base para calcular $\log_5 12$ e $\log_7 0{,}5$ com quatro casas decimais.
+`••` **1.40** Resolva $2^{x+1}=3^x$ e $\log_2x+\log_4x=6$.
 
 <details><summary>Resposta</summary>
 
-$1{,}5440$ e $-0{,}3562$.
+$x=\dfrac{\ln2}{\ln3-\ln2}\approx1{,}7095$; $x=16$.
 
 </details>
 

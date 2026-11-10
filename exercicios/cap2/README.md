@@ -6,55 +6,15 @@ Muitos enunciados são adaptados de *Calculus Volume 1* (OpenStax, CC BY-NC-SA 4
 
 ## Lista
 
-`•` **2.1** Calcule $\displaystyle\lim_{x\to7}x^2$.
+`•` **2.1** Calcule $\displaystyle\lim_{x\to2}\frac{x^2-5x+6}{x^2-4}$.
 
 <details><summary>Resposta</summary>
 
-$49$.
+$-\tfrac14$.
 
 </details>
 
-`•` **2.2** Calcule $\displaystyle\lim_{x\to-2}(4x^2-1)$.
-
-<details><summary>Resposta</summary>
-
-$15$.
-
-</details>
-
-`•` **2.3** Calcule $\displaystyle\lim_{x\to0}\frac{1}{1+\sin x}$.
-
-<details><summary>Resposta</summary>
-
-$1$.
-
-</details>
-
-`•` **2.4** Calcule $\displaystyle\lim_{x\to2}e^{2x-x^2}$.
-
-<details><summary>Resposta</summary>
-
-$1$.
-
-</details>
-
-`•` **2.5** Calcule $\displaystyle\lim_{x\to1}\frac{2-7x}{x+6}$.
-
-<details><summary>Resposta</summary>
-
-$-\tfrac57$.
-
-</details>
-
-`•` **2.6** Calcule $\displaystyle\lim_{x\to3}\ln e^{3x}$.
-
-<details><summary>Resposta</summary>
-
-$9$.
-
-</details>
-
-`•` **2.7** Use as propriedades dos limites para calcular $\displaystyle\lim_{x\to0}(4x^2-2x+3)$.
+`•` **2.2** Calcule $\displaystyle\lim_{x\to-1}\frac{x^3+1}{x+1}$.
 
 <details><summary>Resposta</summary>
 
@@ -62,107 +22,147 @@ $3$.
 
 </details>
 
-`•` **2.8** Calcule $\displaystyle\lim_{x\to1}\frac{x^3+3x^2+5}{4-7x}$.
+`•` **2.3** Calcule $\displaystyle\lim_{x\to1}\frac{x^4-1}{x-1}$.
 
 <details><summary>Resposta</summary>
 
-$-3$.
+$4$.
 
 </details>
 
-`•` **2.9** Calcule $\displaystyle\lim_{x\to-2}\sqrt{x^2-6x+3}$.
+`•` **2.4** Calcule $\displaystyle\lim_{x\to4}\frac{\sqrt x-2}{x-4}$.
 
 <details><summary>Resposta</summary>
 
-$\sqrt{19}$.
+$\tfrac14$.
 
 </details>
 
-`•` **2.10** Calcule $\displaystyle\lim_{x\to-1}(9x+1)^2$.
+`•` **2.5** Calcule $\displaystyle\lim_{x\to0}\frac{\sqrt{x+9}-3}{x}$.
 
 <details><summary>Resposta</summary>
 
-$64$.
+$\tfrac16$.
 
 </details>
 
-`•` **2.11** Mostre que a substituição dá $0/0$ e calcule $\displaystyle\lim_{x\to4}\frac{x^2-16}{x-4}$.
+`•` **2.6** Calcule $\displaystyle\lim_{x\to8}\frac{\sqrt[3]x-2}{x-8}$.
 
 <details><summary>Resposta</summary>
 
-$8$.
+$\tfrac1{12}$.
 
 </details>
 
-`•` **2.12** Calcule $\displaystyle\lim_{x\to6}\frac{3x-18}{2x-12}$.
+`•` **2.7** Calcule $\displaystyle\lim_{h\to0}\frac{(3+h)^2-9}{h}$ e interprete como inclinação de uma tangente.
 
 <details><summary>Resposta</summary>
 
-$\tfrac32$.
+$6$: inclinação da tangente a $y=x^2$ em $x=3$.
 
 </details>
 
-`•` **2.13** Calcule $\displaystyle\lim_{h\to0}\frac{(1+h)^2-1}{h}$.
+`•` **2.8** Calcule $\displaystyle\lim_{x\to1}\left(\frac1{x-1}-\frac2{x^2-1}\right)$.
 
 <details><summary>Resposta</summary>
 
-$2$.
+$\tfrac12$.
 
 </details>
 
-`•` **2.14** Para $f(x)=\begin{cases}x^2,&x\le3\\x+4,&x>3\end{cases}$, calcule os limites laterais em $x=3$. O limite existe?
+`•` **2.9** Calcule $\displaystyle\lim_{x\to0}\frac{\sin7x}{3x}$.
 
 <details><summary>Resposta</summary>
 
-$9$ e $7$; não existe.
+$\tfrac73$.
 
 </details>
 
-`•` **2.15** Para $g(x)=\begin{cases}x^3-1,&x\le0\\1,&x>0\end{cases}$, calcule $\lim_{x\to0^-}g(x)$ e $\lim_{x\to0^+}g(x)$.
+`•` **2.10** Calcule $\displaystyle\lim_{x\to0}\frac{x}{\tan2x}$.
 
 <details><summary>Resposta</summary>
 
-$-1$ e $1$.
+$\tfrac12$.
 
 </details>
 
-`•` **2.16** Calcule $\displaystyle\lim_{x\to0}\frac{\sin5x}{x}$.
+`•` **2.11** Calcule $\displaystyle\lim_{x\to0}\frac{\sin^2(3x)}{x^2}$.
 
 <details><summary>Resposta</summary>
 
-$5$.
+$9$.
 
 </details>
 
-`•` **2.17** Encontre a assíntota vertical de $f(x)=\dfrac{1}{(x-3)^4}$ e o limite correspondente.
+`•` **2.12** Calcule $\displaystyle\lim_{x\to0}\frac{1-\cos x}{\sin x}$.
 
 <details><summary>Resposta</summary>
 
-$x=3$; $\lim_{x\to3}f(x)=+\infty$.
+$0$.
 
 </details>
 
-`•` **2.18** Calcule $\displaystyle\lim_{x\to2^+}\frac{1}{x-2}$ e $\displaystyle\lim_{x\to2^-}\frac{1}{x-2}$.
+`•` **2.13** Calcule $\displaystyle\lim_{x\to\pi}\frac{\sin x}{x-\pi}$. (Dica: $u=x-\pi$.)
 
 <details><summary>Resposta</summary>
 
-$+\infty$ e $-\infty$.
+$-1$.
 
 </details>
 
-`•` **2.19** $f(x)=\dfrac{x^2-4}{x-2}$ é contínua em $x=2$? Classifique a descontinuidade.
+`•` **2.14** Calcule os limites laterais de $\dfrac{|x-3|}{x-3}$ em $x=3$ e esboce o gráfico. O limite existe?
 
 <details><summary>Resposta</summary>
 
-Não; removível (o limite é 4).
+$-1$ e $1$; não existe.
 
 </details>
 
-`•` **2.20** Calcule $\displaystyle\lim_{\theta\to\pi}\frac{\sin\theta}{\tan\theta}$.
+`•` **2.15** Calcule $\displaystyle\lim_{x\to0^+}\frac{x^2+3x}{|x|}$ e $\displaystyle\lim_{x\to0^-}\frac{x^2+3x}{|x|}$.
 
 <details><summary>Resposta</summary>
 
-$-1$ (pois a razão é $\cos\theta$).
+$3$ e $-3$.
+
+</details>
+
+`•` **2.16** Calcule $\displaystyle\lim_{x\to2^-}\frac{x+1}{x-2}$ e $\displaystyle\lim_{x\to2^+}\frac{x+1}{x-2}$ e indique a assíntota vertical.
+
+<details><summary>Resposta</summary>
+
+$-\infty$ e $+\infty$; $x=2$.
+
+</details>
+
+`•` **2.17** Encontre as descontinuidades de $f(x)=\dfrac{x+2}{x^2-4}$ e classifique cada uma.
+
+<details><summary>Resposta</summary>
+
+Removível em $x=-2$ (limite $-\tfrac14$); infinita em $x=2$.
+
+</details>
+
+`•` **2.18** Encontre $k$ para que $f(x)=\begin{cases}kx^2,&x\le2\\2x+k,&x>2\end{cases}$ seja contínua.
+
+<details><summary>Resposta</summary>
+
+$k=\tfrac43$.
+
+</details>
+
+`•` **2.19** Use o Teorema do Confronto para calcular $\displaystyle\lim_{x\to0}x^4\cos\frac2x$.
+
+<details><summary>Resposta</summary>
+
+$0$, pois $-x^4\le x^4\cos\tfrac2x\le x^4$.
+
+</details>
+
+`•` **2.20** Classifique as descontinuidades de $f(x)=\dfrac{x-1}{x^2-1}$ e esboce o gráfico perto delas.
+
+<details><summary>Resposta</summary>
+
+Removível em $x=1$ (limite $\tfrac12$); infinita em $x=-1$.
 
 </details>
 
@@ -230,11 +230,11 @@ $\tfrac35$.
 
 </details>
 
-`••` **2.29** Calcule $\displaystyle\lim_{x\to0}\frac{\tan x}{x}$.
+`••` **2.29** Calcule $\displaystyle\lim_{x\to0}\frac{\tan x-\sin x}{x^3}$.
 
 <details><summary>Resposta</summary>
 
-$1$.
+$\tfrac12$.
 
 </details>
 
@@ -278,11 +278,11 @@ Removível em $x=3$ (limite $\tfrac56$); infinita em $x=-3$.
 
 </details>
 
-`••` **2.35** Onde $f(x)=\dfrac{x+1}{x^2-5x+6}$ é contínua?
+`••` **2.35** Calcule $\displaystyle\lim_{x\to0}\frac{\sqrt{x^2+9}-3}{x^2}$.
 
 <details><summary>Resposta</summary>
 
-Em todo $x\neq2,3$.
+$\tfrac16$.
 
 </details>
 
