@@ -15,7 +15,7 @@ respostas. Os marcados com ★ têm solução completa e animação do gráfico 
 |---|---|---|---|
 | 1 | Funções e gráficos | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap1/README.md) |
 | 2 | Limites | ✅ | [65 exercícios, 12 resolvidos](exercicios/cap2/README.md) |
-| 3 | Derivadas | em produção | — |
+| 3 | Derivadas | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap3/README.md) |
 | 4 | Aplicações das derivadas | em produção | — |
 | 5 | Integração | em produção | — |
 | 6 | Aplicações da integração | em produção | — |
@@ -43,7 +43,7 @@ ferramentas/
 
 ```bash
 pip install -r ferramentas/requirements.txt
-python3 ferramentas/gerar.py            # exercícios + animações dos capítulos 1 e 2
+python3 ferramentas/gerar.py            # exercícios + animações dos capítulos prontos
 cd livro && latexmk -pdf calculo1.tex   # requer TeX Live com babel-portuges, pgfplots e tcolorbox
 ```
 

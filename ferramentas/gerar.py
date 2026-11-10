@@ -12,7 +12,7 @@ RAIZ = os.path.dirname(AQUI)
 sys.path.insert(0, AQUI)
 
 REPO_URL = os.environ.get('REPO_URL', 'https://github.com/AleffAzevedo/calculo-1-pt')
-TITULOS = {1: 'Funções e gráficos', 2: 'Limites'}
+TITULOS = {1: 'Funções e gráficos', 2: 'Limites', 3: 'Derivadas'}
 PONTOS = {'F': 1, 'M': 2, 'D': 3, 'X': 4}
 
 
@@ -105,7 +105,7 @@ def gerar(n, animar=True):
 
 if __name__ == '__main__':
     animar = '--sem-animacoes' not in sys.argv
-    caps = [int(a) for a in sys.argv[1:] if a.isdigit()] or [1, 2]
+    caps = [int(a) for a in sys.argv[1:] if a.isdigit()] or [1, 2, 3]
     for n in caps:
         print(f'Capítulo {n}')
         gerar(n, animar)

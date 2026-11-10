@@ -1,0 +1,583 @@
+% =====================================================================
+\chapter{Derivadas}
+
+No capítulo anterior usamos limites para calcular a inclinação da reta tangente e a
+velocidade instantânea. Essas duas ideias são casos de um único conceito: a
+\emph{derivada}, que mede a taxa de variação instantânea de uma função. Neste capítulo
+definimos a derivada, aprendemos regras para calculá-la sem recorrer ao limite a cada vez e
+a aplicamos a movimento, crescimento populacional, custo e receita. Ao final teremos as
+derivadas de todas as funções do capítulo~1.
+
+% ---------------------------------------------------------------------
+\section{Definindo a derivada}
+
+\subsection{Retas tangentes}
+
+Seja $f$ definida em um intervalo $I$ que contém $a$. Para $x\neq a$ em $I$, o
+\textbf{quociente de diferenças}
+\[
+Q=\frac{f(x)-f(a)}{x-a}
+\qquad\text{ou, com } x=a+h,\qquad
+Q=\frac{f(a+h)-f(a)}{h}
+\]
+é a inclinação da reta secante pelos pontos $(a,f(a))$ e $(x,f(x))$. Quando $x\to a$
+(ou $h\to0$), as secantes se aproximam da reta tangente.
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=8cm,height=6cm,xmin=-0.3,xmax=3.2,ymin=-1,ymax=6.5,xtick={1},xticklabels={$a$},ytick=\empty]
+\addplot[domain=-0.3:2.5]{x^2};
+\foreach \h/\o in {1.4/30,0.8/50,0.4/70}{
+  \edef\tmp{\noexpand\addplot[laranja!\o!white,thin,domain=-0.3:3.2]{1+(2+\h)*(x-1)};
+  \noexpand\fill[laranja!\o!white] (axis cs:{1+\h},{(1+\h)^2}) circle (1.6pt);}\tmp}
+\addplot[laranja,thick,domain=-0.3:3.2]{1+2*(x-1)};
+\fill[black] (axis cs:1,1) circle (2pt) node[below right,font=\footnotesize]{$(a,f(a))$};
+\node[laranja,font=\footnotesize] at (axis cs:2.75,4.1) {tangente};
+\end{axis}\end{tikzpicture}}{As secantes por $(a,f(a))$ e por pontos cada vez mais
+próximos (laranja-claro) tendem à reta tangente (laranja).}
+
+\begin{definicao}
+Seja $f$ definida em um intervalo aberto contendo $a$. A \textbf{reta tangente} ao gráfico
+de $f$ em $a$ é a reta que passa por $(a,f(a))$ com inclinação
+\[
+m_{\tan}=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to0}\frac{f(a+h)-f(a)}{h},
+\]
+desde que esse limite exista.
+\end{definicao}
+
+\begin{exemplo}{3.1}{Reta tangente}
+Encontre a reta tangente a $f(x)=x^2$ em $x=3$ e a $g(x)=1/x$ em $x=2$.
+\solucao
+$m_{\tan}=\lim_{x\to3}\dfrac{x^2-9}{x-3}=\lim_{x\to3}(x+3)=6$; a tangente é
+$y-9=6(x-3)$, ou $y=6x-9$.
+
+Para $g$: $m_{\tan}=\lim_{h\to0}\dfrac{\frac1{2+h}-\frac12}{h}
+=\lim_{h\to0}\dfrac{-h}{2(2+h)h}=-\dfrac14$; a tangente é $y-\tfrac12=-\tfrac14(x-2)$, ou
+$y=-\tfrac14x+1$.
+\end{exemplo}
+
+\subsection{A derivada em um ponto}
+
+A inclinação da tangente é tão importante que recebe um nome próprio.
+
+\begin{definicao}
+A \textbf{derivada} de $f$ em $a$, denotada $f'(a)$, é
+\[
+f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to0}\frac{f(a+h)-f(a)}{h},
+\]
+desde que o limite exista. Nesse caso, dizemos que $f$ é \textbf{derivável} (ou
+diferenciável) em $a$. A derivada $f'(a)$ é a \textbf{taxa de variação instantânea} de $f$
+em $a$.
+\end{definicao}
+
+\begin{exemplo}{3.2}{Calculando uma derivada pela definição}
+Para $f(x)=3x^2-4x+1$, calcule $f'(2)$.
+\solucao
+\begin{align*}
+f'(2)&=\lim_{h\to0}\frac{\big(3(2+h)^2-4(2+h)+1\big)-5}{h}
+=\lim_{h\to0}\frac{12+12h+3h^2-8-4h+1-5}{h}\\
+&=\lim_{h\to0}\frac{8h+3h^2}{h}=\lim_{h\to0}(8+3h)=8.
+\end{align*}
+\end{exemplo}
+
+\subsection{Velocidade e taxas de variação}
+
+Se $s(t)$ é a posição de um objeto que se move ao longo de uma reta, a velocidade média em
+$[a,a+h]$ é $\frac{s(a+h)-s(a)}{h}$, e a \textbf{velocidade instantânea} em $t=a$ é o
+limite dessas médias: $v(a)=s'(a)$. Mais geralmente, para qualquer grandeza $f$, a taxa
+média de variação em um intervalo é um quociente de diferenças, e a taxa instantânea é a
+derivada.
+
+\begin{exemplo}{3.3}{Velocidade de uma bola em queda}
+Uma bola solta do alto de um prédio de 64 pés tem altura $s(t)=-16t^2+64$ (em pés, com $t$
+em segundos). Qual é sua velocidade em $t=1$?
+\solucao
+$s'(1)=\lim_{t\to1}\dfrac{-16t^2+64-48}{t-1}=\lim_{t\to1}\dfrac{-16(t^2-1)}{t-1}
+=\lim_{t\to1}-16(t+1)=-32$ pés/s. O sinal negativo indica que a bola está descendo.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{A derivada como função}
+
+\begin{definicao}
+A \textbf{função derivada} $f'$ é a função cujo domínio é formado pelos $x$ para os quais
+existe
+\[
+f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}.
+\]
+Também escrevemos $\dfrac{dy}{dx}$, $\dfrac{df}{dx}$, $\dfrac{d}{dx}\big(f(x)\big)$ ou $y'$
+(\emph{notação de Leibniz} e \emph{de Lagrange}).
+\end{definicao}
+
+\begin{exemplo}{3.4}{Derivada da raiz quadrada}
+Para $f(x)=\sqrt x$:
+\[
+f'(x)=\lim_{h\to0}\frac{\sqrt{x+h}-\sqrt x}{h}\cdot\frac{\sqrt{x+h}+\sqrt x}{\sqrt{x+h}+\sqrt x}
+=\lim_{h\to0}\frac{h}{h(\sqrt{x+h}+\sqrt x)}=\frac{1}{2\sqrt x}.
+\]
+O domínio de $f'$ é $(0,\infty)$, menor que o de $f$: em $x=0$ a tangente é vertical.
+\end{exemplo}
+
+\subsection{O gráfico da derivada}
+
+O valor de $f'(x)$ é a inclinação do gráfico de $f$ em $x$. Assim:
+\begin{itemize}
+\item onde $f$ é crescente, $f'>0$; onde $f$ é decrescente, $f'<0$;
+\item onde o gráfico de $f$ tem tangente horizontal, $f'=0$.
+\end{itemize}
+
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=1 by 2,vertical sep=1.1cm},painel,width=9cm,height=4.4cm,
+  xmin=-2.4,xmax=2.4,xtick={-1,1},ytick={-2,2}]
+\nextgroupplot[ymin=-3,ymax=3,title={$f(x)=x^3-3x$}]
+\addplot[domain=-2.4:2.4]{x^3-3*x};
+\draw[laranja,thick] (axis cs:-1.6,2) -- (axis cs:-0.4,2);
+\draw[laranja,thick] (axis cs:0.4,-2) -- (axis cs:1.6,-2);
+\draw[cinza,dotted] (axis cs:-1,-3) -- (axis cs:-1,3); \draw[cinza,dotted] (axis cs:1,-3) -- (axis cs:1,3);
+\nextgroupplot[ymin=-4,ymax=8,title={$f'(x)=3x^2-3$}]
+\addplot[domain=-2.4:2.4,laranja]{3*x^2-3};
+\draw[cinza,dotted] (axis cs:-1,-4) -- (axis cs:-1,8); \draw[cinza,dotted] (axis cs:1,-4) -- (axis cs:1,8);
+\end{groupplot}\end{tikzpicture}}{Onde $f$ cresce ($|x|>1$), $f'>0$; onde $f$ decresce
+($|x|<1$), $f'<0$; nos pontos de tangente horizontal ($x=\pm1$), $f'=0$.}
+
+\subsection{Derivabilidade e continuidade}
+
+\begin{teorema}[Derivabilidade implica continuidade]{3.1}
+Se $f$ é derivável em $a$, então $f$ é contínua em $a$.
+\end{teorema}
+\emph{Prova.} Para $x\neq a$,
+$f(x)-f(a)=\dfrac{f(x)-f(a)}{x-a}\,(x-a)\ \to\ f'(a)\cdot0=0$ quando $x\to a$.
+Logo $\lim_{x\to a}f(x)=f(a)$. $\square$
+
+A recíproca é falsa: uma função pode ser contínua em $a$ e não ser derivável ali. Há três
+situações típicas:
+
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 1,horizontal sep=1.0cm},painel,width=5.3cm,height=4.4cm,
+  xmin=-1.5,xmax=1.5,xtick=\empty,ytick=\empty]
+\nextgroupplot[title={(a) bico: $|x|$},ymin=-0.4,ymax=1.5]
+\addplot[domain=-1.5:1.5]{abs(x)};
+\nextgroupplot[title={(b) tangente vertical: $\sqrt[3]{x}$},ymin=-1.3,ymax=1.3]
+\addplot[domain=0:1.5,samples=200]{x^(1/3)}; \addplot[domain=-1.5:0,samples=200]{-(-x)^(1/3)};
+\draw[laranja,dashed] (axis cs:0,-1.3) -- (axis cs:0,1.3);
+\nextgroupplot[title={(c) oscilação: $x\sin\frac1x$},ymin=-0.5,ymax=0.5,xmin=-0.5,xmax=0.5]
+\addplot[domain=-0.5:-0.002,samples=1500,thin]{x*sin(deg(1/x))};
+\addplot[domain=0.002:0.5,samples=1500,thin]{x*sin(deg(1/x))};
+\addplot[laranja,dashed,thin,domain=-0.5:0.5]{x}; \addplot[laranja,dashed,thin,domain=-0.5:0.5]{-x};
+\end{groupplot}\end{tikzpicture}}{Funções contínuas em $0$, mas não deriváveis em $0$.
+(a) Os limites laterais do quociente de diferenças são $-1$ e $1$. (b) O quociente tende a
+$+\infty$. (c) O quociente $\sin(1/h)$ oscila e não tem limite.}
+
+\begin{exemplo}{3.5}{Uma função por partes derivável}
+Encontre $a$ e $b$ para que $f(x)=\begin{cases}ax+b,&x<3\\x^2,&x\ge3\end{cases}$ seja
+derivável em todo $\R$.
+\solucao
+Contínua em 3: $3a+b=9$. Para a derivada existir em 3, os quocientes laterais devem ter o
+mesmo limite. À direita, a inclinação de $x^2$ em 3 é 6; à esquerda, é $a$. Logo $a=6$ e
+$b=-9$. A reta $y=6x-9$ é exatamente a tangente à parábola em $x=3$.
+\end{exemplo}
+
+\subsection{Derivadas de ordem superior}
+
+A derivada de $f'$ é a \textbf{segunda derivada}, $f''$ ou $\dfrac{d^2y}{dx^2}$; depois vêm
+$f'''$, $f^{(4)},\dots$ Se $s(t)$ é a posição, $v(t)=s'(t)$ é a velocidade e
+$a(t)=v'(t)=s''(t)$ é a \textbf{aceleração}.
+
+% ---------------------------------------------------------------------
+\section{Regras de derivação}
+
+Calcular derivadas pela definição é trabalhoso. As regras a seguir, provadas a partir da
+definição, tornam o cálculo mecânico.
+
+\begin{teorema}[Constante e potência]{3.2}
+Se $c$ é constante, $\dfrac{d}{dx}(c)=0$. Para todo inteiro $n\ge1$,
+$\dfrac{d}{dx}\,x^n=nx^{n-1}$.
+\end{teorema}
+\emph{Prova da regra da potência.} Pelo binômio de Newton,
+$(x+h)^n=x^n+nx^{n-1}h+\binom n2x^{n-2}h^2+\dots+h^n$. Então
+\[
+\frac{(x+h)^n-x^n}{h}=nx^{n-1}+\binom n2x^{n-2}h+\dots+h^{n-1}\ \longrightarrow\ nx^{n-1}. \qquad\square
+\]
+
+\begin{teorema}[Soma, diferença e múltiplo constante]{3.3}
+Se $f$ e $g$ são deriváveis e $k$ é constante:
+\[
+(f\pm g)'=f'\pm g',\qquad (kf)'=k\,f'.
+\]
+\end{teorema}
+
+Com isso, derivamos qualquer polinômio termo a termo: por exemplo,
+$\dfrac{d}{dx}\big(2x^5+7x^2-x+4\big)=10x^4+14x-1$.
+
+\begin{teorema}[Regra do produto]{3.4}
+Se $f$ e $g$ são deriváveis, $\big(f\,g\big)'=f'\,g+f\,g'$.
+\end{teorema}
+\emph{Prova.} Somamos e subtraímos $f(x+h)g(x)$ no numerador:
+\[
+\frac{f(x+h)g(x+h)-f(x)g(x)}{h}
+=f(x+h)\,\frac{g(x+h)-g(x)}{h}+g(x)\,\frac{f(x+h)-f(x)}{h}
+\ \longrightarrow\ f(x)g'(x)+g(x)f'(x),
+\]
+usando que $f(x+h)\to f(x)$, pois $f$ é derivável, logo contínua. $\square$
+
+\begin{nota}
+A derivada do produto \emph{não} é o produto das derivadas: $(x\cdot x)'=2x$, e não
+$1\cdot1$.
+\end{nota}
+
+\begin{teorema}[Regra do quociente]{3.5}
+Se $f$ e $g$ são deriváveis e $g(x)\neq0$,
+\[
+\Big(\frac fg\Big)'=\frac{f'\,g-f\,g'}{g^2}.
+\]
+\end{teorema}
+
+Aplicando a regra do quociente a $x^{-n}=1/x^n$, obtemos
+$\dfrac{d}{dx}x^{-n}=\dfrac{0-nx^{n-1}}{x^{2n}}=-nx^{-n-1}$: a regra da potência vale também
+para expoentes inteiros negativos.
+
+\begin{exemplo}{3.6}{Produto e quociente}
+(a) $\dfrac{d}{dx}\big[(x^2+2)(3x^3-5x)\big]=2x(3x^3-5x)+(x^2+2)(9x^2-5)=15x^4+3x^2-10$.
+
+(b) $\dfrac{d}{dx}\Big[\dfrac{5x^2}{4x+3}\Big]=\dfrac{10x(4x+3)-5x^2\cdot4}{(4x+3)^2}
+=\dfrac{20x^2+30x}{(4x+3)^2}$.
+
+(c) $\dfrac{d}{dx}\Big[\dfrac{6}{x^2}\Big]=\dfrac{d}{dx}\big[6x^{-2}\big]=-12x^{-3}=-\dfrac{12}{x^3}$.
+\end{exemplo}
+
+\begin{exemplo}{3.7}{Tangentes horizontais}
+Onde o gráfico de $f(x)=x^3-6x^2+9x+1$ tem tangente horizontal?
+\solucao
+$f'(x)=3x^2-12x+9=3(x-1)(x-3)=0$ em $x=1$ e $x=3$. Os pontos são $(1,5)$ e $(3,1)$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Derivadas como taxas de variação}
+
+\textbf{Fórmula da variação aproximada.} Como $f'(a)\approx\frac{f(a+h)-f(a)}h$ para $h$
+pequeno,
+\[
+f(a+h)\approx f(a)+f'(a)\,h .
+\]
+Por exemplo, se $f(3)=2$ e $f'(3)=5$, então $f(3{,}2)\approx2+5(0{,}2)=3$.
+
+\subsection{Movimento retilíneo}
+
+\begin{definicao}
+Se $s(t)$ é a posição de um objeto no instante $t$: a \textbf{velocidade} é
+$v(t)=s'(t)$; a \textbf{rapidez} (módulo da velocidade) é $|v(t)|$; a
+\textbf{aceleração} é $a(t)=v'(t)=s''(t)$.
+\end{definicao}
+
+O objeto se move no sentido positivo quando $v>0$, no negativo quando $v<0$, e está
+momentaneamente em repouso quando $v=0$. Ele acelera (a rapidez aumenta) quando $v$ e $a$
+têm o mesmo sinal, e desacelera quando têm sinais opostos.
+
+\begin{exemplo}{3.8}{Posição e velocidade}
+Uma partícula tem posição $s(t)=t^3-9t^2+24t$ ($t\ge0$). Quando ela está em repouso? Em
+que intervalos se move para a frente e para trás?
+\solucao
+$v(t)=3t^2-18t+24=3(t-2)(t-4)$. Repouso em $t=2$ e $t=4$. Pelo sinal de $v$: para a frente
+em $[0,2)$ e $(4,\infty)$, para trás em $(2,4)$. A aceleração é $a(t)=6t-18$, nula em $t=3$.
+\end{exemplo}
+
+\subsection{Populações, custo e receita}
+
+Se $P(t)$ é uma população, $P'(t)$ é a \textbf{taxa de crescimento populacional}. Na
+economia, se $C(x)$ é o custo de produzir $x$ unidades e $R(x)$ é a receita com a venda de
+$x$ unidades, o \textbf{custo marginal} é $C'(x)$, a \textbf{receita marginal} é $R'(x)$
+e o \textbf{lucro marginal} é $P'(x)=R'(x)-C'(x)$. Pela fórmula da variação aproximada, o
+custo marginal $C'(x)$ estima o custo de produzir a unidade número $x+1$.
+
+\begin{exemplo}{3.9}{Receita marginal}
+Se $R(x)=4x-0{,}01x^2$ (em mil reais), então $R'(x)=4-0{,}02x$. Para $x=100$, $R'(100)=2$:
+vender a 101ª unidade aumenta a receita em cerca de R\$\,2 mil. O valor exato é
+$R(101)-R(100)=1{,}99$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Derivadas das funções trigonométricas}
+
+\begin{teorema}[Derivadas de seno e cosseno]{3.6}
+\[
+\frac{d}{dx}(\sin x)=\cos x,\qquad \frac{d}{dx}(\cos x)=-\sin x .
+\]
+\end{teorema}
+\emph{Prova para o seno.} Pela fórmula da soma,
+\[
+\frac{\sin(x+h)-\sin x}{h}=\sin x\cdot\frac{\cos h-1}{h}+\cos x\cdot\frac{\sin h}{h}
+\ \longrightarrow\ \sin x\cdot0+\cos x\cdot1=\cos x,
+\]
+usando os dois limites trigonométricos do Teorema~2.7. A prova para o cosseno é
+análoga. $\square$
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=11cm,height=4.4cm,xmin=-6.6,xmax=6.6,ymin=-1.5,ymax=1.5,
+  xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$},ytick={-1,1},
+  legend style={font=\footnotesize,at={(1,1.05)},anchor=south east},legend columns=2]
+\addplot[domain=-6.6:6.6]{sin(deg(x))}; \addlegendentry{$y=\sin x$}
+\addplot[laranja,domain=-6.6:6.6]{cos(deg(x))}; \addlegendentry{$y=\cos x$ (derivada)}
+\foreach \p in {-4.7124,-1.5708,1.5708,4.7124}{\edef\tmp{\noexpand\fill[black] (axis cs:\p,0) circle (1.6pt);}\tmp}
+\end{axis}\end{tikzpicture}}{Onde $\sin x$ tem tangente horizontal (máximos e mínimos), sua
+derivada $\cos x$ se anula (pontos pretos); onde $\sin x$ cresce mais rápido ($x=0$), $\cos x$
+vale 1.}
+
+Pela regra do quociente, $\dfrac{d}{dx}\tan x=\dfrac{\cos x\cos x-\sin x(-\sin x)}{\cos^2x}
+=\dfrac1{\cos^2x}=\sec^2x$. Do mesmo modo:
+
+\begin{teorema}[Demais funções trigonométricas]{3.7}
+\[
+(\tan x)'=\sec^2x,\qquad (\cot x)'=-\csc^2x,\qquad (\sec x)'=\sec x\tan x,\qquad
+(\csc x)'=-\csc x\cot x .
+\]
+\end{teorema}
+
+\textbf{Derivadas de ordem superior.} As derivadas de $\sin x$ se repetem com período 4:
+$\sin x\to\cos x\to-\sin x\to-\cos x\to\sin x$. Assim,
+$\dfrac{d^{74}}{dx^{74}}\sin x=\dfrac{d^2}{dx^2}\sin x=-\sin x$, pois $74=4\cdot18+2$.
+
+\begin{exemplo}{3.10}{Uma massa presa a uma mola}
+A posição de uma massa é $s(t)=2\sin t$ (cm). Então $v(t)=2\cos t$ e $a(t)=-2\sin t=-s(t)$:
+a aceleração é proporcional ao deslocamento e tem sentido oposto. Em $t=\pi/2$, a massa está
+em $s=2$, parada ($v=0$), com aceleração $-2$ cm/s$^2$, que a puxa de volta.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{A regra da cadeia}
+
+Como derivar $h(x)=\sin(x^3)$ ou $(3x^2+1)^{20}$? São funções compostas, e sua derivada
+segue uma regra simples: se $u=g(x)$ varia $g'(x)$ vezes mais rápido que $x$, e $y=f(u)$
+varia $f'(u)$ vezes mais rápido que $u$, então $y$ varia $f'(u)\,g'(x)$ vezes mais rápido que
+$x$.
+
+\begin{regra}{Regra da cadeia}
+Se $g$ é derivável em $x$ e $f$ é derivável em $g(x)$, então $h=f\circ g$ é derivável em
+$x$ e
+\[
+h'(x)=f'\big(g(x)\big)\,g'(x).
+\]
+Na notação de Leibniz, com $y=f(u)$ e $u=g(x)$:\qquad
+$\dfrac{dy}{dx}=\dfrac{dy}{du}\cdot\dfrac{du}{dx}$.
+\end{regra}
+
+Em palavras: \emph{derive a função de fora, mantendo a de dentro, e multiplique pela
+derivada da de dentro}. Dois casos frequentes:
+\[
+\frac{d}{dx}\big(g(x)\big)^n=n\big(g(x)\big)^{n-1}g'(x),\qquad
+\frac{d}{dx}\sin\big(g(x)\big)=\cos\big(g(x)\big)\,g'(x),
+\]
+e analogamente $\frac{d}{dx}\cos u=-\sin u\,u'$, $\frac{d}{dx}\tan u=\sec^2u\,u'$, etc.
+
+\begin{exemplo}{3.11}{Usando a regra da cadeia}
+(a) $\dfrac{d}{dx}(3x^2+1)^3=3(3x^2+1)^2\cdot6x=18x(3x^2+1)^2$.
+
+(b) $\dfrac{d}{dx}\sin^3x=3\sin^2x\cos x$.
+
+(c) $\dfrac{d}{dx}\cos(5x^2)=-\sin(5x^2)\cdot10x$.
+
+(d) $\dfrac{d}{dx}\Big[\dfrac{1}{(3x^2+1)^2}\Big]=\dfrac{d}{dx}(3x^2+1)^{-2}=-2(3x^2+1)^{-3}\cdot6x
+=-\dfrac{12x}{(3x^2+1)^3}$.
+\end{exemplo}
+
+\textbf{Composição de três funções.} Para $k(x)=h\big(f(g(x))\big)$, aplicamos a regra duas
+vezes: $k'(x)=h'\big(f(g(x))\big)\cdot f'\big(g(x)\big)\cdot g'(x)$. Por exemplo,
+\[
+\frac{d}{dx}\sin^4(7x-3)=4\sin^3(7x-3)\cdot\cos(7x-3)\cdot7 .
+\]
+
+\begin{exemplo}{3.12}{Cadeia e produto juntos}
+$\dfrac{d}{dx}\big[x^2\cos(3x)\big]=2x\cos(3x)+x^2\cdot\big(-\sin(3x)\cdot3\big)
+=2x\cos(3x)-3x^2\sin(3x)$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Derivadas de funções inversas}
+
+Se $(a,b)$ está no gráfico de $f$, então $(b,a)$ está no gráfico de $f^{-1}$, que é a
+reflexão em torno de $y=x$. A reflexão troca $\Delta x$ e $\Delta y$; logo, as inclinações
+das tangentes em pontos correspondentes são \emph{recíprocas}.
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7cm,height=7cm,xmin=-2.2,xmax=4.2,ymin=-2.2,ymax=4.2,axis equal image,xtick=\empty,ytick=\empty]
+\addplot[cinza,dotted,domain=-2.2:4.2]{x};
+\addplot[domain=-2.2:1.45]{exp(x)}; \addplot[laranja,domain=0.12:4.2]{ln(x)};
+\addplot[azul,dashed,thin,domain=-0.6:2.2]{exp(0.8)+exp(0.8)*(x-0.8)};
+\addplot[laranja,dashed,thin,domain=0.6:4.2]{0.8+(x-exp(0.8))/exp(0.8)};
+\fill[azul] (axis cs:0.8,{exp(0.8)}) circle (2pt) node[left,font=\footnotesize]{$(a,b)$};
+\fill[laranja] (axis cs:{exp(0.8)},0.8) circle (2pt) node[below right,font=\footnotesize]{$(b,a)$};
+\node[azul,font=\footnotesize] at (axis cs:-1.2,1.4) {$y=e^x$};
+\node[laranja,font=\footnotesize] at (axis cs:3.4,0.7) {$y=\ln x$};
+\end{axis}\end{tikzpicture}}{As tangentes a $f$ em $(a,b)$ e a $f^{-1}$ em $(b,a)$ são
+reflexões uma da outra; suas inclinações são $m$ e $1/m$.}
+
+\begin{teorema}[Derivada da função inversa]{3.8}
+Seja $f$ inversível e derivável. Se $f'\big(f^{-1}(x)\big)\neq0$, então $f^{-1}$ é derivável em
+$x$ e
+\[
+\big(f^{-1}\big)'(x)=\frac{1}{f'\big(f^{-1}(x)\big)} .
+\]
+\end{teorema}
+
+\begin{exemplo}{3.13}{Aplicando o teorema da inversa}
+Para $f(x)=x^3+x+1$, que é crescente, calcule $(f^{-1})'(3)$.
+\solucao
+$f(1)=3$, logo $f^{-1}(3)=1$. Como $f'(x)=3x^2+1$, temos $f'(1)=4$ e
+$(f^{-1})'(3)=\dfrac1{f'(1)}=\dfrac14$. Não foi preciso encontrar a fórmula de $f^{-1}$.
+\end{exemplo}
+
+\textbf{Expoentes racionais.} Aplicando o teorema a $g(x)=x^{1/n}$, inversa de $x^n$,
+obtemos $g'(x)=\frac1n x^{1/n-1}$. Combinando com a regra da cadeia, para todo racional $r$:
+\[
+\frac{d}{dx}x^r=r\,x^{r-1}.
+\]
+Por exemplo, $\dfrac{d}{dx}\sqrt[3]{x^2}=\dfrac{d}{dx}x^{2/3}=\dfrac23x^{-1/3}$.
+
+\textbf{Inversas trigonométricas.} Para $y=\sin^{-1}x$, temos $\sin y=x$ com
+$-\frac\pi2\le y\le\frac\pi2$. Pelo teorema, $\dfrac{dy}{dx}=\dfrac1{\cos y}$. Como
+$\cos y\ge0$ nesse intervalo, $\cos y=\sqrt{1-\sin^2y}=\sqrt{1-x^2}$. Do mesmo modo:
+
+\begin{teorema}[Derivadas das inversas trigonométricas]{3.9}
+\[
+\frac{d}{dx}\sin^{-1}x=\frac{1}{\sqrt{1-x^2}},\qquad
+\frac{d}{dx}\cos^{-1}x=\frac{-1}{\sqrt{1-x^2}},\qquad
+\frac{d}{dx}\tan^{-1}x=\frac{1}{1+x^2},
+\]
+\[
+\frac{d}{dx}\cot^{-1}x=\frac{-1}{1+x^2},\qquad
+\frac{d}{dx}\sec^{-1}x=\frac{1}{|x|\sqrt{x^2-1}},\qquad
+\frac{d}{dx}\csc^{-1}x=\frac{-1}{|x|\sqrt{x^2-1}} .
+\]
+\end{teorema}
+
+\begin{exemplo}{3.14}{Cadeia com inversa trigonométrica}
+$\dfrac{d}{dx}\tan^{-1}(x^2)=\dfrac{2x}{1+x^4}$\qquad e\qquad
+$\dfrac{d}{dx}\big[x\sin^{-1}x\big]=\sin^{-1}x+\dfrac{x}{\sqrt{1-x^2}}$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Derivação implícita}
+
+Muitas curvas, como a circunferência $x^2+y^2=25$, não são gráficos de uma única função
+$y=f(x)$. Ainda assim, perto de cada ponto (salvo exceções) a curva é o gráfico de alguma
+função $y(x)$, e podemos derivar a equação \emph{como está}, tratando $y$ como função de $x$.
+
+\begin{estrategia}{derivação implícita}
+\begin{enumerate}[label=\arabic*.]
+\item Derive os dois lados da equação em relação a $x$, lembrando que, pela regra da
+  cadeia, $\frac{d}{dx}\big(g(y)\big)=g'(y)\,\frac{dy}{dx}$ (por exemplo,
+  $\frac{d}{dx}y^2=2y\,y'$).
+\item Passe os termos com $\frac{dy}{dx}$ para um lado e os demais para o outro.
+\item Ponha $\frac{dy}{dx}$ em evidência e isole.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{3.15}{Tangente a uma circunferência}
+Na circunferência $x^2+y^2=25$: $2x+2y\,y'=0$, logo $y'=-\dfrac xy$. No ponto $(3,-4)$,
+$y'=\frac34$, e a tangente é $y+4=\tfrac34(x-3)$. Note que a tangente é perpendicular ao raio,
+cuja inclinação é $-\tfrac43$.
+\end{exemplo}
+
+\begin{exemplo}{3.16}{O fólio de Descartes}
+Encontre a tangente à curva $x^3+y^3=6xy$ no ponto $(3,3)$.
+\solucao
+Derivando: $3x^2+3y^2y'=6y+6x\,y'$. Isolando,
+\[
+y'=\frac{2y-x^2}{y^2-2x}.
+\]
+Em $(3,3)$: $y'=\frac{6-9}{9-6}=-1$. A tangente é $y=-x+6$.
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=6.2cm,height=6.2cm,xmin=-4,xmax=5,ymin=-4,ymax=5,axis equal image,xtick={3},ytick={3}]
+\addplot[domain=-0.55:12,samples=400,variable=t] ({6*t/(1+t^3)},{6*t^2/(1+t^3)});
+\addplot[domain=-50:-1.6,samples=300,variable=t] ({6*t/(1+t^3)},{6*t^2/(1+t^3)});
+\addplot[laranja,domain=0.5:5.5]{-x+6};
+\fill[laranja] (axis cs:3,3) circle (2pt);
+\end{axis}\end{tikzpicture}}{O fólio de Descartes e a tangente em $(3,3)$.}
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Derivadas das funções exponenciais e logarítmicas}
+
+Vimos no capítulo~1 que $e$ é a base cuja exponencial tem tangente de inclinação 1 em
+$x=0$: $\lim_{h\to0}\frac{e^h-1}{h}=1$. Daí
+\[
+\frac{e^{x+h}-e^x}{h}=e^x\cdot\frac{e^h-1}{h}\ \longrightarrow\ e^x .
+\]
+
+\begin{teorema}[Derivada da exponencial natural]{3.10}
+$\dfrac{d}{dx}e^x=e^x$, e, pela regra da cadeia, $\dfrac{d}{dx}e^{g(x)}=e^{g(x)}\,g'(x)$.
+\end{teorema}
+
+Como $\ln x$ é a inversa de $e^x$, o teorema da inversa dá
+$\frac{d}{dx}\ln x=\frac{1}{e^{\ln x}}=\frac1x$.
+
+\begin{teorema}[Derivada do logaritmo natural]{3.11}
+Para $x>0$, $\dfrac{d}{dx}\ln x=\dfrac1x$, e $\dfrac{d}{dx}\ln g(x)=\dfrac{g'(x)}{g(x)}$
+quando $g(x)>0$. Mais geralmente, $\dfrac{d}{dx}\ln|x|=\dfrac1x$ para $x\neq0$.
+\end{teorema}
+
+Para outras bases, escrevemos $b^x=e^{x\ln b}$ e $\log_bx=\frac{\ln x}{\ln b}$:
+
+\begin{teorema}[Bases quaisquer]{3.12}
+Para $b>0$, $b\neq1$:\qquad
+$\dfrac{d}{dx}b^x=b^x\ln b$,\qquad $\dfrac{d}{dx}\log_bx=\dfrac{1}{x\ln b}$.
+\end{teorema}
+
+\begin{exemplo}{3.17}{Exponenciais e logaritmos}
+(a) $\dfrac{d}{dx}\Big[\dfrac{e^{x^2}}{x}\Big]=\dfrac{2xe^{x^2}\cdot x-e^{x^2}}{x^2}
+=\dfrac{e^{x^2}(2x^2-1)}{x^2}$.
+
+(b) $\dfrac{d}{dx}\ln(x^3+3x-4)=\dfrac{3x^2+3}{x^3+3x-4}$.
+
+(c) $\dfrac{d}{dx}\ln\Big(\dfrac{x^2\sin x}{2x+1}\Big)$: primeiro usamos as propriedades do
+logaritmo, $2\ln x+\ln\sin x-\ln(2x+1)$; a derivada é $\dfrac2x+\cot x-\dfrac{2}{2x+1}$.
+
+(d) $\dfrac{d}{dx}\,3^{x^2}=3^{x^2}\ln3\cdot2x$.
+\end{exemplo}
+
+\subsection{Derivação logarítmica}
+
+Para funções da forma $f(x)^{g(x)}$, ou produtos e quocientes complicados, tomamos o
+logaritmo dos dois lados antes de derivar.
+
+\begin{estrategia}{derivação logarítmica}
+\begin{enumerate}[label=\arabic*.]
+\item Aplique $\ln$ aos dois lados de $y=h(x)$ e simplifique com as propriedades do
+  logaritmo.
+\item Derive implicitamente: o lado esquerdo vira $\frac{y'}{y}$.
+\item Multiplique por $y$ e substitua $y=h(x)$.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{3.18}{A derivada de $x^x$}
+Seja $y=x^x$ ($x>0$). Então $\ln y=x\ln x$, e derivando,
+$\dfrac{y'}{y}=\ln x+x\cdot\dfrac1x=\ln x+1$. Logo
+\[
+\frac{d}{dx}x^x=x^x(\ln x+1).
+\]
+Atenção: $x^x$ não é potência ($x^n$) nem exponencial ($b^x$), e nenhuma das duas regras
+se aplica diretamente.
+\end{exemplo}
+
+Com a mesma técnica, para qualquer real $r$ e $x>0$, $y=x^r$ dá $\ln y=r\ln x$ e
+$y'=y\cdot\frac rx=rx^{r-1}$: a regra da potência vale para \emph{todo} expoente real.
+
+% ---------------------------------------------------------------------
+\section*{Resumo do capítulo}
+\addcontentsline{toc}{section}{Resumo do capítulo}
+\begin{itemize}
+\item $f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}h$: inclinação da tangente e taxa de variação
+  instantânea. Derivável implica contínua, mas não o contrário (bicos, tangentes verticais,
+  oscilações).
+\item Regras: $(x^r)'=rx^{r-1}$; $(f\pm g)'=f'\pm g'$; $(fg)'=f'g+fg'$;
+  $(f/g)'=(f'g-fg')/g^2$; $(f\circ g)'=f'(g)\,g'$.
+\item Trigonométricas: $(\sin x)'=\cos x$, $(\cos x)'=-\sin x$, $(\tan x)'=\sec^2x$,
+  $(\sec x)'=\sec x\tan x$.
+\item Inversas: $(f^{-1})'(x)=1/f'(f^{-1}(x))$; $(\sin^{-1}x)'=1/\sqrt{1-x^2}$,
+  $(\tan^{-1}x)'=1/(1+x^2)$.
+\item Exponenciais e logaritmos: $(e^x)'=e^x$, $(\ln x)'=1/x$, $(b^x)'=b^x\ln b$.
+\item Movimento: $v=s'$, $a=v'=s''$. Economia: custo, receita e lucro marginais são
+  derivadas. Variação aproximada: $f(a+h)\approx f(a)+f'(a)h$.
+\item Derivação implícita: derive tratando $y$ como função de $x$ e isole $y'$.
+  Derivação logarítmica para $f(x)^{g(x)}$ e produtos complicados.
+\end{itemize}
+
+\input{exercicios_cap3}
