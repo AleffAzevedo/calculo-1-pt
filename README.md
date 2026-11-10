@@ -19,7 +19,7 @@ respostas. Os marcados com ★ têm solução completa e animação do gráfico 
 | 4 | Aplicações das derivadas | ✅ | [65 exercícios, 12 resolvidos](exercicios/cap4/README.md) |
 | 5 | Integração | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap5/README.md) |
 | 6 | Aplicações da integração | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap6/README.md) |
-| 7 | Técnicas de integração | em produção | — |
+| 7 | Técnicas de integração | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap7/README.md) |
 
 Cada solução completa segue o mesmo roteiro: a **estratégia**, a resolução passo a passo, um
 comentário sobre erros comuns ou interpretações e uma **animação** do gráfico do problema.
@@ -55,6 +55,8 @@ Para gerar só os textos, sem refazer as animações: `python3 ferramentas/gerar
 Este trabalho é uma obra derivada de *Calculus Volume 1*, © 2016 Rice University,
 disponível gratuitamente em <https://openstax.org/details/books/calculus-volume-1>,
 licenciado sob [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+O capítulo 7 (Técnicas de integração) adapta o capítulo 3 de *Calculus Volume 2*, © 2016 Rice University
+(<https://openstax.org/details/books/calculus-volume-2>), sob a mesma licença.
 Esta adaptação (tradução, condensação, figuras redesenhadas, soluções e animações) é
 distribuída sob a **mesma licença**, apenas para uso não comercial. Veja [LICENSE](LICENSE).
 

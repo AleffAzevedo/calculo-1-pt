@@ -1,0 +1,250 @@
+% =====================================================================
+\chapter{Técnicas de integração}
+
+A substituição resolve muitas integrais, mas não todas: $\int xe^x\,dx$, $\int\sin^4x\,dx$,
+$\int\sqrt{9-x^2}\,dx$ e $\int\frac{dx}{x^2-1}$ pedem outras ferramentas. Este capítulo, adaptado
+do capítulo~3 de \emph{Calculus Volume~2}, reúne as quatro técnicas clássicas (integração por
+partes, integrais trigonométricas, substituição trigonométrica e frações parciais), os métodos
+numéricos para quando nenhuma antiderivada elementar existe e as integrais impróprias, em que
+o intervalo ou o integrando são ilimitados.
+
+% ---------------------------------------------------------------------
+\section{Integração por partes}
+
+Integrando a regra do produto $(uv)'=u'v+uv'$, obtemos
+\[
+\int u\,dv=uv-\int v\,du,\qquad
+\int_a^bu\,dv=\Big[uv\Big]_a^b-\int_a^bv\,du .
+\]
+A ideia é trocar uma integral difícil por outra mais simples. Escolha para $u$ a função que
+\emph{simplifica ao derivar} e para $dv$ a que se integra com facilidade. Uma ordem prática
+de preferência para $u$ é \textbf{LIATE}: \textbf{L}ogaritmos, \textbf{I}nversas trigonométricas,
+\textbf{A}lgébricas (polinômios), \textbf{T}rigonométricas, \textbf{E}xponenciais.
+
+\begin{exemplo}{7.1}{Partes}
+(a) $\int xe^x\,dx$: $u=x$, $dv=e^xdx$, então $du=dx$, $v=e^x$ e
+$\int xe^x\,dx=xe^x-\int e^x\,dx=(x-1)e^x+C$.
+
+(b) $\int\ln x\,dx$: $u=\ln x$, $dv=dx$:
+$\ x\ln x-\int x\cdot\frac1x\,dx=x\ln x-x+C$.
+
+(c) $\int x^2\sin x\,dx$ pede partes duas vezes:
+$-x^2\cos x+\int2x\cos x\,dx=-x^2\cos x+2x\sin x+2\cos x+C$.
+
+(d) $\int_0^\pi x\sin x\,dx=\big[-x\cos x\big]_0^\pi+\int_0^\pi\cos x\,dx=\pi+0=\pi$.
+\end{exemplo}
+
+\textbf{Integrais cíclicas.} Às vezes a integral original reaparece. Em
+$I=\int e^x\sin x\,dx$, partes duas vezes (sempre com $dv=e^xdx$) dá
+$I=e^x\sin x-e^x\cos x-I$, e daí $I=\tfrac12e^x(\sin x-\cos x)+C$.
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=6.4cm,height=4.6cm,xmin=-0.2,xmax=3.1,ymin=-0.15,ymax=1.3,xtick={1,2.718},xticklabels={$1$,$e$},ytick={1}]
+\addplot[fill=azul!25,draw=none,domain=1:2.718,samples=50]{ln(x)} \closedcycle;
+\addplot[fill=laranja!30,draw=none,samples=50,domain=0:1] ({exp(x)},{x}) -- (axis cs:0,1) -- (axis cs:0,0) -- cycle;
+\addplot[azul,thick,domain=0.4:3,samples=60]{ln(x)};
+\draw[dashed] (axis cs:0,1) -- (axis cs:2.718,1) -- (axis cs:2.718,0);
+\node[azul,font=\small] at (axis cs:2.25,0.33) {$\int_1^e\!\ln x\,dx$};
+\node[laranja!80!black,font=\small] at (axis cs:0.8,0.55) {$\int_0^1\! e^y\,dy$};
+\end{axis}\end{tikzpicture}}{Partes, geometricamente: as duas áreas somam o retângulo
+$e\times1$, ou seja, $\int_1^e\ln x\,dx=e-\int_0^1e^y\,dy=e-(e-1)=1$.}
+
+% ---------------------------------------------------------------------
+\section{Integrais trigonométricas}
+
+\textbf{Potências de seno e cosseno}, $\int\sin^mx\cos^nx\,dx$:
+\begin{itemize}
+\item se uma das potências é \emph{ímpar}, separe um fator dela e converta o resto com
+  $\sin^2+\cos^2=1$. Por exemplo, $n$ ímpar: guarde $\cos x\,dx$ e use $u=\sin x$;
+\item se ambas são \emph{pares}, reduza o grau com
+  $\sin^2x=\frac{1-\cos2x}2$, $\cos^2x=\frac{1+\cos2x}2$, $\sin x\cos x=\frac12\sin2x$.
+\end{itemize}
+
+\textbf{Potências de tangente e secante}, $\int\tan^mx\sec^nx\,dx$: se $n$ é par, guarde
+$\sec^2x\,dx$ e use $u=\tan x$; se $m$ é ímpar, guarde $\sec x\tan x\,dx$ e use $u=\sec x$
+(com $\tan^2=\sec^2-1$). Os demais casos costumam exigir partes, como $\int\sec^3x\,dx$.
+
+\textbf{Produtos com frequências diferentes} usam as fórmulas de produto em soma, por exemplo
+$\sin A\cos B=\frac12[\sin(A-B)+\sin(A+B)]$.
+
+\begin{exemplo}{7.2}{Integrais trigonométricas}
+(a) $\int\sin^3x\cos^2x\,dx=\int(1-\cos^2x)\cos^2x\sin x\,dx
+=-\frac{\cos^3x}3+\frac{\cos^5x}5+C$ \quad ($u=\cos x$).
+
+(b) $\int\cos^2x\,dx=\int\frac{1+\cos2x}2\,dx=\frac x2+\frac{\sin2x}4+C$.
+
+(c) $\int\sin^2x\cos^2x\,dx=\frac14\int\sin^22x\,dx=\frac18\int(1-\cos4x)\,dx
+=\frac x8-\frac{\sin4x}{32}+C$.
+
+(d) $\int\sec^3x\,dx$: partes com $u=\sec x$, $dv=\sec^2x\,dx$ dá
+$\sec x\tan x-\int\sec x\tan^2x\,dx=\sec x\tan x-\int\sec^3x\,dx+\int\sec x\,dx$, logo
+$\int\sec^3x\,dx=\frac12\big(\sec x\tan x+\ln|\sec x+\tan x|\big)+C$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Substituição trigonométrica}
+
+Raízes de expressões quadráticas desaparecem com a substituição certa, porque
+$1-\sin^2=\cos^2$, $1+\tan^2=\sec^2$ e $\sec^2-1=\tan^2$:
+
+\begin{center}\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lll}
+\textbf{Expressão} & \textbf{Substituição} & \textbf{Identidade}\\\hline
+$\sqrt{a^2-x^2}$ & $x=a\sin\theta$, $-\frac\pi2\le\theta\le\frac\pi2$ & $a^2-a^2\sin^2\theta=a^2\cos^2\theta$\\
+$\sqrt{a^2+x^2}$ & $x=a\tan\theta$, $-\frac\pi2<\theta<\frac\pi2$ & $a^2+a^2\tan^2\theta=a^2\sec^2\theta$\\
+$\sqrt{x^2-a^2}$ & $x=a\sec\theta$, $0\le\theta<\frac\pi2$ & $a^2\sec^2\theta-a^2=a^2\tan^2\theta$
+\end{tabular}\end{center}
+
+Para voltar à variável $x$, desenhe o triângulo retângulo que traduz a substituição.
+
+\figtikz{\begin{tikzpicture}[scale=0.85,font=\small]
+\draw[thick] (0,0) -- (3,0) -- (3,2) -- cycle; \draw (2.75,0) |- (3,0.25);
+\node[below] at (1.5,0) {$\sqrt{a^2-x^2}$}; \node[right] at (3,1) {$x$}; \node[above left] at (1.5,1) {$a$};
+\node at (0.6,0.17) {$\theta$}; \node at (1.5,-0.9) {$x=a\sin\theta$};
+\begin{scope}[xshift=4.8cm]
+\draw[thick] (0,0) -- (3,0) -- (3,2) -- cycle; \draw (2.75,0) |- (3,0.25);
+\node[below] at (1.5,0) {$a$}; \node[right] at (3,1) {$x$}; \node[above left] at (1.5,1) {$\sqrt{a^2+x^2}$};
+\node at (0.6,0.17) {$\theta$}; \node at (1.5,-0.9) {$x=a\tan\theta$};
+\end{scope}
+\begin{scope}[xshift=9.6cm]
+\draw[thick] (0,0) -- (3,0) -- (3,2) -- cycle; \draw (2.75,0) |- (3,0.25);
+\node[below] at (1.5,0) {$a$}; \node[right] at (3,1) {$\sqrt{x^2-a^2}$}; \node[above left] at (1.5,1) {$x$};
+\node at (0.6,0.17) {$\theta$}; \node at (1.5,-0.9) {$x=a\sec\theta$};
+\end{scope}
+\end{tikzpicture}}{Os três triângulos de referência da substituição trigonométrica.}
+
+\begin{exemplo}{7.3}{Substituição trigonométrica}
+(a) $\int\sqrt{9-x^2}\,dx$: com $x=3\sin\theta$, $dx=3\cos\theta\,d\theta$ e
+$\sqrt{9-x^2}=3\cos\theta$:
+\[
+\int9\cos^2\theta\,d\theta=\tfrac92(\theta+\sin\theta\cos\theta)+C
+=\tfrac92\sin^{-1}\tfrac x3+\tfrac x2\sqrt{9-x^2}+C .
+\]
+(b) $\int\frac{dx}{x^2\sqrt{x^2+4}}$: com $x=2\tan\theta$, $dx=2\sec^2\theta\,d\theta$, a
+integral vira $\frac14\int\frac{\cos\theta}{\sin^2\theta}\,d\theta=-\frac1{4\sin\theta}+C$.
+Pelo triângulo, $\sin\theta=\frac x{\sqrt{x^2+4}}$, e o resultado é
+$-\frac{\sqrt{x^2+4}}{4x}+C$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Frações parciais}
+
+Para integrar uma função racional $\frac{P(x)}{Q(x)}$:
+\begin{estrategia}{frações parciais}
+\begin{enumerate}[label=\arabic*.]
+\item Se $\operatorname{grau}P\ge\operatorname{grau}Q$, divida primeiro (polinômio + fração
+  própria).
+\item Fatore $Q$ em fatores lineares $(ax+b)$ e quadráticos irredutíveis $(ax^2+bx+c)$.
+\item Escreva uma parcela para cada fator: $\frac A{ax+b}$; para um fator repetido $(ax+b)^k$,
+  as parcelas $\frac{A_1}{ax+b}+\dots+\frac{A_k}{(ax+b)^k}$; para um quadrático,
+  $\frac{Bx+C}{ax^2+bx+c}$.
+\item Encontre as constantes (substituindo raízes ou comparando coeficientes) e integre cada
+  parcela: logaritmos, potências e arco-tangentes.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{7.4}{Os três casos}
+(a) $\frac{x+5}{x^2+x-2}=\frac A{x-1}+\frac B{x+2}$. Então $x+5=A(x+2)+B(x-1)$; com $x=1$,
+$A=2$; com $x=-2$, $B=-1$. Logo
+$\int\frac{x+5}{x^2+x-2}\,dx=2\ln|x-1|-\ln|x+2|+C$.
+
+(b) $\frac1{x^2(x+1)}=\frac Ax+\frac B{x^2}+\frac C{x+1}$ dá $B=1$, $C=1$, $A=-1$:
+$\int\frac{dx}{x^2(x+1)}=-\ln|x|-\frac1x+\ln|x+1|+C$.
+
+(c) $\frac{2x^2-x+4}{x^3+4x}=\frac Ax+\frac{Bx+C}{x^2+4}$ dá $A=1$, $B=1$, $C=-1$:
+\[
+\int\frac{2x^2-x+4}{x^3+4x}\,dx=\ln|x|+\tfrac12\ln(x^2+4)-\tfrac12\tan^{-1}\tfrac x2+C .
+\]
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Integração numérica}
+
+Funções como $e^{-x^2}$, $\frac{\sin x}x$ e $\sqrt{1+x^3}$ não têm antiderivada elementar. Com
+$\Delta x=\frac{b-a}n$ e $x_i=a+i\Delta x$:
+\begin{itemize}
+\item \textbf{Regra do trapézio:}
+  $T_n=\frac{\Delta x}2\big[f(x_0)+2f(x_1)+\dots+2f(x_{n-1})+f(x_n)\big]$.
+\item \textbf{Regra de Simpson} ($n$ par), que aproxima $f$ por parábolas a cada dois
+  subintervalos:
+  $S_n=\frac{\Delta x}3\big[f(x_0)+4f(x_1)+2f(x_2)+4f(x_3)+\dots+4f(x_{n-1})+f(x_n)\big]$.
+\end{itemize}
+
+\begin{teorema}[Limitantes de erro]{7.1}
+Se $|f''|\le K$ em $[a,b]$, então $|E_T|\le\dfrac{K(b-a)^3}{12n^2}$. Se $|f^{(4)}|\le M$, então
+$|E_S|\le\dfrac{M(b-a)^5}{180n^4}$.
+\end{teorema}
+
+Dobrar $n$ divide o erro do trapézio por cerca de $4$ e o de Simpson por cerca de $16$.
+Simpson é exata para polinômios de grau até $3$.
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7.4cm,height=4.6cm,xmin=0.8,xmax=2.15,ymin=0,ymax=1.15,xtick={1,1.25,1.5,1.75,2},ytick={0.5,1},xticklabel style={font=\tiny}]
+\addplot[fill=laranja!25,draw=laranja] coordinates {(1,0) (1,1) (1.25,0.8) (1.5,0.6667) (1.75,0.5714) (2,0.5) (2,0)} -- cycle;
+\addplot[azul,thick,domain=0.85:2.1,samples=50]{1/x};
+\foreach \a in {1.25,1.5,1.75}{\edef\tmp{\noexpand\draw[laranja] (axis cs:\a,0) -- (axis cs:\a,{1/\a});}\tmp}
+\end{axis}\end{tikzpicture}}{Regra do trapézio com $n=4$ para $\int_1^2\frac{dx}x$: os
+trapézios ficam acima da curva convexa e superestimam a integral.}
+
+\begin{exemplo}{7.5}{Trapézio $\times$ Simpson}
+Para $\int_1^2\frac{dx}x=\ln2\approx0{,}693147$, com $n=4$:
+$T_4\approx0{,}697024$ (erro $\approx3{,}9\times10^{-3}$) e $S_4\approx0{,}693254$ (erro
+$\approx1{,}1\times10^{-4}$). O teorema garante $|E_T|\le\frac{2\cdot1}{12\cdot16}\approx0{,}0104$
+(pois $f''=\frac2{x^3}\le2$), e o erro real é bem menor que essa cota.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Integrais impróprias}
+
+\begin{definicao}
+(i) Intervalo infinito: $\displaystyle\int_a^\infty f(x)\,dx=\lim_{t\to\infty}\int_a^tf(x)\,dx$
+(analogamente em $-\infty$). Para $\int_{-\infty}^\infty$, divida em um ponto $c$ e exija que
+\emph{as duas} partes convirjam.
+
+(ii) Integrando ilimitado: se $f$ é descontínua em $b$,
+$\displaystyle\int_a^bf(x)\,dx=\lim_{t\to b^-}\int_a^tf(x)\,dx$ (analogamente em $a$ ou num ponto
+interior, dividindo o intervalo).
+
+Se o limite existe e é finito, a integral \textbf{converge}; caso contrário, \textbf{diverge}.
+\end{definicao}
+
+\begin{exemplo}{7.6}{Convergência e divergência}
+(a) $\int_1^\infty\frac{dx}{x^2}=\lim_{t\to\infty}\big(1-\frac1t\big)=1$, mas
+$\int_1^\infty\frac{dx}x=\lim\ln t=\infty$. Em geral, $\int_1^\infty\frac{dx}{x^p}$ converge
+(para $\frac1{p-1}$) se, e só se, $p>1$.
+
+(b) $\int_0^1\frac{dx}{\sqrt x}=\lim_{t\to0^+}(2-2\sqrt t)=2$; já $\int_0^1\frac{dx}{x^p}$
+converge se, e só se, $p<1$.
+
+(c) $\int_{-\infty}^\infty\frac{dx}{1+x^2}=\frac\pi2+\frac\pi2=\pi$.
+
+(d) \emph{Armadilha:} $\int_{-1}^1\frac{dx}{x^2}$ não vale $\big[-\frac1x\big]_{-1}^1=-2$
+(uma integral de função positiva não pode ser negativa!). O integrando explode em $x=0$, e
+$\int_0^1\frac{dx}{x^2}$ diverge.
+\end{exemplo}
+
+\begin{teorema}[Teste da comparação]{7.2}
+Se $0\le f(x)\le g(x)$ para $x\ge a$: se $\int_a^\infty g$ converge, então $\int_a^\infty f$
+converge; se $\int_a^\infty f$ diverge, então $\int_a^\infty g$ diverge.
+\end{teorema}
+Por exemplo, $\int_1^\infty e^{-x^2}dx$ converge, pois $e^{-x^2}\le e^{-x}$ para $x\ge1$; e
+$\int_1^\infty\frac{1+\sin^2x}{\sqrt x}\,dx$ diverge, pois o integrando é $\ge\frac1{\sqrt x}$.
+
+% ---------------------------------------------------------------------
+\section*{Resumo do capítulo}
+\addcontentsline{toc}{section}{Resumo do capítulo}
+\begin{itemize}
+\item Partes: $\int u\,dv=uv-\int v\,du$; $u$ pela ordem LIATE; integrais cíclicas voltam a si
+  mesmas.
+\item Trigonométricas: potência ímpar → guarde um fator; pares → ângulo duplo;
+  $\tan^m\sec^n$ → $u=\tan x$ ($n$ par) ou $u=\sec x$ ($m$ ímpar).
+\item Substituição trigonométrica: $a\sin\theta$, $a\tan\theta$, $a\sec\theta$ para
+  $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$, $\sqrt{x^2-a^2}$; volte pelo triângulo.
+\item Frações parciais: divida se for imprópria, fatore, uma parcela por fator (repetidos e
+  quadráticos têm forma própria).
+\item Trapézio (erro $\sim\frac1{n^2}$) e Simpson (erro $\sim\frac1{n^4}$).
+\item Impróprias: limite de integrais próprias; $\int_1^\infty x^{-p}$ converge sse $p>1$;
+  $\int_0^1x^{-p}$ converge sse $p<1$; teste da comparação.
+\end{itemize}
+
+\input{exercicios_cap7}
