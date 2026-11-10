@@ -1,12 +1,12 @@
 # Capítulo 2 — Limites: exercícios
 
-São 65 exercícios: 20 fáceis, 20 médios, 20 difíceis e 5 desafios. Tente resolver antes de abrir a resposta. Os marcados com ★ têm [solução completa com animação](#soluções-completas).
+São 65 exercícios. Os pontos antes de cada número indicam a dificuldade: **•** fácil, **••** médio, **•••** difícil e **••••** desafio. Tente resolver antes de abrir a resposta. Os marcados com ★ têm [solução completa com animação](#soluções-completas).
 
 Muitos enunciados são adaptados de *Calculus Volume 1* (OpenStax, CC BY-NC-SA 4.0).
 
-## Fáceis
+## Lista
 
-**2.1** Calcule $\displaystyle\lim_{x\to7}x^2$.
+`•` **2.1** Calcule $\displaystyle\lim_{x\to7}x^2$.
 
 <details><summary>Resposta</summary>
 
@@ -14,7 +14,7 @@ $49$.
 
 </details>
 
-**2.2** Calcule $\displaystyle\lim_{x\to-2}(4x^2-1)$.
+`•` **2.2** Calcule $\displaystyle\lim_{x\to-2}(4x^2-1)$.
 
 <details><summary>Resposta</summary>
 
@@ -22,7 +22,7 @@ $15$.
 
 </details>
 
-**2.3** Calcule $\displaystyle\lim_{x\to0}\frac{1}{1+\sin x}$.
+`•` **2.3** Calcule $\displaystyle\lim_{x\to0}\frac{1}{1+\sin x}$.
 
 <details><summary>Resposta</summary>
 
@@ -30,7 +30,7 @@ $1$.
 
 </details>
 
-**2.4** Calcule $\displaystyle\lim_{x\to2}e^{2x-x^2}$.
+`•` **2.4** Calcule $\displaystyle\lim_{x\to2}e^{2x-x^2}$.
 
 <details><summary>Resposta</summary>
 
@@ -38,7 +38,7 @@ $1$.
 
 </details>
 
-**2.5** Calcule $\displaystyle\lim_{x\to1}\frac{2-7x}{x+6}$.
+`•` **2.5** Calcule $\displaystyle\lim_{x\to1}\frac{2-7x}{x+6}$.
 
 <details><summary>Resposta</summary>
 
@@ -46,7 +46,7 @@ $-\tfrac57$.
 
 </details>
 
-**2.6** Calcule $\displaystyle\lim_{x\to3}\ln e^{3x}$.
+`•` **2.6** Calcule $\displaystyle\lim_{x\to3}\ln e^{3x}$.
 
 <details><summary>Resposta</summary>
 
@@ -54,7 +54,7 @@ $9$.
 
 </details>
 
-**2.7** Use as propriedades dos limites para calcular $\displaystyle\lim_{x\to0}(4x^2-2x+3)$.
+`•` **2.7** Use as propriedades dos limites para calcular $\displaystyle\lim_{x\to0}(4x^2-2x+3)$.
 
 <details><summary>Resposta</summary>
 
@@ -62,7 +62,7 @@ $3$.
 
 </details>
 
-**2.8** Calcule $\displaystyle\lim_{x\to1}\frac{x^3+3x^2+5}{4-7x}$.
+`•` **2.8** Calcule $\displaystyle\lim_{x\to1}\frac{x^3+3x^2+5}{4-7x}$.
 
 <details><summary>Resposta</summary>
 
@@ -70,7 +70,7 @@ $-3$.
 
 </details>
 
-**2.9** Calcule $\displaystyle\lim_{x\to-2}\sqrt{x^2-6x+3}$.
+`•` **2.9** Calcule $\displaystyle\lim_{x\to-2}\sqrt{x^2-6x+3}$.
 
 <details><summary>Resposta</summary>
 
@@ -78,7 +78,7 @@ $\sqrt{19}$.
 
 </details>
 
-**2.10** Calcule $\displaystyle\lim_{x\to-1}(9x+1)^2$.
+`•` **2.10** Calcule $\displaystyle\lim_{x\to-1}(9x+1)^2$.
 
 <details><summary>Resposta</summary>
 
@@ -86,7 +86,7 @@ $64$.
 
 </details>
 
-**2.11** Mostre que a substituição dá $0/0$ e calcule $\displaystyle\lim_{x\to4}\frac{x^2-16}{x-4}$.
+`•` **2.11** Mostre que a substituição dá $0/0$ e calcule $\displaystyle\lim_{x\to4}\frac{x^2-16}{x-4}$.
 
 <details><summary>Resposta</summary>
 
@@ -94,7 +94,7 @@ $8$.
 
 </details>
 
-**2.12** Calcule $\displaystyle\lim_{x\to6}\frac{3x-18}{2x-12}$.
+`•` **2.12** Calcule $\displaystyle\lim_{x\to6}\frac{3x-18}{2x-12}$.
 
 <details><summary>Resposta</summary>
 
@@ -102,7 +102,7 @@ $\tfrac32$.
 
 </details>
 
-**2.13** Calcule $\displaystyle\lim_{h\to0}\frac{(1+h)^2-1}{h}$.
+`•` **2.13** Calcule $\displaystyle\lim_{h\to0}\frac{(1+h)^2-1}{h}$.
 
 <details><summary>Resposta</summary>
 
@@ -110,7 +110,7 @@ $2$.
 
 </details>
 
-**2.14** Para $f(x)=\begin{cases}x^2,&x\le3\\x+4,&x>3\end{cases}$, calcule os limites laterais em $x=3$. O limite existe?
+`•` **2.14** Para $f(x)=\begin{cases}x^2,&x\le3\\x+4,&x>3\end{cases}$, calcule os limites laterais em $x=3$. O limite existe?
 
 <details><summary>Resposta</summary>
 
@@ -118,7 +118,7 @@ $9$ e $7$; não existe.
 
 </details>
 
-**2.15** Para $g(x)=\begin{cases}x^3-1,&x\le0\\1,&x>0\end{cases}$, calcule $\lim_{x\to0^-}g(x)$ e $\lim_{x\to0^+}g(x)$.
+`•` **2.15** Para $g(x)=\begin{cases}x^3-1,&x\le0\\1,&x>0\end{cases}$, calcule $\lim_{x\to0^-}g(x)$ e $\lim_{x\to0^+}g(x)$.
 
 <details><summary>Resposta</summary>
 
@@ -126,7 +126,7 @@ $-1$ e $1$.
 
 </details>
 
-**2.16** Calcule $\displaystyle\lim_{x\to0}\frac{\sin5x}{x}$.
+`•` **2.16** Calcule $\displaystyle\lim_{x\to0}\frac{\sin5x}{x}$.
 
 <details><summary>Resposta</summary>
 
@@ -134,7 +134,7 @@ $5$.
 
 </details>
 
-**2.17** Encontre a assíntota vertical de $f(x)=\dfrac{1}{(x-3)^4}$ e o limite correspondente.
+`•` **2.17** Encontre a assíntota vertical de $f(x)=\dfrac{1}{(x-3)^4}$ e o limite correspondente.
 
 <details><summary>Resposta</summary>
 
@@ -142,7 +142,7 @@ $x=3$; $\lim_{x\to3}f(x)=+\infty$.
 
 </details>
 
-**2.18** Calcule $\displaystyle\lim_{x\to2^+}\frac{1}{x-2}$ e $\displaystyle\lim_{x\to2^-}\frac{1}{x-2}$.
+`•` **2.18** Calcule $\displaystyle\lim_{x\to2^+}\frac{1}{x-2}$ e $\displaystyle\lim_{x\to2^-}\frac{1}{x-2}$.
 
 <details><summary>Resposta</summary>
 
@@ -150,7 +150,7 @@ $+\infty$ e $-\infty$.
 
 </details>
 
-**2.19** $f(x)=\dfrac{x^2-4}{x-2}$ é contínua em $x=2$? Classifique a descontinuidade.
+`•` **2.19** $f(x)=\dfrac{x^2-4}{x-2}$ é contínua em $x=2$? Classifique a descontinuidade.
 
 <details><summary>Resposta</summary>
 
@@ -158,7 +158,7 @@ Não; removível (o limite é 4).
 
 </details>
 
-**2.20** Calcule $\displaystyle\lim_{\theta\to\pi}\frac{\sin\theta}{\tan\theta}$.
+`•` **2.20** Calcule $\displaystyle\lim_{\theta\to\pi}\frac{\sin\theta}{\tan\theta}$.
 
 <details><summary>Resposta</summary>
 
@@ -166,9 +166,7 @@ $-1$ (pois a razão é $\cos\theta$).
 
 </details>
 
-## Médios
-
-**2.21** **Conjugado com raiz.** Mostre que a substituição direta leva a uma forma indeterminada e calcule $\displaystyle\lim_{t\to9}\frac{t-9}{\sqrt t-3}$. ★ [ver solução](#ex-2-21)
+`••` **2.21** **Conjugado com raiz.** Mostre que a substituição direta leva a uma forma indeterminada e calcule $\displaystyle\lim_{t\to9}\frac{t-9}{\sqrt t-3}$. ★ [ver solução](#ex-2-21)
 
 <details><summary>Resposta</summary>
 
@@ -176,7 +174,7 @@ $0/0$; o limite é 6.
 
 </details>
 
-**2.22** **Fatorando cubos.** Calcule $\displaystyle\lim_{x\to1}\frac{x^3-1}{x^2-1}$. ★ [ver solução](#ex-2-22)
+`••` **2.22** **Fatorando cubos.** Calcule $\displaystyle\lim_{x\to1}\frac{x^3-1}{x^2-1}$. ★ [ver solução](#ex-2-22)
 
 <details><summary>Resposta</summary>
 
@@ -184,7 +182,7 @@ $\dfrac32$.
 
 </details>
 
-**2.23** Calcule $\displaystyle\lim_{x\to-3}\frac{\sqrt{x+4}-1}{x+3}$.
+`••` **2.23** Calcule $\displaystyle\lim_{x\to-3}\frac{\sqrt{x+4}-1}{x+3}$.
 
 <details><summary>Resposta</summary>
 
@@ -192,7 +190,7 @@ $\tfrac12$.
 
 </details>
 
-**2.24** Calcule $\displaystyle\lim_{x\to1/2}\frac{2x^2+3x-2}{2x-1}$.
+`••` **2.24** Calcule $\displaystyle\lim_{x\to1/2}\frac{2x^2+3x-2}{2x-1}$.
 
 <details><summary>Resposta</summary>
 
@@ -200,7 +198,7 @@ $\tfrac52$.
 
 </details>
 
-**2.25** Calcule $\displaystyle\lim_{x\to2}\frac{1-\frac2x}{x^2-4}$.
+`••` **2.25** Calcule $\displaystyle\lim_{x\to2}\frac{1-\frac2x}{x^2-4}$.
 
 <details><summary>Resposta</summary>
 
@@ -208,7 +206,7 @@ $\tfrac18$.
 
 </details>
 
-**2.26** **Limites laterais infinitos.** Calcule $\displaystyle\lim_{x\to1^-}\frac{2x^2+7x-4}{x^2+x-2}$ e $\displaystyle\lim_{x\to1^+}\frac{2x^2+7x-4}{x^2+x-2}$. ★ [ver solução](#ex-2-26)
+`••` **2.26** **Limites laterais infinitos.** Calcule $\displaystyle\lim_{x\to1^-}\frac{2x^2+7x-4}{x^2+x-2}$ e $\displaystyle\lim_{x\to1^+}\frac{2x^2+7x-4}{x^2+x-2}$. ★ [ver solução](#ex-2-26)
 
 <details><summary>Resposta</summary>
 
@@ -216,7 +214,7 @@ $-\infty$ pela esquerda e $+\infty$ pela direita.
 
 </details>
 
-**2.27** **O limite de $\sin(ax)/x$.** (a) Use tabelas com $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$ para estimar $\lim_{x\to0}\frac{\sin2x}{x}$ e $\lim_{x\to0}\frac{\sin3x}{x}$. (b) Conjecture o valor de $\lim_{x\to0}\frac{\sin ax}{x}$ para $a>0$ e prove-o com o Teorema 2.7. ★ [ver solução](#ex-2-27)
+`••` **2.27** **O limite de $\sin(ax)/x$.** (a) Use tabelas com $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$ para estimar $\lim_{x\to0}\frac{\sin2x}{x}$ e $\lim_{x\to0}\frac{\sin3x}{x}$. (b) Conjecture o valor de $\lim_{x\to0}\frac{\sin ax}{x}$ para $a>0$ e prove-o com o Teorema 2.7. ★ [ver solução](#ex-2-27)
 
 <details><summary>Resposta</summary>
 
@@ -224,7 +222,7 @@ $-\infty$ pela esquerda e $+\infty$ pela direita.
 
 </details>
 
-**2.28** Calcule $\displaystyle\lim_{x\to0}\frac{\sin3x}{\sin5x}$.
+`••` **2.28** Calcule $\displaystyle\lim_{x\to0}\frac{\sin3x}{\sin5x}$.
 
 <details><summary>Resposta</summary>
 
@@ -232,7 +230,7 @@ $\tfrac35$.
 
 </details>
 
-**2.29** Calcule $\displaystyle\lim_{x\to0}\frac{\tan x}{x}$.
+`••` **2.29** Calcule $\displaystyle\lim_{x\to0}\frac{\tan x}{x}$.
 
 <details><summary>Resposta</summary>
 
@@ -240,7 +238,7 @@ $1$.
 
 </details>
 
-**2.30** Calcule $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}$.
+`••` **2.30** Calcule $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x^2}$.
 
 <details><summary>Resposta</summary>
 
@@ -248,7 +246,7 @@ $\tfrac12$.
 
 </details>
 
-**2.31** **Teorema do Confronto.** Calcule $\displaystyle\lim_{\theta\to0}\theta^2\cos\!\left(\frac1\theta\right)$. ★ [ver solução](#ex-2-31)
+`••` **2.31** **Teorema do Confronto.** Calcule $\displaystyle\lim_{\theta\to0}\theta^2\cos\!\left(\frac1\theta\right)$. ★ [ver solução](#ex-2-31)
 
 <details><summary>Resposta</summary>
 
@@ -256,7 +254,7 @@ $\tfrac12$.
 
 </details>
 
-**2.32** **Escolhendo $k$ para a continuidade (I).** Encontre $k$ para que $f(x)=\begin{cases}3x+2, & x<k\\ 2x-3, & k\le x\le8\end{cases}$ seja contínua em todo o seu domínio. ★ [ver solução](#ex-2-32)
+`••` **2.32** **Escolhendo $k$ para a continuidade (I).** Encontre $k$ para que $f(x)=\begin{cases}3x+2, & x<k\\ 2x-3, & k\le x\le8\end{cases}$ seja contínua em todo o seu domínio. ★ [ver solução](#ex-2-32)
 
 <details><summary>Resposta</summary>
 
@@ -264,7 +262,7 @@ $k=-5$.
 
 </details>
 
-**2.33** **Escolhendo $k$ para a continuidade (II).** Encontre $k$ para que $f(x)=\begin{cases}e^{kx}, & 0\le x<4\\ x+3, & 4\le x\le8\end{cases}$ seja contínua em $[0,8]$. ★ [ver solução](#ex-2-33)
+`••` **2.33** **Escolhendo $k$ para a continuidade (II).** Encontre $k$ para que $f(x)=\begin{cases}e^{kx}, & 0\le x<4\\ x+3, & 4\le x\le8\end{cases}$ seja contínua em $[0,8]$. ★ [ver solução](#ex-2-33)
 
 <details><summary>Resposta</summary>
 
@@ -272,7 +270,7 @@ $k=\dfrac{\ln7}{4}\approx0{,}4865$.
 
 </details>
 
-**2.34** Classifique as descontinuidades de $f(x)=\dfrac{x^2-x-6}{x^2-9}$.
+`••` **2.34** Classifique as descontinuidades de $f(x)=\dfrac{x^2-x-6}{x^2-9}$.
 
 <details><summary>Resposta</summary>
 
@@ -280,7 +278,7 @@ Removível em $x=3$ (limite $\tfrac56$); infinita em $x=-3$.
 
 </details>
 
-**2.35** Onde $f(x)=\dfrac{x+1}{x^2-5x+6}$ é contínua?
+`••` **2.35** Onde $f(x)=\dfrac{x+1}{x^2-5x+6}$ é contínua?
 
 <details><summary>Resposta</summary>
 
@@ -288,7 +286,7 @@ Em todo $x\neq2,3$.
 
 </details>
 
-**2.36** $f(x)=\begin{cases}x^2-e^x,&x<0\\x-1,&x\ge0\end{cases}$ é contínua em $x=0$?
+`••` **2.36** $f(x)=\begin{cases}x^2-e^x,&x<0\\x-1,&x\ge0\end{cases}$ é contínua em $x=0$?
 
 <details><summary>Resposta</summary>
 
@@ -296,7 +294,7 @@ Sim: os dois limites laterais e $f(0)$ valem $-1$.
 
 </details>
 
-**2.37** **TVI: duas partículas.** Uma partícula se move numa reta com posição $s(t)$ contínua, e $s(2)=5$, $s(5)=2$. Outra partícula tem posição $h(t)=s(t)-t$. Explique por que existe um instante $t\in[2,5]$ em que $h(t)=0$. O que isso significa para a primeira partícula? ★ [ver solução](#ex-2-37)
+`••` **2.37** **TVI: duas partículas.** Uma partícula se move numa reta com posição $s(t)$ contínua, e $s(2)=5$, $s(5)=2$. Outra partícula tem posição $h(t)=s(t)-t$. Explique por que existe um instante $t\in[2,5]$ em que $h(t)=0$. O que isso significa para a primeira partícula? ★ [ver solução](#ex-2-37)
 
 <details><summary>Resposta</summary>
 
@@ -304,7 +302,7 @@ $h(2)=3>0$ e $h(5)=-3<0$; pelo TVI, $h(c)=0$ para algum $c\in[2,5]$, ou seja, $s
 
 </details>
 
-**2.38** **TVI: localizando uma raiz.** Use o TVI para decidir se $2^x=x^3$ tem solução em $[1{,}25;\,1{,}375]$ ou em $[1{,}375;\,1{,}5]$. Justifique para cada intervalo. ★ [ver solução](#ex-2-38)
+`••` **2.38** **TVI: localizando uma raiz.** Use o TVI para decidir se $2^x=x^3$ tem solução em $[1{,}25;\,1{,}375]$ ou em $[1{,}375;\,1{,}5]$. Justifique para cada intervalo. ★ [ver solução](#ex-2-38)
 
 <details><summary>Resposta</summary>
 
@@ -312,7 +310,7 @@ Com $g(x)=2^x-x^3$: $g(1{,}25)>0$ e $g(1{,}375)<0$, logo há raiz no 1º interva
 
 </details>
 
-**2.39** Calcule $\displaystyle\lim_{x\to-2^-}\frac{2x^2+7x-4}{x^2+x-2}$ e $\displaystyle\lim_{x\to-2^+}\frac{2x^2+7x-4}{x^2+x-2}$.
+`••` **2.39** Calcule $\displaystyle\lim_{x\to-2^-}\frac{2x^2+7x-4}{x^2+x-2}$ e $\displaystyle\lim_{x\to-2^+}\frac{2x^2+7x-4}{x^2+x-2}$.
 
 <details><summary>Resposta</summary>
 
@@ -320,7 +318,7 @@ $-\infty$ e $+\infty$.
 
 </details>
 
-**2.40** **Da secante à tangente.** Calcule $\displaystyle\lim_{h\to0}\frac{\frac{1}{a+h}-\frac1a}{h}$, em que $a\neq0$ é constante. Interprete o resultado em termos de retas secantes ao gráfico de $f(x)=1/x$. ★ [ver solução](#ex-2-40)
+`••` **2.40** **Da secante à tangente.** Calcule $\displaystyle\lim_{h\to0}\frac{\frac{1}{a+h}-\frac1a}{h}$, em que $a\neq0$ é constante. Interprete o resultado em termos de retas secantes ao gráfico de $f(x)=1/x$. ★ [ver solução](#ex-2-40)
 
 <details><summary>Resposta</summary>
 
@@ -328,9 +326,7 @@ $-\dfrac{1}{a^2}$: é a inclinação da reta tangente a $y=1/x$ em $x=a$.
 
 </details>
 
-## Difíceis
-
-**2.41** **Prova $\varepsilon$-$\delta$.** Use a definição precisa de limite para provar que $\displaystyle\lim_{x\to2}(x^2+2x)=8$. ★ [ver solução](#ex-2-41)
+`•••` **2.41** **Prova $\varepsilon$-$\delta$.** Use a definição precisa de limite para provar que $\displaystyle\lim_{x\to2}(x^2+2x)=8$. ★ [ver solução](#ex-2-41)
 
 <details><summary>Resposta</summary>
 
@@ -338,7 +334,7 @@ Escolha $\delta=\min\lbrace 1,\varepsilon/7\rbrace $.
 
 </details>
 
-**2.42** **Provando que um limite não existe.** Use a definição precisa para provar que $\displaystyle\lim_{x\to1}\frac{|x-1|}{x-1}$ não existe. ★ [ver solução](#ex-2-42)
+`•••` **2.42** **Provando que um limite não existe.** Use a definição precisa para provar que $\displaystyle\lim_{x\to1}\frac{|x-1|}{x-1}$ não existe. ★ [ver solução](#ex-2-42)
 
 <details><summary>Resposta</summary>
 
@@ -346,7 +342,7 @@ Tome $\varepsilon=\tfrac12$: perto de 1 a função vale $-1$ e $1$, que não cab
 
 </details>
 
-**2.43** Prove pela definição $\varepsilon$-$\delta$ que $\displaystyle\lim_{x\to2}(5x+8)=18$.
+`•••` **2.43** Prove pela definição $\varepsilon$-$\delta$ que $\displaystyle\lim_{x\to2}(5x+8)=18$.
 
 <details><summary>Resposta</summary>
 
@@ -354,7 +350,7 @@ $\delta=\varepsilon/5$.
 
 </details>
 
-**2.44** Prove pela definição $\varepsilon$-$\delta$ que $\displaystyle\lim_{x\to3}\frac{x^2-9}{x-3}=6$.
+`•••` **2.44** Prove pela definição $\varepsilon$-$\delta$ que $\displaystyle\lim_{x\to3}\frac{x^2-9}{x-3}=6$.
 
 <details><summary>Resposta</summary>
 
@@ -362,7 +358,7 @@ $\delta=\varepsilon$ (para $x\neq3$ a expressão é $x+3$).
 
 </details>
 
-**2.45** Para $f(x)=\begin{cases}8x-3,&x<0\\4x-2,&x\ge0\end{cases}$, prove que $\lim_{x\to0^+}f(x)=-2$.
+`•••` **2.45** Para $f(x)=\begin{cases}8x-3,&x<0\\4x-2,&x\ge0\end{cases}$, prove que $\lim_{x\to0^+}f(x)=-2$.
 
 <details><summary>Resposta</summary>
 
@@ -370,7 +366,7 @@ $\delta=\varepsilon/4$.
 
 </details>
 
-**2.46** Prove que $\displaystyle\lim_{x\to0}\frac1{x^2}=+\infty$ pela definição.
+`•••` **2.46** Prove que $\displaystyle\lim_{x\to0}\frac1{x^2}=+\infty$ pela definição.
 
 <details><summary>Resposta</summary>
 
@@ -378,7 +374,7 @@ Dado $M>0$, tome $\delta=1/\sqrt M$.
 
 </details>
 
-**2.47** Use o Teorema do Confronto para calcular $\displaystyle\lim_{x\to0}x\sin\frac1x$.
+`•••` **2.47** Use o Teorema do Confronto para calcular $\displaystyle\lim_{x\to0}x\sin\frac1x$.
 
 <details><summary>Resposta</summary>
 
@@ -386,7 +382,7 @@ $0$, pois $-|x|\le x\sin\tfrac1x\le|x|$.
 
 </details>
 
-**2.48** Encontre $a$ e $b$ para que $f(x)=\begin{cases}ax+2b,&x<1\\5,&x=1\\bx^2-a,&x>1\end{cases}$ seja contínua em $x=1$.
+`•••` **2.48** Encontre $a$ e $b$ para que $f(x)=\begin{cases}ax+2b,&x<1\\5,&x=1\\bx^2-a,&x>1\end{cases}$ seja contínua em $x=1$.
 
 <details><summary>Resposta</summary>
 
@@ -394,7 +390,7 @@ $a=-\tfrac53$, $b=\tfrac{10}3$.
 
 </details>
 
-**2.49** Calcule $\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}$.
+`•••` **2.49** Calcule $\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}$.
 
 <details><summary>Resposta</summary>
 
@@ -402,7 +398,7 @@ $1$.
 
 </details>
 
-**2.50** Calcule $\displaystyle\lim_{x\to1}\frac{\sqrt[3]x-1}{x-1}$. (Dica: $a^3-1=(a-1)(a^2+a+1)$.)
+`•••` **2.50** Calcule $\displaystyle\lim_{x\to1}\frac{\sqrt[3]x-1}{x-1}$. (Dica: $a^3-1=(a-1)(a^2+a+1)$.)
 
 <details><summary>Resposta</summary>
 
@@ -410,7 +406,7 @@ $\tfrac13$.
 
 </details>
 
-**2.51** Calcule $\displaystyle\lim_{h\to0}\frac{(2+h)^3-8}{h}$ e interprete como inclinação de uma tangente.
+`•••` **2.51** Calcule $\displaystyle\lim_{h\to0}\frac{(2+h)^3-8}{h}$ e interprete como inclinação de uma tangente.
 
 <details><summary>Resposta</summary>
 
@@ -418,7 +414,7 @@ $12$: inclinação da tangente a $y=x^3$ em $x=2$.
 
 </details>
 
-**2.52** Calcule $\displaystyle\lim_{x\to\pi/2}\frac{\cos x}{x-\pi/2}$. (Dica: faça $u=x-\tfrac\pi2$.)
+`•••` **2.52** Calcule $\displaystyle\lim_{x\to\pi/2}\frac{\cos x}{x-\pi/2}$. (Dica: faça $u=x-\tfrac\pi2$.)
 
 <details><summary>Resposta</summary>
 
@@ -426,7 +422,7 @@ $-1$.
 
 </details>
 
-**2.53** Mostre que $x^3+x-1=0$ tem uma raiz em $(0,1)$ e localize-a num intervalo de comprimento $0{,}125$ por bissecção.
+`•••` **2.53** Mostre que $x^3+x-1=0$ tem uma raiz em $(0,1)$ e localize-a num intervalo de comprimento $0{,}125$ por bissecção.
 
 <details><summary>Resposta</summary>
 
@@ -434,7 +430,7 @@ Raiz em $(0{,}625;\,0{,}75)$; de fato $x\approx0{,}6823$.
 
 </details>
 
-**2.54** Mostre que a equação $\cos x=x$ tem pelo menos uma solução.
+`•••` **2.54** Mostre que a equação $\cos x=x$ tem pelo menos uma solução.
 
 <details><summary>Resposta</summary>
 
@@ -442,7 +438,7 @@ $g(x)=\cos x-x$: $g(0)=1>0$, $g(\pi/2)<0$; TVI.
 
 </details>
 
-**2.55** O volume de um objeto de massa $m$ é $V=m/\rho$. Calcule $\lim_{\rho\to0^+}V$ e interprete.
+`•••` **2.55** O volume de um objeto de massa $m$ é $V=m/\rho$. Calcule $\lim_{\rho\to0^+}V$ e interprete.
 
 <details><summary>Resposta</summary>
 
@@ -450,7 +446,7 @@ $+\infty$: densidade tendendo a zero exige volume ilimitado.
 
 </details>
 
-**2.56** Prove pela definição que, se $\lim_{x\to a}f(x)=L$, então $\lim_{x\to a}c\,f(x)=cL$.
+`•••` **2.56** Prove pela definição que, se $\lim_{x\to a}f(x)=L$, então $\lim_{x\to a}c\,f(x)=cL$.
 
 <details><summary>Resposta</summary>
 
@@ -458,7 +454,7 @@ Para $c\neq0$, use $\varepsilon/|c|$ na hipótese; $c=0$ é imediato.
 
 </details>
 
-**2.57** Seja $f(x)=x$ se $x$ é racional e $f(x)=0$ se $x$ é irracional. Determine $\lim_{x\to0}f(x)$ e prove.
+`•••` **2.57** Seja $f(x)=x$ se $x$ é racional e $f(x)=0$ se $x$ é irracional. Determine $\lim_{x\to0}f(x)$ e prove.
 
 <details><summary>Resposta</summary>
 
@@ -466,7 +462,7 @@ $0$; em ambos os casos $|f(x)|\le|x|$, então $\delta=\varepsilon$.
 
 </details>
 
-**2.58** Mostre que $\displaystyle\lim_{x\to0}\sin\frac\pi x$ não existe, usando duas sequências que tendem a 0.
+`•••` **2.58** Mostre que $\displaystyle\lim_{x\to0}\sin\frac\pi x$ não existe, usando duas sequências que tendem a 0.
 
 <details><summary>Resposta</summary>
 
@@ -474,7 +470,7 @@ $x_n=\tfrac1n$ dá 0; $x_n=\tfrac2{4n+1}$ dá 1.
 
 </details>
 
-**2.59** Encontre as assíntotas verticais e as descontinuidades removíveis de $f(x)=\dfrac{x^2-1}{x^3-x^2-2x}$, com os limites laterais.
+`•••` **2.59** Encontre as assíntotas verticais e as descontinuidades removíveis de $f(x)=\dfrac{x^2-1}{x^3-x^2-2x}$, com os limites laterais.
 
 <details><summary>Resposta</summary>
 
@@ -482,7 +478,7 @@ Removível em $x=-1$ (limite $-\tfrac23$); assíntotas $x=0$ ($-\infty$ à esq.,
 
 </details>
 
-**2.60** Onde a função maior inteiro $f(x)=\lfloor x\rfloor$ é descontínua? Classifique e diga de que lado ela é contínua.
+`•••` **2.60** Onde a função maior inteiro $f(x)=\lfloor x\rfloor$ é descontínua? Classifique e diga de que lado ela é contínua.
 
 <details><summary>Resposta</summary>
 
@@ -490,9 +486,7 @@ Em cada inteiro: salto de 1; contínua à direita.
 
 </details>
 
-## Desafios
-
-**2.61** Calcule $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x\sin x}$.
+`••••` **2.61** Calcule $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x\sin x}$.
 
 <details><summary>Resposta</summary>
 
@@ -500,7 +494,7 @@ $\tfrac12$.
 
 </details>
 
-**2.62** Prove pela definição que $\lim_{x\to a}\sqrt x=\sqrt a$ para $a>0$.
+`••••` **2.62** Prove pela definição que $\lim_{x\to a}\sqrt x=\sqrt a$ para $a>0$.
 
 <details><summary>Resposta</summary>
 
@@ -508,7 +502,7 @@ $|\sqrt x-\sqrt a|=\tfrac{|x-a|}{\sqrt x+\sqrt a}\le\tfrac{|x-a|}{\sqrt a}$; tom
 
 </details>
 
-**2.63** Mostre que todo polinômio de grau ímpar tem pelo menos uma raiz real.
+`••••` **2.63** Mostre que todo polinômio de grau ímpar tem pelo menos uma raiz real.
 
 <details><summary>Resposta</summary>
 
@@ -516,7 +510,7 @@ O termo dominante força sinais opostos para $x$ grande e $x$ muito negativo; TV
 
 </details>
 
-**2.64** Calcule $\displaystyle\lim_{x\to0^+}x\left\lfloor\frac1x\right\rfloor$.
+`••••` **2.64** Calcule $\displaystyle\lim_{x\to0^+}x\left\lfloor\frac1x\right\rfloor$.
 
 <details><summary>Resposta</summary>
 
@@ -524,7 +518,7 @@ $1$, pois $1-x<x\lfloor1/x\rfloor\le1$.
 
 </details>
 
-**2.65** Seja $f:[0,1]\to[0,1]$ contínua. Prove que existe $c\in[0,1]$ com $f(c)=c$ (ponto fixo).
+`••••` **2.65** Seja $f:[0,1]\to[0,1]$ contínua. Prove que existe $c\in[0,1]$ com $f(c)=c$ (ponto fixo).
 
 <details><summary>Resposta</summary>
 

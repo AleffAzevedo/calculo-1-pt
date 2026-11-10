@@ -3,7 +3,8 @@
 Adaptação e tradução de **Calculus Volume 1**, de Gilbert Strang (MIT) e Edwin "Jed" Herman
 (University of Wisconsin–Stevens Point), publicado pela OpenStax (Rice University).
 A meta é ter, em até 150 páginas, o essencial do Cálculo I para **revisar** o conteúdo:
-definições, teoremas, exemplos-chave e figuras. Cada capítulo traz 65 exercícios (20 fáceis, 20 médios, 20 difíceis e 5 desafios), com
+definições, teoremas, exemplos-chave e figuras. Cada capítulo traz 65 exercícios, com a dificuldade indicada por pontos (• fácil, •• médio,
+••• difícil, •••• desafio) e
 respostas. Os marcados com ★ têm solução completa e animação do gráfico neste repositório.
 
 📘 **[Baixar o PDF](Calculo_I.pdf)**

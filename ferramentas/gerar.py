@@ -13,7 +13,7 @@ sys.path.insert(0, AQUI)
 
 REPO_URL = os.environ.get('REPO_URL', 'https://github.com/AleffAzevedo/calculo-1-pt')
 TITULOS = {1: 'Funções e gráficos', 2: 'Limites'}
-NIVEIS = [('F', 'Fáceis'), ('M', 'Médios'), ('D', 'Difíceis'), ('X', 'Desafios')]
+PONTOS = {'F': 1, 'M': 2, 'D': 3, 'X': 4}
 
 
 def chaves(s):
@@ -50,23 +50,16 @@ def gerar(n, animar=True):
     # ---------------- LaTeX
     t = ['% Gerado por ferramentas/gerar.py; não edite à mão.',
          '\\section*{Exercícios}', '\\addcontentsline{toc}{section}{Exercícios}',
-         'São quatro níveis: 20 fáceis, 20 médios, 20 difíceis e 5 desafios. '
-         'Os marcados com \\estrela{} têm solução completa, com animação do gráfico, no repositório do livro: '
-         f'\\url{{{url}}}. As respostas estão no fim do capítulo.\n']
-    for cod, nome in NIVEIS:
-        sel = [i for i in itens if i['nivel'] == cod]
-        duas = cod == 'F'
-        t.append(f'\\subsection*{{{nome}}}')
-        if duas:
-            t.append('\\begin{multicols}{2}')
-        t.append('\\begin{itemize}[leftmargin=2.7em,labelsep=0.5em,itemsep=4pt]')
-        for i in sel:
-            est = '\\estrela\\ ' if i['sol'] else ''
-            tit = f'\\textbf{{{i["titulo"]}.}} ' if i['titulo'] else ''
-            t.append(f'\\item[\\textbf{{{i["num"]}}}] {est}{tit}{i["enunciado"]}')
-        t.append('\\end{itemize}')
-        if duas:
-            t.append('\\end{multicols}')
+         'Os pontos antes de cada número indicam a dificuldade: \\nivel{1} fácil, \\nivel{2} médio, '
+         '\\nivel{3} difícil e \\nivel{4} desafio. Os exercícios marcados com \\estrela{} têm solução completa, '
+         f'com animação do gráfico, no repositório do livro: \\url{{{url}}}. '
+         'As respostas estão no fim do capítulo.\n',
+         '\\begin{itemize}[leftmargin=5.2em,labelsep=0.6em,itemsep=4pt]']
+    for i in itens:
+        est = '\\estrela\\ ' if i['sol'] else ''
+        tit = f'\\textbf{{{i["titulo"]}.}} ' if i['titulo'] else ''
+        t.append(f'\\item[\\exnum{{{PONTOS[i["nivel"]]}}}{{{i["num"]}}}] {est}{tit}{i["enunciado"]}')
+    t.append('\\end{itemize}')
     t.append('\\subsection*{Respostas}\n{\\small\\begin{multicols}{2}\\raggedright')
     t.append('\\begin{itemize}[leftmargin=2.7em,labelsep=0.5em,itemsep=1pt]')
     for i in itens:
@@ -76,16 +69,17 @@ def gerar(n, animar=True):
 
     # ---------------- Markdown
     md = [f'# Capítulo {n} — {TITULOS[n]}: exercícios\n',
-          'São 65 exercícios: 20 fáceis, 20 médios, 20 difíceis e 5 desafios. Tente resolver antes de abrir a resposta. '
-          'Os marcados com ★ têm [solução completa com animação](#soluções-completas).\n',
-          'Muitos enunciados são adaptados de *Calculus Volume 1* (OpenStax, CC BY-NC-SA 4.0).\n']
-    for cod, nome in NIVEIS:
-        md.append(f'## {nome}\n')
-        for i in [i for i in itens if i['nivel'] == cod]:
-            est = f' ★ [ver solução](#ex-{i["num"].replace(".", "-")})' if i['sol'] else ''
-            tit = f'**{i["titulo"]}.** ' if i['titulo'] else ''
-            md.append(f'**{i["num"]}** {tit}{tex_para_md(i["enunciado"])}{est}\n')
-            md.append(f'<details><summary>Resposta</summary>\n\n{tex_para_md(i["resposta"])}\n\n</details>\n')
+          'São 65 exercícios. Os pontos antes de cada número indicam a dificuldade: '
+          '**•** fácil, **••** médio, **•••** difícil e **••••** desafio. '
+          'Tente resolver antes de abrir a resposta. Os marcados com ★ têm '
+          '[solução completa com animação](#soluções-completas).\n',
+          'Muitos enunciados são adaptados de *Calculus Volume 1* (OpenStax, CC BY-NC-SA 4.0).\n',
+          '## Lista\n']
+    for i in itens:
+        est = f' ★ [ver solução](#ex-{i["num"].replace(".", "-")})' if i['sol'] else ''
+        tit = f'**{i["titulo"]}.** ' if i['titulo'] else ''
+        md.append(f'`{"•" * PONTOS[i["nivel"]]}` **{i["num"]}** {tit}{tex_para_md(i["enunciado"])}{est}\n')
+        md.append(f'<details><summary>Resposta</summary>\n\n{tex_para_md(i["resposta"])}\n\n</details>\n')
     md.append('## Soluções completas\n')
     for i in [i for i in itens if i['sol']]:
         s = i['sol']

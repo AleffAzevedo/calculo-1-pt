@@ -81,6 +81,9 @@
   \begin{minipage}{0.9\linewidth}\small\textbf{Figura \thechapter.\stepcounter{figure}\arabic{figure}}\quad #4\end{minipage}\end{center}}
 
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\nivel}[1]{{\ifnum#1=4\color{laranja}\else\color{azul}\fi
+  \foreach \i in {1,...,#1}{\textbullet}}}
+\newcommand{\exnum}[2]{\makebox[1.9em][r]{\nivel{#1}}\,\makebox[2.3em][r]{\textbf{#2}}}
 \newcommand{\estrela}{\textcolor{laranja}{$\bigstar$}}
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\csch}{csch}
