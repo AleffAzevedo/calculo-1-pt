@@ -17,7 +17,7 @@ respostas. Os marcados com ★ têm solução completa e animação do gráfico 
 | 2 | Limites | ✅ | [65 exercícios, 12 resolvidos](exercicios/cap2/README.md) |
 | 3 | Derivadas | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap3/README.md) |
 | 4 | Aplicações das derivadas | ✅ | [65 exercícios, 12 resolvidos](exercicios/cap4/README.md) |
-| 5 | Integração | em produção | — |
+| 5 | Integração | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap5/README.md) |
 | 6 | Aplicações da integração | em produção | — |
 
 Cada solução completa segue o mesmo roteiro: a **estratégia**, a resolução passo a passo, um

@@ -1,0 +1,276 @@
+% =====================================================================
+\chapter{Integração}
+
+No capítulo~2 vimos que o problema da área sob uma curva leva a um limite de somas de
+retângulos. Neste capítulo esse limite ganha nome, \emph{integral definida}, e descobrimos o
+fato central do Cálculo: integrar e derivar são operações inversas (Teorema Fundamental do
+Cálculo). Com ele, calcular áreas, deslocamentos e variações totais se reduz a encontrar
+antiderivadas, e a técnica de substituição amplia muito a lista de funções que sabemos
+integrar.
+
+% ---------------------------------------------------------------------
+\section{Aproximando áreas}
+
+\subsection{Notação de somatório}
+
+Escrevemos $\displaystyle\sum_{i=1}^n a_i=a_1+a_2+\dots+a_n$. Valem
+$\sum(a_i\pm b_i)=\sum a_i\pm\sum b_i$ e $\sum c\,a_i=c\sum a_i$, além das fórmulas
+\[
+\sum_{i=1}^n1=n,\qquad \sum_{i=1}^n i=\frac{n(n+1)}2,\qquad
+\sum_{i=1}^n i^2=\frac{n(n+1)(2n+1)}6,\qquad \sum_{i=1}^n i^3=\frac{n^2(n+1)^2}4 .
+\]
+
+\subsection{Somas de Riemann}
+
+Para aproximar a área sob o gráfico de $f\ge0$ em $[a,b]$, dividimos o intervalo em $n$
+subintervalos de largura $\Delta x=\frac{b-a}n$, com extremos $x_i=a+i\,\Delta x$, e somamos
+áreas de retângulos. A altura de cada retângulo é o valor de $f$ em algum ponto $x_i^*$ do
+subintervalo:
+\[
+\sum_{i=1}^n f(x_i^*)\,\Delta x \qquad(\textbf{soma de Riemann}).
+\]
+Usando a extremidade esquerda ($x_{i-1}$), a direita ($x_i$) ou o ponto médio, obtemos as
+aproximações $L_n$, $R_n$ e $M_n$.
+
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 1,horizontal sep=1.0cm},painel,width=5.3cm,height=4.6cm,
+  xmin=-0.1,xmax=2.2,ymin=0,ymax=4.6,xtick={0,0.5,1,1.5,2},ytick={1,4},xticklabel style={font=\tiny}]
+\nextgroupplot[title={$L_4=1{,}75$}]
+\foreach \a in {0,0.5,1,1.5}{\edef\tmp{\noexpand\draw[fill=laranja!25,draw=laranja] (axis cs:\a,0) rectangle (axis cs:{\a+0.5},{\a*\a});}\tmp}
+\addplot[domain=0:2.1]{x^2};
+\nextgroupplot[title={$R_4=3{,}75$}]
+\foreach \a in {0,0.5,1,1.5}{\edef\tmp{\noexpand\draw[fill=laranja!25,draw=laranja] (axis cs:\a,0) rectangle (axis cs:{\a+0.5},{(\a+0.5)^2});}\tmp}
+\addplot[domain=0:2.1]{x^2};
+\nextgroupplot[title={$M_4=2{,}625$}]
+\foreach \a in {0,0.5,1,1.5}{\edef\tmp{\noexpand\draw[fill=laranja!25,draw=laranja] (axis cs:\a,0) rectangle (axis cs:{\a+0.5},{(\a+0.25)^2});}\tmp}
+\addplot[domain=0:2.1]{x^2};
+\end{groupplot}\end{tikzpicture}}{Somas de Riemann com $n=4$ para $f(x)=x^2$ em $[0,2]$:
+extremidade esquerda, direita e ponto médio. A área exata é $\tfrac83\approx2{,}667$.}
+
+\begin{exemplo}{5.1}{Aproximações e o limite}
+Para $f(x)=x^2$ em $[0,2]$ com $n=4$ ($\Delta x=0{,}5$):
+$L_4=0{,}5(0+0{,}25+1+2{,}25)=1{,}75$ e $R_4=0{,}5(0{,}25+1+2{,}25+4)=3{,}75$. Como $f$ é
+crescente, $L_n$ subestima e $R_n$ superestima a área.
+
+Para $n$ qualquer, $x_i=\frac{2i}n$ e
+\[
+R_n=\sum_{i=1}^n\Big(\frac{2i}n\Big)^2\frac2n=\frac8{n^3}\sum_{i=1}^ni^2
+=\frac8{n^3}\cdot\frac{n(n+1)(2n+1)}6\ \xrightarrow{n\to\infty}\ \frac{16}{6}=\frac83 .
+\]
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{A integral definida}
+
+\begin{definicao}
+Se $f$ está definida em $[a,b]$ e o limite
+\[
+\int_a^b f(x)\,dx=\lim_{n\to\infty}\sum_{i=1}^n f(x_i^*)\,\Delta x
+\]
+existe e é o mesmo para quaisquer escolhas dos pontos $x_i^*$, dizemos que $f$ é
+\textbf{integrável} em $[a,b]$ e o limite é a \textbf{integral definida} de $f$ de $a$ a $b$.
+Os números $a$ e $b$ são os \emph{limites de integração}, e $f$ é o \emph{integrando}.
+\end{definicao}
+
+Toda função contínua em $[a,b]$ é integrável (e também as que têm um número finito de
+descontinuidades de salto). A variável de integração é ``muda'':
+$\int_a^bf(x)\,dx=\int_a^bf(t)\,dt$.
+
+\textbf{Área com sinal.} Se $f$ muda de sinal, os retângulos abaixo do eixo contribuem
+negativamente: $\int_a^bf(x)\,dx$ é a \emph{área líquida} (área acima do eixo menos área
+abaixo). A \emph{área total} é $\int_a^b|f(x)|\,dx$.
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=9cm,height=4.4cm,xmin=-0.2,xmax=6.6,ymin=-1.3,ymax=1.3,
+  xtick={3.1416,6.2832},xticklabels={$\pi$,$2\pi$},ytick={-1,1}]
+\addplot[fill=azul!25,draw=none,domain=0:3.1416] {sin(deg(x))} \closedcycle;
+\addplot[fill=laranja!30,draw=none,domain=3.1416:4.7124] {sin(deg(x))} \closedcycle;
+\addplot[domain=-0.2:6.6]{sin(deg(x))};
+\node[azul,font=\small] at (axis cs:1.57,0.4) {$+2$}; \node[laranja,font=\small] at (axis cs:3.95,-0.4) {$-1$};
+\end{axis}\end{tikzpicture}}{$\int_0^{3\pi/2}\sin x\,dx=2-1=1$ (área líquida), enquanto a área
+total é $2+1=3$.}
+
+\begin{teorema}[Propriedades da integral definida]{5.1}
+Para $f$ e $g$ integráveis e $k$ constante:
+\begin{enumerate}[label=(\roman*)]
+\item $\int_a^a f=0$ \ e \ $\int_b^a f=-\int_a^b f$;
+\item $\int_a^b(f\pm g)=\int_a^bf\pm\int_a^bg$ \ e \ $\int_a^bkf=k\int_a^bf$;
+\item $\int_a^bf=\int_a^cf+\int_c^bf$;
+\item se $f\le g$ em $[a,b]$, então $\int_a^bf\le\int_a^bg$; se $m\le f\le M$, então
+  $m(b-a)\le\int_a^bf\le M(b-a)$.
+\end{enumerate}
+\end{teorema}
+
+\textbf{Valor médio.} O \textbf{valor médio} de $f$ em $[a,b]$ é
+$f_{\text{méd}}=\dfrac1{b-a}\displaystyle\int_a^bf(x)\,dx$: a altura do retângulo de base
+$[a,b]$ com a mesma área líquida que a região sob $f$.
+
+% ---------------------------------------------------------------------
+\section{O Teorema Fundamental do Cálculo}
+
+\begin{teorema}[Teorema do Valor Médio para integrais]{5.2}
+Se $f$ é contínua em $[a,b]$, existe $c\in[a,b]$ tal que $f(c)=\dfrac1{b-a}\displaystyle\int_a^bf(x)\,dx$.
+\end{teorema}
+
+Considere a \emph{função área} $F(x)=\int_a^xf(t)\,dt$: a área acumulada de $a$ até $x$. Para
+$h$ pequeno, $F(x+h)-F(x)=\int_x^{x+h}f(t)\,dt\approx f(x)\,h$ (uma fatia de largura $h$ e
+altura $\approx f(x)$). Isso sugere que $F'(x)=f(x)$.
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=8cm,height=4.8cm,xmin=0,xmax=5,ymin=0,ymax=3.6,xtick={0.5,2.6,3.0},xticklabels={$a$,$x$,$x\!+\!h$},ytick=\empty]
+\addplot[fill=azul!20,draw=none,domain=0.5:2.6] {1+0.6*x-0.08*x^2+0.3*sin(deg(2*x))} \closedcycle;
+\addplot[fill=laranja!40,draw=none,domain=2.6:3.0] {1+0.6*x-0.08*x^2+0.3*sin(deg(2*x))} \closedcycle;
+\addplot[domain=0:5]{1+0.6*x-0.08*x^2+0.3*sin(deg(2*x))};
+\node[azul,font=\small] at (axis cs:1.55,0.8) {$F(x)$};
+\end{axis}\end{tikzpicture}}{A função área $F(x)=\int_a^xf(t)\,dt$. Ao passar de $x$ para
+$x+h$, a área cresce cerca de $f(x)\cdot h$ (faixa laranja).}
+
+\begin{teorema}[Teorema Fundamental do Cálculo, parte 1]{5.3}
+Se $f$ é contínua em $[a,b]$, então $F(x)=\int_a^xf(t)\,dt$ é derivável em $(a,b)$ e
+\[
+F'(x)=\frac{d}{dx}\int_a^xf(t)\,dt=f(x).
+\]
+\end{teorema}
+\emph{Prova.} Pelo TVM para integrais, $\frac{F(x+h)-F(x)}h=\frac1h\int_x^{x+h}f(t)\,dt=f(c_h)$
+para algum $c_h$ entre $x$ e $x+h$. Quando $h\to0$, $c_h\to x$ e, por continuidade,
+$f(c_h)\to f(x)$. $\square$
+
+Combinada com a regra da cadeia:
+$\dfrac{d}{dx}\displaystyle\int_a^{g(x)}f(t)\,dt=f\big(g(x)\big)\,g'(x)$. Por exemplo,
+$\dfrac{d}{dx}\displaystyle\int_1^{x^2}\cos t\,dt=2x\cos(x^2)$.
+
+\begin{teorema}[Teorema Fundamental do Cálculo, parte 2]{5.4}
+Se $f$ é contínua em $[a,b]$ e $F$ é qualquer antiderivada de $f$, então
+\[
+\int_a^bf(x)\,dx=F(b)-F(a)=\Big[F(x)\Big]_a^b .
+\]
+\end{teorema}
+\emph{Prova.} $G(x)=\int_a^xf(t)\,dt$ também é antiderivada de $f$ (parte 1), logo
+$G=F+C$. Então $\int_a^bf=G(b)-G(a)=F(b)-F(a)$. $\square$
+
+\begin{exemplo}{5.2}{Usando o TFC}
+(a) $\int_0^2x^2\,dx=\Big[\frac{x^3}3\Big]_0^2=\frac83$, confirmando o Exemplo~5.1 sem limites.
+
+(b) $\int_0^\pi\sin x\,dx=\big[-\cos x\big]_0^\pi=1+1=2$.
+
+(c) $\displaystyle\int_1^4\Big(\sqrt x+\frac1{x^2}\Big)dx=\Big[\tfrac23x^{3/2}-\tfrac1x\Big]_1^4
+=\Big(\tfrac{16}3-\tfrac14\Big)-\Big(\tfrac23-1\Big)=\tfrac{65}{12} .$
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Fórmulas de integração e o Teorema da Variação Total}
+
+Lendo a parte 2 do TFC com $F'$ no lugar de $f$: a integral de uma taxa de variação é a
+variação total.
+
+\begin{teorema}[Teorema da Variação Total]{5.5}
+$F(b)=F(a)+\displaystyle\int_a^bF'(x)\,dx$, ou seja, $\displaystyle\int_a^bF'(x)\,dx=F(b)-F(a)$.
+\end{teorema}
+
+Se $v(t)$ é a velocidade de um objeto, $\int_a^bv(t)\,dt$ é o \textbf{deslocamento} (variação
+de posição), enquanto $\int_a^b|v(t)|\,dt$ é a \textbf{distância percorrida}. Se $r(t)$ é a
+vazão de água num tanque, $\int_a^br(t)\,dt$ é a variação do volume.
+
+\begin{exemplo}{5.3}{Deslocamento \texorpdfstring{$\times$}{x} distância}
+Uma partícula tem velocidade $v(t)=t^2-4t+3=(t-1)(t-3)$ m/s, $0\le t\le4$.
+\solucao
+Deslocamento: $\int_0^4v\,dt=\big[\frac{t^3}3-2t^2+3t\big]_0^4=\frac43$ m.
+Para a distância, separamos onde $v$ muda de sinal ($t=1$ e $t=3$):
+$\int_0^1v=\frac43$, $\int_1^3v=-\frac43$, $\int_3^4v=\frac43$. Distância
+$=\frac43+\frac43+\frac43=4$ m.
+\end{exemplo}
+
+\textbf{Funções pares e ímpares.} Se $f$ é par, $\int_{-a}^af=2\int_0^af$; se $f$ é ímpar,
+$\int_{-a}^af=0$ (as áreas se cancelam). Por exemplo, $\int_{-2}^2x^3\cos x\,dx=0$ sem nenhuma
+conta.
+
+% ---------------------------------------------------------------------
+\section{Substituição}
+
+A regra da cadeia diz que $\frac{d}{dx}F(g(x))=F'(g(x))\,g'(x)$. Lida ao contrário:
+\[
+\int f\big(g(x)\big)\,g'(x)\,dx=\int f(u)\,du,\qquad u=g(x),\ du=g'(x)\,dx .
+\]
+
+\begin{estrategia}{integração por substituição}
+\begin{enumerate}[label=\arabic*.]
+\item Escolha $u=g(x)$, em geral a ``função de dentro'', cuja derivada aparece (a menos de
+  uma constante) no integrando.
+\item Calcule $du=g'(x)\,dx$ e reescreva \emph{toda} a integral em termos de $u$.
+\item Integre em $u$ e volte para $x$. Em integrais definidas, troque também os limites:
+  $x=a\mapsto u=g(a)$ e $x=b\mapsto u=g(b)$.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{5.4}{Substituições}
+(a) $\int x^2(x^3+5)^9\,dx$: com $u=x^3+5$, $du=3x^2dx$, fica
+$\frac13\int u^9\,du=\frac{u^{10}}{30}+C=\frac{(x^3+5)^{10}}{30}+C$.
+
+(b) $\int\sin(5x)\,dx=-\frac15\cos(5x)+C$ \quad ($u=5x$).
+
+(c) $\int x\sqrt{x-1}\,dx$: com $u=x-1$, temos $x=u+1$ e
+$\int(u+1)u^{1/2}\,du=\frac25u^{5/2}+\frac23u^{3/2}+C=\frac25(x-1)^{5/2}+\frac23(x-1)^{3/2}+C$.
+
+(d) $\int_0^{\pi/2}\sin^2x\cos x\,dx$: com $u=\sin x$, os limites viram $0$ e $1$:
+$\int_0^1u^2\,du=\frac13$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Integrais com exponenciais e logaritmos}
+
+Das derivadas do capítulo~3:
+\[
+\int e^u\,du=e^u+C,\qquad \int a^u\,du=\frac{a^u}{\ln a}+C,\qquad \int\frac{du}u=\ln|u|+C .
+\]
+
+\begin{exemplo}{5.5}{Exponenciais e logaritmos}
+(a) $\int xe^{-x^2}dx=-\frac12\int e^u\,du=-\frac12e^{-x^2}+C$ \quad ($u=-x^2$).
+
+(b) $\int\frac{3x^2}{x^3+1}\,dx=\ln|x^3+1|+C$: o numerador é a derivada do denominador.
+
+(c) $\int\tan x\,dx=\int\frac{\sin x}{\cos x}\,dx=-\ln|\cos x|+C=\ln|\sec x|+C$ \quad
+($u=\cos x$).
+
+(d) $\int_1^e\frac{\ln x}x\,dx=\int_0^1u\,du=\frac12$ \quad ($u=\ln x$).
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Integrais que resultam em inversas trigonométricas}
+
+Das derivadas das inversas trigonométricas, para $a>0$:
+\[
+\int\frac{du}{\sqrt{a^2-u^2}}=\sin^{-1}\frac ua+C,\qquad
+\int\frac{du}{a^2+u^2}=\frac1a\tan^{-1}\frac ua+C,\qquad
+\int\frac{du}{u\sqrt{u^2-a^2}}=\frac1a\sec^{-1}\frac{|u|}a+C .
+\]
+
+\begin{exemplo}{5.6}{Inversas trigonométricas}
+(a) $\displaystyle\int\frac{dx}{\sqrt{4-9x^2}}$: com $u=3x$, $\frac13\int\frac{du}{\sqrt{4-u^2}}
+=\frac13\sin^{-1}\frac{3x}2+C$.
+
+(b) $\displaystyle\int_0^1\frac{dx}{1+x^2}=\big[\tan^{-1}x\big]_0^1=\frac\pi4$. Daí,
+$\pi=\int_0^1\frac{4}{1+x^2}\,dx$.
+
+(c) $\displaystyle\int\frac{dx}{x^2+4x+13}$: completando o quadrado, $x^2+4x+13=(x+2)^2+9$, e
+com $u=x+2$: $\frac13\tan^{-1}\frac{x+2}3+C$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section*{Resumo do capítulo}
+\addcontentsline{toc}{section}{Resumo do capítulo}
+\begin{itemize}
+\item Somas de Riemann $\sum f(x_i^*)\Delta x$ aproximam a área; $\int_a^bf$ é o seu limite e
+  mede a área com sinal.
+\item Propriedades: linearidade, aditividade em intervalos, inversão de limites, comparação;
+  valor médio $\frac1{b-a}\int_a^bf$.
+\item TFC 1: $\frac d{dx}\int_a^xf(t)\,dt=f(x)$ (com a cadeia, $f(g(x))g'(x)$).
+  TFC 2: $\int_a^bf=F(b)-F(a)$.
+\item Variação total: $\int_a^bF'=F(b)-F(a)$. Deslocamento $=\int v$; distância
+  $=\int|v|$.
+\item Simetria: $\int_{-a}^a$(ímpar) $=0$; $\int_{-a}^a$(par) $=2\int_0^a$.
+\item Substituição $u=g(x)$, $du=g'(x)dx$; nas definidas, troque os limites.
+\item $\int e^u=e^u$, $\int\frac{du}u=\ln|u|$, $\int\frac{du}{\sqrt{a^2-u^2}}=\sin^{-1}\frac ua$,
+  $\int\frac{du}{a^2+u^2}=\frac1a\tan^{-1}\frac ua$.
+\end{itemize}
+
+\input{exercicios_cap5}
