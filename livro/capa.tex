@@ -1,0 +1,63 @@
+% Capa do livro (TikZ, página inteira)
+\definecolor{noite}{HTML}{0A1A33}
+\definecolor{marinho}{HTML}{153A63}
+\definecolor{ouro}{HTML}{E8A33D}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay,
+  declare function={curva(\x)=8.6+3.2*sin(deg(0.42*\x-0.9))+0.9*sin(deg(1.1*\x));}]
+% fundo
+\shade[top color=noite,bottom color=marinho] (current page.south west) rectangle (current page.north east);
+\begin{scope}[shift={(current page.south west)}]
+  % grade discreta
+  \draw[white,opacity=0.05,line width=0.3pt,step=1cm] (0,0) grid (21,29.7);
+  % retângulos de Riemann: cada vez mais finos da esquerda para a direita
+  \foreach \a/\w/\op in {1.0/1.6/0.10, 2.6/1.6/0.12, 4.2/1.2/0.14, 5.4/1.2/0.16,
+                         6.6/0.8/0.18, 7.4/0.8/0.20, 8.2/0.8/0.22, 9.0/0.5/0.24,
+                         9.5/0.5/0.26, 10.0/0.5/0.28, 10.5/0.5/0.30, 11.0/0.3/0.32,
+                         11.3/0.3/0.34, 11.6/0.3/0.36, 11.9/0.3/0.38, 12.2/0.3/0.40}{
+    \pgfmathsetmacro{\m}{\a+\w/2}
+    \fill[white,opacity=\op] (\a,2.2) rectangle ({\a+\w},{curva(\m)});
+    \draw[white,opacity=\op+0.15,line width=0.3pt] (\a,2.2) rectangle ({\a+\w},{curva(\m)});
+  }
+  % área exata (preenchimento contínuo) à direita
+  \fill[ouro,opacity=0.30] (12.5,2.2) -- plot[domain=12.5:20,samples=80] (\x,{curva(\x)}) -- (20,2.2) -- cycle;
+  % eixo
+  \draw[white,opacity=0.5,line width=0.6pt,-{Stealth}] (0.4,2.2) -- (20.6,2.2);
+  % curva
+  \draw[white,line width=1.8pt] plot[domain=0.5:20.5,samples=200] (\x,{curva(\x)});
+  \begin{scope}\clip (0.4,2.25) rectangle (20.6,20);
+  % secantes convergindo para a tangente em x0
+  \pgfmathsetmacro{\xo}{16.4}
+  \pgfmathsetmacro{\yo}{curva(\xo)}
+  \pgfmathsetmacro{\dm}{(curva(\xo+0.001)-curva(\xo-0.001))/0.002}
+  \foreach \h/\op in {4.2/0.18, 2.8/0.26, 1.7/0.36, 0.9/0.48}{
+    \pgfmathsetmacro{\ms}{(curva(\xo+\h)-\yo)/\h}
+    \draw[ouro,opacity=\op,line width=0.8pt] ({\xo-3.2},{\yo-3.2*\ms}) -- ({\xo+\h+1.2},{\yo+(\h+1.2)*\ms});
+    \fill[ouro,opacity=\op+0.2] ({\xo+\h},{curva(\xo+\h)}) circle (2.2pt);
+  }
+  \draw[ouro,line width=1.6pt] ({\xo-2.6},{\yo-2.6*\dm}) -- ({\xo+2.6},{\yo+2.6*\dm});
+  \fill[ouro] (\xo,\yo) circle (3.6pt);
+  \fill[noite] (\xo,\yo) circle (1.6pt);
+  \end{scope}
+  % fórmulas em marca-d'água
+  \node[white,opacity=0.16,scale=1.5] at (5.2,14.6)
+    {$\displaystyle f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}$};
+  \node[white,opacity=0.16,scale=1.5] at (14.6,14.6)
+    {$\displaystyle\int_a^b f(x)\,dx=F(b)-F(a)$};
+  % título
+  \node[anchor=north west,text=ouro,font=\large\scshape] at (2,27.4)
+    {E\,d\,i\,ç\,ã\,o\ \ c\,o\,n\,d\,e\,n\,s\,a\,d\,a\ \ e\,m\ \ p\,o\,r\,t\,u\,g\,u\,ê\,s};
+  \draw[ouro,line width=1.2pt] (2,26.55) -- (6.5,26.55);
+  \node[anchor=north west,text=white,font=\bfseries,scale=6.4] at (1.75,26.2) {Cálculo\,\textcolor{ouro}{I}};
+  \node[anchor=north west,text=white,opacity=0.9,font=\Large] at (2,21.6)
+    {Funções \textperiodcentered{} Limites \textperiodcentered{} Derivadas \textperiodcentered{} Integrais};
+  % rodapé da capa
+  \draw[ouro,line width=0.8pt] (2,1.55) -- (19,1.55);
+  \node[anchor=west,text=white,opacity=0.85,font=\small] at (2,1.05)
+    {Baseado em \emph{Calculus Volume 1}, de Gilbert Strang e Edwin ``Jed'' Herman};
+  \node[anchor=east,text=white,opacity=0.6,font=\scriptsize] at (19,1.05)
+    {Access for free at openstax.org};
+\end{scope}
+\end{tikzpicture}
+\end{titlepage}

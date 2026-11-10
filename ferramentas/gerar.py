@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Gera, a partir de ex_capN.py:
-  - livro/exercicios_capN.tex  (enunciados + respostas curtas, no livro)
-  - exercicios/capN/README.md   (soluções completas, com animações)
-  - exercicios/capN/anim/*.gif  (animações)
+"""Gera, a partir de ex_capN.py (lista) e sol_capN.py (soluções completas):
+  - livro/exercicios_capN.tex  (lista por nível + respostas, no livro)
+  - exercicios/capN/README.md   (lista com respostas ocultas + soluções completas)
+  - exercicios/capN/anim/*.gif  (animações das soluções completas)
 Uso: python3 gerar.py [N ...] [--sem-animacoes]
 """
-import sys, os, re, importlib
+import sys, os, re, glob, importlib
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.dirname(AQUI)
 sys.path.insert(0, AQUI)
 
 REPO_URL = os.environ.get('REPO_URL', 'https://github.com/AleffAzevedo/calculo-1-pt')
 TITULOS = {1: 'Funções e gráficos', 2: 'Limites'}
+NIVEIS = [('F', 'Fáceis'), ('M', 'Médios'), ('D', 'Difíceis'), ('X', 'Desafios')]
 
 
 def chaves(s):
@@ -20,63 +21,92 @@ def chaves(s):
 
 
 def tex_para_md(s):
-    s = chaves(s)
-    s = s.replace(r'R\$\,', r'R\$ ').replace(r'\%', '%').replace('~', ' ')
-    s = s.replace('\n', ' ')
-    s = re.sub(r'\s+\(([a-d])\)\s', r'\n\n**(\1)** ', ' ' + s + ' ').strip()
-    return s
+    s = chaves(s).replace(r'R\$\,', r'R\$ ').replace(r'\%', '%').replace('~', ' ')
+    return re.sub(r'\s+', ' ', s).strip()
+
+
+def montar(n):
+    lista = importlib.import_module(f'ex_cap{n}').LISTA
+    sols = {s['id']: s for s in importlib.import_module(f'sol_cap{n}').SOLUCOES}
+    itens = []
+    for k, (nivel, enun, resp) in enumerate(lista, 1):
+        it = dict(num=f'{n}.{k}', nivel=nivel, sol=None, titulo=None)
+        if enun.startswith('sol:'):
+            s = sols[enun[4:]]
+            it.update(enunciado=s['enunciado'], resposta=s['resposta'], titulo=s['titulo'],
+                      sol=s, chave=s['id'])
+        else:
+            it.update(enunciado=enun, resposta=resp)
+        itens.append(it)
+    return itens
 
 
 def gerar(n, animar=True):
-    ex = importlib.import_module(f'ex_cap{n}').EXERCICIOS
-    an = importlib.import_module(f'anim_cap{n}').ANIM if animar else {}
+    itens = montar(n)
     pasta = os.path.join(RAIZ, 'exercicios', f'cap{n}')
     os.makedirs(os.path.join(pasta, 'anim'), exist_ok=True)
+    url = f'{REPO_URL}/blob/main/exercicios/cap{n}/README.md'
 
-    # ---------- LaTeX (livro)
-    url = f'{REPO_URL}/tree/main/exercicios/cap{n}'
+    # ---------------- LaTeX
     t = ['% Gerado por ferramentas/gerar.py; não edite à mão.',
-         '\\section*{Exercícios selecionados}',
-         f'\\addcontentsline{{toc}}{{section}}{{Exercícios selecionados}}',
-         'Problemas escolhidos para desenvolver a resolução de problemas. As soluções completas,',
-         'com animações dos gráficos, estão no repositório do livro: '
-         f'\\url{{{url}}}.\n',
-         '\\begin{enumerate}[label=\\textbf{\\thechapter.\\arabic*}, leftmargin=2.6em, itemsep=6pt]']
-    for e in ex:
-        t.append(f'\\item \\textbf{{{e["titulo"]}.}} {e["enunciado"]}')
-    t.append('\\end{enumerate}\n')
-    t.append('\\subsection*{Respostas}\n{\\small\\begin{enumerate}[label=\\textbf{\\thechapter.\\arabic*}, leftmargin=2.6em, itemsep=2pt]')
-    for e in ex:
-        t.append(f'\\item {e["resposta"]}')
-    t.append('\\end{enumerate}}\n')
+         '\\section*{Exercícios}', '\\addcontentsline{toc}{section}{Exercícios}',
+         'São quatro níveis: 20 fáceis, 20 médios, 20 difíceis e 5 desafios. '
+         'Os marcados com \\estrela{} têm solução completa, com animação do gráfico, no repositório do livro: '
+         f'\\url{{{url}}}. As respostas estão no fim do capítulo.\n']
+    for cod, nome in NIVEIS:
+        sel = [i for i in itens if i['nivel'] == cod]
+        duas = cod == 'F'
+        t.append(f'\\subsection*{{{nome}}}')
+        if duas:
+            t.append('\\begin{multicols}{2}')
+        t.append('\\begin{itemize}[leftmargin=2.7em,labelsep=0.5em,itemsep=4pt]')
+        for i in sel:
+            est = '\\estrela\\ ' if i['sol'] else ''
+            tit = f'\\textbf{{{i["titulo"]}.}} ' if i['titulo'] else ''
+            t.append(f'\\item[\\textbf{{{i["num"]}}}] {est}{tit}{i["enunciado"]}')
+        t.append('\\end{itemize}')
+        if duas:
+            t.append('\\end{multicols}')
+    t.append('\\subsection*{Respostas}\n{\\small\\begin{multicols}{2}\\raggedright')
+    t.append('\\begin{itemize}[leftmargin=2.7em,labelsep=0.5em,itemsep=1pt]')
+    for i in itens:
+        t.append(f'\\item[\\textbf{{{i["num"]}}}] {i["resposta"]}')
+    t.append('\\end{itemize}\\end{multicols}}\n')
     open(os.path.join(RAIZ, 'livro', f'exercicios_cap{n}.tex'), 'w').write('\n'.join(t))
 
-    # ---------- Markdown (soluções)
-    md = [f'# Capítulo {n} — {TITULOS[n]}: soluções dos exercícios selecionados\n',
-          'Exercícios adaptados de *Calculus Volume 1* (OpenStax, CC BY-NC-SA 4.0). '
-          'A numeração de origem indica a seção e o número do exercício no original.\n',
-          '| Nº | Exercício | Origem |', '|---|---|---|']
-    for e in ex:
-        ancora = 'exercicio-' + e['id'].replace('.', '')
-        md.append(f'| {e["id"]} | [{e["titulo"]}](#{ancora}) | {e["origem"]} |')
-    md.append('')
-    for e in ex:
-        md.append(f'<a id="exercicio-{e["id"].replace(".", "")}"></a>\n')
-        md.append(f'## {e["id"]} — {e["titulo"]}\n')
-        md.append('> ' + tex_para_md(e['enunciado']).replace('\n\n', '\n>\n> ') + '\n')
-        gif = f'anim/ex-{e["id"]}.gif'
-        if e['id'] in an or os.path.exists(os.path.join(pasta, gif)):
-            md.append(f'![Animação do exercício {e["id"]}]({gif})\n')
-        md.append(chaves(e['solucao']).replace(r'R\$\,', r'R\$ ') + '\n')
+    # ---------------- Markdown
+    md = [f'# Capítulo {n} — {TITULOS[n]}: exercícios\n',
+          'São 65 exercícios: 20 fáceis, 20 médios, 20 difíceis e 5 desafios. Tente resolver antes de abrir a resposta. '
+          'Os marcados com ★ têm [solução completa com animação](#soluções-completas).\n',
+          'Muitos enunciados são adaptados de *Calculus Volume 1* (OpenStax, CC BY-NC-SA 4.0).\n']
+    for cod, nome in NIVEIS:
+        md.append(f'## {nome}\n')
+        for i in [i for i in itens if i['nivel'] == cod]:
+            est = f' ★ [ver solução](#ex-{i["num"].replace(".", "-")})' if i['sol'] else ''
+            tit = f'**{i["titulo"]}.** ' if i['titulo'] else ''
+            md.append(f'**{i["num"]}** {tit}{tex_para_md(i["enunciado"])}{est}\n')
+            md.append(f'<details><summary>Resposta</summary>\n\n{tex_para_md(i["resposta"])}\n\n</details>\n')
+    md.append('## Soluções completas\n')
+    for i in [i for i in itens if i['sol']]:
+        s = i['sol']
+        md.append(f'<a id="ex-{i["num"].replace(".", "-")}"></a>\n')
+        md.append(f'### {i["num"]} — {s["titulo"]}\n')
+        md.append(f'*Origem: OpenStax, {s["origem"]}.*\n')
+        md.append('> ' + tex_para_md(s['enunciado']) + '\n')
+        md.append(f'![Animação do exercício {i["num"]}](anim/ex-{i["num"]}.gif)\n')
+        md.append(chaves(s['solucao']).replace(r'R\$\,', r'R\$ ') + '\n')
         md.append('---\n')
     open(os.path.join(pasta, 'README.md'), 'w').write('\n'.join(md))
 
-    # ---------- animações
-    for e in ex:
-        if e['id'] in an:
-            caminho = os.path.join(pasta, f'anim/ex-{e["id"]}.gif')
-            an[e['id']](caminho)
-            print('  animação', caminho, f'{os.path.getsize(caminho)//1024} KB')
+    # ---------------- animações
+    if animar:
+        an = importlib.import_module(f'anim_cap{n}').ANIM
+        for f in glob.glob(os.path.join(pasta, 'anim', '*.gif')):
+            os.remove(f)
+        for i in [i for i in itens if i['sol']]:
+            caminho = os.path.join(pasta, f'anim/ex-{i["num"]}.gif')
+            an[i['chave']](caminho)
+            print('  animação', os.path.relpath(caminho, RAIZ))
 
 
 if __name__ == '__main__':

@@ -15,6 +15,7 @@
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{textcomp}
+\usepackage{multicol}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{groupplots,fillbetween}
@@ -80,6 +81,7 @@
   \begin{minipage}{0.9\linewidth}\small\textbf{Figura \thechapter.\stepcounter{figure}\arabic{figure}}\quad #4\end{minipage}\end{center}}
 
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\estrela}{\textcolor{laranja}{$\bigstar$}}
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\csch}{csch}
 \DeclareMathOperator{\arcsinh}{arcsinh}
@@ -89,19 +91,7 @@
 
 \begin{document}
 \frontmatter
-\begin{titlepage}
-\centering
-\vspace*{3.5cm}
-{\Huge\bfseries\color{azul} Cálculo I}\\[12pt]
-{\Large Edição condensada em português}\\[6pt]
-{\large Funções, limites, derivadas e integrais}\\[2.5cm]
-{\normalsize Adaptação e tradução de}\\[4pt]
-{\large\itshape Calculus Volume 1}\\[4pt]
-{\normalsize Gilbert Strang (MIT) e Edwin ``Jed'' Herman (University of Wisconsin--Stevens Point)}\\[2pt]
-{\normalsize OpenStax, Rice University, 2016}
-\vfill
-{\small\color{cinza}Versão em construção · novembro de 2026}
-\end{titlepage}
+\input{capa}
 
 \thispagestyle{plain}
 \section*{Créditos e licença}
