@@ -1,0 +1,307 @@
+% =====================================================================
+\chapter{Aplicações da integração}
+
+A ideia do capítulo~5 (dividir em pedaços pequenos, aproximar cada pedaço e somar) vale
+muito além da área sob uma curva. Fatiando uma região, um sólido, um fio ou um volume de
+líquido, a integral calcula áreas entre curvas, volumes, comprimentos, massas, trabalho,
+forças de pressão e centros de massa. O roteiro é sempre o mesmo: escrever a contribuição
+de uma fatia típica de espessura $\Delta x$ e transformar a soma numa integral.
+
+% ---------------------------------------------------------------------
+\section{Áreas entre curvas}
+
+Se $f(x)\ge g(x)$ em $[a,b]$, uma faixa vertical de largura $\Delta x$ tem altura
+$f(x)-g(x)$. Somando e passando ao limite:
+\[
+A=\int_a^b\big[f(x)-g(x)\big]\,dx \qquad(\text{``de cima menos de baixo''}).
+\]
+Se as curvas se cruzam, divida o intervalo nos pontos de interseção ou use
+$\int_a^b|f(x)-g(x)|\,dx$. Quando a região é limitada à direita e à esquerda por curvas
+$x=u(y)$ e $x=v(y)$, pode ser mais simples fatiar na horizontal:
+$A=\int_c^d\big[u(y)-v(y)\big]\,dy$ (``da direita menos da esquerda'').
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=6.6cm,height=5cm,xmin=-1.6,xmax=2.7,ymin=-0.6,ymax=4.8,xtick={-1,1,2},ytick={1,4}]
+\addplot[fill=azul!20,draw=none,domain=-1:2,samples=60] {x+2} \closedcycle;
+\addplot[fill=white,draw=none,domain=-1:2,samples=60] {x^2} \closedcycle;
+\addplot[azul,thick,domain=-1.5:2.5]{x+2}; \addplot[laranja,thick,domain=-1.6:2.2,samples=60]{x^2};
+\draw[fill=verde!40,draw=verde] (axis cs:0.9,0.81) rectangle (axis cs:1.1,3.0);
+\node[azul,font=\small] at (axis cs:2.35,3.8) {$y=x+2$}; \node[laranja,font=\small] at (axis cs:-1.2,2.6) {$y=x^2$};
+\end{axis}\end{tikzpicture}}{Região entre $y=x+2$ e $y=x^2$, com uma faixa típica de altura
+$(x+2)-x^2$ e largura $\Delta x$.}
+
+\begin{exemplo}{6.1}{Área entre duas curvas}
+Calcule a área entre $y=x+2$ e $y=x^2$.
+\solucao
+Interseções: $x^2=x+2\Rightarrow x=-1$ ou $x=2$. Em $[-1,2]$ a reta fica por cima:
+\[
+A=\int_{-1}^2(x+2-x^2)\,dx=\Big[\tfrac{x^2}2+2x-\tfrac{x^3}3\Big]_{-1}^2
+=\tfrac{10}3-\big(-\tfrac76\big)=\tfrac92 .
+\]
+\end{exemplo}
+
+\begin{exemplo}{6.2}{Fatiando na horizontal}
+Calcule a área entre $x=y^2$ e $y=x-2$.
+\solucao
+Na vertical, a curva de baixo muda em $x=1$ e seriam necessárias duas integrais. Em $y$:
+$x=y+2$ (direita) e $x=y^2$ (esquerda), que se cruzam em $y=-1$ e $y=2$:
+$A=\int_{-1}^2(y+2-y^2)\,dy=\frac92$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Volumes por fatiamento}
+
+Se um sólido ocupa $a\le x\le b$ e a seção transversal em $x$ tem área $A(x)$, uma fatia de
+espessura $\Delta x$ tem volume $\approx A(x)\,\Delta x$. Logo
+\[
+V=\int_a^bA(x)\,dx .
+\]
+
+\textbf{Discos.} Girando a região sob $y=f(x)\ge0$, $a\le x\le b$, em torno do eixo $x$, cada
+seção é um disco de raio $f(x)$:
+$V=\pi\int_a^b[f(x)]^2\,dx$.
+
+\textbf{Arruelas.} Se a região está entre $f\ge g\ge0$, a seção é um anel de raio externo
+$R=f(x)$ e raio interno $r=g(x)$:
+$V=\pi\int_a^b\big([f(x)]^2-[g(x)]^2\big)\,dx$. Para giros em torno do eixo $y$ (ou de outra
+reta), troque os papéis: os raios são distâncias ao eixo de rotação.
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7cm,height=5cm,xmin=-0.3,xmax=4.6,ymin=-2.4,ymax=2.6,xtick={4},ytick={2},axis equal image=false]
+\addplot[azul,thick,domain=0:4,samples=60]{sqrt(x)}; \addplot[azul,thick,dashed,domain=0:4,samples=60]{-sqrt(x)};
+\draw[azul,thick] (axis cs:4,0) ellipse [x radius=0.35, y radius=2];
+\draw[fill=laranja!35,draw=laranja] (axis cs:2.5,0) ellipse [x radius=0.25, y radius=1.581];
+\draw[fill=azul!15,draw=none] (axis cs:0,0) -- plot[domain=0:4,samples=40] (axis cs:\x,{sqrt(\x)}) -- (axis cs:4,0) -- cycle;
+\addplot[azul,thick,domain=0:4,samples=60]{sqrt(x)};
+\node[font=\small] at (axis cs:2.9,2.1) {$y=\sqrt x$}; \node[laranja,font=\small] at (axis cs:2.5,-1.95) {disco de raio $\sqrt x$};
+\end{axis}\end{tikzpicture}}{Girando a região sob $y=\sqrt x$ em torno do eixo $x$: cada fatia
+é um disco de raio $\sqrt x$.}
+
+\begin{exemplo}{6.3}{Discos e arruelas}
+(a) Girando a região sob $y=\sqrt x$, $0\le x\le4$, em torno do eixo $x$:
+$V=\pi\int_0^4x\,dx=8\pi$.
+
+(b) Girando a região entre $y=x$ e $y=x^2$ em torno do eixo $x$ ($R=x$, $r=x^2$):
+$V=\pi\int_0^1(x^2-x^4)\,dx=\pi\big(\tfrac13-\tfrac15\big)=\tfrac{2\pi}{15}$.
+
+(c) A esfera de raio $r$ é o giro de $y=\sqrt{r^2-x^2}$:
+$V=\pi\int_{-r}^r(r^2-x^2)\,dx=\tfrac43\pi r^3$.
+\end{exemplo}
+
+Sólidos que não são de revolução também funcionam: basta conhecer $A(x)$. Uma pirâmide de
+base quadrada de lado $L$ e altura $h$ tem, à profundidade $y$ abaixo do vértice, seção
+quadrada de lado $\frac{L}{h}y$; logo $V=\int_0^h\frac{L^2}{h^2}y^2\,dy=\frac13L^2h$.
+
+% ---------------------------------------------------------------------
+\section{Volumes por cascas cilíndricas}
+
+Girando em torno do eixo $y$ a região sob $y=f(x)\ge0$, $0\le a\le x\le b$, uma faixa
+vertical de largura $\Delta x$ a distância $x$ do eixo gera uma \emph{casca cilíndrica} de
+raio $x$, altura $f(x)$ e espessura $\Delta x$. ``Desenrolada'', ela é quase uma placa de
+volume $2\pi x\,f(x)\,\Delta x$:
+\[
+V=2\pi\int_a^b x\,f(x)\,dx \qquad(\text{raio}\times\text{altura}\times\text{espessura}).
+\]
+Em geral: $V=2\pi\int(\text{raio da casca})(\text{altura da casca})\,d(\text{variável})$.
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7.4cm,height=4.8cm,xmin=-1.25,xmax=1.3,ymin=-0.05,ymax=0.36,xtick={-1,1},ytick={0.25}]
+\addplot[fill=azul!15,draw=none,domain=0:1,samples=60]{x-x^2} \closedcycle;
+\addplot[azul,thick,domain=0:1,samples=60]{x-x^2}; \addplot[azul,dashed,domain=-1:0,samples=60]{-x-x^2};
+\draw[fill=laranja!40,draw=laranja] (axis cs:0.62,0) rectangle (axis cs:0.68,0.2356);
+\draw[laranja,dashed] (axis cs:-0.65,0) rectangle (axis cs:-0.62,0.2356);
+\draw[laranja] (axis cs:0,0.2356) ellipse [x radius=0.65, y radius=0.025];
+\draw[<->,verde] (axis cs:0,0.29) -- node[above,font=\scriptsize]{raio $x$} (axis cs:0.65,0.29);
+\end{axis}\end{tikzpicture}}{Método das cascas: a faixa em $x$, girando em torno do eixo $y$,
+gera um cilindro fino de raio $x$ e altura $x-x^2$.}
+
+\begin{exemplo}{6.4}{Cascas}
+Gire a região sob $y=x-x^2$, $0\le x\le1$, em torno do eixo $y$.
+\solucao
+Com arruelas teríamos de resolver $y=x-x^2$ para $x$ (dois ramos). Com cascas:
+$V=2\pi\int_0^1x(x-x^2)\,dx=2\pi\big(\tfrac13-\tfrac14\big)=\tfrac\pi6$.
+\end{exemplo}
+
+\begin{nota}
+Escolha o método pela geometria: \textbf{discos/arruelas} usam fatias
+\emph{perpendiculares} ao eixo de rotação; \textbf{cascas} usam fatias \emph{paralelas} a
+ele. Prefira o que deixa os raios como funções simples da variável de integração.
+\end{nota}
+
+% ---------------------------------------------------------------------
+\section{Comprimento de arco e área de superfície}
+
+Entre $x$ e $x+\Delta x$, o gráfico de $f$ é quase um segmento de comprimento
+$\sqrt{\Delta x^2+\Delta y^2}=\sqrt{1+(\Delta y/\Delta x)^2}\,\Delta x$. Se $f'$ é contínua,
+\[
+L=\int_a^b\sqrt{1+[f'(x)]^2}\,dx .
+\]
+Girando o gráfico em torno do eixo $x$, cada pedaço gera uma faixa (tronco de cone) de raio
+$f(x)$; a \textbf{área de superfície} é
+\[
+S=2\pi\int_a^b f(x)\sqrt{1+[f'(x)]^2}\,dx .
+\]
+
+\begin{exemplo}{6.5}{Comprimento e superfície}
+(a) $y=x^{3/2}$, $0\le x\le1$: $f'=\frac32x^{1/2}$ e
+$L=\int_0^1\sqrt{1+\tfrac94x}\,dx=\tfrac8{27}\Big[\big(1+\tfrac94x\big)^{3/2}\Big]_0^1
+=\tfrac{13\sqrt{13}-8}{27}\approx1{,}440$.
+
+(b) $y=\sqrt x$, $1\le x\le4$, girando em torno do eixo $x$: como
+$f\sqrt{1+f'^2}=\sqrt x\sqrt{1+\frac1{4x}}=\sqrt{x+\tfrac14}$,
+\[
+S=2\pi\int_1^4\sqrt{x+\tfrac14}\,dx=\tfrac{4\pi}3\Big[\big(x+\tfrac14\big)^{3/2}\Big]_1^4
+=\tfrac\pi6\big(17\sqrt{17}-5\sqrt5\big)\approx30{,}85 .
+\]
+\end{exemplo}
+
+Poucas funções dão integrandos de comprimento de arco elementares; em geral recorremos a
+métodos numéricos. As ``boas'' são justamente as construídas para que $1+f'^2$ seja um
+quadrado perfeito (veja os exercícios).
+
+% ---------------------------------------------------------------------
+\section{Aplicações físicas}
+
+\textbf{Massa.} Uma barra em $[a,b]$ com densidade linear $\rho(x)$ (kg/m) tem massa
+$m=\int_a^b\rho(x)\,dx$. Um disco de raio $r$ com densidade radial $\rho(r)$ (kg/m$^2$) é
+fatiado em anéis de área $2\pi r\,\Delta r$: $m=\int_0^R2\pi r\,\rho(r)\,dr$.
+
+\textbf{Trabalho.} Uma força constante $F$ ao longo de uma distância $d$ realiza trabalho
+$W=Fd$. Se a força varia, $W=\int_a^bF(x)\,dx$. Para uma mola, a lei de Hooke dá $F=kx$
+($x$ = deformação a partir do comprimento natural).
+
+\textbf{Bombeamento.} Para esvaziar um tanque, fatie o \emph{líquido} na horizontal: a camada
+na altura $y$, de área $A(y)$ e espessura $\Delta y$, pesa $\rho g A(y)\,\Delta y$ e precisa
+subir uma distância $D(y)$. Então $W=\int\rho g\,A(y)\,D(y)\,dy$.
+
+\textbf{Força hidrostática.} À profundidade $h$, a pressão é $p=\rho gh$. Numa placa
+vertical submersa com largura $w(h)$ na profundidade $h$: $F=\int\rho g\,h\,w(h)\,dh$.
+(Água: $\rho=1000$ kg/m$^3$, $g=9{,}8$ m/s$^2$, $\rho g=9800$ N/m$^3$.)
+
+\begin{exemplo}{6.6}{Mola, tanque e comporta}
+(a) Uma força de $10$ N estica uma mola $0{,}2$ m: $k=50$ N/m. O trabalho para esticá-la
+$0{,}5$ m a partir do repouso é $\int_0^{0{,}5}50x\,dx=6{,}25$ J.
+
+(b) Um tanque cilíndrico vertical de raio $2$ m e altura $5$ m está cheio de água. Para
+bombear tudo pela borda superior, a camada na altura $y$ sobe $5-y$:
+$W=\int_0^5 9800\cdot4\pi(5-y)\,dy=9800\cdot4\pi\cdot12{,}5\approx1{,}54\times10^6$ J.
+
+(c) Uma comporta retangular vertical de $2$ m de largura e $3$ m de altura tem a borda
+superior na superfície: $F=\int_0^3 9800\,h\cdot2\,dh=88\,200$ N.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Momentos e centros de massa}
+
+Massas $m_i$ nos pontos $x_i$ de uma reta se equilibram em $\bar x=\frac{\sum m_ix_i}{\sum m_i}$
+(o numerador é o \emph{momento} em relação à origem). Para uma placa fina homogênea (lâmina)
+ocupando a região entre $f\ge g$ em $[a,b]$, com área $A$, o \textbf{centroide} é
+\[
+\bar x=\frac1A\int_a^bx\,\big[f(x)-g(x)\big]\,dx,\qquad
+\bar y=\frac1A\int_a^b\frac{[f(x)]^2-[g(x)]^2}2\,dx .
+\]
+(Em $\bar y$, cada faixa vertical tem seu centro na altura $\frac{f+g}2$ e área $(f-g)\Delta x$.)
+Simetria ajuda: se a região é simétrica em relação a uma reta, o centroide está nela.
+
+\begin{teorema}[Teorema de Pappus]{6.1}
+Se uma região plana de área $A$ gira em torno de uma reta do seu plano que não a corta, o
+volume do sólido gerado é $V=2\pi d\,A$, onde $d$ é a distância do centroide da região ao
+eixo.
+\end{teorema}
+
+\begin{exemplo}{6.7}{Centroide e toro}
+(a) Região sob $y=\sqrt x$, $0\le x\le4$: $A=\int_0^4\sqrt x\,dx=\frac{16}3$,
+$\bar x=\frac3{16}\int_0^4x^{3/2}dx=\frac3{16}\cdot\frac{64}5=\frac{12}5$ e
+$\bar y=\frac3{16}\int_0^4\frac x2\,dx=\frac34$.
+Por Pappus, o giro em torno do eixo $x$ tem $V=2\pi\cdot\frac34\cdot\frac{16}3=8\pi$,
+como no Exemplo~6.3(a).
+
+(b) Um disco de raio $r$ com centro a distância $R>r$ de um eixo gera um toro:
+$V=2\pi R\cdot\pi r^2=2\pi^2Rr^2$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Integrais, funções exponenciais e logaritmos}
+
+O TFC permite \emph{definir} o logaritmo natural por uma integral, sem falar em expoentes:
+\[
+\ln x=\int_1^x\frac{dt}t,\qquad x>0 .
+\]
+Pelo TFC, $\frac{d}{dx}\ln x=\frac1x>0$: $\ln$ é crescente, com $\ln1=0$. A propriedade
+$\ln(ab)=\ln a+\ln b$ sai de uma substituição: em $\int_a^{ab}\frac{dt}t$, faça $t=au$ e
+obtenha $\int_1^b\frac{du}u=\ln b$. Daí também $\ln(a^r)=r\ln a$ para $r$ racional.
+
+O número $e$ é definido por $\ln e=1$ (a área sob $1/t$ de $1$ a $e$ vale $1$), e a
+exponencial $e^x$ é a inversa de $\ln x$. Pela derivada da inversa,
+$\frac{d}{dx}e^x=\frac1{1/e^x}=e^x$. Para $a>0$, define-se $a^x=e^{x\ln a}$, de onde
+$\frac{d}{dx}a^x=a^x\ln a$ e $\log_ax=\frac{\ln x}{\ln a}$. Essa construção justifica com
+rigor tudo o que usamos sobre exponenciais desde o capítulo~1.
+
+% ---------------------------------------------------------------------
+\section{Crescimento e decaimento exponencial}
+
+Quando a taxa de variação de uma quantidade é proporcional à própria quantidade,
+$y'=ky$, temos $\frac{y'}y=k$; integrando, $\ln|y|=kt+C$ e
+\[
+y(t)=y_0\,e^{kt}\qquad(y_0=y(0)).
+\]
+Com $k>0$ há \textbf{crescimento}, com \textbf{tempo de duplicação} $T_2=\frac{\ln2}k$. Com
+$k<0$ há \textbf{decaimento}, com \textbf{meia-vida} $T_{1/2}=\frac{\ln2}{|k|}$. Juros compostos
+continuamente seguem o mesmo modelo: $P(t)=P_0e^{rt}$.
+
+\begin{exemplo}{6.8}{Datação por carbono-14}
+O C-14 tem meia-vida de $5730$ anos. Um fóssil tem $30\%$ do C-14 original. Qual a sua idade?
+\solucao
+$k=-\frac{\ln2}{5730}$. De $0{,}30=e^{kt}$: $t=\frac{\ln(1/0{,}3)}{\ln2}\cdot5730
+\approx\frac{1{,}2040}{0{,}6931}\cdot5730\approx9950$ anos.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Cálculo das funções hiperbólicas}
+
+Das definições $\sinh x=\frac{e^x-e^{-x}}2$ e $\cosh x=\frac{e^x+e^{-x}}2$ (capítulo~1):
+\[
+\frac{d}{dx}\sinh x=\cosh x,\qquad \frac{d}{dx}\cosh x=\sinh x,\qquad
+\frac{d}{dx}\tanh x=\operatorname{sech}^2x .
+\]
+Repare na ausência do sinal de menos em $(\cosh x)'$, ao contrário de $(\cos x)'$. As inversas
+se escrevem com logaritmos, por exemplo $\sinh^{-1}x=\ln\big(x+\sqrt{x^2+1}\big)$, e dão
+\[
+\int\frac{dx}{\sqrt{1+x^2}}=\sinh^{-1}x+C,\qquad
+\int\frac{dx}{\sqrt{x^2-1}}=\cosh^{-1}x+C\ (x>1),\qquad
+\int\frac{dx}{1-x^2}=\tanh^{-1}x+C\ (|x|<1).
+\]
+
+\textbf{A catenária.} Um cabo homogêneo suspenso pelas pontas assume a forma
+$y=a\cosh\frac xa$. Como $1+\sinh^2=\cosh^2$, o comprimento de arco é elementar:
+\[
+L=\int_{-b}^b\sqrt{1+\sinh^2\tfrac xa}\,dx=\int_{-b}^b\cosh\tfrac xa\,dx=2a\sinh\frac ba .
+\]
+
+\begin{exemplo}{6.9}{Hiperbólicas}
+(a) $\frac{d}{dx}\cosh(x^2)=2x\sinh(x^2)$.
+
+(b) $\int\tanh x\,dx=\int\frac{\sinh x}{\cosh x}\,dx=\ln(\cosh x)+C$.
+
+(c) $\int_0^1\frac{dx}{\sqrt{1+x^2}}=\sinh^{-1}1=\ln(1+\sqrt2)\approx0{,}8814$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section*{Resumo do capítulo}
+\addcontentsline{toc}{section}{Resumo do capítulo}
+\begin{itemize}
+\item Área entre curvas: $\int_a^b(\text{cima}-\text{baixo})\,dx$ ou
+  $\int_c^d(\text{direita}-\text{esquerda})\,dy$.
+\item Volume: $\int A(x)\,dx$; discos $\pi\int R^2$; arruelas $\pi\int(R^2-r^2)$; cascas
+  $2\pi\int(\text{raio})(\text{altura})$.
+\item Comprimento $\int\sqrt{1+f'^2}$; superfície $2\pi\int f\sqrt{1+f'^2}$.
+\item Massa $\int\rho$; trabalho $\int F$ (mola $F=kx$; bombeamento $\int\rho gAD$); força
+  hidrostática $\int\rho g\,h\,w(h)\,dh$.
+\item Centroide: $\bar x=\frac1A\int x(f-g)$, $\bar y=\frac1A\int\frac{f^2-g^2}2$; Pappus
+  $V=2\pi dA$.
+\item $\ln x=\int_1^x\frac{dt}t$; $e^x$ é sua inversa; $y'=ky\Rightarrow y=y_0e^{kt}$,
+  $T_2=\frac{\ln2}k$.
+\item $(\sinh)'=\cosh$, $(\cosh)'=\sinh$; catenária $y=a\cosh\frac xa$.
+\end{itemize}
+
+\input{exercicios_cap6}
