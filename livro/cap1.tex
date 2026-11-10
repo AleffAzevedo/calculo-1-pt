@@ -1,0 +1,748 @@
+% =====================================================================
+\chapter{Funções e gráficos}
+
+O Cálculo é a matemática que descreve como as funções variam. Neste capítulo revisamos
+todas as funções necessárias ao estudo do Cálculo: polinomiais, racionais, trigonométricas,
+exponenciais, logarítmicas e hiperbólicas. Vemos como avaliá-las, as propriedades dos seus
+gráficos e as técnicas algébricas para resolver equações que as envolvem. É a base de tudo o
+que vem depois; convém dominá-la antes da introdução formal do Cálculo, no próximo capítulo.
+
+% ---------------------------------------------------------------------
+\section{Revisão de funções}
+
+\subsection{Funções}
+
+Dados dois conjuntos $A$ e $B$, um conjunto de pares ordenados $(x,y)$ com $x\in A$ e
+$y\in B$ é uma \emph{relação} de $A$ em $B$. Uma função é um tipo especial de relação, em
+que cada elemento do primeiro conjunto está associado a \emph{exatamente um} elemento do
+segundo. O elemento do primeiro conjunto é a \emph{entrada}; o do segundo, a \emph{saída}.
+Quando conhecemos a entrada, a saída fica determinada; por isso dizemos que a saída é
+função da entrada. A área de um quadrado, por exemplo, é função do comprimento do lado.
+
+\begin{definicao}
+Uma \textbf{função} $f$ consiste em um conjunto de entradas, um conjunto de saídas e uma
+regra que associa cada entrada a exatamente uma saída. O conjunto de entradas é o
+\textbf{domínio} da função; o conjunto de saídas é a \textbf{imagem}.
+\end{definicao}
+
+Para uma função $f$ com domínio $D$, costumamos usar $x$ para a entrada e $y$ para a saída,
+e escrevemos $y=f(x)$ (lê-se ``$y$ é igual a $f$ de $x$''). Chamamos $x$ de \emph{variável
+independente} e $y$ de \emph{variável dependente}. Uma entrada só pode ser enviada a uma
+saída, mas duas entradas diferentes podem ser enviadas à mesma saída
+(Figura~\thechapter.1).
+
+\figtikz{\begin{tikzpicture}[font=\small]
+\draw[rounded corners=8pt,fill=azul!10,draw=azul] (0,0) rectangle (2,3.6);
+\draw[rounded corners=8pt,fill=azul!10,draw=azul] (4.2,0) rectangle (6.2,3.6);
+\node at (1,-0.35) {Domínio}; \node at (5.2,-0.35) {Imagem};
+\foreach \y/\t in {3/1,2.2/2,1.4/3,0.6/4} \node (a\t) at (1,\y) {\t};
+\foreach \y/\t in {2.8/2,1.8/4,0.8/6} \node (b\t) at (5.2,\y) {\t};
+\draw[-{Stealth},laranja,thick] (a1) -- (b6);
+\draw[-{Stealth},verde,thick] (a2) -- (b4);
+\draw[-{Stealth},azul,thick] (a3) -- (b2);
+\draw[-{Stealth},red!70!black,thick] (a4) -- (b2);
+\draw[-{Stealth},thick] (1.6,3.9) to[bend left=20] node[above]{$f$} (4.6,3.9);
+\end{tikzpicture}}{Uma função associa cada elemento do domínio a exatamente um elemento
+da imagem. Entradas diferentes (aqui, 3 e 4) podem ter a mesma saída.}
+
+O \textbf{gráfico} de $f$ é o conjunto dos pontos $(x,f(x))$ do plano, com $x$ no domínio.
+Quando uma função é dada apenas por uma fórmula, sem domínio explícito, o domínio é o
+conjunto de todos os reais $x$ para os quais $f(x)$ é um número real; é o chamado
+\emph{domínio natural}. Assim, o domínio de $f(x)=x^2$ é $\R$, e o de $f(x)=\sqrt{x}$ é o
+conjunto dos reais não negativos.
+
+\textbf{Notação.} Usamos a notação de conjuntos, como $\Set{x}{1<x<5}$, e a de intervalos:
+\[
+(1,5)=\Set{x}{1<x<5},\quad [1,5]=\Set{x}{1\le x\le 5},\quad
+[0,\infty)=\Set{x}{x\ge 0},\quad (-\infty,\infty)=\R .
+\]
+O símbolo $\infty$ não é um número real; indica apenas que o conjunto não tem limitação
+naquela direção.
+
+Algumas funções são \textbf{definidas por partes}, com fórmulas diferentes em diferentes
+partes do domínio. Por exemplo,
+\[
+f(x)=\begin{cases}3x+1, & x\ge 2\\ x^2, & x<2\end{cases}
+\]
+dá $f(5)=3(5)+1=16$ e $f(-1)=(-1)^2=1$.
+
+\begin{exemplo}{1.1}{Determinando domínio e imagem}
+Determine o domínio e a imagem de (a) $f(x)=(x-4)^2+5$; (b) $f(x)=\sqrt{3x+2}-1$;
+(c) $f(x)=\dfrac{3}{x-2}$.
+\solucao
+(a) $f(x)$ é real para todo $x$, logo o domínio é $(-\infty,\infty)$. Como $(x-4)^2\ge0$,
+temos $f(x)\ge5$. Para todo $y\ge5$, a equação $(x-4)^2+5=y$ tem solução
+$x=4\pm\sqrt{y-5}$; logo a imagem é $\Set{y}{y\ge5}$.
+
+(b) Precisamos de $3x+2\ge0$, ou seja, domínio $\Set{x}{x\ge -2/3}$. Como
+$\sqrt{3x+2}\ge0$, temos $f(x)\ge-1$. Dado $y\ge-1$, de $\sqrt{3x+2}=y+1$ vem
+$x=\tfrac13(y+1)^2-\tfrac23\ge-\tfrac23$, que está no domínio. A imagem é $\Set{y}{y\ge-1}$.
+
+(c) O denominador não pode se anular: domínio $\Set{x}{x\neq2}$. De $3/(x-2)=y$ vem
+$x=3/y+2$, possível sempre que $y\neq0$. A imagem é $\Set{y}{y\neq0}$.
+\end{exemplo}
+
+\subsection{Representações de uma função}
+
+Uma função pode ser representada por uma \emph{tabela}, um \emph{gráfico} ou uma
+\emph{fórmula}, e muitas vezes usamos as três juntas: marcamos no gráfico os valores de uma
+tabela, ou construímos uma tabela a partir de uma fórmula.
+
+Os valores de $x$ com $f(x)=0$ são os \textbf{zeros} da função; eles indicam onde o gráfico
+corta o eixo $x$. O \textbf{intercepto $y$}, se existir, é o ponto $(0,f(0))$. Como cada
+entrada tem uma única saída, cada reta vertical $x=c$ corta o gráfico no máximo uma vez.
+
+\begin{regra}{Regra: teste da reta vertical}
+Dada uma função $f$, toda reta vertical corta o gráfico de $f$ no máximo uma vez. Se alguma
+reta vertical corta um conjunto de pontos mais de uma vez, esse conjunto não é gráfico de
+uma função.
+\end{regra}
+
+\fig[0.6]{CNX_Calc_Figure_01_01_006.jpg}{(a) Gráfico de uma função: toda reta vertical o
+corta no máximo uma vez. (b) Não é gráfico de função: algumas retas verticais o cortam mais
+de uma vez.}
+
+Dizemos que $f$ é \textbf{crescente} em um intervalo $I$ se $f(x_1)\le f(x_2)$ sempre que
+$x_1<x_2$ em $I$, e \textbf{estritamente crescente} se $f(x_1)<f(x_2)$. Analogamente, $f$
+é \textbf{decrescente} se $f(x_1)\ge f(x_2)$ e \textbf{estritamente decrescente} se
+$f(x_1)>f(x_2)$ sempre que $x_1<x_2$. Por exemplo, $f(x)=3x$ é crescente em $\R$, e
+$f(x)=-x^3$ é estritamente decrescente em $\R$.
+
+\subsection{Combinação e composição de funções}
+
+Dadas $f$ e $g$, definimos a soma, a diferença, o produto e o quociente:
+\[
+(f\pm g)(x)=f(x)\pm g(x),\qquad (f\cdot g)(x)=f(x)\,g(x),\qquad
+\Big(\frac fg\Big)(x)=\frac{f(x)}{g(x)}\ \ \text{se } g(x)\neq0 .
+\]
+Por exemplo, com $f(x)=2x-3$ e $g(x)=x^2-1$, temos $(f/g)(x)=\dfrac{2x-3}{x^2-1}$, com
+domínio $\Set{x}{x\neq\pm1}$.
+
+Também podemos aplicar uma função ao resultado de outra. Se o custo $C$ de aquecer um
+prédio depende da temperatura $T$, e a temperatura depende da hora $t$, então o custo como
+função do tempo é $C(T(t))$.
+
+\begin{definicao}
+Sejam $f$ uma função com domínio $A$ e imagem $B$, e $g$ uma função com domínio $D$ e
+imagem $E$. Se $B\subseteq D$, a \textbf{função composta} $g\circ f$ é a função com
+domínio $A$ dada por
+\[
+(g\circ f)(x)=g\big(f(x)\big).
+\]
+\end{definicao}
+
+\begin{exemplo}{1.2}{Composição de funções dadas por fórmulas}
+Sejam $f(x)=x^2+1$ e $g(x)=1/x$. Encontre $g\circ f$ e $f\circ g$, com domínio e imagem.
+\solucao
+$(g\circ f)(x)=g(x^2+1)=\dfrac{1}{x^2+1}$. Como $x^2+1\neq0$ para todo $x$, o domínio é
+$\R$. Como $0<1/(x^2+1)\le1$, e para cada $y\in(0,1]$ a equação tem solução
+$x=\pm\sqrt{1/y-1}$, a imagem é $(0,1]$.
+
+$(f\circ g)(x)=f(1/x)=\dfrac{1}{x^2}+1$, com domínio $\Set{x}{x\neq0}$. Resolvendo
+$(1/x)^2+1=y$, obtemos $x=\pm1/\sqrt{y-1}$, real se e somente se $y>1$. A imagem é
+$\Set{y}{y>1}$.
+
+Note que $f\circ g\neq g\circ f$: a ordem da composição importa.
+\end{exemplo}
+
+\subsection{Simetria}
+
+Se $f(-x)=f(x)$, o ponto $(-x,y)$ está no gráfico sempre que $(x,y)$ está, e o gráfico é
+simétrico em relação ao eixo $y$. Se $f(-x)=-f(x)$, o gráfico é simétrico em relação à
+origem: girá-lo $180^\circ$ em torno da origem não o altera.
+
+\begin{definicao}
+Se $f(-x)=f(x)$ para todo $x$ do domínio, $f$ é uma \textbf{função par} (simétrica em
+relação ao eixo $y$). Se $f(-x)=-f(x)$ para todo $x$ do domínio, $f$ é uma
+\textbf{função ímpar} (simétrica em relação à origem).
+\end{definicao}
+
+\fig[0.6]{CNX_Calc_Figure_01_01_012.jpg}{(a) $f(x)=x^4-2x^2-3$ é par: simetria em relação
+ao eixo $y$. (b) $f(x)=x^3-4x$ é ímpar: simetria em relação à origem.}
+
+\begin{exemplo}{1.3}{Funções pares e ímpares}
+Classifique: (a) $f(x)=-5x^4+7x^2-2$; (b) $f(x)=2x^5-4x+5$; (c) $f(x)=\dfrac{3x}{x^2+1}$.
+\solucao
+Calculamos $f(-x)$ e comparamos com $f(x)$ e $-f(x)$.
+(a) $f(-x)=-5x^4+7x^2-2=f(x)$: par.
+(b) $f(-x)=-2x^5+4x+5$, que não é $f(x)$ nem $-f(x)=-2x^5+4x-5$: nem par nem ímpar.
+(c) $f(-x)=\dfrac{-3x}{x^2+1}=-f(x)$: ímpar.
+\end{exemplo}
+
+A \textbf{função valor absoluto} é
+\[
+|x|=\begin{cases}-x, & x<0\\ x, & x\ge0.\end{cases}
+\]
+Sua imagem é $\Set{y}{y\ge0}$, e ela é par. Por exemplo, $f(x)=2|x-3|+4$ tem domínio $\R$
+e, como $|x-3|\ge0$, imagem $\Set{y}{y\ge4}$.
+
+% ---------------------------------------------------------------------
+\section{Classes básicas de funções}
+
+\subsection{Funções afins e inclinação}
+
+Uma \textbf{função afim} (ou linear) tem a forma $f(x)=mx+b$, e seu gráfico é uma reta.
+Para quaisquer dois pontos $(x_1,y_1)$ e $(x_2,y_2)$ dessa reta, a razão entre a variação
+de $y$ e a de $x$ é sempre a mesma.
+
+\begin{definicao}
+A \textbf{inclinação} da reta que passa por $(x_1,y_1)$ e $(x_2,y_2)$ é
+\[
+m=\frac{y_2-y_1}{x_2-x_1}=\frac{\Delta y}{\Delta x}.
+\]
+A reta que passa por $(x_1,y_1)$ com inclinação $m$ tem \textbf{equação ponto-inclinação}
+$y-y_1=m(x-x_1)$. A reta com inclinação $m$ e intercepto $(0,b)$ tem equação
+$y=mx+b$ (forma \textbf{reduzida}). A \textbf{forma geral} $ax+by=c$, com $a$ e $b$ não
+ambos nulos, inclui também as retas verticais $x=k$.
+\end{definicao}
+
+\begin{exemplo}{1.4}{Inclinação e equação de uma reta}
+Encontre a reta que passa por $(11,-4)$ e $(-4,5)$.
+\solucao
+$m=\dfrac{5-(-4)}{-4-11}=-\dfrac{9}{15}=-\dfrac35$. Pelo ponto $(11,-4)$:
+$y+4=-\tfrac35(x-11)$, ou seja, $y=-\tfrac35x+\tfrac{13}{5}$.
+\end{exemplo}
+
+\subsection{Polinômios}
+
+Um \textbf{polinômio} é uma função da forma
+$f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0$, com $n$ inteiro não negativo e $a_n\neq0$; $n$
+é o \emph{grau}. Polinômios de grau 0, 1, 2 e 3 são chamados constantes, afins,
+quadráticos e cúbicos. As \textbf{funções potência} $f(x)=ax^b$ incluem $x^n$, que é par
+para $n$ par e ímpar para $n$ ímpar.
+
+\fig[0.55]{CNX_Calc_Figure_01_02_004.jpg}{(a) Para $n$ par, $ax^n$ é par. (b) Para $n$
+ímpar, $ax^n$ é ímpar.}
+
+\textbf{Comportamento no infinito.} Para $|x|$ grande, o termo de maior grau domina. Se
+$a_n>0$ e $n$ é par, $f(x)\to\infty$ quando $x\to\pm\infty$; se $n$ é ímpar,
+$f(x)\to\infty$ quando $x\to\infty$ e $f(x)\to-\infty$ quando $x\to-\infty$. Se $a_n<0$,
+os sinais se invertem.
+
+\textbf{Zeros.} Os zeros de polinômios de grau 1 e 2 se encontram diretamente; para grau
+maior, fatoramos quando possível.
+
+\begin{regra}{Regra: fórmula quadrática}
+As soluções de $ax^2+bx+c=0$, com $a\neq0$, são
+\[
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+\]
+Se o discriminante $b^2-4ac$ é positivo, há duas soluções reais; se é nulo, uma; se é
+negativo, nenhuma.
+\end{regra}
+
+\subsection{Funções algébricas e transcendentes}
+
+Uma \textbf{função racional} é um quociente de polinômios, $f(x)=p(x)/q(x)$, definida onde
+$q(x)\neq0$. As \textbf{funções algébricas} são as obtidas de polinômios por soma,
+subtração, multiplicação, divisão e extração de raízes; por exemplo,
+$f(x)=\sqrt{x^2-4}$ e $g(x)=\sqrt[3]{x}/(1-x^2)$. Para $f(x)=\sqrt[n]{x}$, o domínio é
+$[0,\infty)$ se $n$ é par e $\R$ se $n$ é ímpar. As funções que não são algébricas são as
+\textbf{transcendentes}: trigonométricas, exponenciais, logarítmicas e hiperbólicas.
+
+\subsection{Funções definidas por partes}
+
+\begin{exemplo}{1.5}{Gráfico de uma função definida por partes}
+Esboce $f(x)=\begin{cases}x+3, & x<1\\ (x-2)^2, & x\ge1.\end{cases}$
+\solucao
+Desenhamos a reta $y=x+3$ em $(-\infty,1)$ e a parábola $y=(x-2)^2$ em $[1,\infty)$. Como
+$f(1)=(1-2)^2=1$, marcamos uma bola cheia em $(1,1)$. A reta se aproxima de $(1,4)$ sem
+atingi-lo: marcamos ali uma bola vazia.
+\fig[0.38]{CNX_Calc_Figure_01_02_011.jpg}{Função afim para $x<1$ e quadrática para $x\ge1$.}
+\end{exemplo}
+
+\subsection{Transformações de funções}
+
+A partir do gráfico de $y=f(x)$ obtemos outros sem novos cálculos. Para $c>0$:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}\toprule
+\textbf{Função} & \textbf{Efeito sobre o gráfico de $f$}\\\midrule
+$f(x)+c$ / $f(x)-c$ & translação vertical de $c$ para cima / para baixo\\
+$f(x+c)$ / $f(x-c)$ & translação horizontal de $c$ para a esquerda / para a direita\\
+$c\,f(x)$ & alongamento vertical se $c>1$; compressão vertical se $0<c<1$\\
+$f(cx)$ & compressão horizontal se $c>1$; alongamento horizontal se $0<c<1$\\
+$-f(x)$ & reflexão em relação ao eixo $x$\\
+$f(-x)$ & reflexão em relação ao eixo $y$\\\bottomrule
+\end{tabular}
+\end{center}
+
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.4cm},painel,width=6.2cm,height=5cm]
+\nextgroupplot[xmin=-4,xmax=4,ymin=-5.5,ymax=9,title={Translações verticais}]
+\addplot[cinza,dashed,domain=-4:4]{x^2};
+\addplot[domain=-4:4]{x^2+4} node[pos=0.85,right,font=\scriptsize]{$x^2+4$};
+\addplot[laranja,domain=-4:4]{x^2-4} node[pos=0.93,right,font=\scriptsize]{$x^2-4$};
+\nextgroupplot[xmin=-7,xmax=7,ymin=-1,ymax=6,title={Translações horizontais}]
+\addplot[cinza,dashed,domain=-7:7]{abs(x)};
+\addplot[domain=-7:7]{abs(x+3)} node[pos=0.04,above right,font=\scriptsize]{$|x+3|$};
+\addplot[laranja,domain=-7:7]{abs(x-3)} node[pos=0.96,above left,font=\scriptsize]{$|x-3|$};
+\end{groupplot}\end{tikzpicture}}{Translações dos gráficos de $x^2$ e $|x|$ (tracejados).
+À esquerda, verticais: $x^2\pm4$. À direita, horizontais: $|x+3|$ desloca para a esquerda
+e $|x-3|$, para a direita.}
+
+\begin{exemplo}{1.6}{Transformando uma função}
+Esboce (a) $f(x)=-|x+2|-3$ e (b) $f(x)=3\sqrt{-x}+1$.
+\solucao
+(a) Partindo de $y=|x|$: translação de 2 unidades para a esquerda, reflexão em relação ao
+eixo $x$ e translação de 3 unidades para baixo.
+(b) Partindo de $y=\sqrt{x}$: reflexão em relação ao eixo $y$, alongamento vertical por um
+fator 3 e translação de 1 unidade para cima.
+\figdupla[0.34]{CNX_Calc_Figure_01_02_019.jpg}{CNX_Calc_Figure_01_02_020.jpg}{As funções (a)
+e (b) como sequências de três transformações de $|x|$ e de $\sqrt x$.}
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Funções trigonométricas}
+
+\subsection{Radianos}
+
+No Cálculo, os ângulos são medidos em \textbf{radianos}. A medida em radianos de um ângulo
+$\theta$ é o comprimento $s$ do arco que ele determina no círculo unitário. Como a
+circunferência unitária mede $2\pi$, temos $2\pi$ rad $=360^\circ$, ou seja,
+\[
+1\ \text{rad}=\frac{180^\circ}{\pi}\approx57{,}3^\circ,\qquad 1^\circ=\frac{\pi}{180}\ \text{rad}.
+\]
+Assim, $225^\circ=225\cdot\pi/180=5\pi/4$ rad, e $5\pi/3$ rad $=300^\circ$.
+
+\subsection{As seis funções trigonométricas}
+
+\begin{definicao}
+Seja $P=(x,y)$ um ponto do círculo unitário centrado na origem $O$, e $\theta$ o ângulo
+com lado inicial no semieixo $x$ positivo e lado final $OP$. Então
+\[
+\sin\theta=y,\quad \cos\theta=x,\quad \tan\theta=\frac yx,\quad
+\csc\theta=\frac1y,\quad \sec\theta=\frac1x,\quad \cot\theta=\frac xy .
+\]
+Se $x=0$, $\sec\theta$ e $\tan\theta$ não estão definidas; se $y=0$, $\cot\theta$ e
+$\csc\theta$ não estão definidas.
+\end{definicao}
+
+\fig[0.32]{CNX_Calc_Figure_01_03_002.jpg}{O ângulo $\theta$ na posição padrão. Os valores
+das funções trigonométricas são dados pelas coordenadas $x$ e $y$ de $P$.}
+
+Em um círculo de raio $r$, as coordenadas de um ponto satisfazem $x=r\cos\theta$ e
+$y=r\sin\theta$. Em um triângulo retângulo com ângulo agudo $\theta$, isso dá as razões
+conhecidas: $\sin\theta=$ cateto oposto/hipotenusa, $\cos\theta=$ cateto
+adjacente/hipotenusa e $\tan\theta=$ oposto/adjacente.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}c|ccccc@{}}\toprule
+$\theta$ & $0$ & $\pi/6$ & $\pi/4$ & $\pi/3$ & $\pi/2$\\\midrule
+$\sin\theta$ & $0$ & $1/2$ & $\sqrt2/2$ & $\sqrt3/2$ & $1$\\
+$\cos\theta$ & $1$ & $\sqrt3/2$ & $\sqrt2/2$ & $1/2$ & $0$\\
+$\tan\theta$ & $0$ & $\sqrt3/3$ & $1$ & $\sqrt3$ & não definida\\\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Identidades trigonométricas}
+
+\begin{regra}{Regra: identidades trigonométricas}
+\textbf{Recíprocas:} $\cot\theta=\dfrac1{\tan\theta}$,\; $\csc\theta=\dfrac1{\sin\theta}$,\;
+$\sec\theta=\dfrac1{\cos\theta}$.
+
+\textbf{De razão:} $\tan\theta=\dfrac{\sin\theta}{\cos\theta}$,\;
+$\cot\theta=\dfrac{\cos\theta}{\sin\theta}$.
+
+\textbf{Pitagóricas:} $\sin^2\theta+\cos^2\theta=1$,\quad $1+\tan^2\theta=\sec^2\theta$,\quad
+$1+\cot^2\theta=\csc^2\theta$.
+
+\textbf{Adição e subtração:}
+$\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta$,\quad
+$\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta$.
+
+\textbf{Ângulo duplo:} $\sin(2\theta)=2\sin\theta\cos\theta$,\quad
+$\cos(2\theta)=2\cos^2\theta-1=1-2\sin^2\theta=\cos^2\theta-\sin^2\theta$.
+\end{regra}
+
+\begin{exemplo}{1.7}{Resolvendo equações trigonométricas}
+Encontre todas as soluções de (a) $1+\cos(2\theta)=\cos\theta$ e (b) $\sin(2\theta)=\tan\theta$.
+\solucao
+(a) Pela fórmula do ângulo duplo, a equação equivale a $2\cos^2\theta-\cos\theta=0$.
+Devemos \emph{fatorar}, e não dividir por $\cos\theta$, que pode ser zero:
+$\cos\theta\,(2\cos\theta-1)=0$. Logo $\cos\theta=0$ ou $\cos\theta=1/2$, e as soluções são
+\[
+\theta=\frac\pi2+n\pi,\qquad \theta=\pm\frac\pi3+2n\pi,\qquad n\in\mathbb Z.
+\]
+(b) Escrevendo $2\sin\theta\cos\theta=\sin\theta/\cos\theta$ e multiplicando por
+$\cos\theta$, obtemos $\sin\theta\,(2\cos^2\theta-1)=0$. Como multiplicamos por
+$\cos\theta$, que poderia ser nulo, é preciso descartar soluções estranhas no fim. Temos
+$\sin\theta=0$ ou $\cos^2\theta=1/2$, e as soluções são
+$\theta=n\pi$ e $\theta=\dfrac\pi4+\dfrac{n\pi}2$, $n\in\mathbb Z$.
+\end{exemplo}
+
+\subsection{Gráficos e períodos}
+
+Uma função $f$ é \textbf{periódica} se existe $P>0$ tal que $f(x+P)=f(x)$ para todo $x$; o
+menor desses $P$ é o \textbf{período}. Seno, cosseno, secante e cossecante têm período
+$2\pi$; tangente e cotangente têm período $\pi$.
+
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 3,horizontal sep=1.3cm,vertical sep=1.3cm},painel,width=6cm,height=3.6cm]
+\nextgroupplot[title={$y=\sin x$},xmin=-6.6,xmax=6.6,ymin=-1.6,ymax=1.6,xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$}]
+\addplot[domain=-6.6:6.6]{sin(deg(x))};\nextgroupplot[title={$y=\cos x$},xmin=-6.6,xmax=6.6,ymin=-1.6,ymax=1.6,xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$}]
+\addplot[domain=-6.6:6.6]{cos(deg(x))};\nextgroupplot[title={$y=\tan x$},xmin=-6.6,xmax=6.6,ymin=-4,ymax=4,xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$}]
+\addplot[domain=-6.560:-4.752,restrict y to domain=-6:6]{tan(deg(x))};
+\addplot[domain=-4.672:-1.611,restrict y to domain=-6:6]{tan(deg(x))};
+\addplot[domain=-1.531:1.531,restrict y to domain=-6:6]{tan(deg(x))};
+\addplot[domain=1.611:4.672,restrict y to domain=-6:6]{tan(deg(x))};
+\addplot[domain=4.752:6.560,restrict y to domain=-6:6]{tan(deg(x))};
+\draw[assint] (axis cs:-4.7124,-4) -- (axis cs:-4.7124,4);
+\draw[assint] (axis cs:-1.5708,-4) -- (axis cs:-1.5708,4);
+\draw[assint] (axis cs:1.5708,-4) -- (axis cs:1.5708,4);
+\draw[assint] (axis cs:4.7124,-4) -- (axis cs:4.7124,4);
+\nextgroupplot[title={$y=\cot x$},xmin=-6.6,xmax=6.6,ymin=-4,ymax=4,xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$}]
+\addplot[domain=-6.560:-6.323,restrict y to domain=-6:6]{cos(deg(x))/sin(deg(x))};
+\addplot[domain=-6.243:-3.182,restrict y to domain=-6:6]{cos(deg(x))/sin(deg(x))};
+\addplot[domain=-3.102:-0.040,restrict y to domain=-6:6]{cos(deg(x))/sin(deg(x))};
+\addplot[domain=0.040:3.102,restrict y to domain=-6:6]{cos(deg(x))/sin(deg(x))};
+\addplot[domain=3.182:6.243,restrict y to domain=-6:6]{cos(deg(x))/sin(deg(x))};
+\addplot[domain=6.323:6.560,restrict y to domain=-6:6]{cos(deg(x))/sin(deg(x))};
+\draw[assint] (axis cs:-6.2832,-4) -- (axis cs:-6.2832,4);
+\draw[assint] (axis cs:-3.1416,-4) -- (axis cs:-3.1416,4);
+\draw[assint] (axis cs:0.0000,-4) -- (axis cs:0.0000,4);
+\draw[assint] (axis cs:3.1416,-4) -- (axis cs:3.1416,4);
+\draw[assint] (axis cs:6.2832,-4) -- (axis cs:6.2832,4);
+\nextgroupplot[title={$y=\sec x$},xmin=-6.6,xmax=6.6,ymin=-4,ymax=4,xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$}]
+\addplot[domain=-6.560:-4.752,restrict y to domain=-6:6]{1/cos(deg(x))};
+\addplot[domain=-4.672:-1.611,restrict y to domain=-6:6]{1/cos(deg(x))};
+\addplot[domain=-1.531:1.531,restrict y to domain=-6:6]{1/cos(deg(x))};
+\addplot[domain=1.611:4.672,restrict y to domain=-6:6]{1/cos(deg(x))};
+\addplot[domain=4.752:6.560,restrict y to domain=-6:6]{1/cos(deg(x))};
+\draw[assint] (axis cs:-4.7124,-4) -- (axis cs:-4.7124,4);
+\draw[assint] (axis cs:-1.5708,-4) -- (axis cs:-1.5708,4);
+\draw[assint] (axis cs:1.5708,-4) -- (axis cs:1.5708,4);
+\draw[assint] (axis cs:4.7124,-4) -- (axis cs:4.7124,4);
+\nextgroupplot[title={$y=\csc x$},xmin=-6.6,xmax=6.6,ymin=-4,ymax=4,xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$}]
+\addplot[domain=-6.560:-6.323,restrict y to domain=-6:6]{1/sin(deg(x))};
+\addplot[domain=-6.243:-3.182,restrict y to domain=-6:6]{1/sin(deg(x))};
+\addplot[domain=-3.102:-0.040,restrict y to domain=-6:6]{1/sin(deg(x))};
+\addplot[domain=0.040:3.102,restrict y to domain=-6:6]{1/sin(deg(x))};
+\addplot[domain=3.182:6.243,restrict y to domain=-6:6]{1/sin(deg(x))};
+\addplot[domain=6.323:6.560,restrict y to domain=-6:6]{1/sin(deg(x))};
+\draw[assint] (axis cs:-6.2832,-4) -- (axis cs:-6.2832,4);
+\draw[assint] (axis cs:-3.1416,-4) -- (axis cs:-3.1416,4);
+\draw[assint] (axis cs:0.0000,-4) -- (axis cs:0.0000,4);
+\draw[assint] (axis cs:3.1416,-4) -- (axis cs:3.1416,4);
+\draw[assint] (axis cs:6.2832,-4) -- (axis cs:6.2832,4);
+\end{groupplot}\end{tikzpicture}}{As seis funções trigonométricas. Seno, cosseno, secante e
+cossecante têm período $2\pi$; tangente e cotangente, período $\pi$. Tracejado: assíntotas
+verticais.}
+
+Para $f(x)=A\sin\big(B(x-\alpha)\big)+C$ (ou com cosseno), $|A|$ é a \textbf{amplitude},
+o período é $2\pi/|B|$, $\alpha$ é a translação horizontal (\emph{defasagem}) e $C$ é a
+translação vertical.
+
+\begin{exemplo}{1.8}{Esboçando uma senoide transformada}
+Esboce $f(x)=3\sin\!\big(2(x-\tfrac\pi4)\big)+1$.
+\solucao
+Compressão horizontal por fator 2, defasagem de $\pi/4$ para a direita, alongamento
+vertical por fator 3 e translação de 1 unidade para cima. Amplitude 3, período $\pi$.
+\fig[0.36]{CNX_Calc_Figure_01_03_012.jpg}{Gráfico de $f(x)=3\sin(2(x-\pi/4))+1$.}
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Funções inversas}
+
+\subsection{Existência da inversa}
+
+Uma função ``desfaz'' a outra se, ao aplicarmos uma e depois a outra, voltamos à entrada.
+
+\begin{definicao}
+Dada $f$ com domínio $D$ e imagem $R$, sua \textbf{função inversa} (se existir) é a
+função $f^{-1}$ com domínio $R$ e imagem $D$ tal que $f^{-1}(y)=x$ se $f(x)=y$. Ou seja,
+\[
+f^{-1}\big(f(x)\big)=x\ \text{ para todo } x\in D,\qquad
+f\big(f^{-1}(y)\big)=y\ \text{ para todo } y\in R.
+\]
+\end{definicao}
+
+\begin{nota}
+$f^{-1}(x)$ não significa $1/f(x)$. A notação indica a função inversa.
+\end{nota}
+
+Para que $f^{-1}$ seja função, cada saída de $f$ deve vir de uma única entrada.
+
+\begin{definicao}
+$f$ é \textbf{injetora} se $f(x_1)\neq f(x_2)$ sempre que $x_1\neq x_2$. Uma função tem
+inversa se, e somente se, é injetora.
+\end{definicao}
+
+\begin{regra}{Regra: teste da reta horizontal}
+Uma função $f$ é injetora se, e somente se, toda reta horizontal corta o gráfico de $f$ no
+máximo uma vez.
+\end{regra}
+
+\fig[0.5]{CNX_Calc_Figure_01_04_002.jpg}{(a) $x^2$ não é injetora: falha no teste da reta
+horizontal. (b) $x^3$ é injetora.}
+
+\begin{estrategia}{encontrando a inversa}
+\begin{enumerate}[label=\arabic*.]
+\item Resolva $y=f(x)$ para $x$, em função de $y$.
+\item Troque as variáveis e escreva $y=f^{-1}(x)$.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{1.9}{Encontrando uma inversa}
+Encontre a inversa de $f(x)=3x-4$.
+\solucao
+De $y=3x-4$ vem $x=\tfrac13y+\tfrac43$; logo $f^{-1}(x)=\tfrac13x+\tfrac43$, com domínio e
+imagem $\R$. Verificação:
+$f^{-1}(f(x))=\tfrac13(3x-4)+\tfrac43=x$.
+\end{exemplo}
+
+\textbf{Gráfico da inversa.} Se $(a,b)$ está no gráfico de $f$, então $(b,a)$ está no de
+$f^{-1}$. Portanto o gráfico de $f^{-1}$ é a reflexão do gráfico de $f$ em relação à reta
+$y=x$.
+
+\fig[0.55]{CNX_Calc_Figure_01_04_017.jpg}{(a) O ponto $(a,b)$ no gráfico de $f$. (b) O
+ponto $(b,a)$ no gráfico de $f^{-1}$: os gráficos são simétricos em relação a $y=x$.}
+
+\textbf{Restrição de domínio.} Uma função que não é injetora pode ter inversa em um domínio
+menor. Assim, $x^2$ restrita a $[0,\infty)$ tem inversa $\sqrt x$.
+
+\begin{exemplo}{1.10}{Restringindo o domínio}
+$f(x)=(x+1)^2$ não é injetora (é $x^2$ transladada 1 unidade para a esquerda). Em
+$[-1,\infty)$ ela é injetora, com imagem $[0,\infty)$. Resolvendo $y=(x+1)^2$, vem
+$x=-1\pm\sqrt y$; como $x\ge-1$, escolhemos o sinal $+$. Logo $f^{-1}(x)=-1+\sqrt x$, com
+domínio $[0,\infty)$ e imagem $[-1,\infty)$.
+\end{exemplo}
+
+\subsection{Funções trigonométricas inversas}
+
+As funções trigonométricas não são injetoras, pois são periódicas. Restringindo o domínio,
+obtemos as inversas.
+
+\begin{definicao}
+Para $-1\le x\le1$:
+\[
+\sin^{-1}x=y \iff \sin y=x \text{ e } -\tfrac\pi2\le y\le\tfrac\pi2;\qquad
+\cos^{-1}x=y \iff \cos y=x \text{ e } 0\le y\le\pi.
+\]
+Para todo $x$ real:
+\[
+\tan^{-1}x=y \iff \tan y=x \text{ e } -\tfrac\pi2<y<\tfrac\pi2;\qquad
+\cot^{-1}x=y \iff \cot y=x \text{ e } 0<y<\pi.
+\]
+Para $|x|\ge1$, definem-se de modo análogo $\csc^{-1}x$ (com
+$-\tfrac\pi2\le y\le\tfrac\pi2$, $y\neq0$) e $\sec^{-1}x$ (com $0\le y\le\pi$,
+$y\neq\tfrac\pi2$). Também se escreve $\arcsin$, $\arccos$, $\arctan$ etc.
+\end{definicao}
+
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 1,horizontal sep=1.1cm},painel,width=5.2cm,height=5.2cm,
+  xmin=-2,xmax=3.4,ymin=-2,ymax=3.4,
+  xtick={-1,1},ytick={-1.5708,1.5708,3.1416},yticklabels={$-\frac\pi2$,$\frac\pi2$,$\pi$}]
+\nextgroupplot[title={$y=\sin^{-1}x$}]
+\addplot[cinza,dotted,thin,domain=-2:3.4]{x};
+\addplot[laranja!70,thin,domain=-1.5708:1.5708]{sin(deg(x))};
+\addplot[domain=-1:1]{rad(asin(x))};
+\nextgroupplot[title={$y=\cos^{-1}x$}]
+\addplot[cinza,dotted,thin,domain=-2:3.4]{x};
+\addplot[laranja!70,thin,domain=0:3.1416]{cos(deg(x))};
+\addplot[domain=-1:1]{rad(acos(x))};
+\nextgroupplot[title={$y=\tan^{-1}x$},xmin=-3.4,xtick={-2,2}]
+\addplot[cinza,dotted,thin,domain=-3.4:3.4]{x};
+\addplot[laranja!70,thin,domain=-1.25:1.25]{tan(deg(x))};
+\addplot[domain=-3.4:3.4]{rad(atan(x))};
+\draw[assint] (axis cs:-3.4,1.5708) -- (axis cs:3.4,1.5708);
+\draw[assint] (axis cs:-3.4,-1.5708) -- (axis cs:3.4,-1.5708);
+\end{groupplot}\end{tikzpicture}}{Cada inversa trigonométrica (em azul) é a reflexão, em
+relação à reta $y=x$ (pontilhada), da função trigonométrica restrita (em laranja):
+$\sin$ em $[-\frac\pi2,\frac\pi2]$, $\cos$ em $[0,\pi]$ e $\tan$ em
+$(-\frac\pi2,\frac\pi2)$. As demais inversas são obtidas do mesmo modo.}
+
+\begin{exemplo}{1.11}{Avaliando inversas trigonométricas}
+(a) $\sin^{-1}(-\sqrt3/2)$: o ângulo em $[-\pi/2,\pi/2]$ com seno $-\sqrt3/2$ é $-\pi/3$.
+
+(b) $\cos^{-1}(\cos(5\pi/4))=\cos^{-1}(-\sqrt2/2)=3\pi/4$, e \emph{não} $5\pi/4$, pois
+$\cos^{-1}$ toma valores em $[0,\pi]$.
+
+(c) $\sin^{-1}(\cos(2\pi/3))=\sin^{-1}(-1/2)=-\pi/6$.
+\end{exemplo}
+
+% ---------------------------------------------------------------------
+\section{Funções exponenciais e logarítmicas}
+
+\subsection{Funções exponenciais}
+
+Se uma população começa com $P_0$ indivíduos e cresce à taxa anual $r$, após $t$ anos ela
+tem $P(t)=P_0(1+r)^t$ indivíduos. Esse é um exemplo de \textbf{função exponencial}: uma
+função da forma $f(x)=b^x$, com $b>0$ e $b\neq1$. Seu domínio é $\R$ e sua imagem é
+$(0,\infty)$. Se $b>1$, $b^x$ é crescente; se $0<b<1$, é decrescente. A exponencial
+cresce muito mais rapidamente que qualquer potência: $2^x$ supera $x^2$ para $x$ grande.
+
+\fig[0.38]{CNX_Calc_Figure_01_05_002.jpg}{$b^x$ é crescente se $b>1$ e decrescente se
+$0<b<1$.}
+
+\begin{regra}{Regra: leis dos expoentes}
+Para $a>0$, $b>0$ e quaisquer $x$, $y$:
+\[
+b^xb^y=b^{x+y},\quad \frac{b^x}{b^y}=b^{x-y},\quad (b^x)^y=b^{xy},\quad
+(ab)^x=a^xb^x,\quad \frac{a^x}{b^x}=\Big(\frac ab\Big)^x.
+\]
+\end{regra}
+
+\subsection{O número $e$}
+
+Se investimos $P$ reais a juros anuais $r$ capitalizados $n$ vezes por ano, após $t$ anos
+temos $P(1+r/n)^{nt}$. Quando $n$ cresce (capitalização cada vez mais frequente), a
+quantidade $(1+1/m)^m$ se aproxima de um número fixo,
+\[
+e\approx2{,}718282,
+\]
+e o montante tende a $Pe^{rt}$ (\emph{capitalização contínua}). O número $e$ é irracional.
+A função $f(x)=e^x$ é a \textbf{exponencial natural}. Ela é a única exponencial cujo
+gráfico tem reta tangente de inclinação exatamente 1 em $x=0$, fato que tornará as
+derivadas e integrais de $e^x$ especialmente simples.
+
+\subsection{Funções logarítmicas}
+
+Como $b^x$ é injetora, ela tem inversa: o \textbf{logaritmo na base $b$},
+\[
+\log_b x=y \iff b^y=x,\qquad x>0 .
+\]
+Seu domínio é $(0,\infty)$ e sua imagem é $\R$. Escrevemos $\ln x=\log_e x$
+(\textbf{logaritmo natural}). Como inversas, $b^{\log_b x}=x$ para $x>0$ e
+$\log_b(b^x)=x$ para todo $x$; em particular, $e^{\ln x}=x$ e $\ln(e^x)=x$.
+
+\fig[0.36]{CNX_Calc_Figure_01_05_004.jpg}{$y=e^x$ e $y=\ln x$ são inversas: seus gráficos
+são simétricos em relação a $y=x$.}
+
+\begin{regra}{Regra: propriedades dos logaritmos}
+Se $a,b,c>0$, $b\neq1$ e $r\in\R$:
+\[
+\log_b(ac)=\log_b a+\log_b c,\qquad
+\log_b\Big(\frac ac\Big)=\log_b a-\log_b c,\qquad
+\log_b(a^r)=r\log_b a .
+\]
+\end{regra}
+
+\begin{exemplo}{1.12}{Equações exponenciais e logarítmicas}
+(a) $5^x=2$. Aplicando $\ln$: $x\ln5=\ln2$, logo $x=\ln2/\ln5$.
+
+(b) $e^x+6e^{-x}=5$. Multiplicando por $e^x$: $(e^x)^2-5e^x+6=0$, isto é,
+$(e^x-3)(e^x-2)=0$. Logo $x=\ln3$ ou $x=\ln2$.
+
+(c) $\log_{10}\sqrt x+\log_{10}x=2$. O lado esquerdo é
+$\log_{10}x^{3/2}=\tfrac32\log_{10}x$; logo $\log_{10}x=4/3$ e $x=10^{4/3}=10\sqrt[3]{10}$.
+\end{exemplo}
+
+\begin{regra}{Regra: mudança de base}
+Para $a,b>0$ com $a,b\neq1$:
+\[
+a^x=b^{x\log_b a}\ \ (\text{em particular } a^x=e^{x\ln a}),\qquad
+\log_a x=\frac{\log_b x}{\log_b a}\ \ (\text{em particular } \log_a x=\frac{\ln x}{\ln a}).
+\]
+\end{regra}
+
+Graças a essas fórmulas, basta saber derivar e integrar $e^x$ e $\ln x$ para lidar com
+qualquer base.
+
+\begin{exemplo}{1.13}{A escala Richter}
+Na escala Richter, de base 10, dois terremotos de magnitudes $R_1$ e $R_2$ e amplitudes
+$A_1$ e $A_2$ satisfazem
+\[
+R_1-R_2=\log_{10}\Big(\frac{A_1}{A_2}\Big).
+\]
+Assim, um terremoto de magnitude 8 é 10 vezes mais intenso que um de magnitude 7, e
+100 vezes mais intenso que um de magnitude 6. Comparemos o terremoto do Japão (2011,
+magnitude 9) com o do Haiti (2010, magnitude 7,3).
+\solucao
+$9-7{,}3=\log_{10}(A_1/A_2)$, logo $A_1/A_2=10^{1{,}7}\approx50$. O terremoto do Japão
+foi cerca de 50 vezes mais intenso.
+\end{exemplo}
+
+\subsection{Funções hiperbólicas}
+
+Certas combinações de $e^x$ e $e^{-x}$ aparecem com frequência. A forma de um cabo ou
+corrente suspensa pelas extremidades, sob o próprio peso (a \emph{catenária}), é descrita
+por uma delas.
+
+\begin{definicao}
+\[
+\cosh x=\frac{e^x+e^{-x}}2,\qquad \sinh x=\frac{e^x-e^{-x}}2,\qquad
+\tanh x=\frac{\sinh x}{\cosh x}=\frac{e^x-e^{-x}}{e^x+e^{-x}},
+\]
+\[
+\csch x=\frac1{\sinh x},\qquad \sech x=\frac1{\cosh x},\qquad \coth x=\frac{\cosh x}{\sinh x}.
+\]
+\end{definicao}
+
+O nome vem da identidade $\cosh^2t-\sinh^2t=1$: o ponto $(\cosh t,\sinh t)$ percorre a
+hipérbole $x^2-y^2=1$, assim como $(\cos t,\sin t)$ percorre o círculo $x^2+y^2=1$.
+
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 2,horizontal sep=1.1cm,vertical sep=1.3cm},painel,width=5.2cm,height=4.4cm,
+  xmin=-3,xmax=3,xtick={-2,2}]
+\nextgroupplot[title={$y=\cosh x$},ymin=-0.5,ymax=5,ytick={1,4}]
+\addplot[domain=-3:3]{cosh(x)};
+\addplot[cinza,dashed,thin,domain=-3:3]{exp(x)/2};
+\addplot[cinza,dashed,thin,domain=-3:3]{exp(-x)/2};
+\nextgroupplot[title={$y=\sinh x$},ymin=-5,ymax=5,ytick={-4,4}]
+\addplot[domain=-3:3]{sinh(x)};
+\addplot[cinza,dashed,thin,domain=-3:3]{exp(x)/2};
+\addplot[cinza,dashed,thin,domain=-3:3]{-exp(-x)/2};
+\nextgroupplot[title={$y=\tanh x$},ymin=-2,ymax=2,ytick={-1,1}]
+\addplot[domain=-3:3]{tanh(x)};
+\draw[assint] (axis cs:-3,1) -- (axis cs:3,1);
+\draw[assint] (axis cs:-3,-1) -- (axis cs:3,-1);
+\nextgroupplot[title={$y=\coth x$},ymin=-4,ymax=4,ytick={-1,1}]
+\addplot[domain=-3:-0.25]{1/tanh(x)};
+\addplot[domain=0.25:3]{1/tanh(x)};
+\draw[assint] (axis cs:-3,1) -- (axis cs:3,1);
+\draw[assint] (axis cs:-3,-1) -- (axis cs:3,-1);
+\nextgroupplot[title={$y=\operatorname{sech} x$},ymin=-0.5,ymax=1.5,ytick={1}]
+\addplot[domain=-3:3]{1/cosh(x)};
+\nextgroupplot[title={$y=\operatorname{csch} x$},ymin=-4,ymax=4,ytick={-2,2}]
+\addplot[domain=-3:-0.25]{1/sinh(x)};
+\addplot[domain=0.25:3]{1/sinh(x)};
+\end{groupplot}\end{tikzpicture}}{As funções hiperbólicas. Em cinza tracejado,
+$\pm\frac12e^{\pm x}$: para $|x|$ grande, $\cosh x$ e $\sinh x$ se comportam como
+$\frac12e^{|x|}$. Em laranja, as assíntotas $y=\pm1$ de $\tanh$ e $\coth$.}
+
+\begin{regra}{Regra: identidades hiperbólicas}
+\begin{tabular}{@{}ll@{}}
+$\cosh(-x)=\cosh x$, \quad $\sinh(-x)=-\sinh x$ & $\cosh x+\sinh x=e^x$, \quad $\cosh x-\sinh x=e^{-x}$\\[2pt]
+$\cosh^2x-\sinh^2x=1$ & $1-\tanh^2x=\sech^2x$, \quad $\coth^2x-1=\csch^2x$\\[2pt]
+\multicolumn{2}{@{}l}{$\sinh(x\pm y)=\sinh x\cosh y\pm\cosh x\sinh y$,\quad
+$\cosh(x\pm y)=\cosh x\cosh y\pm\sinh x\sinh y$}
+\end{tabular}
+\end{regra}
+
+\begin{exemplo}{1.14}{Avaliando funções hiperbólicas}
+Se $\sinh x=3/4$, então $\cosh^2x=1+(3/4)^2=25/16$; como $\cosh x\ge1$, temos
+$\cosh x=5/4$. Daí $\tanh x=3/5$, $\csch x=4/3$, $\sech x=4/5$ e $\coth x=5/3$.
+\end{exemplo}
+
+\textbf{Inversas hiperbólicas.} Como as hiperbólicas são combinações de exponenciais, suas
+inversas se escrevem com logaritmos:
+\[
+\sinh^{-1}x=\ln\!\big(x+\sqrt{x^2+1}\big),\qquad
+\cosh^{-1}x=\ln\!\big(x+\sqrt{x^2-1}\big)\ (x\ge1),\]\[
+\tanh^{-1}x=\frac12\ln\Big(\frac{1+x}{1-x}\Big)\ (|x|<1).
+\]
+
+% ---------------------------------------------------------------------
+\section*{Resumo do capítulo}
+\addcontentsline{toc}{section}{Resumo do capítulo}
+\begin{itemize}
+\item Uma função associa a cada entrada exatamente uma saída. Sem domínio explícito, o
+  domínio é o conjunto dos $x$ em que a fórmula define um número real.
+\item Teste da reta vertical: um gráfico de função é cortado no máximo uma vez por cada
+  reta vertical. Uma função tem quantos zeros quiser, mas no máximo um intercepto $y$.
+\item Para definir $g\circ f$, a imagem de $f$ deve estar contida no domínio de $g$; em
+  geral $f\circ g\neq g\circ f$.
+\item Funções pares são simétricas em relação ao eixo $y$; ímpares, em relação à origem.
+\item A inclinação $m=\Delta y/\Delta x$ é a taxa de variação constante de uma função afim.
+\item Translações, alongamentos, compressões e reflexões transformam gráficos conhecidos.
+\item Ângulos em radianos: $\pi$ rad $=180^\circ$. Seno e cosseno têm período $2\pi$;
+  tangente, período $\pi$.
+\item Uma função tem inversa se, e somente se, é injetora; o gráfico de $f^{-1}$ é o reflexo
+  do de $f$ em $y=x$. Restringindo o domínio, obtêm-se as inversas trigonométricas.
+\item $b^x$ e $\log_b x$ são inversas; $\ln x=\log_e x$. Qualquer base se reduz à base $e$.
+\item $\cosh x=(e^x+e^{-x})/2$, $\sinh x=(e^x-e^{-x})/2$ e $\cosh^2x-\sinh^2x=1$.
+\end{itemize}
+
+\input{exercicios_cap1}

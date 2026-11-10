@@ -1,0 +1,574 @@
+% =====================================================================
+\chapter{Limites}
+
+O conceito de limite está na base de todo o Cálculo: a derivada e a integral são, ambas,
+definidas por limites. Neste capítulo construímos a ideia de limite, primeiro de modo
+intuitivo, com tabelas e gráficos, depois com regras de cálculo e, por fim, com uma
+definição precisa. Também estudamos a continuidade, uma propriedade que depende
+diretamente do limite.
+
+% ---------------------------------------------------------------------
+\section{Uma prévia do Cálculo}
+
+O Cálculo nasceu de dois problemas geométricos: encontrar a reta tangente a uma curva
+(o \emph{problema da tangente}, que leva ao Cálculo Diferencial) e calcular a área sob uma
+curva (o \emph{problema da área}, que leva ao Cálculo Integral). Os dois envolvem uma
+mesma ideia: aproximar uma quantidade cada vez melhor e observar para onde as aproximações
+tendem.
+
+\subsection{O problema da tangente}
+
+Para uma reta, a taxa de variação é a inclinação. Para uma curva qualquer, aproximamos a
+taxa de variação em um ponto $(a,f(a))$ por \emph{retas secantes}, que passam por
+$(a,f(a))$ e por um ponto próximo $(x,f(x))$.
+
+\begin{definicao}
+A \textbf{reta secante} ao gráfico de $f$ pelos pontos $(a,f(a))$ e $(x,f(x))$ é a reta
+que passa por esses pontos. Sua inclinação é
+\[
+m_{\sec}=\frac{f(x)-f(a)}{x-a}.
+\]
+\end{definicao}
+
+À medida que $x$ se aproxima de $a$, as secantes se aproximam de uma reta, a
+\textbf{reta tangente} ao gráfico em $(a,f(a))$, e $m_{\sec}$ se aproxima da inclinação
+da tangente, que é a \emph{taxa de variação instantânea} de $f$ em $a$.
+
+\fig[0.38]{CNX_Calc_Figure_02_01_005.jpg}{Quando $x$ se aproxima de $a$, as secantes se
+aproximam da reta tangente (\emph{tangent line}).}
+
+\begin{exemplo}{2.1}{Inclinações de secantes}
+Estime a inclinação da tangente a $f(x)=x^2$ em $x=1$ usando as secantes por $(1,1)$ e
+(a) $(2,4)$; (b) $(3/2,\,9/4)$.
+\solucao
+(a) $m_{\sec}=\dfrac{4-1}{2-1}=3$. (b) $m_{\sec}=\dfrac{9/4-1}{3/2-1}=\dfrac52=2{,}5$. O
+ponto de (b) está mais perto de $(1,1)$, então $2{,}5$ é uma estimativa melhor. Com pontos
+cada vez mais próximos, veremos que a inclinação da tangente é exatamente 2.
+\end{exemplo}
+
+O mesmo raciocínio se aplica ao movimento. Se $s(t)$ é a posição de um objeto no instante
+$t$, a \textbf{velocidade média} no intervalo $[a,t]$ é
+\[
+v_{\text{méd}}=\frac{s(t)-s(a)}{t-a},
+\]
+e a \textbf{velocidade instantânea} em $t=a$ é o valor do qual as velocidades médias se
+aproximam quando $t$ se aproxima de $a$, se esse valor existir.
+
+\subsection{O problema da área}
+
+Para estimar a área sob o gráfico de uma função positiva entre $x=a$ e $x=b$, dividimos o
+intervalo em partes e somamos as áreas de retângulos. Quanto mais retângulos, melhor a
+aproximação; a área exata é o valor para o qual essas somas tendem. Esse é o ponto de
+partida do Cálculo Integral (capítulo~5).
+
+\fig[0.4]{CNX_Calc_Figure_02_01_007.jpg}{A área sob a curva aproximada por retângulos.}
+
+% ---------------------------------------------------------------------
+\section{O limite de uma função}
+
+\subsection{Definição intuitiva}
+
+\begin{definicao}
+Seja $f$ definida em todos os pontos de um intervalo aberto contendo $a$, exceto
+possivelmente em $a$, e seja $L$ um número real. Se os valores $f(x)$ se aproximam de $L$
+quando $x$ ($\neq a$) se aproxima de $a$, dizemos que o \textbf{limite} de $f(x)$ quando
+$x$ tende a $a$ é $L$, e escrevemos
+\[
+\lim_{x\to a}f(x)=L .
+\]
+Em outras palavras: à medida que $x$ fica perto de $a$, $f(x)$ fica perto de $L$ e
+permanece perto.
+\end{definicao}
+
+\begin{nota}
+O limite não depende do valor $f(a)$; $f$ nem precisa estar definida em $a$. Importa
+apenas o comportamento de $f$ \emph{perto} de $a$.
+\end{nota}
+
+\begin{estrategia}{estimar um limite com uma tabela}
+\begin{enumerate}[label=\arabic*.]
+\item Monte duas colunas de valores de $x$ que se aproximam de $a$: uma pela esquerda
+  ($a-0{,}1$, $a-0{,}01$, $a-0{,}001,\dots$) e outra pela direita ($a+0{,}1$,
+  $a+0{,}01,\dots$), com os respectivos $f(x)$.
+\item Se as duas colunas de $f(x)$ se aproximam de um mesmo valor $L$, a estimativa é
+  $\lim_{x\to a}f(x)=L$.
+\item Confirme com o gráfico de $f$ perto de $x=a$.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{2.2}{Estimando $\lim_{x\to0}\frac{\sin x}{x}$}
+Calculando $(\sin x)/x$ para $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$, obtemos
+$0{,}99833\ldots$, $0{,}99998\ldots$ e $0{,}9999998\ldots$ (a função é par, então os valores
+pela esquerda e pela direita coincidem). Os valores se aproximam de 1, e o gráfico confirma:
+\[
+\lim_{x\to0}\frac{\sin x}{x}=1 .
+\]
+Provaremos esse resultado na seção~2.3.
+\fig[0.42]{CNX_Calc_Figure_02_02_003.jpg}{Gráfico de $f(x)=(\sin x)/x$ perto de $x=0$.}
+\end{exemplo}
+
+Dois limites básicos, intuitivamente evidentes, servem de ponto de partida:
+
+\begin{teorema}[Dois limites importantes]{2.1}
+Para todo número real $a$ e toda constante $c$:
+\qquad $\displaystyle\lim_{x\to a}x=a$ \qquad e \qquad $\displaystyle\lim_{x\to a}c=c$.
+\end{teorema}
+
+\subsection{Quando o limite não existe}
+
+Um limite pode não existir por diferentes motivos: a função pode se aproximar de valores
+diferentes pela esquerda e pela direita, crescer sem limitação, ou oscilar.
+
+\begin{exemplo}{2.3}{Um limite que não existe}
+Considere $\lim_{x\to0}\sin(1/x)$. Para a sequência $x=\dfrac2\pi,\dfrac2{3\pi},
+\dfrac2{5\pi},\dots$, que tende a 0, os valores de $\sin(1/x)$ são $1,-1,1,-1,\dots$. Eles não
+se aproximam de nenhum número, logo o limite não existe. O gráfico oscila cada vez mais
+rapidamente entre $-1$ e $1$ perto de $x=0$.
+\fig[0.4]{CNX_Calc_Figure_02_02_008.jpg}{$\sin(1/x)$ oscila entre $-1$ e $1$ quando
+$x\to0$.}
+\end{exemplo}
+
+\subsection{Limites laterais}
+
+\begin{definicao}
+\textbf{Limite à esquerda:} se $f$ está definida em um intervalo $(c,a)$ e $f(x)$ se
+aproxima de $L$ quando $x$ se aproxima de $a$ com $x<a$, escrevemos
+$\displaystyle\lim_{x\to a^-}f(x)=L$.
+
+\textbf{Limite à direita:} se $f$ está definida em um intervalo $(a,c)$ e $f(x)$ se
+aproxima de $L$ quando $x$ se aproxima de $a$ com $x>a$, escrevemos
+$\displaystyle\lim_{x\to a^+}f(x)=L$.
+\end{definicao}
+
+\begin{exemplo}{2.4}{Limites laterais}
+Para $f(x)=\begin{cases}x+1, & x<2\\ x^2-4, & x\ge2,\end{cases}$ temos
+$\lim_{x\to2^-}f(x)=2+1=3$ e $\lim_{x\to2^+}f(x)=2^2-4=0$. Como os limites laterais são
+diferentes, $\lim_{x\to2}f(x)$ não existe.
+\fig[0.3]{CNX_Calc_Figure_02_02_010.jpg}{Limites laterais diferentes em $x=2$.}
+\end{exemplo}
+
+\begin{teorema}[Limites laterais e bilaterais]{2.2}
+Seja $f$ definida em um intervalo aberto contendo $a$, exceto possivelmente em $a$. Então
+\[
+\lim_{x\to a}f(x)=L \iff \lim_{x\to a^-}f(x)=L \ \text{ e } \ \lim_{x\to a^+}f(x)=L .
+\]
+\end{teorema}
+
+\subsection{Limites infinitos}
+
+Quando $f(x)$ cresce sem limitação à medida que $x$ se aproxima de $a$ (pela esquerda,
+pela direita ou pelos dois lados), escrevemos, respectivamente,
+\[
+\lim_{x\to a^-}f(x)=+\infty,\qquad \lim_{x\to a^+}f(x)=+\infty,\qquad
+\lim_{x\to a}f(x)=+\infty ;
+\]
+analogamente para $-\infty$, quando $f(x)$ decresce sem limitação. Atenção: dizer que o
+limite é $\infty$ é uma forma de descrever \emph{como} o limite deixa de existir, pois
+$\infty$ não é um número real. Por exemplo, para $f(x)=1/x$:
+$\lim_{x\to0^-}\frac1x=-\infty$ e $\lim_{x\to0^+}\frac1x=+\infty$.
+
+\fig[0.3]{CNX_Calc_Figure_02_02_012.jpg}{O gráfico de $1/x$ perto de $x=0$.}
+
+\begin{teorema}[Limites infinitos de potências inteiras]{2.3}
+Se $n$ é um inteiro positivo par, $\displaystyle\lim_{x\to a}\frac{1}{(x-a)^n}=+\infty$.
+Se $n$ é um inteiro positivo ímpar,
+$\displaystyle\lim_{x\to a^+}\frac{1}{(x-a)^n}=+\infty$ e
+$\displaystyle\lim_{x\to a^-}\frac{1}{(x-a)^n}=-\infty$.
+\end{teorema}
+
+\begin{definicao}
+A reta $x=a$ é uma \textbf{assíntota vertical} de $f$ se pelo menos um dos limites
+$\lim_{x\to a^-}f(x)$, $\lim_{x\to a^+}f(x)$ ou $\lim_{x\to a}f(x)$ for $+\infty$ ou
+$-\infty$.
+\end{definicao}
+
+Por exemplo, $f(x)=\dfrac{1}{(x-3)^4}$ tem assíntota vertical $x=3$, pois
+$\lim_{x\to3}f(x)=+\infty$ pelo Teorema~2.3.
+
+% ---------------------------------------------------------------------
+\section{As propriedades dos limites}
+
+\subsection{Calculando limites com as propriedades}
+
+Estimar limites com tabelas e gráficos é útil, mas trabalhoso e às vezes enganoso. As
+propriedades a seguir permitem calcular limites diretamente.
+
+\begin{teorema}[Propriedades dos limites]{2.4}
+Sejam $f$ e $g$ definidas para $x\neq a$ em um intervalo aberto contendo $a$, com
+$\lim_{x\to a}f(x)=L$ e $\lim_{x\to a}g(x)=M$ reais, e seja $c$ uma constante. Então:
+\begin{itemize}
+\item \textbf{Soma e diferença:} $\lim_{x\to a}\big(f(x)\pm g(x)\big)=L\pm M$.
+\item \textbf{Múltiplo constante:} $\lim_{x\to a}c\,f(x)=cL$.
+\item \textbf{Produto:} $\lim_{x\to a}f(x)\,g(x)=L\cdot M$.
+\item \textbf{Quociente:} $\lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac LM$, se $M\neq0$.
+\item \textbf{Potência:} $\lim_{x\to a}\big(f(x)\big)^n=L^n$, para todo inteiro positivo $n$.
+\item \textbf{Raiz:} $\lim_{x\to a}\sqrt[n]{f(x)}=\sqrt[n]{L}$, para todo $L$ se $n$ é ímpar,
+  e para $L\ge0$ se $n$ é par e $f(x)\ge0$.
+\end{itemize}
+\end{teorema}
+
+\begin{exemplo}{2.5}{Usando as propriedades}
+\[
+\lim_{x\to2}\frac{2x^2-3x+1}{x^3+4}
+=\frac{2\lim x^2-3\lim x+\lim 1}{\lim x^3+\lim 4}
+=\frac{2(4)-3(2)+1}{8+4}=\frac{3}{12}=\frac14 .
+\]
+\end{exemplo}
+
+Aplicando as propriedades repetidamente, obtemos o resultado geral para polinômios e
+funções racionais.
+
+\begin{teorema}[Limites de polinômios e funções racionais]{2.5}
+Se $p$ e $q$ são polinômios e $a$ é real, então
+$\displaystyle\lim_{x\to a}p(x)=p(a)$ e
+$\displaystyle\lim_{x\to a}\frac{p(x)}{q(x)}=\frac{p(a)}{q(a)}$ quando $q(a)\neq0$.
+\end{teorema}
+
+\subsection{A forma indeterminada $0/0$}
+
+Quando $q(a)=0$, a propriedade do quociente não se aplica diretamente. Se também $p(a)=0$,
+temos a \textbf{forma indeterminada $0/0$}: o limite pode existir ou não, e é preciso
+manipular a expressão. A ideia central é que \emph{se $f(x)=g(x)$ para todo $x\neq a$
+perto de $a$, então as duas funções têm o mesmo limite em $a$}. Por exemplo,
+$\dfrac{x^2-1}{x-1}=x+1$ para $x\neq1$, logo
+$\lim_{x\to1}\dfrac{x^2-1}{x-1}=\lim_{x\to1}(x+1)=2$.
+
+\begin{estrategia}{limites da forma $0/0$}
+\begin{enumerate}[label=\arabic*.]
+\item Verifique que as propriedades não se aplicam diretamente (forma $0/0$).
+\item Encontre uma função igual a $f(x)/g(x)$ para $x\neq a$:
+  (a) se forem polinômios, fatore e cancele os fatores comuns;
+  (b) se houver diferença com raiz quadrada, multiplique pelo conjugado;
+  (c) se houver fração composta, simplifique-a.
+\item Aplique as propriedades dos limites.
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{2.6}{Fatorando e cancelando}
+\[
+\lim_{x\to3}\frac{x^2-3x}{2x^2-5x-3}=\lim_{x\to3}\frac{x(x-3)}{(x-3)(2x+1)}
+=\lim_{x\to3}\frac{x}{2x+1}=\frac37 .
+\]
+\end{exemplo}
+
+\begin{exemplo}{2.7}{Multiplicando pelo conjugado}
+Calcule $\displaystyle\lim_{x\to-1}\frac{\sqrt{x+2}-1}{x+1}$.
+\solucao
+A expressão tem a forma $0/0$ em $x=-1$. Multiplicamos numerador e denominador pelo
+conjugado $\sqrt{x+2}+1$:
+\begin{align*}
+\lim_{x\to-1}\frac{\sqrt{x+2}-1}{x+1}
+&=\lim_{x\to-1}\frac{(\sqrt{x+2}-1)(\sqrt{x+2}+1)}{(x+1)(\sqrt{x+2}+1)}
+ =\lim_{x\to-1}\frac{x+1}{(x+1)(\sqrt{x+2}+1)}\\
+&=\lim_{x\to-1}\frac{1}{\sqrt{x+2}+1}=\frac12 .
+\end{align*}
+\end{exemplo}
+
+\begin{exemplo}{2.8}{Simplificando uma fração composta}
+\[
+\lim_{x\to1}\frac{\frac{1}{x+1}-\frac12}{x-1}
+=\lim_{x\to1}\frac{2-(x+1)}{2(x+1)(x-1)}
+=\lim_{x\to1}\frac{-(x-1)}{2(x+1)(x-1)}
+=\lim_{x\to1}\frac{-1}{2(x+1)}=-\frac14 .
+\]
+\end{exemplo}
+
+\textbf{Forma $K/0$ com $K\neq0$.} Se o numerador tende a $K\neq0$ e o denominador tende a
+0, o limite não é finito. Estudamos os limites laterais pelo sinal: por exemplo, em
+$\lim_{x\to2}\frac{x-3}{x^2-2x}$, o numerador tende a $-1$ e o denominador $x(x-2)$ tende
+a $0^-$ pela esquerda e a $0^+$ pela direita. Logo o limite é $+\infty$ pela esquerda e
+$-\infty$ pela direita.
+
+\subsection{O Teorema do Confronto}
+
+\begin{teorema}[Teorema do Confronto]{2.6}
+Sejam $f$, $g$ e $h$ definidas para $x\neq a$ em um intervalo aberto contendo $a$. Se
+$f(x)\le g(x)\le h(x)$ nesse intervalo, para $x\neq a$, e
+$\lim_{x\to a}f(x)=L=\lim_{x\to a}h(x)$, então $\lim_{x\to a}g(x)=L$.
+\end{teorema}
+
+\fig[0.4]{CNX_Calc_Figure_02_03_005.jpg}{O Teorema do Confronto: $g$ fica ``espremida''
+entre $f$ e $h$.}
+
+\begin{exemplo}{2.9}{Aplicando o Teorema do Confronto}
+Como $-1\le\cos x\le1$, temos $-|x|\le x\cos x\le|x|$. Como $\lim_{x\to0}(-|x|)=0=
+\lim_{x\to0}|x|$, concluímos que $\lim_{x\to0}x\cos x=0$.
+\end{exemplo}
+
+\textbf{Dois limites trigonométricos fundamentais.} Pelo círculo unitário, para
+$0<\theta<\pi/2$, valem $0<\sin\theta<\theta<\tan\theta$ (o arco de comprimento $\theta$
+fica entre o segmento vertical de comprimento $\sin\theta$ e o segmento tangente de
+comprimento $\tan\theta$). Pelo confronto, isso dá $\lim_{\theta\to0}\sin\theta=0$ e,
+daí, $\lim_{\theta\to0}\cos\theta=1$.
+
+\fig[0.32]{CNX_Calc_Figure_02_03_008.jpg}{Para $0<\theta<\pi/2$:
+$\sin\theta<\theta<\tan\theta$.}
+
+Dividindo $\sin\theta<\theta<\tan\theta$ por $\sin\theta>0$ e invertendo, obtemos
+$\cos\theta<\dfrac{\sin\theta}{\theta}<1$. Essa desigualdade vale também para
+$-\pi/2<\theta<0$, porque as três funções são pares. Pelo Teorema do Confronto:
+
+\begin{teorema}[Limites trigonométricos especiais]{2.7}
+\[
+\lim_{\theta\to0}\frac{\sin\theta}{\theta}=1
+\qquad\text{e}\qquad
+\lim_{\theta\to0}\frac{1-\cos\theta}{\theta}=0 .
+\]
+\end{teorema}
+O segundo limite sai do primeiro multiplicando pelo conjugado:
+\[
+\frac{1-\cos\theta}{\theta}=\frac{1-\cos^2\theta}{\theta(1+\cos\theta)}
+=\frac{\sin\theta}{\theta}\cdot\frac{\sin\theta}{1+\cos\theta}\ \longrightarrow\ 1\cdot\frac02=0 .
+\]
+Esses dois limites serão essenciais para derivar seno e cosseno no capítulo~3.
+
+% ---------------------------------------------------------------------
+\section{Continuidade}
+
+\subsection{Continuidade em um ponto}
+
+Intuitivamente, uma função é contínua quando seu gráfico pode ser traçado sem tirar o lápis
+do papel. A definição precisa exige três condições.
+
+\begin{definicao}
+Uma função $f$ é \textbf{contínua no ponto $a$} se, e somente se:
+\begin{enumerate}[label=(\roman*)]
+\item $f(a)$ está definida;
+\item $\lim_{x\to a}f(x)$ existe;
+\item $\lim_{x\to a}f(x)=f(a)$.
+\end{enumerate}
+Se alguma condição falha, $f$ é \textbf{descontínua} em $a$.
+\end{definicao}
+
+Para verificar a continuidade em $a$, testamos as condições na ordem: se uma falha,
+paramos. Por exemplo, $f(x)=(x^2-4)/(x-2)$ não é contínua em $x=2$, pois $f(2)$ não está
+definida. Já
+\[
+f(x)=\begin{cases}x^3, & x\neq1\\ 0, & x=1\end{cases}
+\]
+está definida em 1 e tem $\lim_{x\to1}f(x)=1$, mas $1\neq f(1)=0$: falha a condição (iii).
+
+\begin{teorema}[Continuidade de polinômios e funções racionais]{2.8}
+Polinômios e funções racionais são contínuos em todos os pontos de seus domínios.
+\end{teorema}
+Isso decorre do Teorema~2.5: para $q(a)\neq0$, $\lim_{x\to a}p(x)/q(x)=p(a)/q(a)$.
+
+\subsection{Tipos de descontinuidade}
+
+\begin{definicao}
+Se $f$ é descontínua em $a$, então $f$ tem:
+\begin{enumerate}[label=\arabic*.]
+\item uma \textbf{descontinuidade removível} se $\lim_{x\to a}f(x)$ existe (é um número
+  real);
+\item uma \textbf{descontinuidade de salto} se os limites laterais existem, mas são
+  diferentes;
+\item uma \textbf{descontinuidade infinita} se pelo menos um limite lateral é $\pm\infty$.
+\end{enumerate}
+\end{definicao}
+
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 1,horizontal sep=1.1cm},painel,width=5.2cm,height=4.4cm,
+  xmin=-0.5,xmax=4,ymin=-0.5,ymax=4,xtick={2},xticklabels={$a$},ytick=\empty]
+\nextgroupplot[title={(a) removível}]
+\addplot[domain=-0.5:4]{0.5*x+1};
+\draw[azul,thick,fill=white] (axis cs:2,2) circle (2pt);
+\fill[laranja] (axis cs:2,3.2) circle (2pt);
+\nextgroupplot[title={(b) de salto}]
+\addplot[domain=-0.5:2]{0.5*x+0.6};
+\addplot[domain=2:4]{0.5*x+1.6};
+\fill[azul] (axis cs:2,1.6) circle (2pt);
+\draw[azul,thick,fill=white] (axis cs:2,2.6) circle (2pt);
+\nextgroupplot[title={(c) infinita},ymin=-4,ymax=4]
+\addplot[domain=-0.5:1.75]{1/(x-2)+0.5};
+\addplot[domain=2.25:4]{1/(x-2)+0.5};
+\draw[assint] (axis cs:2,-4) -- (axis cs:2,4);
+\end{groupplot}\end{tikzpicture}}{Tipos de descontinuidade em $x=a$: (a) removível, com
+o limite existindo, mas diferente de $f(a)$ ou com $f(a)$ indefinido; (b) de salto, com
+limites laterais finitos e diferentes; (c) infinita, com limite lateral $\pm\infty$.}
+
+\begin{exemplo}{2.10}{Classificando descontinuidades}
+(a) $f(x)=\dfrac{x^2-4}{x-2}$ em $x=2$: $\lim_{x\to2}f(x)=\lim(x+2)=4$ existe;
+descontinuidade \emph{removível}.
+
+(b) $f(x)=\begin{cases}-x^2+4, & x\le3\\ 4x-8, & x>3\end{cases}$ em $x=3$: os limites
+laterais são $-5$ e $4$; descontinuidade \emph{de salto}.
+
+(c) $f(x)=\dfrac{x+2}{x+1}$ em $x=-1$: pela esquerda o limite é $-\infty$ e pela direita
+$+\infty$; descontinuidade \emph{infinita}.
+\end{exemplo}
+
+\subsection{Continuidade em um intervalo}
+
+\begin{definicao}[Continuidade lateral]
+$f$ é \textbf{contínua à direita} em $a$ se $\lim_{x\to a^+}f(x)=f(a)$, e
+\textbf{contínua à esquerda} em $a$ se $\lim_{x\to a^-}f(x)=f(a)$.
+\end{definicao}
+
+Uma função é contínua em um intervalo aberto se é contínua em cada ponto dele. É contínua
+em $[a,b]$ se é contínua em $(a,b)$, contínua à direita em $a$ e contínua à esquerda em
+$b$. Por exemplo, $f(x)=\sqrt{4-x^2}$ é contínua em $[-2,2]$.
+
+\begin{teorema}[Função composta]{2.9}
+Se $f$ é contínua em $L$ e $\lim_{x\to a}g(x)=L$, então
+\[
+\lim_{x\to a}f\big(g(x)\big)=f\Big(\lim_{x\to a}g(x)\Big)=f(L).
+\]
+\end{teorema}
+Por exemplo, $\lim_{x\to\pi/2}\cos\!\big(x-\tfrac\pi2\big)=\cos0=1$. Em particular, a
+composta de funções contínuas é contínua.
+
+\begin{teorema}[Continuidade das funções trigonométricas]{2.10}
+As funções trigonométricas são contínuas em todo o seu domínio.
+\end{teorema}
+
+Mais geralmente, exponenciais, logaritmos, raízes e todas as funções construídas a partir
+delas e de polinômios por operações algébricas e composição são contínuas onde estão
+definidas.
+
+\subsection{O Teorema do Valor Intermediário}
+
+\begin{teorema}[Teorema do Valor Intermediário]{2.11}
+Seja $f$ contínua em um intervalo fechado e limitado $[a,b]$. Se $z$ é qualquer número
+real entre $f(a)$ e $f(b)$, então existe $c\in[a,b]$ tal que $f(c)=z$.
+\end{teorema}
+
+\fig[0.34]{CNX_Calc_Figure_02_04_007.jpg}{Existe $c\in[a,b]$ com $f(c)=z$.}
+
+\begin{exemplo}{2.11}{Garantindo um zero}
+Mostre que $f(x)=x-\cos x$ tem pelo menos um zero.
+\solucao
+$f$ é contínua em $\R$. Como $f(0)=-1<0$ e $f(\pi/2)=\pi/2>0$, o Teorema do Valor
+Intermediário garante que existe $c\in[0,\pi/2]$ com $f(c)=0$.
+\end{exemplo}
+
+\begin{nota}
+A continuidade é essencial. Para $f(x)=1/x$, temos $f(-1)=-1<0$ e $f(1)=1>0$, mas $f$ não
+tem zero em $[-1,1]$, pois não é contínua em $x=0$.
+\end{nota}
+
+% ---------------------------------------------------------------------
+\section{A definição precisa de limite}
+
+\subsection{Quantificando a proximidade}
+
+A definição intuitiva fala em $f(x)$ ``se aproximar'' de $L$. Para torná-la precisa,
+medimos distâncias: $|f(x)-L|$ é a distância entre $f(x)$ e $L$, e $|x-a|$ é a distância
+entre $x$ e $a$. Dizer que $f(x)$ fica tão perto de $L$ quanto quisermos significa: para
+qualquer tolerância $\varepsilon>0$, conseguimos garantir $|f(x)-L|<\varepsilon$ tomando
+$x$ suficientemente perto de $a$, a uma distância menor que algum $\delta>0$.
+
+\begin{definicao}[Definição $\varepsilon$-$\delta$ de limite]
+Seja $f$ definida para $x\neq a$ em um intervalo aberto contendo $a$, e seja $L$ real.
+Então $\lim_{x\to a}f(x)=L$ se, para todo $\varepsilon>0$, existe $\delta>0$ tal que
+\[
+0<|x-a|<\delta\ \Longrightarrow\ |f(x)-L|<\varepsilon .
+\]
+\end{definicao}
+
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=8cm,height=6.2cm,xmin=0,xmax=4.2,ymin=0,ymax=4.6,
+  xtick={1.6,2,2.4},xticklabels={$a-\delta$,$a$,$a+\delta$},
+  ytick={1.95,2.6,3.25},yticklabels={$L-\varepsilon$,$L$,$L+\varepsilon$},
+  x tick label style={font=\scriptsize,rotate=0},axis on top]
+\fill[laranja!12] (axis cs:0,1.95) rectangle (axis cs:4.2,3.25);
+\fill[azul!12] (axis cs:1.6,0) rectangle (axis cs:2.4,4.6);
+\draw[laranja,dashed,thin] (axis cs:0,1.95) -- (axis cs:4.2,1.95);
+\draw[laranja,dashed,thin] (axis cs:0,3.25) -- (axis cs:4.2,3.25);
+\draw[azul!60,dashed,thin] (axis cs:1.6,0) -- (axis cs:1.6,4.6);
+\draw[azul!60,dashed,thin] (axis cs:2.4,0) -- (axis cs:2.4,4.6);
+\addplot[domain=0.2:4]{0.15*x^3-0.9*x^2+2.1*x+0.6};
+\draw[azul,thick,fill=white] (axis cs:2,2.6) circle (2pt);
+\end{axis}\end{tikzpicture}}{A definição $\varepsilon$-$\delta$: para cada faixa
+horizontal $(L-\varepsilon,L+\varepsilon)$ existe uma faixa vertical $(a-\delta,a+\delta)$
+na qual o gráfico, exceto possivelmente em $x=a$, fica dentro da faixa horizontal.}
+
+\begin{estrategia}{provar que $\lim_{x\to a}f(x)=L$}
+\begin{enumerate}[label=\arabic*.]
+\item Comece com: ``Seja $\varepsilon>0$.''
+\item Encontre $\delta$ (geralmente trabalhando ``de trás para a frente'' a partir de
+  $|f(x)-L|<\varepsilon$) e escreva: ``Escolha $\delta=\ldots$''.
+\item Escreva: ``Suponha $0<|x-a|<\delta$.''
+\item Usando essa hipótese, mostre que $|f(x)-L|<\varepsilon$.
+\item Conclua: ``Portanto, $\lim_{x\to a}f(x)=L$.''
+\end{enumerate}
+\end{estrategia}
+
+\begin{exemplo}{2.12}{Uma prova $\varepsilon$-$\delta$ com função afim}
+Prove que $\lim_{x\to-1}(4x+1)=-3$.
+\solucao
+Rascunho: queremos $|(4x+1)-(-3)|=|4x+4|=4|x+1|<\varepsilon$, ou seja, $|x+1|<\varepsilon/4$.
+Isso sugere $\delta=\varepsilon/4$.
+
+Prova: seja $\varepsilon>0$. Escolha $\delta=\varepsilon/4$. Suponha $0<|x+1|<\delta$.
+Então $|(4x+1)-(-3)|=4|x+1|<4\delta=\varepsilon$. Portanto,
+$\lim_{x\to-1}(4x+1)=-3$.
+\end{exemplo}
+
+\begin{exemplo}{2.13}{Uma prova $\varepsilon$-$\delta$ com função quadrática}
+Prove que $\lim_{x\to-1}(x^2-2x+3)=6$.
+\solucao
+Rascunho: $|(x^2-2x+3)-6|=|x+1|\cdot|x-3|$. O fator $|x-3|$ depende de $x$, então
+primeiro o limitamos: se $|x+1|<1$, então $-1<x+1<1$, isto é, $-5<x-3<-3$, e logo
+$|x-3|<5$. Basta então ter também $|x+1|<\varepsilon/5$.
+
+Prova: seja $\varepsilon>0$. Escolha $\delta=\min\{1,\varepsilon/5\}$. Suponha
+$0<|x+1|<\delta$. Então $|x+1|<1$, donde $|x-3|<5$, e $|x+1|<\varepsilon/5$. Logo
+$|(x^2-2x+3)-6|=|x+1|\,|x-3|<\tfrac{\varepsilon}{5}\cdot5=\varepsilon$.
+\end{exemplo}
+
+\subsection{Provando as propriedades dos limites}
+
+A definição precisa permite demonstrar as propriedades da seção~2.3. Como exemplo,
+provemos a da soma. Uma ferramenta recorrente é a \textbf{desigualdade triangular}:
+$|a+b|\le|a|+|b|$ para quaisquer reais $a$ e $b$.
+
+\emph{Prova da propriedade da soma.} Suponha $\lim_{x\to a}f(x)=L$ e
+$\lim_{x\to a}g(x)=M$. Seja $\varepsilon>0$. Existe $\delta_1>0$ tal que
+$0<|x-a|<\delta_1$ implica $|f(x)-L|<\varepsilon/2$, e existe $\delta_2>0$ tal que
+$0<|x-a|<\delta_2$ implica $|g(x)-M|<\varepsilon/2$. Escolha $\delta=\min\{\delta_1,\delta_2\}$.
+Se $0<|x-a|<\delta$, então
+\[
+|(f(x)+g(x))-(L+M)|\le|f(x)-L|+|g(x)-M|<\frac\varepsilon2+\frac\varepsilon2=\varepsilon. \qquad\square
+\]
+
+Para mostrar que um limite \emph{não} existe, basta exibir um $\varepsilon>0$ para o qual
+nenhum $\delta$ funciona. Por exemplo, se $f(x)=-1$ para $x<0$ e $f(x)=1$ para $x\ge0$, com
+$\varepsilon=1/2$ não há $\delta$ que sirva para nenhum candidato $L$: perto de 0 há valores
+de $f$ iguais a $-1$ e a $1$, que distam 2 entre si.
+
+\subsection{Limites laterais e infinitos}
+
+As outras formas de limite têm definições análogas:
+\begin{itemize}
+\item $\lim_{x\to a^+}f(x)=L$ se, para todo $\varepsilon>0$, existe $\delta>0$ tal que
+  $0<x-a<\delta\Rightarrow|f(x)-L|<\varepsilon$;
+\item $\lim_{x\to a^-}f(x)=L$ se, para todo $\varepsilon>0$, existe $\delta>0$ tal que
+  $-\delta<x-a<0\Rightarrow|f(x)-L|<\varepsilon$;
+\item $\lim_{x\to a}f(x)=+\infty$ se, para todo $M>0$, existe $\delta>0$ tal que
+  $0<|x-a|<\delta\Rightarrow f(x)>M$ (e $-\infty$ com $f(x)<-M$).
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\section*{Resumo do capítulo}
+\addcontentsline{toc}{section}{Resumo do capítulo}
+\begin{itemize}
+\item A inclinação da tangente e a velocidade instantânea são limites de inclinações de
+  secantes e de velocidades médias; a área sob uma curva é o limite de somas de áreas de
+  retângulos.
+\item $\lim_{x\to a}f(x)=L$ quando $f(x)$ fica arbitrariamente perto de $L$ para $x$
+  suficientemente perto de $a$ ($x\neq a$); o valor $f(a)$ é irrelevante.
+\item O limite bilateral existe se, e somente se, os laterais existem e são iguais.
+\item Um limite infinito descreve uma assíntota vertical; $\infty$ não é um número.
+\item Para polinômios e racionais (com denominador não nulo), basta substituir.
+  Na forma $0/0$, fatore, use o conjugado ou simplifique antes.
+\item Teorema do Confronto; $\lim_{\theta\to0}\frac{\sin\theta}{\theta}=1$ e
+  $\lim_{\theta\to0}\frac{1-\cos\theta}{\theta}=0$.
+\item Contínua em $a$: $f(a)$ definida, o limite existe e é igual a $f(a)$.
+  Descontinuidades: removível, de salto, infinita.
+\item Teorema do Valor Intermediário: uma função contínua em $[a,b]$ assume todos os
+  valores entre $f(a)$ e $f(b)$.
+\item Definição precisa: para todo $\varepsilon>0$ existe $\delta>0$ tal que
+  $0<|x-a|<\delta\Rightarrow|f(x)-L|<\varepsilon$.
+\end{itemize}
+
+\input{exercicios_cap2}

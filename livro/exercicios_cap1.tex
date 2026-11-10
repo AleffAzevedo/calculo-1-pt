@@ -1,0 +1,62 @@
+% Gerado por ferramentas/gerar.py; não edite à mão.
+\section*{Exercícios selecionados}
+\addcontentsline{toc}{section}{Exercícios selecionados}
+Problemas escolhidos para desenvolver a resolução de problemas. As soluções completas,
+com animações dos gráficos, estão no repositório do livro: \url{https://github.com/AleffAzevedo/calculo-1-pt/tree/main/exercicios/cap1}.
+
+\begin{enumerate}[label=\textbf{\thechapter.\arabic*}, leftmargin=2.6em, itemsep=6pt]
+\item \textbf{Composição e domínio.} Sejam $f(x)=\dfrac{3}{2x+1}$ e $g(x)=\dfrac{2}{x}$. Encontre $(f\circ g)(x)$ e
+$(g\circ f)(x)$ e determine o domínio de cada composta.
+\item \textbf{Custo e ponto de equilíbrio.} Uma confeitaria vende cupcakes em festivais. Montar a barraca custa R\$\,125,00 e cada
+cupcake custa R\$\,0,75 para ser produzido.
+(a) Escreva o custo total $C$ em função do número $x$ de cupcakes.
+(b) Quanto custa produzir 160 cupcakes?
+(c) Vendendo cada cupcake a R\$\,1,50, quantos ela precisa vender para começar a ter lucro?
+\item \textbf{Identidade trigonométrica.} Verifique a identidade $\dfrac{1}{1-\sin\alpha}+\dfrac{1}{1+\sin\alpha}=2\sec^2\alpha$.
+\item \textbf{Horas de luz do dia.} O número de horas de luz do dia em uma cidade é modelado por
+$N(t)=12+3\sin\!\left[\frac{2\pi}{365}(t-79)\right]$, em que $t$ é o número de dias após
+1º de janeiro.
+(a) Encontre a amplitude e o período.
+(b) Quantas horas de luz há no dia mais longo do ano? E no mais curto?
+(c) Quantas horas de luz há 90 dias após 1º de janeiro?
+\item \textbf{Custo de remoção de uma toxina.} O custo (em milhares de reais) para remover $p$ partes por bilhão (ppb) de uma toxina de um
+lago é $C(p)=\dfrac{75p}{85-p}$, válido para $0\le p<85$.
+(a) Calcule o custo para remover 25, 40 e 50 ppb.
+(b) Encontre a função inversa $p=C^{-1}(C)$.
+(c) Quanto da toxina se remove com R\$\,50 mil?
+\item \textbf{Profundidade da maré.} A profundidade (em pés) da água em um cais é $D(t)=5\sin\!\left(\frac{\pi}{6}t-\frac{7\pi}{6}\right)+8$,
+em que $t$ é o número de horas após a meia-noite. Determine o primeiro instante após a
+meia-noite em que a profundidade é 11,75 pés.
+\item \textbf{Expressões hiperbólicas.} Reescreva em termos de exponenciais e simplifique:
+(a) $2\cosh(\ln x)$; (b) $\cosh 4x+\sinh 4x$; (c) $\cosh 2x-\sinh 2x$;
+(d) $\ln(\cosh x+\sinh x)+\ln(\cosh x-\sinh x)$.
+\item \textbf{Decaimento do iodo-131.} O iodo-131 decai segundo $Q(t)=Q_0e^{-0{,}08664t}$, com $t$ em dias. Quanto tempo leva
+(arredondando para o dia mais próximo) para 95\% de uma amostra decair?
+\item \textbf{Crescimento de bactérias.} Uma colônia de bactérias dobra a cada 12 horas e começa com 1000 bactérias.
+(a) Usando $Q=Q_0e^{kt}$, determine $k$ (quatro casas decimais).
+(b) Aproximadamente quanto tempo leva para haver 200\,000 bactérias?
+\item \textbf{Escala Richter.} O terremoto de 1906 em São Francisco teve magnitude 8,3 na escala Richter. No mesmo
+período, um terremoto de magnitude 4,9 no Japão causou poucos danos. Quantas vezes o de
+São Francisco foi mais intenso?
+\item \textbf{População sazonal.} A população de uma cidade litorânea, em milhares, é modelada por
+$P(t)=82{,}5-67{,}5\cos\!\left(\frac\pi6t\right)$, com $t$ em meses ($t=0$ é 1º de janeiro).
+Em que intervalos do ano a população é menor que 20 mil? E maior que 140 mil?
+\end{enumerate}
+
+\subsection*{Respostas}
+{\small\begin{enumerate}[label=\textbf{\thechapter.\arabic*}, leftmargin=2.6em, itemsep=2pt]
+\item $(f\circ g)(x)=\dfrac{3x}{x+4}$, com $x\neq0,-4$;\quad
+$(g\circ f)(x)=\dfrac{2(2x+1)}{3}$, com $x\neq-\tfrac12$.
+\item (a) $C(x)=0{,}75x+125$; (b) R\$\,245,00; (c) 167 cupcakes.
+\item Some as frações: o denominador comum é $1-\sin^2\alpha=\cos^2\alpha$.
+\item (a) Amplitude 3, período 365 dias; (b) 15 h e 9 h; (c) $\approx12{,}56$ h.
+\item (a) $\approx$ R\$\,31,25 mil, R\$\,66,67 mil e R\$\,107,14 mil;
+(b) $p=\dfrac{85C}{C+75}$; (c) 34 ppb.
+\item $t=7+\frac6\pi\sin^{-1}(0{,}75)\approx8{,}62$ h, por volta de 8h37.
+\item (a) $x+\frac1x$ ($x>0$); (b) $e^{4x}$; (c) $e^{-2x}$; (d) $0$.
+\item $t=\dfrac{\ln 20}{0{,}08664}\approx35$ dias.
+\item (a) $k=\frac{\ln2}{12}\approx0{,}0578$ por hora; (b) $\approx92$ horas.
+\item $10^{3{,}4}\approx2512$ vezes.
+\item $P<20$ para $t\in[0;\,0{,}74)\cup(11{,}26;\,12]$ (início de dez. a fim de jan.);
+$P>140$ para $t\in(4{,}95;\,7{,}05)$ (fim de maio ao início de ago.).
+\end{enumerate}}
