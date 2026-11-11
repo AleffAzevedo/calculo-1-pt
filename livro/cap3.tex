@@ -14,7 +14,7 @@ derivadas de todas as funções do capítulo~1.
 \subsection{Retas tangentes}
 
 Seja $f$ definida em um intervalo $I$ que contém $a$. Para $x\neq a$ em $I$, o
-\textbf{quociente de diferenças}
+\textbf{quociente de diferenças}\index{quociente de diferencas@quociente de diferenças}
 \[
 Q=\frac{f(x)-f(a)}{x-a}
 \qquad\text{ou, com } x=a+h,\qquad
@@ -60,12 +60,12 @@ $y=-\tfrac14x+1$.
 A inclinação da tangente é tão importante que recebe um nome próprio.
 
 \begin{definicao}
-A \textbf{derivada} de $f$ em $a$, denotada $f'(a)$, é
+A \textbf{derivada}\index{derivada} de $f$ em $a$, denotada $f'(a)$, é
 \[
 f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to0}\frac{f(a+h)-f(a)}{h},
 \]
-desde que o limite exista. Nesse caso, dizemos que $f$ é \textbf{derivável} (ou
-diferenciável) em $a$. A derivada $f'(a)$ é a \textbf{taxa de variação instantânea} de $f$
+desde que o limite exista. Nesse caso, dizemos que $f$ é \textbf{derivável}\index{funcao@função!derivavel@derivável} (ou
+diferenciável) em $a$. A derivada $f'(a)$ é a \textbf{taxa de variação instantânea}\index{taxa de variacao@taxa de variação} de $f$
 em $a$.
 \end{definicao}
 
@@ -141,7 +141,7 @@ O valor de $f'(x)$ é a inclinação do gráfico de $f$ em $x$. Assim:
 
 \subsection{Derivabilidade e continuidade}
 
-\begin{teorema}[Derivabilidade implica continuidade]{3.1}
+\begin{teorema}[Derivabilidade implica continuidade]{3.1}\index{derivabilidade e continuidade}
 Se $f$ é derivável em $a$, então $f$ é contínua em $a$.
 \end{teorema}
 \emph{Prova.} Para $x\neq a$,
@@ -178,9 +178,9 @@ $b=-9$. A reta $y=6x-9$ é exatamente a tangente à parábola em $x=3$.
 
 \subsection{Derivadas de ordem superior}
 
-A derivada de $f'$ é a \textbf{segunda derivada}, $f''$ ou $\dfrac{d^2y}{dx^2}$; depois vêm
+A derivada de $f'$ é a \textbf{segunda derivada}\index{derivada!de ordem superior}, $f''$ ou $\dfrac{d^2y}{dx^2}$; depois vêm
 $f'''$, $f^{(4)},\dots$ Se $s(t)$ é a posição, $v(t)=s'(t)$ é a velocidade e
-$a(t)=v'(t)=s''(t)$ é a \textbf{aceleração}.
+$a(t)=v'(t)=s''(t)$ é a \textbf{aceleração}\index{aceleracao@aceleração}.
 
 % ---------------------------------------------------------------------
 \section{Regras de derivação}
@@ -208,7 +208,7 @@ Se $f$ e $g$ são deriváveis e $k$ é constante:
 Com isso, derivamos qualquer polinômio termo a termo: por exemplo,
 $\dfrac{d}{dx}\big(2x^5+7x^2-x+4\big)=10x^4+14x-1$.
 
-\begin{teorema}[Regra do produto]{3.4}
+\begin{teorema}[Regra do produto]{3.4}\index{regra do produto}
 Se $f$ e $g$ são deriváveis, $\big(f\,g\big)'=f'\,g+f\,g'$.
 \end{teorema}
 \emph{Prova.} Somamos e subtraímos $f(x+h)g(x)$ no numerador:
@@ -224,7 +224,7 @@ A derivada do produto \emph{não} é o produto das derivadas: $(x\cdot x)'=2x$, 
 $1\cdot1$.
 \end{nota}
 
-\begin{teorema}[Regra do quociente]{3.5}
+\begin{teorema}[Regra do quociente]{3.5}\index{regra do quociente}
 Se $f$ e $g$ são deriváveis e $g(x)\neq0$,
 \[
 \Big(\frac fg\Big)'=\frac{f'\,g-f\,g'}{g^2}.
@@ -284,7 +284,7 @@ em $[0,2)$ e $(4,\infty)$, para trás em $(2,4)$. A aceleração é $a(t)=6t-18$
 
 Se $P(t)$ é uma população, $P'(t)$ é a \textbf{taxa de crescimento populacional}. Na
 economia, se $C(x)$ é o custo de produzir $x$ unidades e $R(x)$ é a receita com a venda de
-$x$ unidades, o \textbf{custo marginal} é $C'(x)$, a \textbf{receita marginal} é $R'(x)$
+$x$ unidades, o \textbf{custo marginal}\index{analise marginal@análise marginal} é $C'(x)$, a \textbf{receita marginal} é $R'(x)$
 e o \textbf{lucro marginal} é $P'(x)=R'(x)-C'(x)$. Pela fórmula da variação aproximada, o
 custo marginal $C'(x)$ estima o custo de produzir a unidade número $x+1$.
 
@@ -349,7 +349,7 @@ segue uma regra simples: se $u=g(x)$ varia $g'(x)$ vezes mais rápido que $x$, e
 varia $f'(u)$ vezes mais rápido que $u$, então $y$ varia $f'(u)\,g'(x)$ vezes mais rápido que
 $x$.
 
-\begin{regra}{Regra da cadeia}
+\begin{regra}{Regra da cadeia}\index{regra da cadeia}
 Se $g$ é derivável em $x$ e $f$ é derivável em $g(x)$, então $h=f\circ g$ é derivável em
 $x$ e
 \[
@@ -460,7 +460,7 @@ Muitas curvas, como a circunferência $x^2+y^2=25$, não são gráficos de uma �
 $y=f(x)$. Ainda assim, perto de cada ponto (salvo exceções) a curva é o gráfico de alguma
 função $y(x)$, e podemos derivar a equação \emph{como está}, tratando $y$ como função de $x$.
 
-\begin{estrategia}{derivação implícita}
+\begin{estrategia}{derivação implícita}\index{derivacao implicita@derivação implícita}
 \begin{enumerate}[label=\arabic*.]
 \item Derive os dois lados da equação em relação a $x$, lembrando que, pela regra da
   cadeia, $\frac{d}{dx}\big(g(y)\big)=g'(y)\,\frac{dy}{dx}$ (por exemplo,
@@ -538,7 +538,7 @@ logaritmo, $2\ln x+\ln\sin x-\ln(2x+1)$; a derivada é $\dfrac2x+\cot x-\dfrac{2
 Para funções da forma $f(x)^{g(x)}$, ou produtos e quocientes complicados, tomamos o
 logaritmo dos dois lados antes de derivar.
 
-\begin{estrategia}{derivação logarítmica}
+\begin{estrategia}{derivação logarítmica}\index{derivacao logaritmica@derivação logarítmica}
 \begin{enumerate}[label=\arabic*.]
 \item Aplique $\ln$ aos dois lados de $y=h(x)$ e simplifique com as propriedades do
   logaritmo.
@@ -561,7 +561,7 @@ Com a mesma técnica, para qualquer real $r$ e $x>0$, $y=x^r$ dá $\ln y=r\ln x$
 $y'=y\cdot\frac rx=rx^{r-1}$: a regra da potência vale para \emph{todo} expoente real.
 
 % ---------------------------------------------------------------------
-\section*{Resumo do capítulo}
+\section*{Resumo do capítulo}\markright{Resumo do capítulo}
 \addcontentsline{toc}{section}{Resumo do capítulo}
 \begin{itemize}
 \item $f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}h$: inclinação da tangente e taxa de variação

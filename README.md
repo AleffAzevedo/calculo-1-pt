@@ -20,6 +20,9 @@ respostas. Os marcados com ★ têm solução completa e animação do gráfico 
 | 5 | Integração | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap5/README.md) |
 | 6 | Aplicações da integração | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap6/README.md) |
 | 7 | Técnicas de integração | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap7/README.md) |
+| A | Formulário (apêndice) | ✅ | — |
+
+Versão **1.0** (novembro de 2026): 107 páginas, 455 exercícios, todas as figuras em português, apêndice de fórmulas e índice remissivo.
 
 Cada solução completa segue o mesmo roteiro: a **estratégia**, a resolução passo a passo, um
 comentário sobre erros comuns ou interpretações e uma **animação** do gráfico do problema.
@@ -30,7 +33,7 @@ comentário sobre erros comuns ou interpretações e uma **animação** do gráf
 
 ```
 Calculo_I.pdf          livro compilado
-livro/                 fontes LaTeX (calculo1.tex, capN.tex) e figuras
+livro/                 fontes LaTeX (calculo1.tex, capN.tex, apendice.tex); figuras em TikZ/pgfplots
   exercicios_capN.tex  gerado automaticamente; não edite à mão
 exercicios/capN/       soluções (README.md) e animações (anim/*.gif)
 ferramentas/
@@ -45,7 +48,7 @@ ferramentas/
 ```bash
 pip install -r ferramentas/requirements.txt
 python3 ferramentas/gerar.py            # exercícios + animações dos capítulos prontos
-cd livro && latexmk -pdf calculo1.tex   # requer TeX Live com babel-portuges, pgfplots e tcolorbox
+cd livro && latexmk -pdf calculo1.tex   # requer TeX Live com babel-portuges, pgfplots, tcolorbox e makeindex
 ```
 
 Para gerar só os textos, sem refazer as animações: `python3 ferramentas/gerar.py --sem-animacoes`.
@@ -61,8 +64,9 @@ Esta adaptação (tradução, condensação, figuras redesenhadas, soluções e 
 distribuída sob a **mesma licença**, apenas para uso não comercial. Veja [LICENSE](LICENSE).
 
 **Alterações em relação ao original:** tradução; condensação do texto; remoção dos pontos
-de verificação, dos projetos e da maior parte dos exercícios; listas de exercícios por nível,
-com soluções e animações novas; redesenho de parte das figuras.
+de verificação, dos projetos e dos exercícios do original; listas de exercícios novas, por nível,
+com soluções e animações; todas as figuras redesenhadas em português; apêndice de fórmulas e
+índice remissivo.
 
 Esta versão não é endossada pela OpenStax nem pela Rice University. Os nomes e logotipos
 OpenStax e Rice University são marcas registradas e não fazem parte da licença.

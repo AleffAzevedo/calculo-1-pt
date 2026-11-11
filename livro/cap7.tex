@@ -9,7 +9,7 @@ numéricos para quando nenhuma antiderivada elementar existe e as integrais impr
 o intervalo ou o integrando são ilimitados.
 
 % ---------------------------------------------------------------------
-\section{Integração por partes}
+\section{Integração por partes}\index{integracao por partes@integração por partes}
 
 Integrando a regra do produto $(uv)'=u'v+uv'$, obtemos
 \[
@@ -18,7 +18,7 @@ Integrando a regra do produto $(uv)'=u'v+uv'$, obtemos
 \]
 A ideia é trocar uma integral difícil por outra mais simples. Escolha para $u$ a função que
 \emph{simplifica ao derivar} e para $dv$ a que se integra com facilidade. Uma ordem prática
-de preferência para $u$ é \textbf{LIATE}: \textbf{L}ogaritmos, \textbf{I}nversas trigonométricas,
+de preferência para $u$ é \textbf{LIATE}\index{liate@LIATE}: \textbf{L}ogaritmos, \textbf{I}nversas trigonométricas,
 \textbf{A}lgébricas (polinômios), \textbf{T}rigonométricas, \textbf{E}xponenciais.
 
 \begin{exemplo}{7.1}{Partes}
@@ -34,7 +34,7 @@ $-x^2\cos x+\int2x\cos x\,dx=-x^2\cos x+2x\sin x+2\cos x+C$.
 (d) $\int_0^\pi x\sin x\,dx=\big[-x\cos x\big]_0^\pi+\int_0^\pi\cos x\,dx=\pi+0=\pi$.
 \end{exemplo}
 
-\textbf{Integrais cíclicas.} Às vezes a integral original reaparece. Em
+\textbf{Integrais cíclicas.}\index{integral!ciclica@cíclica} Às vezes a integral original reaparece. Em
 $I=\int e^x\sin x\,dx$, partes duas vezes (sempre com $dv=e^xdx$) dá
 $I=e^x\sin x-e^x\cos x-I$, e daí $I=\tfrac12e^x(\sin x-\cos x)+C$.
 
@@ -50,7 +50,7 @@ $I=e^x\sin x-e^x\cos x-I$, e daí $I=\tfrac12e^x(\sin x-\cos x)+C$.
 $e\times1$, ou seja, $\int_1^e\ln x\,dx=e-\int_0^1e^y\,dy=e-(e-1)=1$.}
 
 % ---------------------------------------------------------------------
-\section{Integrais trigonométricas}
+\section{Integrais trigonométricas}\index{integrais trigonometricas@integrais trigonométricas}
 
 \textbf{Potências de seno e cosseno}, $\int\sin^mx\cos^nx\,dx$:
 \begin{itemize}
@@ -82,7 +82,7 @@ $\int\sec^3x\,dx=\frac12\big(\sec x\tan x+\ln|\sec x+\tan x|\big)+C$.
 \end{exemplo}
 
 % ---------------------------------------------------------------------
-\section{Substituição trigonométrica}
+\section{Substituição trigonométrica}\index{substituicao trigonometrica@substituição trigonométrica}
 
 Raízes de expressões quadráticas desaparecem com a substituição certa, porque
 $1-\sin^2=\cos^2$, $1+\tan^2=\sec^2$ e $\sec^2-1=\tan^2$:
@@ -130,7 +130,7 @@ $-\frac{\sqrt{x^2+4}}{4x}+C$.
 \section{Frações parciais}
 
 Para integrar uma função racional $\frac{P(x)}{Q(x)}$:
-\begin{estrategia}{frações parciais}
+\begin{estrategia}{frações parciais}\index{fracoes parciais@frações parciais}
 \begin{enumerate}[label=\arabic*.]
 \item Se $\operatorname{grau}P\ge\operatorname{grau}Q$, divida primeiro (polinômio + fração
   própria).
@@ -163,14 +163,14 @@ $\int\frac{dx}{x^2(x+1)}=-\ln|x|-\frac1x+\ln|x+1|+C$.
 Funções como $e^{-x^2}$, $\frac{\sin x}x$ e $\sqrt{1+x^3}$ não têm antiderivada elementar. Com
 $\Delta x=\frac{b-a}n$ e $x_i=a+i\Delta x$:
 \begin{itemize}
-\item \textbf{Regra do trapézio:}
+\item \textbf{Regra do trapézio:}\index{regra do trapezio@regra do trapézio}
   $T_n=\frac{\Delta x}2\big[f(x_0)+2f(x_1)+\dots+2f(x_{n-1})+f(x_n)\big]$.
-\item \textbf{Regra de Simpson} ($n$ par), que aproxima $f$ por parábolas a cada dois
+\item \textbf{Regra de Simpson}\index{regra de simpson@regra de Simpson} ($n$ par), que aproxima $f$ por parábolas a cada dois
   subintervalos:
   $S_n=\frac{\Delta x}3\big[f(x_0)+4f(x_1)+2f(x_2)+4f(x_3)+\dots+4f(x_{n-1})+f(x_n)\big]$.
 \end{itemize}
 
-\begin{teorema}[Limitantes de erro]{7.1}
+\begin{teorema}[Limitantes de erro]{7.1}\index{integracao numerica@integração numérica}
 Se $|f''|\le K$ em $[a,b]$, então $|E_T|\le\dfrac{K(b-a)^3}{12n^2}$. Se $|f^{(4)}|\le M$, então
 $|E_S|\le\dfrac{M(b-a)^5}{180n^4}$.
 \end{teorema}
@@ -194,7 +194,7 @@ $\approx1{,}1\times10^{-4}$). O teorema garante $|E_T|\le\frac{2\cdot1}{12\cdot1
 \end{exemplo}
 
 % ---------------------------------------------------------------------
-\section{Integrais impróprias}
+\section{Integrais impróprias}\index{integral!impropria@imprópria}
 
 \begin{definicao}
 (i) Intervalo infinito: $\displaystyle\int_a^\infty f(x)\,dx=\lim_{t\to\infty}\int_a^tf(x)\,dx$
@@ -223,7 +223,7 @@ converge se, e só se, $p<1$.
 $\int_0^1\frac{dx}{x^2}$ diverge.
 \end{exemplo}
 
-\begin{teorema}[Teste da comparação]{7.2}
+\begin{teorema}[Teste da comparação]{7.2}\index{teste!da comparacao@da comparação}
 Se $0\le f(x)\le g(x)$ para $x\ge a$: se $\int_a^\infty g$ converge, então $\int_a^\infty f$
 converge; se $\int_a^\infty f$ diverge, então $\int_a^\infty g$ diverge.
 \end{teorema}
@@ -231,7 +231,7 @@ Por exemplo, $\int_1^\infty e^{-x^2}dx$ converge, pois $e^{-x^2}\le e^{-x}$ para
 $\int_1^\infty\frac{1+\sin^2x}{\sqrt x}\,dx$ diverge, pois o integrando é $\ge\frac1{\sqrt x}$.
 
 % ---------------------------------------------------------------------
-\section*{Resumo do capítulo}
+\section*{Resumo do capítulo}\markright{Resumo do capítulo}
 \addcontentsline{toc}{section}{Resumo do capítulo}
 \begin{itemize}
 \item Partes: $\int u\,dv=uv-\int v\,du$; $u$ pela ordem LIATE; integrais cíclicas voltam a si

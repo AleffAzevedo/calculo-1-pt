@@ -11,7 +11,7 @@ integrar.
 % ---------------------------------------------------------------------
 \section{Aproximando áreas}
 
-\subsection{Notação de somatório}
+\subsection{Notação de somatório}\index{somatorio@somatório}
 
 Escrevemos $\displaystyle\sum_{i=1}^n a_i=a_1+a_2+\dots+a_n$. Valem
 $\sum(a_i\pm b_i)=\sum a_i\pm\sum b_i$ e $\sum c\,a_i=c\sum a_i$, além das fórmulas
@@ -27,7 +27,7 @@ subintervalos de largura $\Delta x=\frac{b-a}n$, com extremos $x_i=a+i\,\Delta x
 áreas de retângulos. A altura de cada retângulo é o valor de $f$ em algum ponto $x_i^*$ do
 subintervalo:
 \[
-\sum_{i=1}^n f(x_i^*)\,\Delta x \qquad(\textbf{soma de Riemann}).
+\sum_{i=1}^n f(x_i^*)\,\Delta x \qquad(\textbf{soma de Riemann}\index{soma de riemann@soma de Riemann}).
 \]
 Usando a extremidade esquerda ($x_{i-1}$), a direita ($x_i$) ou o ponto médio, obtemos as
 aproximações $L_n$, $R_n$ e $M_n$.
@@ -68,7 +68,7 @@ Se $f$ está definida em $[a,b]$ e o limite
 \int_a^b f(x)\,dx=\lim_{n\to\infty}\sum_{i=1}^n f(x_i^*)\,\Delta x
 \]
 existe e é o mesmo para quaisquer escolhas dos pontos $x_i^*$, dizemos que $f$ é
-\textbf{integrável} em $[a,b]$ e o limite é a \textbf{integral definida} de $f$ de $a$ a $b$.
+\textbf{integrável}\index{funcao@função!integravel@integrável} em $[a,b]$ e o limite é a \textbf{integral definida}\index{integral!definida} de $f$ de $a$ a $b$.
 Os números $a$ e $b$ são os \emph{limites de integração}, e $f$ é o \emph{integrando}.
 \end{definicao}
 
@@ -76,7 +76,7 @@ Toda função contínua em $[a,b]$ é integrável (e também as que têm um núm
 descontinuidades de salto). A variável de integração é ``muda'':
 $\int_a^bf(x)\,dx=\int_a^bf(t)\,dt$.
 
-\textbf{Área com sinal.} Se $f$ muda de sinal, os retângulos abaixo do eixo contribuem
+\textbf{Área com sinal.}\index{area com sinal@área com sinal} Se $f$ muda de sinal, os retângulos abaixo do eixo contribuem
 negativamente: $\int_a^bf(x)\,dx$ é a \emph{área líquida} (área acima do eixo menos área
 abaixo). A \emph{área total} é $\int_a^b|f(x)|\,dx$.
 
@@ -101,14 +101,14 @@ Para $f$ e $g$ integráveis e $k$ constante:
 \end{enumerate}
 \end{teorema}
 
-\textbf{Valor médio.} O \textbf{valor médio} de $f$ em $[a,b]$ é
+\textbf{Valor médio.} O \textbf{valor médio}\index{valor medio de uma funcao@valor médio de uma função} de $f$ em $[a,b]$ é
 $f_{\text{méd}}=\dfrac1{b-a}\displaystyle\int_a^bf(x)\,dx$: a altura do retângulo de base
 $[a,b]$ com a mesma área líquida que a região sob $f$.
 
 % ---------------------------------------------------------------------
 \section{O Teorema Fundamental do Cálculo}
 
-\begin{teorema}[Teorema do Valor Médio para integrais]{5.2}
+\begin{teorema}[Teorema do Valor Médio para integrais]{5.2}\index{teorema@Teorema!do valor medio para integrais@do Valor Médio para integrais}
 Se $f$ é contínua em $[a,b]$, existe $c\in[a,b]$ tal que $f(c)=\dfrac1{b-a}\displaystyle\int_a^bf(x)\,dx$.
 \end{teorema}
 
@@ -125,7 +125,7 @@ altura $\approx f(x)$). Isso sugere que $F'(x)=f(x)$.
 \end{axis}\end{tikzpicture}}{A função área $F(x)=\int_a^xf(t)\,dt$. Ao passar de $x$ para
 $x+h$, a área cresce cerca de $f(x)\cdot h$ (faixa laranja).}
 
-\begin{teorema}[Teorema Fundamental do Cálculo, parte 1]{5.3}
+\begin{teorema}[Teorema Fundamental do Cálculo, parte 1]{5.3}\index{teorema@Teorema!fundamental do calculo@Fundamental do Cálculo}
 Se $f$ é contínua em $[a,b]$, então $F(x)=\int_a^xf(t)\,dt$ é derivável em $(a,b)$ e
 \[
 F'(x)=\frac{d}{dx}\int_a^xf(t)\,dt=f(x).
@@ -163,12 +163,12 @@ $G=F+C$. Então $\int_a^bf=G(b)-G(a)=F(b)-F(a)$. $\square$
 Lendo a parte 2 do TFC com $F'$ no lugar de $f$: a integral de uma taxa de variação é a
 variação total.
 
-\begin{teorema}[Teorema da Variação Total]{5.5}
+\begin{teorema}[Teorema da Variação Total]{5.5}\index{teorema@Teorema!da variacao total@da Variação Total}
 $F(b)=F(a)+\displaystyle\int_a^bF'(x)\,dx$, ou seja, $\displaystyle\int_a^bF'(x)\,dx=F(b)-F(a)$.
 \end{teorema}
 
-Se $v(t)$ é a velocidade de um objeto, $\int_a^bv(t)\,dt$ é o \textbf{deslocamento} (variação
-de posição), enquanto $\int_a^b|v(t)|\,dt$ é a \textbf{distância percorrida}. Se $r(t)$ é a
+Se $v(t)$ é a velocidade de um objeto, $\int_a^bv(t)\,dt$ é o \textbf{deslocamento}\index{deslocamento} (variação
+de posição), enquanto $\int_a^b|v(t)|\,dt$ é a \textbf{distância percorrida}\index{distancia percorrida@distância percorrida}. Se $r(t)$ é a
 vazão de água num tanque, $\int_a^br(t)\,dt$ é a variação do volume.
 
 \begin{exemplo}{5.3}{Deslocamento \texorpdfstring{$\times$}{x} distância}
@@ -180,7 +180,7 @@ $\int_0^1v=\frac43$, $\int_1^3v=-\frac43$, $\int_3^4v=\frac43$. Distância
 $=\frac43+\frac43+\frac43=4$ m.
 \end{exemplo}
 
-\textbf{Funções pares e ímpares.} Se $f$ é par, $\int_{-a}^af=2\int_0^af$; se $f$ é ímpar,
+\textbf{Funções pares e ímpares.}\index{simetria em integrais} Se $f$ é par, $\int_{-a}^af=2\int_0^af$; se $f$ é ímpar,
 $\int_{-a}^af=0$ (as áreas se cancelam). Por exemplo, $\int_{-2}^2x^3\cos x\,dx=0$ sem nenhuma
 conta.
 
@@ -192,7 +192,7 @@ A regra da cadeia diz que $\frac{d}{dx}F(g(x))=F'(g(x))\,g'(x)$. Lida ao contrá
 \int f\big(g(x)\big)\,g'(x)\,dx=\int f(u)\,du,\qquad u=g(x),\ du=g'(x)\,dx .
 \]
 
-\begin{estrategia}{integração por substituição}
+\begin{estrategia}{integração por substituição}\index{substituicao@substituição}
 \begin{enumerate}[label=\arabic*.]
 \item Escolha $u=g(x)$, em geral a ``função de dentro'', cuja derivada aparece (a menos de
   uma constante) no integrando.
@@ -256,7 +256,7 @@ com $u=x+2$: $\frac13\tan^{-1}\frac{x+2}3+C$.
 \end{exemplo}
 
 % ---------------------------------------------------------------------
-\section*{Resumo do capítulo}
+\section*{Resumo do capítulo}\markright{Resumo do capítulo}
 \addcontentsline{toc}{section}{Resumo do capítulo}
 \begin{itemize}
 \item Somas de Riemann $\sum f(x_i^*)\Delta x$ aproximam a área; $\int_a^bf$ é o seu limite e

@@ -8,7 +8,7 @@ forças de pressão e centros de massa. O roteiro é sempre o mesmo: escrever a 
 de uma fatia típica de espessura $\Delta x$ e transformar a soma numa integral.
 
 % ---------------------------------------------------------------------
-\section{Áreas entre curvas}
+\section{Áreas entre curvas}\index{area entre curvas@área entre curvas}
 
 Se $f(x)\ge g(x)$ em $[a,b]$, uma faixa vertical de largura $\Delta x$ tem altura
 $f(x)-g(x)$. Somando e passando ao limite:
@@ -49,7 +49,7 @@ $A=\int_{-1}^2(y+2-y^2)\,dy=\frac92$.
 \end{exemplo}
 
 % ---------------------------------------------------------------------
-\section{Volumes por fatiamento}
+\section{Volumes por fatiamento}\index{volume!por fatiamento}
 
 Se um sólido ocupa $a\le x\le b$ e a seção transversal em $x$ tem área $A(x)$, uma fatia de
 espessura $\Delta x$ tem volume $\approx A(x)\,\Delta x$. Logo
@@ -57,11 +57,11 @@ espessura $\Delta x$ tem volume $\approx A(x)\,\Delta x$. Logo
 V=\int_a^bA(x)\,dx .
 \]
 
-\textbf{Discos.} Girando a região sob $y=f(x)\ge0$, $a\le x\le b$, em torno do eixo $x$, cada
+\textbf{Discos.}\index{volume!por discos} Girando a região sob $y=f(x)\ge0$, $a\le x\le b$, em torno do eixo $x$, cada
 seção é um disco de raio $f(x)$:
 $V=\pi\int_a^b[f(x)]^2\,dx$.
 
-\textbf{Arruelas.} Se a região está entre $f\ge g\ge0$, a seção é um anel de raio externo
+\textbf{Arruelas.}\index{volume!por arruelas} Se a região está entre $f\ge g\ge0$, a seção é um anel de raio externo
 $R=f(x)$ e raio interno $r=g(x)$:
 $V=\pi\int_a^b\big([f(x)]^2-[g(x)]^2\big)\,dx$. Para giros em torno do eixo $y$ (ou de outra
 reta), troque os papéis: os raios são distâncias ao eixo de rotação.
@@ -93,7 +93,7 @@ base quadrada de lado $L$ e altura $h$ tem, à profundidade $y$ abaixo do vérti
 quadrada de lado $\frac{L}{h}y$; logo $V=\int_0^h\frac{L^2}{h^2}y^2\,dy=\frac13L^2h$.
 
 % ---------------------------------------------------------------------
-\section{Volumes por cascas cilíndricas}
+\section{Volumes por cascas cilíndricas}\index{volume!por cascas cilindricas@por cascas cilíndricas}
 
 Girando em torno do eixo $y$ a região sob $y=f(x)\ge0$, $0\le a\le x\le b$, uma faixa
 vertical de largura $\Delta x$ a distância $x$ do eixo gera uma \emph{casca cilíndrica} de
@@ -129,7 +129,7 @@ ele. Prefira o que deixa os raios como funções simples da variável de integra
 \end{nota}
 
 % ---------------------------------------------------------------------
-\section{Comprimento de arco e área de superfície}
+\section{Comprimento de arco e área de superfície}\index{comprimento de arco}
 
 Entre $x$ e $x+\Delta x$, o gráfico de $f$ é quase um segmento de comprimento
 $\sqrt{\Delta x^2+\Delta y^2}=\sqrt{1+(\Delta y/\Delta x)^2}\,\Delta x$. Se $f'$ é contínua,
@@ -137,7 +137,7 @@ $\sqrt{\Delta x^2+\Delta y^2}=\sqrt{1+(\Delta y/\Delta x)^2}\,\Delta x$. Se $f'$
 L=\int_a^b\sqrt{1+[f'(x)]^2}\,dx .
 \]
 Girando o gráfico em torno do eixo $x$, cada pedaço gera uma faixa (tronco de cone) de raio
-$f(x)$; a \textbf{área de superfície} é
+$f(x)$; a \textbf{área de superfície}\index{area de superficie@área de superfície} é
 \[
 S=2\pi\int_a^b f(x)\sqrt{1+[f'(x)]^2}\,dx .
 \]
@@ -162,19 +162,19 @@ quadrado perfeito (veja os exercícios).
 % ---------------------------------------------------------------------
 \section{Aplicações físicas}
 
-\textbf{Massa.} Uma barra em $[a,b]$ com densidade linear $\rho(x)$ (kg/m) tem massa
+\textbf{Massa.}\index{massa} Uma barra em $[a,b]$ com densidade linear $\rho(x)$ (kg/m) tem massa
 $m=\int_a^b\rho(x)\,dx$. Um disco de raio $r$ com densidade radial $\rho(r)$ (kg/m$^2$) é
 fatiado em anéis de área $2\pi r\,\Delta r$: $m=\int_0^R2\pi r\,\rho(r)\,dr$.
 
-\textbf{Trabalho.} Uma força constante $F$ ao longo de uma distância $d$ realiza trabalho
+\textbf{Trabalho.}\index{trabalho} Uma força constante $F$ ao longo de uma distância $d$ realiza trabalho
 $W=Fd$. Se a força varia, $W=\int_a^bF(x)\,dx$. Para uma mola, a lei de Hooke dá $F=kx$
 ($x$ = deformação a partir do comprimento natural).
 
-\textbf{Bombeamento.} Para esvaziar um tanque, fatie o \emph{líquido} na horizontal: a camada
+\textbf{Bombeamento.}\index{bombeamento} Para esvaziar um tanque, fatie o \emph{líquido} na horizontal: a camada
 na altura $y$, de área $A(y)$ e espessura $\Delta y$, pesa $\rho g A(y)\,\Delta y$ e precisa
 subir uma distância $D(y)$. Então $W=\int\rho g\,A(y)\,D(y)\,dy$.
 
-\textbf{Força hidrostática.} À profundidade $h$, a pressão é $p=\rho gh$. Numa placa
+\textbf{Força hidrostática.}\index{forca hidrostatica@força hidrostática} À profundidade $h$, a pressão é $p=\rho gh$. Numa placa
 vertical submersa com largura $w(h)$ na profundidade $h$: $F=\int\rho g\,h\,w(h)\,dh$.
 (Água: $\rho=1000$ kg/m$^3$, $g=9{,}8$ m/s$^2$, $\rho g=9800$ N/m$^3$.)
 
@@ -195,7 +195,7 @@ superior na superfície: $F=\int_0^3 9800\,h\cdot2\,dh=88\,200$ N.
 
 Massas $m_i$ nos pontos $x_i$ de uma reta se equilibram em $\bar x=\frac{\sum m_ix_i}{\sum m_i}$
 (o numerador é o \emph{momento} em relação à origem). Para uma placa fina homogênea (lâmina)
-ocupando a região entre $f\ge g$ em $[a,b]$, com área $A$, o \textbf{centroide} é
+ocupando a região entre $f\ge g$ em $[a,b]$, com área $A$, o \textbf{centroide}\index{centroide} é
 \[
 \bar x=\frac1A\int_a^bx\,\big[f(x)-g(x)\big]\,dx,\qquad
 \bar y=\frac1A\int_a^b\frac{[f(x)]^2-[g(x)]^2}2\,dx .
@@ -203,7 +203,7 @@ ocupando a região entre $f\ge g$ em $[a,b]$, com área $A$, o \textbf{centroide
 (Em $\bar y$, cada faixa vertical tem seu centro na altura $\frac{f+g}2$ e área $(f-g)\Delta x$.)
 Simetria ajuda: se a região é simétrica em relação a uma reta, o centroide está nela.
 
-\begin{teorema}[Teorema de Pappus]{6.1}
+\begin{teorema}[Teorema de Pappus]{6.1}\index{teorema@Teorema!de pappus@de Pappus}
 Se uma região plana de área $A$ gira em torno de uma reta do seu plano que não a corta, o
 volume do sólido gerado é $V=2\pi d\,A$, onde $d$ é a distância do centroide da região ao
 eixo.
@@ -238,15 +238,15 @@ $\frac{d}{dx}a^x=a^x\ln a$ e $\log_ax=\frac{\ln x}{\ln a}$. Essa construção ju
 rigor tudo o que usamos sobre exponenciais desde o capítulo~1.
 
 % ---------------------------------------------------------------------
-\section{Crescimento e decaimento exponencial}
+\section{Crescimento e decaimento exponencial}\index{crescimento exponencial}
 
 Quando a taxa de variação de uma quantidade é proporcional à própria quantidade,
 $y'=ky$, temos $\frac{y'}y=k$; integrando, $\ln|y|=kt+C$ e
 \[
 y(t)=y_0\,e^{kt}\qquad(y_0=y(0)).
 \]
-Com $k>0$ há \textbf{crescimento}, com \textbf{tempo de duplicação} $T_2=\frac{\ln2}k$. Com
-$k<0$ há \textbf{decaimento}, com \textbf{meia-vida} $T_{1/2}=\frac{\ln2}{|k|}$. Juros compostos
+Com $k>0$ há \textbf{crescimento}, com \textbf{tempo de duplicação}\index{tempo de duplicacao@tempo de duplicação} $T_2=\frac{\ln2}k$. Com
+$k<0$ há \textbf{decaimento}, com \textbf{meia-vida}\index{meia-vida} $T_{1/2}=\frac{\ln2}{|k|}$. Juros compostos
 continuamente seguem o mesmo modelo: $P(t)=P_0e^{rt}$.
 
 \begin{exemplo}{6.8}{Datação por carbono-14}
@@ -272,7 +272,7 @@ se escrevem com logaritmos, por exemplo $\sinh^{-1}x=\ln\big(x+\sqrt{x^2+1}\big)
 \int\frac{dx}{1-x^2}=\tanh^{-1}x+C\ (|x|<1).
 \]
 
-\textbf{A catenária.} Um cabo homogêneo suspenso pelas pontas assume a forma
+\textbf{A catenária.}\index{catenaria@catenária} Um cabo homogêneo suspenso pelas pontas assume a forma
 $y=a\cosh\frac xa$. Como $1+\sinh^2=\cosh^2$, o comprimento de arco é elementar:
 \[
 L=\int_{-b}^b\sqrt{1+\sinh^2\tfrac xa}\,dx=\int_{-b}^b\cosh\tfrac xa\,dx=2a\sinh\frac ba .
@@ -287,7 +287,7 @@ L=\int_{-b}^b\sqrt{1+\sinh^2\tfrac xa}\,dx=\int_{-b}^b\cosh\tfrac xa\,dx=2a\sinh
 \end{exemplo}
 
 % ---------------------------------------------------------------------
-\section*{Resumo do capítulo}
+\section*{Resumo do capítulo}\markright{Resumo do capítulo}
 \addcontentsline{toc}{section}{Resumo do capítulo}
 \begin{itemize}
 \item Área entre curvas: $\int_a^b(\text{cima}-\text{baixo})\,dx$ ou

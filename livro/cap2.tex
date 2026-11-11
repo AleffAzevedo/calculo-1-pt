@@ -23,7 +23,7 @@ taxa de variação em um ponto $(a,f(a))$ por \emph{retas secantes}, que passam 
 $(a,f(a))$ e por um ponto próximo $(x,f(x))$.
 
 \begin{definicao}
-A \textbf{reta secante} ao gráfico de $f$ pelos pontos $(a,f(a))$ e $(x,f(x))$ é a reta
+A \textbf{reta secante}\index{reta!secante} ao gráfico de $f$ pelos pontos $(a,f(a))$ e $(x,f(x))$ é a reta
 que passa por esses pontos. Sua inclinação é
 \[
 m_{\sec}=\frac{f(x)-f(a)}{x-a}.
@@ -31,11 +31,16 @@ m_{\sec}=\frac{f(x)-f(a)}{x-a}.
 \end{definicao}
 
 À medida que $x$ se aproxima de $a$, as secantes se aproximam de uma reta, a
-\textbf{reta tangente} ao gráfico em $(a,f(a))$, e $m_{\sec}$ se aproxima da inclinação
+\textbf{reta tangente}\index{reta!tangente} ao gráfico em $(a,f(a))$, e $m_{\sec}$ se aproxima da inclinação
 da tangente, que é a \emph{taxa de variação instantânea} de $f$ em $a$.
 
-\fig[0.38]{CNX_Calc_Figure_02_01_005.jpg}{Quando $x$ se aproxima de $a$, as secantes se
-aproximam da reta tangente (\emph{tangent line}).}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7cm,height=5.2cm,xmin=-0.3,xmax=3.6,ymin=0,ymax=3.6,xtick={1},xticklabels={$a$},ytick=\empty]
+\addplot[domain=-0.3:3.4]{0.25*x^2+1} node[pos=0.98,left,font=\scriptsize]{$f$};
+\foreach \b/\c in {3/laranja!90,2.2/laranja!60,1.5/laranja!35}{\edef\tmp{\noexpand\addplot[\c,thin,domain=-0.3:3.6]{1.25+0.25*(\b+1)*(x-1)};}\tmp}
+\addplot[verde,thick,domain=-0.3:3.6]{1.25+0.5*(x-1)} node[pos=0.96,below,font=\scriptsize]{tangente};
+\fill (axis cs:1,1.25) circle (1.6pt);
+\end{axis}\end{tikzpicture}}{Quando $x$ se aproxima de $a$, as secantes (laranja) se aproximam da reta tangente (verde).}
 
 \begin{exemplo}{2.1}{Inclinações de secantes}
 Estime a inclinação da tangente a $f(x)=x^2$ em $x=1$ usando as secantes por $(1,1)$ e
@@ -47,11 +52,11 @@ cada vez mais próximos, veremos que a inclinação da tangente é exatamente 2.
 \end{exemplo}
 
 O mesmo raciocínio se aplica ao movimento. Se $s(t)$ é a posição de um objeto no instante
-$t$, a \textbf{velocidade média} no intervalo $[a,t]$ é
+$t$, a \textbf{velocidade média}\index{velocidade!media@média} no intervalo $[a,t]$ é
 \[
 v_{\text{méd}}=\frac{s(t)-s(a)}{t-a},
 \]
-e a \textbf{velocidade instantânea} em $t=a$ é o valor do qual as velocidades médias se
+e a \textbf{velocidade instantânea}\index{velocidade!instantanea@instantânea} em $t=a$ é o valor do qual as velocidades médias se
 aproximam quando $t$ se aproxima de $a$, se esse valor existir.
 
 \subsection{O problema da área}
@@ -61,7 +66,11 @@ intervalo em partes e somamos as áreas de retângulos. Quanto mais retângulos,
 aproximação; a área exata é o valor para o qual essas somas tendem. Esse é o ponto de
 partida do Cálculo Integral (capítulo~5).
 
-\fig[0.4]{CNX_Calc_Figure_02_01_007.jpg}{A área sob a curva aproximada por retângulos.}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7cm,height=5cm,xmin=0,xmax=5.6,ymin=0,ymax=2.6,xtick={1,5},xticklabels={$a$,$b$},ytick=\empty]
+\foreach \a in {1,1.5,...,4.5}{\edef\tmp{\noexpand\draw[fill=azul!15,draw=azul] (axis cs:\a,0) rectangle (axis cs:{\a+0.5},{-0.15*(\a-3.2)^2+2.2});}\tmp}
+\addplot[domain=0.2:5.5]{-0.15*(x-3.2)^2+2.2};
+\end{axis}\end{tikzpicture}}{A área sob a curva aproximada por retângulos.}
 
 % ---------------------------------------------------------------------
 \section{O limite de uma função}
@@ -71,7 +80,7 @@ partida do Cálculo Integral (capítulo~5).
 \begin{definicao}
 Seja $f$ definida em todos os pontos de um intervalo aberto contendo $a$, exceto
 possivelmente em $a$, e seja $L$ um número real. Se os valores $f(x)$ se aproximam de $L$
-quando $x$ ($\neq a$) se aproxima de $a$, dizemos que o \textbf{limite} de $f(x)$ quando
+quando $x$ ($\neq a$) se aproxima de $a$, dizemos que o \textbf{limite}\index{limite} de $f(x)$ quando
 $x$ tende a $a$ é $L$, e escrevemos
 \[
 \lim_{x\to a}f(x)=L .
@@ -85,7 +94,7 @@ O limite não depende do valor $f(a)$; $f$ nem precisa estar definida em $a$. Im
 apenas o comportamento de $f$ \emph{perto} de $a$.
 \end{nota}
 
-\begin{estrategia}{estimar um limite com uma tabela}
+\begin{estrategia}{estimar um limite com uma tabela}\index{limite!estimado por tabela}
 \begin{enumerate}[label=\arabic*.]
 \item Monte duas colunas de valores de $x$ que se aproximam de $a$: uma pela esquerda
   ($a-0{,}1$, $a-0{,}01$, $a-0{,}001,\dots$) e outra pela direita ($a+0{,}1$,
@@ -104,7 +113,11 @@ pela esquerda e pela direita coincidem). Os valores se aproximam de 1, e o gráf
 \lim_{x\to0}\frac{\sin x}{x}=1 .
 \]
 Provaremos esse resultado na seção~2.3.
-\fig[0.42]{CNX_Calc_Figure_02_02_003.jpg}{Gráfico de $f(x)=(\sin x)/x$ perto de $x=0$.}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=8cm,height=4.4cm,xmin=-8,xmax=8,ymin=-0.45,ymax=1.2,xtick={-6,-3,3,6},ytick={0.5,1}]
+\addplot[domain=-8:-0.01,samples=150]{sin(deg(x))/x}; \addplot[domain=0.01:8,samples=150]{sin(deg(x))/x};
+\draw[azul,fill=white] (axis cs:0,1) circle (2pt);
+\end{axis}\end{tikzpicture}}{Gráfico de $f(x)=(\sin x)/x$ perto de $x=0$.}
 \end{exemplo}
 
 Dois limites básicos, intuitivamente evidentes, servem de ponto de partida:
@@ -124,14 +137,18 @@ Considere $\lim_{x\to0}\sin(1/x)$. Para a sequência $x=\dfrac2\pi,\dfrac2{3\pi}
 \dfrac2{5\pi},\dots$, que tende a 0, os valores de $\sin(1/x)$ são $1,-1,1,-1,\dots$. Eles não
 se aproximam de nenhum número, logo o limite não existe. O gráfico oscila cada vez mais
 rapidamente entre $-1$ e $1$ perto de $x=0$.
-\fig[0.4]{CNX_Calc_Figure_02_02_008.jpg}{$\sin(1/x)$ oscila entre $-1$ e $1$ quando
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=8cm,height=4.4cm,xmin=-0.5,xmax=0.5,ymin=-1.3,ymax=1.3,xtick={-0.4,-0.2,0.2,0.4},ytick={-1,1},
+  xticklabel style={/pgf/number format/use comma}]
+\addplot[thin,domain=-0.5:-0.012,samples=1200]{sin(deg(1/x))}; \addplot[thin,domain=0.012:0.5,samples=1200]{sin(deg(1/x))};
+\end{axis}\end{tikzpicture}}{$\sin(1/x)$ oscila entre $-1$ e $1$ quando
 $x\to0$.}
 \end{exemplo}
 
 \subsection{Limites laterais}
 
 \begin{definicao}
-\textbf{Limite à esquerda:} se $f$ está definida em um intervalo $(c,a)$ e $f(x)$ se
+\textbf{Limite à esquerda:}\index{limite!lateral} se $f$ está definida em um intervalo $(c,a)$ e $f(x)$ se
 aproxima de $L$ quando $x$ se aproxima de $a$ com $x<a$, escrevemos
 $\displaystyle\lim_{x\to a^-}f(x)=L$.
 
@@ -144,7 +161,11 @@ $\displaystyle\lim_{x\to a^+}f(x)=L$.
 Para $f(x)=\begin{cases}x+1, & x<2\\ x^2-4, & x\ge2,\end{cases}$ temos
 $\lim_{x\to2^-}f(x)=2+1=3$ e $\lim_{x\to2^+}f(x)=2^2-4=0$. Como os limites laterais são
 diferentes, $\lim_{x\to2}f(x)$ não existe.
-\fig[0.3]{CNX_Calc_Figure_02_02_010.jpg}{Limites laterais diferentes em $x=2$.}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=6.2cm,height=5cm,xmin=-3,xmax=4,ymin=-2.2,ymax=5.5,xtick={-1,2},ytick={3}]
+\addplot[domain=-3:2]{x+1}; \addplot[laranja,domain=2:3.05]{x^2-4};
+\draw[azul,fill=white] (axis cs:2,3) circle (2pt); \fill[laranja] (axis cs:2,0) circle (2pt);
+\end{axis}\end{tikzpicture}}{Limites laterais diferentes em $x=2$.}
 \end{exemplo}
 
 \begin{teorema}[Limites laterais e bilaterais]{2.2}
@@ -167,9 +188,12 @@ limite é $\infty$ é uma forma de descrever \emph{como} o limite deixa de exist
 $\infty$ não é um número real. Por exemplo, para $f(x)=1/x$:
 $\lim_{x\to0^-}\frac1x=-\infty$ e $\lim_{x\to0^+}\frac1x=+\infty$.
 
-\fig[0.3]{CNX_Calc_Figure_02_02_012.jpg}{O gráfico de $1/x$ perto de $x=0$.}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=6cm,height=5cm,xmin=-3,xmax=3,ymin=-5,ymax=5,xtick={-2,-1,1,2},ytick={-4,-2,2,4}]
+\addplot[domain=-3:-0.2]{1/x}; \addplot[domain=0.2:3]{1/x};
+\end{axis}\end{tikzpicture}}{O gráfico de $1/x$ perto de $x=0$.}
 
-\begin{teorema}[Limites infinitos de potências inteiras]{2.3}
+\begin{teorema}[Limites infinitos de potências inteiras]{2.3}\index{limite!infinito}
 Se $n$ é um inteiro positivo par, $\displaystyle\lim_{x\to a}\frac{1}{(x-a)^n}=+\infty$.
 Se $n$ é um inteiro positivo ímpar,
 $\displaystyle\lim_{x\to a^+}\frac{1}{(x-a)^n}=+\infty$ e
@@ -177,7 +201,7 @@ $\displaystyle\lim_{x\to a^-}\frac{1}{(x-a)^n}=-\infty$.
 \end{teorema}
 
 \begin{definicao}
-A reta $x=a$ é uma \textbf{assíntota vertical} de $f$ se pelo menos um dos limites
+A reta $x=a$ é uma \textbf{assíntota vertical}\index{assintota@assíntota!vertical} de $f$ se pelo menos um dos limites
 $\lim_{x\to a^-}f(x)$, $\lim_{x\to a^+}f(x)$ ou $\lim_{x\to a}f(x)$ for $+\infty$ ou
 $-\infty$.
 \end{definicao}
@@ -233,7 +257,7 @@ perto de $a$, então as duas funções têm o mesmo limite em $a$}. Por exemplo,
 $\dfrac{x^2-1}{x-1}=x+1$ para $x\neq1$, logo
 $\lim_{x\to1}\dfrac{x^2-1}{x-1}=\lim_{x\to1}(x+1)=2$.
 
-\begin{estrategia}{limites da forma $0/0$}
+\begin{estrategia}{limites da forma $0/0$}\index{forma indeterminada}
 \begin{enumerate}[label=\arabic*.]
 \item Verifique que as propriedades não se aplicam diretamente (forma $0/0$).
 \item Encontre uma função igual a $f(x)/g(x)$ para $x\neq a$:
@@ -287,7 +311,13 @@ $f(x)\le g(x)\le h(x)$ nesse intervalo, para $x\neq a$, e
 $\lim_{x\to a}f(x)=L=\lim_{x\to a}h(x)$, então $\lim_{x\to a}g(x)=L$.
 \end{teorema}
 
-\fig[0.4]{CNX_Calc_Figure_02_03_005.jpg}{O Teorema do Confronto: $g$ fica ``espremida''
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7cm,height=5cm,xmin=-1,xmax=3.2,ymin=-0.5,ymax=3.2,xtick={1},xticklabels={$a$},ytick=\empty]
+\addplot[domain=-1:3]{2+0.5*(x-1)^2} node[pos=0.97,above left,font=\scriptsize]{$h$};
+\addplot[verde,domain=-1:3]{2-0.3*(x-1)^2+0.15*(x-1)^2*sin(deg(4*x))} node[pos=0.97,left,font=\scriptsize]{$g$};
+\addplot[laranja,domain=-0.6:2.6]{2-(x-1)^2} node[pos=0.97,left,font=\scriptsize]{$f$};
+\fill (axis cs:1,2) circle (1.6pt);
+\end{axis}\end{tikzpicture}}{O Teorema do Confronto: $g$ fica ``espremida''
 entre $f$ e $h$.}
 
 \begin{exemplo}{2.9}{Aplicando o Teorema do Confronto}
@@ -301,8 +331,15 @@ fica entre o segmento vertical de comprimento $\sin\theta$ e o segmento tangente
 comprimento $\tan\theta$). Pelo confronto, isso dá $\lim_{\theta\to0}\sin\theta=0$ e,
 daí, $\lim_{\theta\to0}\cos\theta=1$.
 
-\fig[0.32]{CNX_Calc_Figure_02_03_008.jpg}{Para $0<\theta<\pi/2$:
-$\sin\theta<\theta<\tan\theta$.}
+\figtikz{\begin{tikzpicture}[scale=2.3,font=\small]
+\draw[->] (-0.2,0) -- (1.35,0) node[right]{$x$}; \draw[->] (0,-0.2) -- (0,1.15) node[above]{$y$};
+\draw[thick] (0,0) ++(0:1) arc (0:95:1);
+\fill[azul!15] (0,0) -- (1,0) arc (0:40:1) -- cycle;
+\draw[thick,azul] (0,0) -- (40:1); \draw[laranja,thick] (40:1) -- ({cos(40)},0); \draw[laranja,thin] ({cos(40)},0.32) -- (0.45,0.62) node[above,font=\footnotesize]{$\sin\theta$};
+\draw[thick] (0,0) -- (1,{tan(40)}); \draw[verde,thick] (1,0) -- (1,{tan(40)}) node[midway,right]{$\tan\theta$};
+\draw[azul,very thick] (1,0) arc (0:40:1); \draw (0.22,0) arc (0:40:0.22); \node at (20:0.33) {$\theta$};
+\node[below] at (1,0) {$1$};
+\end{tikzpicture}}{Para $0<\theta<\pi/2$: $\sin\theta<\theta<\tan\theta$ (segmento laranja, arco azul e segmento verde).}
 
 Dividindo $\sin\theta<\theta<\tan\theta$ por $\sin\theta>0$ e invertendo, obtemos
 $\cos\theta<\dfrac{\sin\theta}{\theta}<1$. Essa desigualdade vale também para
@@ -323,7 +360,7 @@ O segundo limite sai do primeiro multiplicando pelo conjugado:
 Esses dois limites serão essenciais para derivar seno e cosseno no capítulo~3.
 
 % ---------------------------------------------------------------------
-\section{Continuidade}
+\section{Continuidade}\index{continuidade}
 
 \subsection{Continuidade em um ponto}
 
@@ -358,7 +395,7 @@ Isso decorre do Teorema~2.5: para $q(a)\neq0$, $\lim_{x\to a}p(x)/q(x)=p(a)/q(a)
 \begin{definicao}
 Se $f$ é descontínua em $a$, então $f$ tem:
 \begin{enumerate}[label=\arabic*.]
-\item uma \textbf{descontinuidade removível} se $\lim_{x\to a}f(x)$ existe (é um número
+\item uma \textbf{descontinuidade removível}\index{descontinuidade} se $\lim_{x\to a}f(x)$ existe (é um número
   real);
 \item uma \textbf{descontinuidade de salto} se os limites laterais existem, mas são
   diferentes;
@@ -400,7 +437,7 @@ $+\infty$; descontinuidade \emph{infinita}.
 \subsection{Continuidade em um intervalo}
 
 \begin{definicao}[Continuidade lateral]
-$f$ é \textbf{contínua à direita} em $a$ se $\lim_{x\to a^+}f(x)=f(a)$, e
+$f$ é \textbf{contínua à direita}\index{continuidade!lateral} em $a$ se $\lim_{x\to a^+}f(x)=f(a)$, e
 \textbf{contínua à esquerda} em $a$ se $\lim_{x\to a^-}f(x)=f(a)$.
 \end{definicao}
 
@@ -432,7 +469,13 @@ Seja $f$ contínua em um intervalo fechado e limitado $[a,b]$. Se $z$ é qualque
 real entre $f(a)$ e $f(b)$, então existe $c\in[a,b]$ tal que $f(c)=z$.
 \end{teorema}
 
-\fig[0.34]{CNX_Calc_Figure_02_04_007.jpg}{Existe $c\in[a,b]$ com $f(c)=z$.}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7cm,height=5.4cm,xmin=0,xmax=5.6,ymin=0,ymax=5,xtick={0.3,4.61,5},xticklabels={$a$,$c$,$b$},ytick={1.3645,3,4.333},yticklabels={$f(a)$,$z$,$f(b)$}]
+\draw[dashed] (axis cs:0,1.3645) -| (axis cs:0.3,0); \draw[dashed] (axis cs:0,4.333) -| (axis cs:5,0);
+\draw[laranja,dashed] (axis cs:0,3) -| (axis cs:4.61,0);
+\addplot[domain=0.3:5]{x^3/6-x^2+1.5*x+1};
+\fill[laranja] (axis cs:4.61,3) circle (1.6pt);
+\end{axis}\end{tikzpicture}}{Existe $c\in[a,b]$ com $f(c)=z$.}
 
 \begin{exemplo}{2.11}{Garantindo um zero}
 Mostre que $f(x)=x-\cos x$ tem pelo menos um zero.
@@ -447,7 +490,7 @@ tem zero em $[-1,1]$, pois não é contínua em $x=0$.
 \end{nota}
 
 % ---------------------------------------------------------------------
-\section{A definição precisa de limite}
+\section{A definição precisa de limite}\index{limite!definicao precisa (-)@definição precisa ($\varepsilon$-$\delta$)}
 
 \subsection{Quantificando a proximidade}
 
@@ -519,7 +562,7 @@ $|(x^2-2x+3)-6|=|x+1|\,|x-3|<\tfrac{\varepsilon}{5}\cdot5=\varepsilon$.
 \subsection{Provando as propriedades dos limites}
 
 A definição precisa permite demonstrar as propriedades da seção~2.3. Como exemplo,
-provemos a da soma. Uma ferramenta recorrente é a \textbf{desigualdade triangular}:
+provemos a da soma. Uma ferramenta recorrente é a \textbf{desigualdade triangular}\index{desigualdade triangular}:
 $|a+b|\le|a|+|b|$ para quaisquer reais $a$ e $b$.
 
 \emph{Prova da propriedade da soma.} Suponha $\lim_{x\to a}f(x)=L$ e
@@ -549,7 +592,7 @@ As outras formas de limite têm definições análogas:
 \end{itemize}
 
 % ---------------------------------------------------------------------
-\section*{Resumo do capítulo}
+\section*{Resumo do capítulo}\markright{Resumo do capítulo}
 \addcontentsline{toc}{section}{Resumo do capítulo}
 \begin{itemize}
 \item A inclinação da tangente e a velocidade instantânea são limites de inclinações de

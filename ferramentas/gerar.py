@@ -49,7 +49,7 @@ def gerar(n, animar=True):
 
     # ---------------- LaTeX
     t = ['% Gerado por ferramentas/gerar.py; não edite à mão.',
-         '\\section*{Exercícios}', '\\addcontentsline{toc}{section}{Exercícios}',
+         '\\section*{Exercícios}\\markright{Exercícios}', '\\addcontentsline{toc}{section}{Exercícios}',
          'Os pontos antes de cada número indicam a dificuldade: \\nivel{1} fácil, \\nivel{2} médio, '
          '\\nivel{3} difícil e \\nivel{4} desafio. Os exercícios marcados com \\estrela{} têm solução completa, '
          f'com animação do gráfico, no repositório do livro: \\url{{{url}}}. '
@@ -60,7 +60,7 @@ def gerar(n, animar=True):
         tit = f'\\textbf{{{i["titulo"]}.}} ' if i['titulo'] else ''
         t.append(f'\\item[\\exnum{{{PONTOS[i["nivel"]]}}}{{{i["num"]}}}] {est}{tit}{i["enunciado"]}')
     t.append('\\end{itemize}')
-    t.append('\\subsection*{Respostas}\n{\\small\\begin{multicols}{2}\\raggedright')
+    t.append('\\subsection*{Respostas}\\markright{Respostas}\n{\\small\\begin{multicols}{2}\\raggedright')
     t.append('\\begin{itemize}[leftmargin=2.7em,labelsep=0.5em,itemsep=1pt]')
     for i in itens:
         t.append(f'\\item[\\textbf{{{i["num"]}}}] {i["resposta"]}')

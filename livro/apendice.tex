@@ -1,0 +1,206 @@
+% =====================================================================
+\chapter{Formulário}
+\raggedbottom
+\index{formulário}
+
+Resumo das fórmulas usadas ao longo do livro, para consulta rápida durante os exercícios.
+
+% ---------------------------------------------------------------------
+\section{Álgebra}
+\begin{multicols}{2}\small
+\textbf{Fatoração}
+\begin{align*}
+a^2-b^2&=(a-b)(a+b)\\
+a^3\pm b^3&=(a\pm b)(a^2\mp ab+b^2)\\
+(a\pm b)^2&=a^2\pm2ab+b^2\\
+ax^2+bx+c&=a(x-x_1)(x-x_2)
+\end{align*}
+com $x_{1,2}=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$.
+
+\textbf{Completar o quadrado}
+\[
+ax^2+bx+c=a\Big(x+\frac b{2a}\Big)^2+c-\frac{b^2}{4a}
+\]
+
+\columnbreak
+\textbf{Expoentes e logaritmos}
+\begin{gather*}
+a^xa^y=a^{x+y},\quad \frac{a^x}{a^y}=a^{x-y},\quad (a^x)^y=a^{xy}\\
+\ln(ab)=\ln a+\ln b,\quad \ln\frac ab=\ln a-\ln b\\
+\ln a^r=r\ln a,\quad \log_ax=\frac{\ln x}{\ln a}\\
+a^x=e^{x\ln a},\quad e^{\ln x}=x,\quad \ln e^x=x
+\end{gather*}
+
+\textbf{Valor absoluto}
+\[
+|x|<a\iff-a<x<a,\qquad |a+b|\le|a|+|b|
+\]
+\end{multicols}
+
+% ---------------------------------------------------------------------
+\section{Trigonometria}
+\begin{multicols}{2}\small
+\textbf{Valores notáveis}
+
+\begin{tabular}{c|ccccc}
+$\theta$ & $0$ & $\frac\pi6$ & $\frac\pi4$ & $\frac\pi3$ & $\frac\pi2$\\\hline
+$\sin\theta$ & $0$ & $\frac12$ & $\frac{\sqrt2}2$ & $\frac{\sqrt3}2$ & $1$\\
+$\cos\theta$ & $1$ & $\frac{\sqrt3}2$ & $\frac{\sqrt2}2$ & $\frac12$ & $0$\\
+$\tan\theta$ & $0$ & $\frac{\sqrt3}3$ & $1$ & $\sqrt3$ & ---
+\end{tabular}
+
+\textbf{Pitagóricas}
+\begin{gather*}
+\sin^2x+\cos^2x=1\\
+1+\tan^2x=\sec^2x,\qquad 1+\cot^2x=\csc^2x
+\end{gather*}
+
+\textbf{Paridade e complementares}
+\begin{gather*}
+\sin(-x)=-\sin x,\qquad \cos(-x)=\cos x\\
+\sin\big(\tfrac\pi2-x\big)=\cos x,\qquad \cos\big(\tfrac\pi2-x\big)=\sin x
+\end{gather*}
+
+\columnbreak
+\textbf{Soma de arcos}
+\begin{gather*}
+\sin(a\pm b)=\sin a\cos b\pm\cos a\sin b\\
+\cos(a\pm b)=\cos a\cos b\mp\sin a\sin b
+\end{gather*}
+
+\textbf{Arco duplo e metade}
+\begin{gather*}
+\sin2x=2\sin x\cos x\\
+\cos2x=\cos^2x-\sin^2x=2\cos^2x-1=1-2\sin^2x\\
+\sin^2x=\frac{1-\cos2x}2,\qquad \cos^2x=\frac{1+\cos2x}2
+\end{gather*}
+
+\textbf{Produto em soma}
+\begin{gather*}
+\sin a\cos b=\tfrac12[\sin(a-b)+\sin(a+b)]\\
+\sin a\sin b=\tfrac12[\cos(a-b)-\cos(a+b)]\\
+\cos a\cos b=\tfrac12[\cos(a-b)+\cos(a+b)]
+\end{gather*}
+\end{multicols}
+
+{\small\textbf{Hiperbólicas:} $\cosh x=\frac{e^x+e^{-x}}2$, $\sinh x=\frac{e^x-e^{-x}}2$,
+$\cosh^2x-\sinh^2x=1$, $\sinh^{-1}x=\ln\big(x+\sqrt{x^2+1}\big)$,
+$\cosh^{-1}x=\ln\big(x+\sqrt{x^2-1}\big)$ ($x\ge1$), $\tanh^{-1}x=\frac12\ln\frac{1+x}{1-x}$ ($|x|<1$).}
+
+% ---------------------------------------------------------------------
+\section{Limites}
+{\small
+\[
+\lim_{x\to0}\frac{\sin x}x=1,\qquad \lim_{x\to0}\frac{1-\cos x}x=0,\qquad
+\lim_{x\to\infty}\Big(1+\frac1x\Big)^x=e,\qquad \lim_{x\to0}\frac{e^x-1}x=1,
+\]
+\[
+\lim_{x\to\infty}\frac{x^n}{e^x}=0,\qquad \lim_{x\to\infty}\frac{\ln x}{x^p}=0\ (p>0),\qquad
+\lim_{x\to0^+}x^p\ln x=0\ (p>0).
+\]}
+
+% ---------------------------------------------------------------------
+\section{Derivadas}
+\begin{multicols}{2}\small
+\textbf{Regras} ($c$ constante)
+\begin{gather*}
+(cf)'=cf',\qquad (f\pm g)'=f'\pm g'\\
+(fg)'=f'g+fg'\\
+\Big(\frac fg\Big)'=\frac{f'g-fg'}{g^2}\\
+\big(f(g(x))\big)'=f'(g(x))\,g'(x)\\
+(f^{-1})'(x)=\frac1{f'(f^{-1}(x))}
+\end{gather*}
+
+\textbf{Potências, exponenciais, logaritmos}
+\begin{gather*}
+(x^n)'=nx^{n-1},\qquad (e^x)'=e^x,\qquad (a^x)'=a^x\ln a\\
+(\ln|x|)'=\frac1x,\qquad (\log_ax)'=\frac1{x\ln a}
+\end{gather*}
+
+\columnbreak
+\textbf{Trigonométricas}
+\begin{gather*}
+(\sin x)'=\cos x,\qquad (\cos x)'=-\sin x\\
+(\tan x)'=\sec^2x,\qquad (\cot x)'=-\csc^2x\\
+(\sec x)'=\sec x\tan x,\qquad (\csc x)'=-\csc x\cot x
+\end{gather*}
+
+\textbf{Inversas trigonométricas}
+\begin{gather*}
+(\sin^{-1}x)'=\frac1{\sqrt{1-x^2}},\qquad (\cos^{-1}x)'=-\frac1{\sqrt{1-x^2}}\\
+(\tan^{-1}x)'=\frac1{1+x^2},\qquad (\sec^{-1}x)'=\frac1{|x|\sqrt{x^2-1}}
+\end{gather*}
+
+\textbf{Hiperbólicas}
+\begin{gather*}
+(\sinh x)'=\cosh x,\qquad (\cosh x)'=\sinh x,\qquad (\tanh x)'=\operatorname{sech}^2x
+\end{gather*}
+\end{multicols}
+
+% ---------------------------------------------------------------------
+\clearpage
+\section{Integrais}
+{\small Em todas, some $+C$. Substituição: $\int f(g(x))g'(x)\,dx=\int f(u)\,du$. Partes:
+$\int u\,dv=uv-\int v\,du$.}
+
+{\small\noindent\begin{minipage}[t]{0.44\linewidth}\vspace{0pt}
+\[\begin{aligned}
+&\int x^n\,dx=\frac{x^{n+1}}{n+1}\quad(n\ne-1)\\
+&\int\frac{dx}x=\ln|x|\\
+&\int e^x\,dx=e^x,\qquad \int a^x\,dx=\frac{a^x}{\ln a}\\
+&\int\ln x\,dx=x\ln x-x\\
+&\int\sin x\,dx=-\cos x,\qquad \int\cos x\,dx=\sin x\\
+&\int\sec^2x\,dx=\tan x,\qquad \int\csc^2x\,dx=-\cot x\\
+&\int\sec x\tan x\,dx=\sec x\\
+&\int\tan x\,dx=\ln|\sec x|\\
+&\int\cot x\,dx=\ln|\sin x|\\
+&\int\sec x\,dx=\ln|\sec x+\tan x|\\
+&\int\csc x\,dx=-\ln|\csc x+\cot x|
+\end{aligned}\]
+\end{minipage}\hfill\begin{minipage}[t]{0.54\linewidth}\vspace{0pt}
+\[\begin{aligned}
+&\int\sec^3x\,dx=\tfrac12\big(\sec x\tan x+\ln|\sec x+\tan x|\big)\\
+&\int\sin^2x\,dx=\frac x2-\frac{\sin2x}4\\
+&\int\cos^2x\,dx=\frac x2+\frac{\sin2x}4\\
+&\int\frac{dx}{\sqrt{a^2-x^2}}=\sin^{-1}\frac xa\\
+&\int\frac{dx}{a^2+x^2}=\frac1a\tan^{-1}\frac xa\\
+&\int\frac{dx}{x\sqrt{x^2-a^2}}=\frac1a\sec^{-1}\frac{|x|}a\\
+&\int\frac{dx}{\sqrt{x^2\pm a^2}}=\ln\big|x+\sqrt{x^2\pm a^2}\big|\\
+&\int\frac{dx}{a^2-x^2}=\frac1{2a}\ln\Big|\frac{a+x}{a-x}\Big|\\
+&\int\sqrt{a^2-x^2}\,dx=\frac x2\sqrt{a^2-x^2}+\frac{a^2}2\sin^{-1}\frac xa\\
+&\int\sinh x\,dx=\cosh x,\qquad \int\cosh x\,dx=\sinh x
+\end{aligned}\]
+\end{minipage}\par}
+
+% ---------------------------------------------------------------------
+\section{Somatórios e geometria}
+\begin{multicols}{2}\small
+\textbf{Somatórios}
+\begin{gather*}
+\sum_{i=1}^n i=\frac{n(n+1)}2,\qquad \sum_{i=1}^n i^2=\frac{n(n+1)(2n+1)}6\\
+\sum_{i=1}^n i^3=\Big[\frac{n(n+1)}2\Big]^2,\qquad \sum_{i=0}^{n-1}r^i=\frac{1-r^n}{1-r}
+\end{gather*}
+
+\textbf{Aplicações da integral}
+\begin{gather*}
+A=\int_a^b(f-g),\quad V=\pi\int R^2,\quad V=2\pi\int r\,h\\
+L=\int_a^b\sqrt{1+f'^2},\quad S=2\pi\int_a^bf\sqrt{1+f'^2}\\
+f_{\text{méd}}=\frac1{b-a}\int_a^bf
+\end{gather*}
+
+\columnbreak
+\textbf{Áreas e volumes}
+\begin{gather*}
+\text{círculo: }A=\pi r^2,\ C=2\pi r;\qquad \text{elipse: }A=\pi ab\\
+\text{setor (ângulo $\theta$): }A=\tfrac12r^2\theta,\ s=r\theta\\
+\text{esfera: }V=\tfrac43\pi r^3,\ S=4\pi r^2\\
+\text{cilindro: }V=\pi r^2h;\qquad \text{cone: }V=\tfrac13\pi r^2h\\
+\text{cone (lateral): }S=\pi r\ell
+\end{gather*}
+
+\textbf{Métodos numéricos}
+\begin{gather*}
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\ \text{(Newton)}\\
+|E_T|\le\frac{K(b-a)^3}{12n^2},\qquad |E_S|\le\frac{M(b-a)^5}{180n^4}
+\end{gather*}
+\end{multicols}

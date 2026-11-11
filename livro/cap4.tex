@@ -15,7 +15,7 @@ Quando duas grandezas estão ligadas por uma equação e ambas variam com o temp
 de variação também ficam ligadas. Derivando a equação em relação a $t$ (implicitamente),
 obtemos uma relação entre as taxas.
 
-\begin{estrategia}{taxas relacionadas}
+\begin{estrategia}{taxas relacionadas}\index{taxas relacionadas}
 \begin{enumerate}[label=\arabic*.]
 \item Faça um desenho e dê nome às variáveis, indicando quais dependem do tempo.
 \item Anote as taxas conhecidas e a taxa pedida, como derivadas em relação a $t$.
@@ -68,7 +68,7 @@ $\frac{dh}{dt}=\frac{8}{9\pi}\approx0{,}28$ m/min.
 \section{Aproximações lineares e diferenciais}
 
 Perto do ponto de tangência, o gráfico de uma função derivável é quase indistinguível de
-sua reta tangente. A \textbf{aproximação linear} (ou linearização) de $f$ em $a$ é
+sua reta tangente. A \textbf{aproximação linear}\index{aproximacao linear@aproximação linear} (ou linearização) de $f$ em $a$ é
 \[
 L(x)=f(a)+f'(a)(x-a),\qquad f(x)\approx L(x)\ \text{ para } x \text{ perto de } a .
 \]
@@ -83,7 +83,7 @@ pequenos, usada, por exemplo, no estudo do pêndulo.
 (c) Para $f(x)=(1+x)^n$ em $a=0$: $(1+x)^n\approx1+nx$. Assim, $\sqrt[3]{1{,}03}\approx1{,}01$.
 \end{exemplo}
 
-\textbf{Diferenciais.} Se $y=f(x)$, a \textbf{diferencial} $dy=f'(x)\,dx$ aproxima a variação
+\textbf{Diferenciais.} Se $y=f(x)$, a \textbf{diferencial}\index{diferencial} $dy=f'(x)\,dx$ aproxima a variação
 real $\Delta y=f(x+dx)-f(x)$. Na prática, as diferenciais estimam como um erro de medida se
 propaga.
 
@@ -99,8 +99,8 @@ como sugere $\frac{dV}{V}=3\frac{dx}{x}$.
 \section{Máximos e mínimos}
 
 \begin{definicao}
-$f$ tem um \textbf{máximo absoluto} em $c$ se $f(c)\ge f(x)$ para todo $x$ do domínio, e um
-\textbf{mínimo absoluto} se $f(c)\le f(x)$ para todo $x$. Tem um \textbf{máximo local}
+$f$ tem um \textbf{máximo absoluto}\index{extremos!absolutos} em $c$ se $f(c)\ge f(x)$ para todo $x$ do domínio, e um
+\textbf{mínimo absoluto} se $f(c)\le f(x)$ para todo $x$. Tem um \textbf{máximo local}\index{extremos!locais}
 (ou relativo) em $c$ se $f(c)\ge f(x)$ para todo $x$ em algum intervalo aberto contendo $c$;
 analogamente para \textbf{mínimo local}. Esses valores são os \textbf{extremos} de $f$.
 \end{definicao}
@@ -116,7 +116,7 @@ analogamente para \textbf{mínimo local}. Esses valores são os \textbf{extremos
 \end{axis}\end{tikzpicture}}{Extremos locais e absolutos de uma função contínua em um
 intervalo fechado. Os extremos absolutos podem ocorrer nas extremidades.}
 
-\begin{teorema}[Teorema do Valor Extremo]{4.1}
+\begin{teorema}[Teorema do Valor Extremo]{4.1}\index{teorema@Teorema!do valor extremo@do Valor Extremo}
 Se $f$ é contínua em um intervalo fechado e limitado $[a,b]$, então $f$ tem máximo e mínimo
 absolutos em $[a,b]$.
 \end{teorema}
@@ -124,15 +124,15 @@ absolutos em $[a,b]$.
 As duas hipóteses importam: $f(x)=x$ em $(0,1)$ não tem máximo nem mínimo (o intervalo é
 aberto), e $f(x)=1/x$ em $[-1,1]\setminus\{0\}$ também não (falta continuidade).
 
-\begin{teorema}[Teorema de Fermat]{4.2}
+\begin{teorema}[Teorema de Fermat]{4.2}\index{teorema@Teorema!de fermat@de Fermat}
 Se $f$ tem um extremo local em $c$ e $f$ é derivável em $c$, então $f'(c)=0$.
 \end{teorema}
 
-Um \textbf{ponto crítico} de $f$ é um ponto $c$ do domínio em que $f'(c)=0$ ou $f'(c)$ não
+Um \textbf{ponto crítico}\index{ponto critico@ponto crítico} de $f$ é um ponto $c$ do domínio em que $f'(c)=0$ ou $f'(c)$ não
 existe. Pelo teorema de Fermat, \emph{extremos locais só ocorrem em pontos críticos}. A
 recíproca é falsa: $f(x)=x^3$ tem $f'(0)=0$ e nenhum extremo em $0$.
 
-\begin{estrategia}{extremos absolutos em $[a,b]$ (método do intervalo fechado)}
+\begin{estrategia}{extremos absolutos em $[a,b]$ (método do intervalo fechado)}\index{metodo do intervalo fechado@método do intervalo fechado}
 \begin{enumerate}[label=\arabic*.]
 \item Calcule $f$ nas extremidades $a$ e $b$.
 \item Encontre os pontos críticos em $(a,b)$ e calcule $f$ neles.
@@ -151,7 +151,7 @@ $f(2)=4-3\sqrt[3]4\approx-0{,}76$. Máximo absoluto $0$ em $x=0$; mínimo absolu
 % ---------------------------------------------------------------------
 \section{O Teorema do Valor Médio}
 
-\begin{teorema}[Teorema de Rolle]{4.3}
+\begin{teorema}[Teorema de Rolle]{4.3}\index{teorema@Teorema!de rolle@de Rolle}
 Se $f$ é contínua em $[a,b]$, derivável em $(a,b)$ e $f(a)=f(b)$, então existe $c\in(a,b)$ com
 $f'(c)=0$.
 \end{teorema}
@@ -159,7 +159,7 @@ $f'(c)=0$.
 ambos ocorrem nas extremidades, $f$ é constante e $f'\equiv0$. Caso contrário, um deles
 ocorre em um ponto interior $c$, e pelo teorema de Fermat $f'(c)=0$. $\square$
 
-\begin{teorema}[Teorema do Valor Médio]{4.4}
+\begin{teorema}[Teorema do Valor Médio]{4.4}\index{teorema@Teorema!do valor medio@do Valor Médio}
 Se $f$ é contínua em $[a,b]$ e derivável em $(a,b)$, então existe $c\in(a,b)$ tal que
 \[
 f'(c)=\frac{f(b)-f(a)}{b-a}.
@@ -204,7 +204,7 @@ $f(x_2)-f(x_1)=f'(c)(x_2-x_1)>0$. $\square$
 % ---------------------------------------------------------------------
 \section{Derivadas e a forma do gráfico}
 
-\begin{teorema}[Teste da primeira derivada]{4.6}
+\begin{teorema}[Teste da primeira derivada]{4.6}\index{teste!da primeira derivada}
 Seja $c$ um ponto crítico de $f$, contínua em um intervalo aberto contendo $c$.
 \begin{itemize}
 \item Se $f'$ muda de positiva para negativa em $c$, $f$ tem um máximo local em $c$.
@@ -214,15 +214,15 @@ Seja $c$ um ponto crítico de $f$, contínua em um intervalo aberto contendo $c$
 \end{teorema}
 
 \textbf{Concavidade.} Se $f'$ é crescente em $I$, o gráfico de $f$ se curva para cima, e
-dizemos que $f$ é \textbf{côncava para cima} em $I$. Se $f'$ é decrescente, $f$ é
-\textbf{côncava para baixo}. Um \textbf{ponto de inflexão} é um ponto do gráfico em que a
+dizemos que $f$ é \textbf{côncava para cima}\index{concavidade} em $I$. Se $f'$ é decrescente, $f$ é
+\textbf{côncava para baixo}. Um \textbf{ponto de inflexão}\index{ponto de inflexao@ponto de inflexão} é um ponto do gráfico em que a
 concavidade muda.
 
-\begin{teorema}[Teste da concavidade]{4.7}
+\begin{teorema}[Teste da concavidade]{4.7}\index{teste!da concavidade}
 Se $f''>0$ em $I$, $f$ é côncava para cima em $I$; se $f''<0$, côncava para baixo.
 \end{teorema}
 
-\begin{teorema}[Teste da segunda derivada]{4.8}
+\begin{teorema}[Teste da segunda derivada]{4.8}\index{teste!da segunda derivada}
 Suponha $f'(c)=0$ e $f''$ contínua perto de $c$. Se $f''(c)>0$, $f$ tem mínimo local em $c$;
 se $f''(c)<0$, máximo local. Se $f''(c)=0$, o teste é inconclusivo.
 \end{teorema}
@@ -252,7 +252,7 @@ inflexão (verde). A cor indica a concavidade.}
 
 Escrevemos $\lim_{x\to\infty}f(x)=L$ se $f(x)$ fica arbitrariamente perto de $L$ para $x$
 suficientemente grande; analogamente para $x\to-\infty$. Nesse caso, a reta $y=L$ é uma
-\textbf{assíntota horizontal}. As propriedades dos limites continuam valendo, e o limite
+\textbf{assíntota horizontal}\index{assintota@assíntota!horizontal}. As propriedades dos limites continuam valendo, e o limite
 básico é $\lim_{x\to\pm\infty}\frac1{x^n}=0$ para $n>0$.
 
 \textbf{Funções racionais.} Dividimos numerador e denominador pela maior potência de $x$ do
@@ -264,7 +264,7 @@ Em geral, para $\frac{p(x)}{q(x)}$: se $\operatorname{grau}p<\operatorname{grau}
 é $0$; se os graus são iguais, é a razão dos coeficientes dominantes; se
 $\operatorname{grau}p>\operatorname{grau}q$, o limite é $\pm\infty$. Quando
 $\operatorname{grau}p=\operatorname{grau}q+1$, a divisão de polinômios dá uma
-\textbf{assíntota oblíqua}: $\frac{p(x)}{q(x)}=mx+b+\frac{r(x)}{q(x)}$, com
+\textbf{assíntota oblíqua}\index{assintota@assíntota!obliqua@oblíqua}: $\frac{p(x)}{q(x)}=mx+b+\frac{r(x)}{q(x)}$, com
 $\frac{r}{q}\to0$.
 
 \begin{nota}
@@ -275,7 +275,7 @@ $\lim_{x\to\infty}\frac{\sqrt{x^2+1}}{x}=1$, mas $\lim_{x\to-\infty}\frac{\sqrt{
 Comportamentos transcendentes a lembrar: $e^x\to\infty$ e $e^{-x}\to0$ quando $x\to\infty$;
 $\ln x\to\infty$ (devagar); $\tan^{-1}x\to\pm\frac\pi2$ quando $x\to\pm\infty$.
 
-\begin{estrategia}{esboço do gráfico de uma função}
+\begin{estrategia}{esboço do gráfico de uma função}\index{esboco de graficos@esboço de gráficos}
 \begin{enumerate}[label=\arabic*.]
 \item Domínio, interceptos e simetria.
 \item Assíntotas verticais (limites infinitos) e horizontais/oblíquas (limites no infinito).
@@ -309,7 +309,7 @@ Muitos problemas práticos pedem o maior ou o menor valor de uma grandeza: área
 mínimo, tempo mínimo. A estratégia combina modelagem com o método do intervalo fechado ou com
 o teste da primeira derivada.
 
-\begin{estrategia}{problemas de otimização}
+\begin{estrategia}{problemas de otimização}\index{otimizacao@otimização}
 \begin{enumerate}[label=\arabic*.]
 \item Faça um desenho e nomeie as variáveis.
 \item Escreva a grandeza a otimizar em função das variáveis.
@@ -344,7 +344,7 @@ diâmetro}.
 % ---------------------------------------------------------------------
 \section{A regra de L'Hôpital}
 
-\begin{teorema}[Regra de L'Hôpital]{4.9}
+\begin{teorema}[Regra de L'Hôpital]{4.9}\index{lhopital, regra de@L'Hôpital, regra de}
 Sejam $f$ e $g$ deriváveis perto de $a$ (exceto possivelmente em $a$), com $g'(x)\neq0$
 perto de $a$. Se $\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0$, ou se ambos são $\pm\infty$, então
 \[
@@ -425,12 +425,12 @@ gráfico ou do Teorema do Valor Intermediário.
 \section{Antiderivadas}
 
 \begin{definicao}
-$F$ é uma \textbf{antiderivada} (ou primitiva) de $f$ em um intervalo $I$ se $F'(x)=f(x)$ para
+$F$ é uma \textbf{antiderivada}\index{antiderivada} (ou primitiva) de $f$ em um intervalo $I$ se $F'(x)=f(x)$ para
 todo $x\in I$.
 \end{definicao}
 
 Pela consequência (ii) do TVM, se $F$ é uma antiderivada de $f$, então \emph{todas} as
-antiderivadas são da forma $F(x)+C$. Escrevemos a \textbf{integral indefinida}
+antiderivadas são da forma $F(x)+C$. Escrevemos a \textbf{integral indefinida}\index{integral!indefinida}
 \[
 \int f(x)\,dx=F(x)+C .
 \]
@@ -460,7 +460,7 @@ $\displaystyle\int\Big(5x^3-\frac{7}{x^2}+4\sqrt x\Big)dx
 $\displaystyle\int\frac{x^2+1}{x}\,dx=\int\Big(x+\frac1x\Big)dx=\frac{x^2}2+\ln|x|+C$.
 \end{exemplo}
 
-\textbf{Problemas de valor inicial.} Uma condição como $F(a)=b$ fixa a constante $C$.
+\textbf{Problemas de valor inicial.}\index{problema de valor inicial} Uma condição como $F(a)=b$ fixa a constante $C$.
 
 \begin{exemplo}{4.16}{Um carro freando}
 Um carro a 30 m/s freia com desaceleração constante de 6 m/s$^2$. Que distância percorre até
@@ -472,7 +472,7 @@ $s(5)=150-75=75$ m.
 \end{exemplo}
 
 % ---------------------------------------------------------------------
-\section*{Resumo do capítulo}
+\section*{Resumo do capítulo}\markright{Resumo do capítulo}
 \addcontentsline{toc}{section}{Resumo do capítulo}
 \begin{itemize}
 \item Taxas relacionadas: derive a equação que liga as variáveis em relação a $t$; substitua

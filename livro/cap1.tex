@@ -20,9 +20,9 @@ Quando conhecemos a entrada, a saída fica determinada; por isso dizemos que a s
 função da entrada. A área de um quadrado, por exemplo, é função do comprimento do lado.
 
 \begin{definicao}
-Uma \textbf{função} $f$ consiste em um conjunto de entradas, um conjunto de saídas e uma
+Uma \textbf{função}\index{funcao@função} $f$ consiste em um conjunto de entradas, um conjunto de saídas e uma
 regra que associa cada entrada a exatamente uma saída. O conjunto de entradas é o
-\textbf{domínio} da função; o conjunto de saídas é a \textbf{imagem}.
+\textbf{domínio}\index{dominio@domínio} da função; o conjunto de saídas é a \textbf{imagem}\index{imagem}.
 \end{definicao}
 
 Para uma função $f$ com domínio $D$, costumamos usar $x$ para a entrada e $y$ para a saída,
@@ -45,7 +45,7 @@ saída, mas duas entradas diferentes podem ser enviadas à mesma saída
 \end{tikzpicture}}{Uma função associa cada elemento do domínio a exatamente um elemento
 da imagem. Entradas diferentes (aqui, 3 e 4) podem ter a mesma saída.}
 
-O \textbf{gráfico} de $f$ é o conjunto dos pontos $(x,f(x))$ do plano, com $x$ no domínio.
+O \textbf{gráfico}\index{grafico de uma funcao@gráfico de uma função} de $f$ é o conjunto dos pontos $(x,f(x))$ do plano, com $x$ no domínio.
 Quando uma função é dada apenas por uma fórmula, sem domínio explícito, o domínio é o
 conjunto de todos os reais $x$ para os quais $f(x)$ é um número real; é o chamado
 \emph{domínio natural}. Assim, o domínio de $f(x)=x^2$ é $\R$, e o de $f(x)=\sqrt{x}$ é o
@@ -59,7 +59,7 @@ conjunto dos reais não negativos.
 O símbolo $\infty$ não é um número real; indica apenas que o conjunto não tem limitação
 naquela direção.
 
-Algumas funções são \textbf{definidas por partes}, com fórmulas diferentes em diferentes
+Algumas funções são \textbf{definidas por partes}\index{funcao@função!definida por partes}, com fórmulas diferentes em diferentes
 partes do domínio. Por exemplo,
 \[
 f(x)=\begin{cases}3x+1, & x\ge 2\\ x^2, & x<2\end{cases}
@@ -88,23 +88,31 @@ Uma função pode ser representada por uma \emph{tabela}, um \emph{gráfico} ou 
 \emph{fórmula}, e muitas vezes usamos as três juntas: marcamos no gráfico os valores de uma
 tabela, ou construímos uma tabela a partir de uma fórmula.
 
-Os valores de $x$ com $f(x)=0$ são os \textbf{zeros} da função; eles indicam onde o gráfico
+Os valores de $x$ com $f(x)=0$ são os \textbf{zeros}\index{zeros de uma funcao@zeros de uma função} da função; eles indicam onde o gráfico
 corta o eixo $x$. O \textbf{intercepto $y$}, se existir, é o ponto $(0,f(0))$. Como cada
 entrada tem uma única saída, cada reta vertical $x=c$ corta o gráfico no máximo uma vez.
 
-\begin{regra}{Regra: teste da reta vertical}
+\begin{regra}{Regra: teste da reta vertical}\index{teste da reta vertical}
 Dada uma função $f$, toda reta vertical corta o gráfico de $f$ no máximo uma vez. Se alguma
 reta vertical corta um conjunto de pontos mais de uma vez, esse conjunto não é gráfico de
 uma função.
 \end{regra}
 
-\fig[0.6]{CNX_Calc_Figure_01_01_006.jpg}{(a) Gráfico de uma função: toda reta vertical o
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.2cm},painel,width=5.6cm,height=4.8cm,xtick=\empty,ytick=\empty]
+\nextgroupplot[xmin=-2.4,xmax=2.6,ymin=-2.2,ymax=2.4,title={(a) é função}]
+\foreach \a in {-1.4,0.3,1.6}{\edef\tmp{\noexpand\draw[laranja,thin] (axis cs:\a,-2.2) -- (axis cs:\a,2.4);}\tmp}
+\addplot[domain=-2.2:2.4]{0.25*x^4-0.15*x^3-1.1*x^2+0.4*x+0.3};
+\nextgroupplot[xmin=-2.2,xmax=2.2,ymin=-2.2,ymax=2.4,title={(b) não é função}]
+\foreach \a in {-0.6,0.5}{\edef\tmp{\noexpand\draw[laranja,thin] (axis cs:\a,-2.2) -- (axis cs:\a,2.4);}\tmp}
+\addplot[variable=t,domain=-1.75:1.75] ({t^3-2*t},{t});
+\end{groupplot}\end{tikzpicture}}{(a) Gráfico de uma função: toda reta vertical o
 corta no máximo uma vez. (b) Não é gráfico de função: algumas retas verticais o cortam mais
 de uma vez.}
 
-Dizemos que $f$ é \textbf{crescente} em um intervalo $I$ se $f(x_1)\le f(x_2)$ sempre que
+Dizemos que $f$ é \textbf{crescente}\index{funcao@função!crescente} em um intervalo $I$ se $f(x_1)\le f(x_2)$ sempre que
 $x_1<x_2$ em $I$, e \textbf{estritamente crescente} se $f(x_1)<f(x_2)$. Analogamente, $f$
-é \textbf{decrescente} se $f(x_1)\ge f(x_2)$ e \textbf{estritamente decrescente} se
+é \textbf{decrescente}\index{funcao@função!decrescente} se $f(x_1)\ge f(x_2)$ e \textbf{estritamente decrescente} se
 $f(x_1)>f(x_2)$ sempre que $x_1<x_2$. Por exemplo, $f(x)=3x$ é crescente em $\R$, e
 $f(x)=-x^3$ é estritamente decrescente em $\R$.
 
@@ -124,7 +132,7 @@ função do tempo é $C(T(t))$.
 
 \begin{definicao}
 Sejam $f$ uma função com domínio $A$ e imagem $B$, e $g$ uma função com domínio $D$ e
-imagem $E$. Se $B\subseteq D$, a \textbf{função composta} $g\circ f$ é a função com
+imagem $E$. Se $B\subseteq D$, a \textbf{função composta}\index{funcao@função!composta} $g\circ f$ é a função com
 domínio $A$ dada por
 \[
 (g\circ f)(x)=g\big(f(x)\big).
@@ -152,12 +160,18 @@ simétrico em relação ao eixo $y$. Se $f(-x)=-f(x)$, o gráfico é simétrico 
 origem: girá-lo $180^\circ$ em torno da origem não o altera.
 
 \begin{definicao}
-Se $f(-x)=f(x)$ para todo $x$ do domínio, $f$ é uma \textbf{função par} (simétrica em
+Se $f(-x)=f(x)$ para todo $x$ do domínio, $f$ é uma \textbf{função par}\index{funcao@função!par} (simétrica em
 relação ao eixo $y$). Se $f(-x)=-f(x)$ para todo $x$ do domínio, $f$ é uma
-\textbf{função ímpar} (simétrica em relação à origem).
+\textbf{função ímpar}\index{funcao@função!impar@ímpar} (simétrica em relação à origem).
 \end{definicao}
 
-\fig[0.6]{CNX_Calc_Figure_01_01_012.jpg}{(a) $f(x)=x^4-2x^2-3$ é par: simetria em relação
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.2cm},painel,width=5.6cm,height=4.8cm]
+\nextgroupplot[xmin=-2.6,xmax=2.6,ymin=-5,ymax=5,xtick={-2,-1,1,2},ytick={-4,-3,2,4},title={(a) $x^4-2x^2-3$: par}]
+\addplot[domain=-2.25:2.25]{x^4-2*x^2-3};
+\nextgroupplot[xmin=-3,xmax=3,ymin=-5,ymax=5,xtick={-2,2},ytick={-3,3},title={(b) $x^3-4x$: ímpar}]
+\addplot[domain=-2.75:2.75]{x^3-4*x};
+\end{groupplot}\end{tikzpicture}}{(a) $f(x)=x^4-2x^2-3$ é par: simetria em relação
 ao eixo $y$. (b) $f(x)=x^3-4x$ é ímpar: simetria em relação à origem.}
 
 \begin{exemplo}{1.3}{Funções pares e ímpares}
@@ -169,7 +183,7 @@ Calculamos $f(-x)$ e comparamos com $f(x)$ e $-f(x)$.
 (c) $f(-x)=\dfrac{-3x}{x^2+1}=-f(x)$: ímpar.
 \end{exemplo}
 
-A \textbf{função valor absoluto} é
+A \textbf{função valor absoluto}\index{valor absoluto} é
 \[
 |x|=\begin{cases}-x, & x<0\\ x, & x\ge0.\end{cases}
 \]
@@ -181,16 +195,16 @@ e, como $|x-3|\ge0$, imagem $\Set{y}{y\ge4}$.
 
 \subsection{Funções afins e inclinação}
 
-Uma \textbf{função afim} (ou linear) tem a forma $f(x)=mx+b$, e seu gráfico é uma reta.
+Uma \textbf{função afim}\index{funcao@função!afim} (ou linear) tem a forma $f(x)=mx+b$, e seu gráfico é uma reta.
 Para quaisquer dois pontos $(x_1,y_1)$ e $(x_2,y_2)$ dessa reta, a razão entre a variação
 de $y$ e a de $x$ é sempre a mesma.
 
 \begin{definicao}
-A \textbf{inclinação} da reta que passa por $(x_1,y_1)$ e $(x_2,y_2)$ é
+A \textbf{inclinação}\index{inclinacao@inclinação} da reta que passa por $(x_1,y_1)$ e $(x_2,y_2)$ é
 \[
 m=\frac{y_2-y_1}{x_2-x_1}=\frac{\Delta y}{\Delta x}.
 \]
-A reta que passa por $(x_1,y_1)$ com inclinação $m$ tem \textbf{equação ponto-inclinação}
+A reta que passa por $(x_1,y_1)$ com inclinação $m$ tem \textbf{equação ponto-inclinação}\index{equacao da reta@equação da reta}
 $y-y_1=m(x-x_1)$. A reta com inclinação $m$ e intercepto $(0,b)$ tem equação
 $y=mx+b$ (forma \textbf{reduzida}). A \textbf{forma geral} $ax+by=c$, com $a$ e $b$ não
 ambos nulos, inclui também as retas verticais $x=k$.
@@ -205,13 +219,21 @@ $y+4=-\tfrac35(x-11)$, ou seja, $y=-\tfrac35x+\tfrac{13}{5}$.
 
 \subsection{Polinômios}
 
-Um \textbf{polinômio} é uma função da forma
+Um \textbf{polinômio}\index{polinomio@polinômio} é uma função da forma
 $f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0$, com $n$ inteiro não negativo e $a_n\neq0$; $n$
 é o \emph{grau}. Polinômios de grau 0, 1, 2 e 3 são chamados constantes, afins,
-quadráticos e cúbicos. As \textbf{funções potência} $f(x)=ax^b$ incluem $x^n$, que é par
+quadráticos e cúbicos. As \textbf{funções potência}\index{funcao@função!potencia@potência} $f(x)=ax^b$ incluem $x^n$, que é par
 para $n$ par e ímpar para $n$ ímpar.
 
-\fig[0.55]{CNX_Calc_Figure_01_02_004.jpg}{(a) Para $n$ par, $ax^n$ é par. (b) Para $n$
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.2cm},painel,width=5.6cm,height=4.8cm,xmin=-1.7,xmax=1.7,xtick={-1,1}]
+\nextgroupplot[ymin=-0.4,ymax=3.2,ytick={1,2},title={(a) $n$ par}]
+\addplot[laranja,domain=-1.7:1.7]{x^2} node[pos=0.97,left,font=\scriptsize]{$x^2$};
+\addplot[domain=-1.33:1.33]{x^4} node[pos=0.98,right,font=\scriptsize]{$x^4$};
+\nextgroupplot[ymin=-3.2,ymax=3.2,ytick={-1,1},title={(b) $n$ ímpar}]
+\addplot[laranja,domain=-1.47:1.47]{x^3} node[pos=0.98,right,font=\scriptsize]{$x^3$};
+\addplot[domain=-1.26:1.26]{x^5} node[pos=0.98,left,font=\scriptsize]{$x^5$};
+\end{groupplot}\end{tikzpicture}}{(a) Para $n$ par, $ax^n$ é par. (b) Para $n$
 ímpar, $ax^n$ é ímpar.}
 
 \textbf{Comportamento no infinito.} Para $|x|$ grande, o termo de maior grau domina. Se
@@ -222,7 +244,7 @@ os sinais se invertem.
 \textbf{Zeros.} Os zeros de polinômios de grau 1 e 2 se encontram diretamente; para grau
 maior, fatoramos quando possível.
 
-\begin{regra}{Regra: fórmula quadrática}
+\begin{regra}{Regra: fórmula quadrática}\index{formula quadratica@fórmula quadrática}
 As soluções de $ax^2+bx+c=0$, com $a\neq0$, são
 \[
 x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
@@ -233,12 +255,12 @@ negativo, nenhuma.
 
 \subsection{Funções algébricas e transcendentes}
 
-Uma \textbf{função racional} é um quociente de polinômios, $f(x)=p(x)/q(x)$, definida onde
-$q(x)\neq0$. As \textbf{funções algébricas} são as obtidas de polinômios por soma,
+Uma \textbf{função racional}\index{funcao@função!racional} é um quociente de polinômios, $f(x)=p(x)/q(x)$, definida onde
+$q(x)\neq0$. As \textbf{funções algébricas}\index{funcao@função!algebrica@algébrica} são as obtidas de polinômios por soma,
 subtração, multiplicação, divisão e extração de raízes; por exemplo,
 $f(x)=\sqrt{x^2-4}$ e $g(x)=\sqrt[3]{x}/(1-x^2)$. Para $f(x)=\sqrt[n]{x}$, o domínio é
 $[0,\infty)$ se $n$ é par e $\R$ se $n$ é ímpar. As funções que não são algébricas são as
-\textbf{transcendentes}: trigonométricas, exponenciais, logarítmicas e hiperbólicas.
+\textbf{transcendentes}\index{funcao@função!transcendente}: trigonométricas, exponenciais, logarítmicas e hiperbólicas.
 
 \subsection{Funções definidas por partes}
 
@@ -248,10 +270,15 @@ Esboce $f(x)=\begin{cases}x+3, & x<1\\ (x-2)^2, & x\ge1.\end{cases}$
 Desenhamos a reta $y=x+3$ em $(-\infty,1)$ e a parábola $y=(x-2)^2$ em $[1,\infty)$. Como
 $f(1)=(1-2)^2=1$, marcamos uma bola cheia em $(1,1)$. A reta se aproxima de $(1,4)$ sem
 atingi-lo: marcamos ali uma bola vazia.
-\fig[0.38]{CNX_Calc_Figure_01_02_011.jpg}{Função afim para $x<1$ e quadrática para $x\ge1$.}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=6.2cm,height=5cm,xmin=-4.5,xmax=4.8,ymin=-1.8,ymax=6,xtick={-3,1,2,4},ytick={1,4}]
+\addplot[domain=-4.5:1]{x+3} node[pos=0.25,above left,font=\scriptsize]{$x+3$};
+\addplot[laranja,domain=1:4.4]{(x-2)^2} node[pos=0.9,right,font=\scriptsize]{$(x-2)^2$};
+\draw[azul,fill=white] (axis cs:1,4) circle (2pt); \fill[laranja] (axis cs:1,1) circle (2pt);
+\end{axis}\end{tikzpicture}}{Função afim para $x<1$ e quadrática para $x\ge1$.}
 \end{exemplo}
 
-\subsection{Transformações de funções}
+\subsection{Transformações de funções}\index{transformacoes de graficos@transformações de gráficos}
 
 A partir do gráfico de $y=f(x)$ obtemos outros sem novos cálculos. Para $c>0$:
 
@@ -288,16 +315,26 @@ Esboce (a) $f(x)=-|x+2|-3$ e (b) $f(x)=3\sqrt{-x}+1$.
 eixo $x$ e translação de 3 unidades para baixo.
 (b) Partindo de $y=\sqrt{x}$: reflexão em relação ao eixo $y$, alongamento vertical por um
 fator 3 e translação de 1 unidade para cima.
-\figdupla[0.34]{CNX_Calc_Figure_01_02_019.jpg}{CNX_Calc_Figure_01_02_020.jpg}{As funções (a)
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.2cm},painel,width=5.8cm,height=5cm]
+\nextgroupplot[xmin=-6.5,xmax=4,ymin=-7.5,ymax=4,xtick={-2,2},ytick={-3,3},title={(a) $-|x+2|-3$}]
+\addplot[cinza,dashed,domain=-4:4]{abs(x)} node[pos=0.95,left,font=\scriptsize]{$|x|$};
+\addplot[domain=-6.5:2.5]{-abs(x+2)-3};
+\fill[azul] (axis cs:-2,-3) circle (1.6pt);
+\nextgroupplot[xmin=-6.5,xmax=4.5,ymin=-0.8,ymax=9,xtick={-4,-1,1,4},ytick={1,4,7},title={(b) $3\sqrt{-x}+1$}]
+\addplot[cinza,dashed,domain=0:4.5,samples=100]{sqrt(x)} node[pos=0.9,above,font=\scriptsize]{$\sqrt x$};
+\addplot[domain=-6.5:0,samples=100]{3*sqrt(-x)+1};
+\fill[azul] (axis cs:0,1) circle (1.6pt); \fill[azul] (axis cs:-4,7) circle (1.6pt);
+\end{groupplot}\end{tikzpicture}}{As funções (a)
 e (b) como sequências de três transformações de $|x|$ e de $\sqrt x$.}
 \end{exemplo}
 
 % ---------------------------------------------------------------------
-\section{Funções trigonométricas}
+\section{Funções trigonométricas}\index{funcoes trigonometricas@funções trigonométricas}
 
 \subsection{Radianos}
 
-No Cálculo, os ângulos são medidos em \textbf{radianos}. A medida em radianos de um ângulo
+No Cálculo, os ângulos são medidos em \textbf{radianos}\index{radiano}. A medida em radianos de um ângulo
 $\theta$ é o comprimento $s$ do arco que ele determina no círculo unitário. Como a
 circunferência unitária mede $2\pi$, temos $2\pi$ rad $=360^\circ$, ou seja,
 \[
@@ -318,8 +355,14 @@ Se $x=0$, $\sec\theta$ e $\tan\theta$ não estão definidas; se $y=0$, $\cot\the
 $\csc\theta$ não estão definidas.
 \end{definicao}
 
-\fig[0.32]{CNX_Calc_Figure_01_03_002.jpg}{O ângulo $\theta$ na posição padrão. Os valores
-das funções trigonométricas são dados pelas coordenadas $x$ e $y$ de $P$.}
+\figtikz{\begin{tikzpicture}[scale=1.9,font=\small]
+\draw[->] (-1.3,0) -- (1.4,0) node[right]{$x$}; \draw[->] (0,-1.3) -- (0,1.4) node[above]{$y$};
+\draw[thick] (0,0) circle (1);
+\draw[thick,azul] (0,0) -- node[above left,pos=0.55]{$1$} (60:1); \fill[azul] (60:1) circle (1.3pt) node[above right]{$P=(\cos\theta,\sin\theta)$};
+\draw[laranja,dashed] (60:1) -- (0.5,0) node[below]{$\cos\theta$};
+\draw[->] (0.3,0) arc (0:60:0.3); \node at (25:0.45) {$\theta$};
+\draw[laranja,thin] (0.5,0.45) -- (1.08,0.62) node[right,font=\footnotesize]{$\sin\theta$};
+\end{tikzpicture}}{O ângulo $\theta$ na posição padrão: o ponto $P$ do círculo unitário tem coordenadas $(\cos\theta,\sin\theta)$.}
 
 Em um círculo de raio $r$, as coordenadas de um ponto satisfazem $x=r\cos\theta$ e
 $y=r\sin\theta$. Em um triângulo retângulo com ângulo agudo $\theta$, isso dá as razões
@@ -338,7 +381,7 @@ $\tan\theta$ & $0$ & $\sqrt3/3$ & $1$ & $\sqrt3$ & não definida\\\bottomrule
 
 \subsection{Identidades trigonométricas}
 
-\begin{regra}{Regra: identidades trigonométricas}
+\begin{regra}{Regra: identidades trigonométricas}\index{identidades trigonometricas@identidades trigonométricas}
 \textbf{Recíprocas:} $\cot\theta=\dfrac1{\tan\theta}$,\; $\csc\theta=\dfrac1{\sin\theta}$,\;
 $\sec\theta=\dfrac1{\cos\theta}$.
 
@@ -374,7 +417,7 @@ $\theta=n\pi$ e $\theta=\dfrac\pi4+\dfrac{n\pi}2$, $n\in\mathbb Z$.
 
 \subsection{Gráficos e períodos}
 
-Uma função $f$ é \textbf{periódica} se existe $P>0$ tal que $f(x+P)=f(x)$ para todo $x$; o
+Uma função $f$ é \textbf{periódica}\index{funcao@função!periodica@periódica} se existe $P>0$ tal que $f(x+P)=f(x)$ para todo $x$; o
 menor desses $P$ é o \textbf{período}. Seno, cosseno, secante e cossecante têm período
 $2\pi$; tangente e cotangente têm período $\pi$.
 
@@ -430,7 +473,7 @@ $2\pi$; tangente e cotangente têm período $\pi$.
 cossecante têm período $2\pi$; tangente e cotangente, período $\pi$. Tracejado: assíntotas
 verticais.}
 
-Para $f(x)=A\sin\big(B(x-\alpha)\big)+C$ (ou com cosseno), $|A|$ é a \textbf{amplitude},
+Para $f(x)=A\sin\big(B(x-\alpha)\big)+C$ (ou com cosseno), $|A|$ é a \textbf{amplitude}\index{amplitude},
 o período é $2\pi/|B|$, $\alpha$ é a translação horizontal (\emph{defasagem}) e $C$ é a
 translação vertical.
 
@@ -439,7 +482,12 @@ Esboce $f(x)=3\sin\!\big(2(x-\tfrac\pi4)\big)+1$.
 \solucao
 Compressão horizontal por fator 2, defasagem de $\pi/4$ para a direita, alongamento
 vertical por fator 3 e translação de 1 unidade para cima. Amplitude 3, período $\pi$.
-\fig[0.36]{CNX_Calc_Figure_01_03_012.jpg}{Gráfico de $f(x)=3\sin(2(x-\pi/4))+1$.}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=10cm,height=4.8cm,xmin=-4.9,xmax=7.2,ymin=-2.6,ymax=4.8,
+  xtick={-4.712,-3.1416,-1.5708,0.7854,1.5708,3.1416,4.712,6.2832},xticklabels={$-\frac{3\pi}2$,$-\pi$,$-\frac\pi2$,$\frac\pi4$,$\frac\pi2$,$\pi$,$\frac{3\pi}2$,$2\pi$},ytick={-2,1,4}]
+\draw[assint] (axis cs:-4.9,1) -- (axis cs:7.2,1);
+\addplot[domain=-4.9:7.2,samples=300]{3*sin(deg(2*(x-pi/4)))+1};
+\end{axis}\end{tikzpicture}}{Gráfico de $f(x)=3\sin(2(x-\pi/4))+1$: amplitude $3$, período $\pi$, deslocamento de fase $\frac\pi4$ e linha média $y=1$ (tracejada).}
 \end{exemplo}
 
 % ---------------------------------------------------------------------
@@ -450,7 +498,7 @@ vertical por fator 3 e translação de 1 unidade para cima. Amplitude 3, períod
 Uma função ``desfaz'' a outra se, ao aplicarmos uma e depois a outra, voltamos à entrada.
 
 \begin{definicao}
-Dada $f$ com domínio $D$ e imagem $R$, sua \textbf{função inversa} (se existir) é a
+Dada $f$ com domínio $D$ e imagem $R$, sua \textbf{função inversa}\index{funcao@função!inversa} (se existir) é a
 função $f^{-1}$ com domínio $R$ e imagem $D$ tal que $f^{-1}(y)=x$ se $f(x)=y$. Ou seja,
 \[
 f^{-1}\big(f(x)\big)=x\ \text{ para todo } x\in D,\qquad
@@ -465,16 +513,26 @@ $f^{-1}(x)$ não significa $1/f(x)$. A notação indica a função inversa.
 Para que $f^{-1}$ seja função, cada saída de $f$ deve vir de uma única entrada.
 
 \begin{definicao}
-$f$ é \textbf{injetora} se $f(x_1)\neq f(x_2)$ sempre que $x_1\neq x_2$. Uma função tem
+$f$ é \textbf{injetora}\index{funcao@função!injetora} se $f(x_1)\neq f(x_2)$ sempre que $x_1\neq x_2$. Uma função tem
 inversa se, e somente se, é injetora.
 \end{definicao}
 
-\begin{regra}{Regra: teste da reta horizontal}
+\begin{regra}{Regra: teste da reta horizontal}\index{teste da reta horizontal}
 Uma função $f$ é injetora se, e somente se, toda reta horizontal corta o gráfico de $f$ no
 máximo uma vez.
 \end{regra}
 
-\fig[0.5]{CNX_Calc_Figure_01_04_002.jpg}{(a) $x^2$ não é injetora: falha no teste da reta
+\figtikz{\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.2cm},painel,width=5.6cm,height=4.8cm,xmin=-2.4,xmax=2.4,xtick={-1,1},ytick={2}]
+\nextgroupplot[ymin=-0.5,ymax=4.4,title={(a) $x^2$}]
+\draw[laranja] (axis cs:-2.4,2) -- (axis cs:2.4,2);
+\addplot[domain=-2.1:2.1]{x^2};
+\fill (axis cs:-1.414,2) circle (1.6pt); \fill (axis cs:1.414,2) circle (1.6pt);
+\nextgroupplot[ymin=-4,ymax=4,title={(b) $x^3$}]
+\draw[laranja] (axis cs:-2.4,2) -- (axis cs:2.4,2);
+\addplot[domain=-1.6:1.6]{x^3};
+\fill (axis cs:1.26,2) circle (1.6pt);
+\end{groupplot}\end{tikzpicture}}{(a) $x^2$ não é injetora: falha no teste da reta
 horizontal. (b) $x^3$ é injetora.}
 
 \begin{estrategia}{encontrando a inversa}
@@ -496,8 +554,15 @@ $f^{-1}(f(x))=\tfrac13(3x-4)+\tfrac43=x$.
 $f^{-1}$. Portanto o gráfico de $f^{-1}$ é a reflexão do gráfico de $f$ em relação à reta
 $y=x$.
 
-\fig[0.55]{CNX_Calc_Figure_01_04_017.jpg}{(a) O ponto $(a,b)$ no gráfico de $f$. (b) O
-ponto $(b,a)$ no gráfico de $f^{-1}$: os gráficos são simétricos em relação a $y=x$.}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=6.2cm,height=6.2cm,xmin=-2.6,xmax=3,ymin=-2.6,ymax=3,xtick=\empty,ytick=\empty]
+\addplot[cinza,dashed,domain=-2.6:3]{x} node[pos=0.97,below right,font=\scriptsize]{$y=x$};
+\addplot[domain=-2:1.9,samples=100] ({x},{x^3/4+x/2}) node[pos=0.97,left,font=\scriptsize]{$f$};
+\addplot[laranja,domain=-2:1.9,samples=100] ({x^3/4+x/2},{x}) node[pos=0.97,below,font=\scriptsize]{$f^{-1}$};
+\fill[azul] (axis cs:1.2,1.032) circle (1.6pt) node[right,font=\scriptsize]{$(a,b)$};
+\fill[laranja] (axis cs:1.032,1.2) circle (1.6pt) node[above left,font=\scriptsize]{$(b,a)$};
+\draw[cinza,thin,dotted] (axis cs:1.2,1.032) -- (axis cs:1.032,1.2);
+\end{axis}\end{tikzpicture}}{Se $(a,b)$ está no gráfico de $f$, então $(b,a)$ está no gráfico de $f^{-1}$: os gráficos são simétricos em relação à reta $y=x$.}
 
 \textbf{Restrição de domínio.} Uma função que não é injetora pode ter inversa em um domínio
 menor. Assim, $x^2$ restrita a $[0,\infty)$ tem inversa $\sqrt x$.
@@ -509,7 +574,7 @@ $x=-1\pm\sqrt y$; como $x\ge-1$, escolhemos o sinal $+$. Logo $f^{-1}(x)=-1+\sqr
 domínio $[0,\infty)$ e imagem $[-1,\infty)$.
 \end{exemplo}
 
-\subsection{Funções trigonométricas inversas}
+\subsection{Funções trigonométricas inversas}\index{funcoes trigonometricas inversas@funções trigonométricas inversas}
 
 As funções trigonométricas não são injetoras, pois são periódicas. Restringindo o domínio,
 obtemos as inversas.
@@ -568,15 +633,23 @@ $\cos^{-1}$ toma valores em $[0,\pi]$.
 \subsection{Funções exponenciais}
 
 Se uma população começa com $P_0$ indivíduos e cresce à taxa anual $r$, após $t$ anos ela
-tem $P(t)=P_0(1+r)^t$ indivíduos. Esse é um exemplo de \textbf{função exponencial}: uma
+tem $P(t)=P_0(1+r)^t$ indivíduos. Esse é um exemplo de \textbf{função exponencial}\index{funcao@função!exponencial}: uma
 função da forma $f(x)=b^x$, com $b>0$ e $b\neq1$. Seu domínio é $\R$ e sua imagem é
 $(0,\infty)$. Se $b>1$, $b^x$ é crescente; se $0<b<1$, é decrescente. A exponencial
 cresce muito mais rapidamente que qualquer potência: $2^x$ supera $x^2$ para $x$ grande.
 
-\fig[0.38]{CNX_Calc_Figure_01_05_002.jpg}{$b^x$ é crescente se $b>1$ e decrescente se
-$0<b<1$.}
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=7cm,height=5cm,xmin=-3,xmax=3,ymin=-0.3,ymax=6.2,xtick={-1,1},ytick={1,2,4}]
+\addplot[domain=-3:1.29]{4^x}; \addplot[domain=-3:2.58]{2^x};
+\node[azul,font=\scriptsize,anchor=west] at (axis cs:1.35,5.5) {$4^x$};
+\node[azul,font=\scriptsize,anchor=west] at (axis cs:2.2,4.2) {$2^x$};
+\addplot[laranja,domain=-1.29:3]{(1/4)^x}; \addplot[laranja,domain=-2.58:3]{(1/2)^x};
+\node[laranja,font=\scriptsize,anchor=east] at (axis cs:-1.35,5.5) {$(\frac14)^x$};
+\node[laranja,font=\scriptsize,anchor=east] at (axis cs:-2.2,4.2) {$(\frac12)^x$};
+\fill (axis cs:0,1) circle (1.5pt);
+\end{axis}\end{tikzpicture}}{$b^x$ é crescente se $b>1$ (azul) e decrescente se $0<b<1$ (laranja). Todas passam por $(0,1)$.}
 
-\begin{regra}{Regra: leis dos expoentes}
+\begin{regra}{Regra: leis dos expoentes}\index{expoentes, leis dos}
 Para $a>0$, $b>0$ e quaisquer $x$, $y$:
 \[
 b^xb^y=b^{x+y},\quad \frac{b^x}{b^y}=b^{x-y},\quad (b^x)^y=b^{xy},\quad
@@ -593,7 +666,7 @@ quantidade $(1+1/m)^m$ se aproxima de um número fixo,
 e\approx2{,}718282,
 \]
 e o montante tende a $Pe^{rt}$ (\emph{capitalização contínua}). O número $e$ é irracional.
-A função $f(x)=e^x$ é a \textbf{exponencial natural}. Ela é a única exponencial cujo
+A função $f(x)=e^x$ é a \textbf{exponencial natural}\index{exponencial natural}. Ela é a única exponencial cujo
 gráfico tem reta tangente de inclinação exatamente 1 em $x=0$, fato que tornará as
 derivadas e integrais de $e^x$ especialmente simples.
 
@@ -604,13 +677,18 @@ Como $b^x$ é injetora, ela tem inversa: o \textbf{logaritmo na base $b$},
 \log_b x=y \iff b^y=x,\qquad x>0 .
 \]
 Seu domínio é $(0,\infty)$ e sua imagem é $\R$. Escrevemos $\ln x=\log_e x$
-(\textbf{logaritmo natural}). Como inversas, $b^{\log_b x}=x$ para $x>0$ e
+(\textbf{logaritmo natural}\index{logaritmo natural}). Como inversas, $b^{\log_b x}=x$ para $x>0$ e
 $\log_b(b^x)=x$ para todo $x$; em particular, $e^{\ln x}=x$ e $\ln(e^x)=x$.
 
-\fig[0.36]{CNX_Calc_Figure_01_05_004.jpg}{$y=e^x$ e $y=\ln x$ são inversas: seus gráficos
+\figtikz{\begin{tikzpicture}
+\begin{axis}[painel,width=6.2cm,height=6.2cm,xmin=-3,xmax=4,ymin=-3,ymax=4,xtick={1},ytick={1}]
+\addplot[cinza,dashed,domain=-3:4]{x} node[pos=0.97,below right,font=\scriptsize]{$y=x$};
+\addplot[domain=-3:1.38]{exp(x)} node[pos=0.95,left,font=\scriptsize]{$e^x$};
+\addplot[laranja,domain=0.05:4,samples=150]{ln(x)} node[pos=0.95,below,font=\scriptsize]{$\ln x$};
+\end{axis}\end{tikzpicture}}{$y=e^x$ e $y=\ln x$ são inversas: seus gráficos
 são simétricos em relação a $y=x$.}
 
-\begin{regra}{Regra: propriedades dos logaritmos}
+\begin{regra}{Regra: propriedades dos logaritmos}\index{logaritmo!propriedades}
 Se $a,b,c>0$, $b\neq1$ e $r\in\R$:
 \[
 \log_b(ac)=\log_b a+\log_b c,\qquad
@@ -629,7 +707,7 @@ $(e^x-3)(e^x-2)=0$. Logo $x=\ln3$ ou $x=\ln2$.
 $\log_{10}x^{3/2}=\tfrac32\log_{10}x$; logo $\log_{10}x=4/3$ e $x=10^{4/3}=10\sqrt[3]{10}$.
 \end{exemplo}
 
-\begin{regra}{Regra: mudança de base}
+\begin{regra}{Regra: mudança de base}\index{logaritmo!mudanca de base@mudança de base}
 Para $a,b>0$ com $a,b\neq1$:
 \[
 a^x=b^{x\log_b a}\ \ (\text{em particular } a^x=e^{x\ln a}),\qquad
@@ -654,7 +732,7 @@ $9-7{,}3=\log_{10}(A_1/A_2)$, logo $A_1/A_2=10^{1{,}7}\approx50$. O terremoto do
 foi cerca de 50 vezes mais intenso.
 \end{exemplo}
 
-\subsection{Funções hiperbólicas}
+\subsection{Funções hiperbólicas}\index{funcoes hiperbolicas@funções hiperbólicas}
 
 Certas combinações de $e^x$ e $e^{-x}$ aparecem com frequência. A forma de um cabo ou
 corrente suspensa pelas extremidades, sob o próprio peso (a \emph{catenária}), é descrita
@@ -702,7 +780,7 @@ hipérbole $x^2-y^2=1$, assim como $(\cos t,\sin t)$ percorre o círculo $x^2+y^
 $\pm\frac12e^{\pm x}$: para $|x|$ grande, $\cosh x$ e $\sinh x$ se comportam como
 $\frac12e^{|x|}$. Em laranja, as assíntotas $y=\pm1$ de $\tanh$ e $\coth$.}
 
-\begin{regra}{Regra: identidades hiperbólicas}
+\begin{regra}{Regra: identidades hiperbólicas}\index{identidades hiperbolicas@identidades hiperbólicas}
 \begin{tabular}{@{}ll@{}}
 $\cosh(-x)=\cosh x$, \quad $\sinh(-x)=-\sinh x$ & $\cosh x+\sinh x=e^x$, \quad $\cosh x-\sinh x=e^{-x}$\\[2pt]
 $\cosh^2x-\sinh^2x=1$ & $1-\tanh^2x=\sech^2x$, \quad $\coth^2x-1=\csch^2x$\\[2pt]
@@ -725,7 +803,7 @@ inversas se escrevem com logaritmos:
 \]
 
 % ---------------------------------------------------------------------
-\section*{Resumo do capítulo}
+\section*{Resumo do capítulo}\markright{Resumo do capítulo}
 \addcontentsline{toc}{section}{Resumo do capítulo}
 \begin{itemize}
 \item Uma função associa a cada entrada exatamente uma saída. Sem domínio explícito, o

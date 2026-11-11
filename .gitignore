@@ -7,3 +7,6 @@
 *.synctex.gz
 __pycache__/
 livro/calculo1.pdf
+*.idx
+*.ind
+*.ilg

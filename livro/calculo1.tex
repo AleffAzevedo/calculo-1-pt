@@ -17,6 +17,8 @@
 \usepackage{textcomp}
 \usepackage{multicol}
 \usepackage{pgfplots}
+\usepackage{imakeidx}
+\makeindex[title=Índice remissivo,columns=2,intoc,options=-s indice.ist]
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{groupplots,fillbetween}
 \usetikzlibrary{arrows.meta,calc}
@@ -109,16 +111,19 @@ de Gilbert Strang e Edwin ``Jed'' Herman (OpenStax, 2016,
 \url{https://openstax.org/details/books/calculus-volume-2}), sob a mesma licença.
 
 \textbf{Alterações feitas nesta versão:} tradução para o português; condensação do texto
-(redução de explicações, exemplos e figuras para cerca de 150 páginas); reorganização de
-algumas passagens; remoção dos pontos de verificação, dos projetos e da maior parte dos
-exercícios. Ao fim de cada capítulo há uma seleção de exercícios do original, traduzidos,
-com soluções e animações novas publicadas no repositório do livro. Várias figuras foram
-redesenhadas em português; as demais são as do original, e algumas mantêm rótulos internos
-em inglês. No texto, os decimais usam vírgula, no padrão brasileiro.
+(redução de explicações, exemplos e figuras); reorganização de algumas passagens; remoção dos
+pontos de verificação, dos projetos e dos exercícios do original. Todas as figuras foram
+redesenhadas em português. As listas de exercícios ao fim de cada capítulo foram
+elaboradas para esta edição, inspiradas nos temas e exemplos do original; os exercícios
+marcados com \estrela{} têm solução completa e animação no repositório do livro
+(\url{https://github.com/AleffAzevedo/calculo-1-pt}). Foram acrescentados um apêndice de
+fórmulas e um índice remissivo. No texto, os decimais usam vírgula, no padrão brasileiro.
 
 Esta versão não é endossada pela OpenStax nem pela Rice University. Os nomes e logotipos
 OpenStax e Rice University são marcas registradas e não fazem parte da licença.
 Esta adaptação é distribuída sob a mesma licença CC BY-NC-SA 4.0, apenas para uso não comercial.
+
+\textbf{Versão 1.0}, novembro de 2026.
 
 \tableofcontents
 
@@ -130,5 +135,14 @@ Esta adaptação é distribuída sob a mesma licença CC BY-NC-SA 4.0, apenas pa
 \input{cap5}
 \input{cap6}
 \input{cap7}
+
+\appendix
+\renewcommand{\chaptername}{Apêndice}
+\titleformat{\chapter}[display]{\normalfont\bfseries\color{azul}}
+  {\large\scshape Apêndice \thechapter}{4pt}{\Huge}
+\input{apendice}
+
+\backmatter
+\printindex
 
 \end{document}
