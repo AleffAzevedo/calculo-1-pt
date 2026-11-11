@@ -25,7 +25,7 @@ $A=\int_c^d\big[u(y)-v(y)\big]\,dy$ (``da direita menos da esquerda'').
 \addplot[fill=azul!20,draw=none,domain=-1:2,samples=60] {x+2} \closedcycle;
 \addplot[fill=white,draw=none,domain=-1:2,samples=60] {x^2} \closedcycle;
 \addplot[azul,thick,domain=-1.5:2.5]{x+2}; \addplot[laranja,thick,domain=-1.6:2.2,samples=60]{x^2};
-\draw[fill=verde!40,draw=verde] (axis cs:0.9,0.81) rectangle (axis cs:1.1,3.0);
+\draw[fill=verde!80,draw=azul] (axis cs:0.9,0.81) rectangle (axis cs:1.1,3.0);
 \node[azul,font=\small] at (axis cs:2.35,3.8) {$y=x+2$}; \node[laranja,font=\small] at (axis cs:-1.2,2.6) {$y=x^2$};
 \end{axis}\end{tikzpicture}}{Região entre $y=x+2$ e $y=x^2$, com uma faixa típica de altura
 $(x+2)-x^2$ e largura $\Delta x$.}
@@ -111,7 +111,7 @@ Em geral: $V=2\pi\int(\text{raio da casca})(\text{altura da casca})\,d(\text{var
 \draw[fill=laranja!40,draw=laranja] (axis cs:0.62,0) rectangle (axis cs:0.68,0.2356);
 \draw[laranja,dashed] (axis cs:-0.65,0) rectangle (axis cs:-0.62,0.2356);
 \draw[laranja] (axis cs:0,0.2356) ellipse [x radius=0.65, y radius=0.025];
-\draw[<->,verde] (axis cs:0,0.29) -- node[above,font=\scriptsize]{raio $x$} (axis cs:0.65,0.29);
+\draw[<->,azul] (axis cs:0,0.29) -- node[above,font=\scriptsize]{raio $x$} (axis cs:0.65,0.29);
 \end{axis}\end{tikzpicture}}{Método das cascas: a faixa em $x$, girando em torno do eixo $y$,
 gera um cilindro fino de raio $x$ e altura $x-x^2$.}
 
@@ -259,31 +259,31 @@ $k=-\frac{\ln2}{5730}$. De $0{,}30=e^{kt}$: $t=\frac{\ln(1/0{,}3)}{\ln2}\cdot573
 % ---------------------------------------------------------------------
 \section{Cálculo das funções hiperbólicas}
 
-Das definições $\sinh x=\frac{e^x-e^{-x}}2$ e $\cosh x=\frac{e^x+e^{-x}}2$ (capítulo~1):
+Das definições $\senh x=\frac{e^x-e^{-x}}2$ e $\cosh x=\frac{e^x+e^{-x}}2$ (capítulo~1):
 \[
-\frac{d}{dx}\sinh x=\cosh x,\qquad \frac{d}{dx}\cosh x=\sinh x,\qquad
-\frac{d}{dx}\tanh x=\operatorname{sech}^2x .
+\frac{d}{dx}\senh x=\cosh x,\qquad \frac{d}{dx}\cosh x=\senh x,\qquad
+\frac{d}{dx}\tgh x=\operatorname{sech}^2x .
 \]
 Repare na ausência do sinal de menos em $(\cosh x)'$, ao contrário de $(\cos x)'$. As inversas
-se escrevem com logaritmos, por exemplo $\sinh^{-1}x=\ln\big(x+\sqrt{x^2+1}\big)$, e dão
+se escrevem com logaritmos, por exemplo $\arcsenh x=\ln\big(x+\sqrt{x^2+1}\big)$, e dão
 \[
-\int\frac{dx}{\sqrt{1+x^2}}=\sinh^{-1}x+C,\qquad
-\int\frac{dx}{\sqrt{x^2-1}}=\cosh^{-1}x+C\ (x>1),\qquad
-\int\frac{dx}{1-x^2}=\tanh^{-1}x+C\ (|x|<1).
+\int\frac{dx}{\sqrt{1+x^2}}=\arcsenh x+C,\qquad
+\int\frac{dx}{\sqrt{x^2-1}}=\arccosh x+C\ (x>1),\qquad
+\int\frac{dx}{1-x^2}=\arctgh x+C\ (|x|<1).
 \]
 
 \textbf{A catenária.}\index{catenaria@catenária} Um cabo homogêneo suspenso pelas pontas assume a forma
-$y=a\cosh\frac xa$. Como $1+\sinh^2=\cosh^2$, o comprimento de arco é elementar:
+$y=a\cosh\frac xa$. Como $1+\senh^2=\cosh^2$, o comprimento de arco é elementar:
 \[
-L=\int_{-b}^b\sqrt{1+\sinh^2\tfrac xa}\,dx=\int_{-b}^b\cosh\tfrac xa\,dx=2a\sinh\frac ba .
+L=\int_{-b}^b\sqrt{1+\senh^2\tfrac xa}\,dx=\int_{-b}^b\cosh\tfrac xa\,dx=2a\senh\frac ba .
 \]
 
 \begin{exemplo}{6.9}{Hiperbólicas}
-(a) $\frac{d}{dx}\cosh(x^2)=2x\sinh(x^2)$.
+(a) $\frac{d}{dx}\cosh(x^2)=2x\senh(x^2)$.
 
-(b) $\int\tanh x\,dx=\int\frac{\sinh x}{\cosh x}\,dx=\ln(\cosh x)+C$.
+(b) $\int\tgh x\,dx=\int\frac{\senh x}{\cosh x}\,dx=\ln(\cosh x)+C$.
 
-(c) $\int_0^1\frac{dx}{\sqrt{1+x^2}}=\sinh^{-1}1=\ln(1+\sqrt2)\approx0{,}8814$.
+(c) $\int_0^1\frac{dx}{\sqrt{1+x^2}}=\arcsen h1=\ln(1+\sqrt2)\approx0{,}8814$.
 \end{exemplo}
 
 % ---------------------------------------------------------------------
@@ -301,7 +301,7 @@ L=\int_{-b}^b\sqrt{1+\sinh^2\tfrac xa}\,dx=\int_{-b}^b\cosh\tfrac xa\,dx=2a\sinh
   $V=2\pi dA$.
 \item $\ln x=\int_1^x\frac{dt}t$; $e^x$ é sua inversa; $y'=ky\Rightarrow y=y_0e^{kt}$,
   $T_2=\frac{\ln2}k$.
-\item $(\sinh)'=\cosh$, $(\cosh)'=\sinh$; catenária $y=a\cosh\frac xa$.
+\item $(\senh)'=\cosh$, $(\cosh)'=\senh$; catenária $y=a\cosh\frac xa$.
 \end{itemize}
 
 \input{exercicios_cap6}

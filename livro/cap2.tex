@@ -38,9 +38,9 @@ da tangente, que é a \emph{taxa de variação instantânea} de $f$ em $a$.
 \begin{axis}[painel,width=7cm,height=5.2cm,xmin=-0.3,xmax=3.6,ymin=0,ymax=3.6,xtick={1},xticklabels={$a$},ytick=\empty]
 \addplot[domain=-0.3:3.4]{0.25*x^2+1} node[pos=0.98,left,font=\scriptsize]{$f$};
 \foreach \b/\c in {3/laranja!90,2.2/laranja!60,1.5/laranja!35}{\edef\tmp{\noexpand\addplot[\c,thin,domain=-0.3:3.6]{1.25+0.25*(\b+1)*(x-1)};}\tmp}
-\addplot[verde,thick,domain=-0.3:3.6]{1.25+0.5*(x-1)} node[pos=0.96,below,font=\scriptsize]{tangente};
+\addplot[azul,very thick,domain=-0.3:3.6]{1.25+0.5*(x-1)} node[pos=0.96,below,font=\scriptsize]{tangente};
 \fill (axis cs:1,1.25) circle (1.6pt);
-\end{axis}\end{tikzpicture}}{Quando $x$ se aproxima de $a$, as secantes (laranja) se aproximam da reta tangente (verde).}
+\end{axis}\end{tikzpicture}}{Quando $x$ se aproxima de $a$, as secantes (verde) se aproximam da reta tangente (grafite, espessa).}
 
 \begin{exemplo}{2.1}{Inclinações de secantes}
 Estime a inclinação da tangente a $f(x)=x^2$ em $x=1$ usando as secantes por $(1,1)$ e
@@ -105,19 +105,19 @@ apenas o comportamento de $f$ \emph{perto} de $a$.
 \end{enumerate}
 \end{estrategia}
 
-\begin{exemplo}{2.2}{Estimando $\lim_{x\to0}\frac{\sin x}{x}$}
-Calculando $(\sin x)/x$ para $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$, obtemos
+\begin{exemplo}{2.2}{Estimando $\lim_{x\to0}\frac{\sen x}{x}$}
+Calculando $(\sen x)/x$ para $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$, obtemos
 $0{,}99833\ldots$, $0{,}99998\ldots$ e $0{,}9999998\ldots$ (a função é par, então os valores
 pela esquerda e pela direita coincidem). Os valores se aproximam de 1, e o gráfico confirma:
 \[
-\lim_{x\to0}\frac{\sin x}{x}=1 .
+\lim_{x\to0}\frac{\sen x}{x}=1 .
 \]
 Provaremos esse resultado na seção~2.3.
 \figtikz{\begin{tikzpicture}
 \begin{axis}[painel,width=8cm,height=4.4cm,xmin=-8,xmax=8,ymin=-0.45,ymax=1.2,xtick={-6,-3,3,6},ytick={0.5,1}]
 \addplot[domain=-8:-0.01,samples=150]{sin(deg(x))/x}; \addplot[domain=0.01:8,samples=150]{sin(deg(x))/x};
 \draw[azul,fill=white] (axis cs:0,1) circle (2pt);
-\end{axis}\end{tikzpicture}}{Gráfico de $f(x)=(\sin x)/x$ perto de $x=0$.}
+\end{axis}\end{tikzpicture}}{Gráfico de $f(x)=(\sen x)/x$ perto de $x=0$.}
 \end{exemplo}
 
 Dois limites básicos, intuitivamente evidentes, servem de ponto de partida:
@@ -133,15 +133,15 @@ Um limite pode não existir por diferentes motivos: a função pode se aproximar
 diferentes pela esquerda e pela direita, crescer sem limitação, ou oscilar.
 
 \begin{exemplo}{2.3}{Um limite que não existe}
-Considere $\lim_{x\to0}\sin(1/x)$. Para a sequência $x=\dfrac2\pi,\dfrac2{3\pi},
-\dfrac2{5\pi},\dots$, que tende a 0, os valores de $\sin(1/x)$ são $1,-1,1,-1,\dots$. Eles não
+Considere $\lim_{x\to0}\sen(1/x)$. Para a sequência $x=\dfrac2\pi,\dfrac2{3\pi},
+\dfrac2{5\pi},\dots$, que tende a 0, os valores de $\sen(1/x)$ são $1,-1,1,-1,\dots$. Eles não
 se aproximam de nenhum número, logo o limite não existe. O gráfico oscila cada vez mais
 rapidamente entre $-1$ e $1$ perto de $x=0$.
 \figtikz{\begin{tikzpicture}
 \begin{axis}[painel,width=8cm,height=4.4cm,xmin=-0.5,xmax=0.5,ymin=-1.3,ymax=1.3,xtick={-0.4,-0.2,0.2,0.4},ytick={-1,1},
   xticklabel style={/pgf/number format/use comma}]
 \addplot[thin,domain=-0.5:-0.012,samples=1200]{sin(deg(1/x))}; \addplot[thin,domain=0.012:0.5,samples=1200]{sin(deg(1/x))};
-\end{axis}\end{tikzpicture}}{$\sin(1/x)$ oscila entre $-1$ e $1$ quando
+\end{axis}\end{tikzpicture}}{$\sen(1/x)$ oscila entre $-1$ e $1$ quando
 $x\to0$.}
 \end{exemplo}
 
@@ -314,7 +314,7 @@ $\lim_{x\to a}f(x)=L=\lim_{x\to a}h(x)$, então $\lim_{x\to a}g(x)=L$.
 \figtikz{\begin{tikzpicture}
 \begin{axis}[painel,width=7cm,height=5cm,xmin=-1,xmax=3.2,ymin=-0.5,ymax=3.2,xtick={1},xticklabels={$a$},ytick=\empty]
 \addplot[domain=-1:3]{2+0.5*(x-1)^2} node[pos=0.97,above left,font=\scriptsize]{$h$};
-\addplot[verde,domain=-1:3]{2-0.3*(x-1)^2+0.15*(x-1)^2*sin(deg(4*x))} node[pos=0.97,left,font=\scriptsize]{$g$};
+\addplot[cinza,dashed,domain=-1:3]{2-0.3*(x-1)^2+0.15*(x-1)^2*sin(deg(4*x))} node[pos=0.97,left,font=\scriptsize]{$g$};
 \addplot[laranja,domain=-0.6:2.6]{2-(x-1)^2} node[pos=0.97,left,font=\scriptsize]{$f$};
 \fill (axis cs:1,2) circle (1.6pt);
 \end{axis}\end{tikzpicture}}{O Teorema do Confronto: $g$ fica ``espremida''
@@ -326,28 +326,28 @@ Como $-1\le\cos x\le1$, temos $-|x|\le x\cos x\le|x|$. Como $\lim_{x\to0}(-|x|)=
 \end{exemplo}
 
 \textbf{Dois limites trigonométricos fundamentais.} Pelo círculo unitário, para
-$0<\theta<\pi/2$, valem $0<\sin\theta<\theta<\tan\theta$ (o arco de comprimento $\theta$
-fica entre o segmento vertical de comprimento $\sin\theta$ e o segmento tangente de
-comprimento $\tan\theta$). Pelo confronto, isso dá $\lim_{\theta\to0}\sin\theta=0$ e,
+$0<\theta<\pi/2$, valem $0<\sen\theta<\theta<\tg\theta$ (o arco de comprimento $\theta$
+fica entre o segmento vertical de comprimento $\sen\theta$ e o segmento tangente de
+comprimento $\tg\theta$). Pelo confronto, isso dá $\lim_{\theta\to0}\sen\theta=0$ e,
 daí, $\lim_{\theta\to0}\cos\theta=1$.
 
 \figtikz{\begin{tikzpicture}[scale=2.3,font=\small]
 \draw[->] (-0.2,0) -- (1.35,0) node[right]{$x$}; \draw[->] (0,-0.2) -- (0,1.15) node[above]{$y$};
 \draw[thick] (0,0) ++(0:1) arc (0:95:1);
 \fill[azul!15] (0,0) -- (1,0) arc (0:40:1) -- cycle;
-\draw[thick,azul] (0,0) -- (40:1); \draw[laranja,thick] (40:1) -- ({cos(40)},0); \draw[laranja,thin] ({cos(40)},0.32) -- (0.45,0.62) node[above,font=\footnotesize]{$\sin\theta$};
-\draw[thick] (0,0) -- (1,{tan(40)}); \draw[verde,thick] (1,0) -- (1,{tan(40)}) node[midway,right]{$\tan\theta$};
+\draw[thick,azul] (0,0) -- (40:1); \draw[laranja,thick] (40:1) -- ({cos(40)},0); \draw[laranja,thin] ({cos(40)},0.32) -- (0.45,0.62) node[above,font=\footnotesize]{$\sen\theta$};
+\draw[thick] (0,0) -- (1,{tan(40)}); \draw[azul,very thick,dashed] (1,0) -- (1,{tan(40)}) node[midway,right]{$\tg\theta$};
 \draw[azul,very thick] (1,0) arc (0:40:1); \draw (0.22,0) arc (0:40:0.22); \node at (20:0.33) {$\theta$};
 \node[below] at (1,0) {$1$};
-\end{tikzpicture}}{Para $0<\theta<\pi/2$: $\sin\theta<\theta<\tan\theta$ (segmento laranja, arco azul e segmento verde).}
+\end{tikzpicture}}{Para $0<\theta<\pi/2$: $\sen\theta<\theta<\tg\theta$ (segmento verde, arco grafite e segmento tracejado).}
 
-Dividindo $\sin\theta<\theta<\tan\theta$ por $\sin\theta>0$ e invertendo, obtemos
-$\cos\theta<\dfrac{\sin\theta}{\theta}<1$. Essa desigualdade vale também para
+Dividindo $\sen\theta<\theta<\tg\theta$ por $\sen\theta>0$ e invertendo, obtemos
+$\cos\theta<\dfrac{\sen\theta}{\theta}<1$. Essa desigualdade vale também para
 $-\pi/2<\theta<0$, porque as três funções são pares. Pelo Teorema do Confronto:
 
 \begin{teorema}[Limites trigonométricos especiais]{2.7}
 \[
-\lim_{\theta\to0}\frac{\sin\theta}{\theta}=1
+\lim_{\theta\to0}\frac{\sen\theta}{\theta}=1
 \qquad\text{e}\qquad
 \lim_{\theta\to0}\frac{1-\cos\theta}{\theta}=0 .
 \]
@@ -355,7 +355,7 @@ $-\pi/2<\theta<0$, porque as três funções são pares. Pelo Teorema do Confron
 O segundo limite sai do primeiro multiplicando pelo conjugado:
 \[
 \frac{1-\cos\theta}{\theta}=\frac{1-\cos^2\theta}{\theta(1+\cos\theta)}
-=\frac{\sin\theta}{\theta}\cdot\frac{\sin\theta}{1+\cos\theta}\ \longrightarrow\ 1\cdot\frac02=0 .
+=\frac{\sen\theta}{\theta}\cdot\frac{\sen\theta}{1+\cos\theta}\ \longrightarrow\ 1\cdot\frac02=0 .
 \]
 Esses dois limites serão essenciais para derivar seno e cosseno no capítulo~3.
 
@@ -604,7 +604,7 @@ As outras formas de limite têm definições análogas:
 \item Um limite infinito descreve uma assíntota vertical; $\infty$ não é um número.
 \item Para polinômios e racionais (com denominador não nulo), basta substituir.
   Na forma $0/0$, fatore, use o conjugado ou simplifique antes.
-\item Teorema do Confronto; $\lim_{\theta\to0}\frac{\sin\theta}{\theta}=1$ e
+\item Teorema do Confronto; $\lim_{\theta\to0}\frac{\sen\theta}{\theta}=1$ e
   $\lim_{\theta\to0}\frac{1-\cos\theta}{\theta}=0$.
 \item Contínua em $a$: $f(a)$ definida, o limite existe e é igual a $f(a)$.
   Descontinuidades: removível, de salto, infinita.

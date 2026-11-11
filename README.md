@@ -22,7 +22,7 @@ respostas. Os marcados com ★ têm solução completa e animação do gráfico 
 | 7 | Técnicas de integração | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap7/README.md) |
 | A | Formulário (apêndice) | ✅ | — |
 
-Versão **1.0** (novembro de 2026): 107 páginas, 455 exercícios, todas as figuras em português, apêndice de fórmulas e índice remissivo.
+Versão **1.1** (novembro de 2026): 108 páginas, 455 exercícios, todas as figuras em português, apêndice de fórmulas e índice remissivo. Notação brasileira (sen, tg, arcsen…) e projeto gráfico com a identidade visual da **Nexus BI** (fonte Barlow Semi Condensed, em `livro/fontes/`, sob a SIL OFL). A marca Nexus BI não é coberta pela licença CC BY-NC-SA.
 
 Cada solução completa segue o mesmo roteiro: a **estratégia**, a resolução passo a passo, um
 comentário sobre erros comuns ou interpretações e uma **animação** do gráfico do problema.
@@ -48,7 +48,7 @@ ferramentas/
 ```bash
 pip install -r ferramentas/requirements.txt
 python3 ferramentas/gerar.py            # exercícios + animações dos capítulos prontos
-cd livro && latexmk -pdf calculo1.tex   # requer TeX Live com babel-portuges, pgfplots, tcolorbox e makeindex
+cd livro && latexmk -xelatex calculo1.tex   # XeLaTeX; requer TeX Live com babel-portuges, pgfplots, tcolorbox e makeindex
 ```
 
 Para gerar só os textos, sem refazer as animações: `python3 ferramentas/gerar.py --sem-animacoes`.

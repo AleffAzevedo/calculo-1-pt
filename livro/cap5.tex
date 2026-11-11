@@ -87,7 +87,7 @@ abaixo). A \emph{área total} é $\int_a^b|f(x)|\,dx$.
 \addplot[fill=laranja!30,draw=none,domain=3.1416:4.7124] {sin(deg(x))} \closedcycle;
 \addplot[domain=-0.2:6.6]{sin(deg(x))};
 \node[azul,font=\small] at (axis cs:1.57,0.4) {$+2$}; \node[laranja,font=\small] at (axis cs:3.95,-0.4) {$-1$};
-\end{axis}\end{tikzpicture}}{$\int_0^{3\pi/2}\sin x\,dx=2-1=1$ (área líquida), enquanto a área
+\end{axis}\end{tikzpicture}}{$\int_0^{3\pi/2}\sen x\,dx=2-1=1$ (área líquida), enquanto a área
 total é $2+1=3$.}
 
 \begin{teorema}[Propriedades da integral definida]{5.1}
@@ -123,7 +123,7 @@ altura $\approx f(x)$). Isso sugere que $F'(x)=f(x)$.
 \addplot[domain=0:5]{1+0.6*x-0.08*x^2+0.3*sin(deg(2*x))};
 \node[azul,font=\small] at (axis cs:1.55,0.8) {$F(x)$};
 \end{axis}\end{tikzpicture}}{A função área $F(x)=\int_a^xf(t)\,dt$. Ao passar de $x$ para
-$x+h$, a área cresce cerca de $f(x)\cdot h$ (faixa laranja).}
+$x+h$, a área cresce cerca de $f(x)\cdot h$ (faixa verde).}
 
 \begin{teorema}[Teorema Fundamental do Cálculo, parte 1]{5.3}\index{teorema@Teorema!fundamental do calculo@Fundamental do Cálculo}
 Se $f$ é contínua em $[a,b]$, então $F(x)=\int_a^xf(t)\,dt$ é derivável em $(a,b)$ e
@@ -151,7 +151,7 @@ $G=F+C$. Então $\int_a^bf=G(b)-G(a)=F(b)-F(a)$. $\square$
 \begin{exemplo}{5.2}{Usando o TFC}
 (a) $\int_0^2x^2\,dx=\Big[\frac{x^3}3\Big]_0^2=\frac83$, confirmando o Exemplo~5.1 sem limites.
 
-(b) $\int_0^\pi\sin x\,dx=\big[-\cos x\big]_0^\pi=1+1=2$.
+(b) $\int_0^\pi\sen x\,dx=\big[-\cos x\big]_0^\pi=1+1=2$.
 
 (c) $\displaystyle\int_1^4\Big(\sqrt x+\frac1{x^2}\Big)dx=\Big[\tfrac23x^{3/2}-\tfrac1x\Big]_1^4
 =\Big(\tfrac{16}3-\tfrac14\Big)-\Big(\tfrac23-1\Big)=\tfrac{65}{12} .$
@@ -206,12 +206,12 @@ A regra da cadeia diz que $\frac{d}{dx}F(g(x))=F'(g(x))\,g'(x)$. Lida ao contrá
 (a) $\int x^2(x^3+5)^9\,dx$: com $u=x^3+5$, $du=3x^2dx$, fica
 $\frac13\int u^9\,du=\frac{u^{10}}{30}+C=\frac{(x^3+5)^{10}}{30}+C$.
 
-(b) $\int\sin(5x)\,dx=-\frac15\cos(5x)+C$ \quad ($u=5x$).
+(b) $\int\sen(5x)\,dx=-\frac15\cos(5x)+C$ \quad ($u=5x$).
 
 (c) $\int x\sqrt{x-1}\,dx$: com $u=x-1$, temos $x=u+1$ e
 $\int(u+1)u^{1/2}\,du=\frac25u^{5/2}+\frac23u^{3/2}+C=\frac25(x-1)^{5/2}+\frac23(x-1)^{3/2}+C$.
 
-(d) $\int_0^{\pi/2}\sin^2x\cos x\,dx$: com $u=\sin x$, os limites viram $0$ e $1$:
+(d) $\int_0^{\pi/2}\sen^2x\cos x\,dx$: com $u=\sen x$, os limites viram $0$ e $1$:
 $\int_0^1u^2\,du=\frac13$.
 \end{exemplo}
 
@@ -228,7 +228,7 @@ Das derivadas do capítulo~3:
 
 (b) $\int\frac{3x^2}{x^3+1}\,dx=\ln|x^3+1|+C$: o numerador é a derivada do denominador.
 
-(c) $\int\tan x\,dx=\int\frac{\sin x}{\cos x}\,dx=-\ln|\cos x|+C=\ln|\sec x|+C$ \quad
+(c) $\int\tg x\,dx=\int\frac{\sen x}{\cos x}\,dx=-\ln|\cos x|+C=\ln|\sec x|+C$ \quad
 ($u=\cos x$).
 
 (d) $\int_1^e\frac{\ln x}x\,dx=\int_0^1u\,du=\frac12$ \quad ($u=\ln x$).
@@ -239,20 +239,20 @@ Das derivadas do capítulo~3:
 
 Das derivadas das inversas trigonométricas, para $a>0$:
 \[
-\int\frac{du}{\sqrt{a^2-u^2}}=\sin^{-1}\frac ua+C,\qquad
-\int\frac{du}{a^2+u^2}=\frac1a\tan^{-1}\frac ua+C,\qquad
-\int\frac{du}{u\sqrt{u^2-a^2}}=\frac1a\sec^{-1}\frac{|u|}a+C .
+\int\frac{du}{\sqrt{a^2-u^2}}=\arcsen\frac ua+C,\qquad
+\int\frac{du}{a^2+u^2}=\frac1a\arctg\frac ua+C,\qquad
+\int\frac{du}{u\sqrt{u^2-a^2}}=\frac1a\arcsec\frac{|u|}a+C .
 \]
 
 \begin{exemplo}{5.6}{Inversas trigonométricas}
 (a) $\displaystyle\int\frac{dx}{\sqrt{4-9x^2}}$: com $u=3x$, $\frac13\int\frac{du}{\sqrt{4-u^2}}
-=\frac13\sin^{-1}\frac{3x}2+C$.
+=\frac13\arcsen\frac{3x}2+C$.
 
-(b) $\displaystyle\int_0^1\frac{dx}{1+x^2}=\big[\tan^{-1}x\big]_0^1=\frac\pi4$. Daí,
+(b) $\displaystyle\int_0^1\frac{dx}{1+x^2}=\big[\arctg x\big]_0^1=\frac\pi4$. Daí,
 $\pi=\int_0^1\frac{4}{1+x^2}\,dx$.
 
 (c) $\displaystyle\int\frac{dx}{x^2+4x+13}$: completando o quadrado, $x^2+4x+13=(x+2)^2+9$, e
-com $u=x+2$: $\frac13\tan^{-1}\frac{x+2}3+C$.
+com $u=x+2$: $\frac13\arctg\frac{x+2}3+C$.
 \end{exemplo}
 
 % ---------------------------------------------------------------------
@@ -269,8 +269,8 @@ com $u=x+2$: $\frac13\tan^{-1}\frac{x+2}3+C$.
   $=\int|v|$.
 \item Simetria: $\int_{-a}^a$(ímpar) $=0$; $\int_{-a}^a$(par) $=2\int_0^a$.
 \item Substituição $u=g(x)$, $du=g'(x)dx$; nas definidas, troque os limites.
-\item $\int e^u=e^u$, $\int\frac{du}u=\ln|u|$, $\int\frac{du}{\sqrt{a^2-u^2}}=\sin^{-1}\frac ua$,
-  $\int\frac{du}{a^2+u^2}=\frac1a\tan^{-1}\frac ua$.
+\item $\int e^u=e^u$, $\int\frac{du}u=\ln|u|$, $\int\frac{du}{\sqrt{a^2-u^2}}=\arcsen\frac ua$,
+  $\int\frac{du}{a^2+u^2}=\frac1a\arctg\frac ua$.
 \end{itemize}
 
 \input{exercicios_cap5}

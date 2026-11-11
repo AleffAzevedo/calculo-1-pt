@@ -70,7 +70,7 @@ $\tfrac12$.
 
 </details>
 
-`•` **2.9** Calcule $\displaystyle\lim_{x\to0}\frac{\sin7x}{3x}$.
+`•` **2.9** Calcule $\displaystyle\lim_{x\to0}\frac{\operatorname{sen}7x}{3x}$.
 
 <details><summary>Resposta</summary>
 
@@ -78,7 +78,7 @@ $\tfrac73$.
 
 </details>
 
-`•` **2.10** Calcule $\displaystyle\lim_{x\to0}\frac{x}{\tan2x}$.
+`•` **2.10** Calcule $\displaystyle\lim_{x\to0}\frac{x}{\operatorname{tg}2x}$.
 
 <details><summary>Resposta</summary>
 
@@ -86,7 +86,7 @@ $\tfrac12$.
 
 </details>
 
-`•` **2.11** Calcule $\displaystyle\lim_{x\to0}\frac{\sin^2(3x)}{x^2}$.
+`•` **2.11** Calcule $\displaystyle\lim_{x\to0}\frac{\operatorname{sen}^2(3x)}{x^2}$.
 
 <details><summary>Resposta</summary>
 
@@ -94,7 +94,7 @@ $9$.
 
 </details>
 
-`•` **2.12** Calcule $\displaystyle\lim_{x\to0}\frac{1-\cos x}{\sin x}$.
+`•` **2.12** Calcule $\displaystyle\lim_{x\to0}\frac{1-\cos x}{\operatorname{sen} x}$.
 
 <details><summary>Resposta</summary>
 
@@ -102,7 +102,7 @@ $0$.
 
 </details>
 
-`•` **2.13** Calcule $\displaystyle\lim_{x\to\pi}\frac{\sin x}{x-\pi}$. (Dica: $u=x-\pi$.)
+`•` **2.13** Calcule $\displaystyle\lim_{x\to\pi}\frac{\operatorname{sen} x}{x-\pi}$. (Dica: $u=x-\pi$.)
 
 <details><summary>Resposta</summary>
 
@@ -214,15 +214,15 @@ $-\infty$ pela esquerda e $+\infty$ pela direita.
 
 </details>
 
-`••` **2.27** **O limite de $\sin(ax)/x$.** (a) Use tabelas com $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$ para estimar $\lim_{x\to0}\frac{\sin2x}{x}$ e $\lim_{x\to0}\frac{\sin3x}{x}$. (b) Conjecture o valor de $\lim_{x\to0}\frac{\sin ax}{x}$ para $a>0$ e prove-o com o Teorema 2.7. ★ [ver solução](#ex-2-27)
+`••` **2.27** **O limite de $\operatorname{sen}(ax)/x$.** (a) Use tabelas com $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$ para estimar $\lim_{x\to0}\frac{\operatorname{sen}2x}{x}$ e $\lim_{x\to0}\frac{\operatorname{sen}3x}{x}$. (b) Conjecture o valor de $\lim_{x\to0}\frac{\operatorname{sen} ax}{x}$ para $a>0$ e prove-o com o Teorema 2.7. ★ [ver solução](#ex-2-27)
 
 <details><summary>Resposta</summary>
 
-(a) 2 e 3; (b) $\lim_{x\to0}\frac{\sin ax}{x}=a$.
+(a) 2 e 3; (b) $\lim_{x\to0}\frac{\operatorname{sen} ax}{x}=a$.
 
 </details>
 
-`••` **2.28** Calcule $\displaystyle\lim_{x\to0}\frac{\sin3x}{\sin5x}$.
+`••` **2.28** Calcule $\displaystyle\lim_{x\to0}\frac{\operatorname{sen}3x}{\operatorname{sen}5x}$.
 
 <details><summary>Resposta</summary>
 
@@ -230,7 +230,7 @@ $\tfrac35$.
 
 </details>
 
-`••` **2.29** Calcule $\displaystyle\lim_{x\to0}\frac{\tan x-\sin x}{x^3}$.
+`••` **2.29** Calcule $\displaystyle\lim_{x\to0}\frac{\operatorname{tg} x-\operatorname{sen} x}{x^3}$.
 
 <details><summary>Resposta</summary>
 
@@ -374,11 +374,11 @@ Dado $M>0$, tome $\delta=1/\sqrt M$.
 
 </details>
 
-`•••` **2.47** Use o Teorema do Confronto para calcular $\displaystyle\lim_{x\to0}x\sin\frac1x$.
+`•••` **2.47** Use o Teorema do Confronto para calcular $\displaystyle\lim_{x\to0}x\operatorname{sen}\frac1x$.
 
 <details><summary>Resposta</summary>
 
-$0$, pois $-|x|\le x\sin\tfrac1x\le|x|$.
+$0$, pois $-|x|\le x\operatorname{sen}\tfrac1x\le|x|$.
 
 </details>
 
@@ -462,7 +462,7 @@ $0$; em ambos os casos $|f(x)|\le|x|$, então $\delta=\varepsilon$.
 
 </details>
 
-`•••` **2.58** Mostre que $\displaystyle\lim_{x\to0}\sin\frac\pi x$ não existe, usando duas sequências que tendem a 0.
+`•••` **2.58** Mostre que $\displaystyle\lim_{x\to0}\operatorname{sen}\frac\pi x$ não existe, usando duas sequências que tendem a 0.
 
 <details><summary>Resposta</summary>
 
@@ -486,7 +486,7 @@ Em cada inteiro: salto de 1; contínua à direita.
 
 </details>
 
-`••••` **2.61** Calcule $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x\sin x}$.
+`••••` **2.61** Calcule $\displaystyle\lim_{x\to0}\frac{1-\cos x}{x\operatorname{sen} x}$.
 
 <details><summary>Resposta</summary>
 
@@ -593,21 +593,21 @@ Portanto $x=1$ é uma **assíntota vertical**.
 
 <a id="ex-2-27"></a>
 
-### 2.27 — O limite de $\sin(ax)/x$
+### 2.27 — O limite de $\operatorname{sen}(ax)/x$
 
 *Origem: OpenStax, 2.2, ex. 35–37.*
 
-> (a) Use tabelas com $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$ para estimar $\lim_{x\to0}\frac{\sin2x}{x}$ e $\lim_{x\to0}\frac{\sin3x}{x}$. (b) Conjecture o valor de $\lim_{x\to0}\frac{\sin ax}{x}$ para $a>0$ e prove-o com o Teorema 2.7.
+> (a) Use tabelas com $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$ para estimar $\lim_{x\to0}\frac{\operatorname{sen}2x}{x}$ e $\lim_{x\to0}\frac{\operatorname{sen}3x}{x}$. (b) Conjecture o valor de $\lim_{x\to0}\frac{\operatorname{sen} ax}{x}$ para $a>0$ e prove-o com o Teorema 2.7.
 
 ![Animação do exercício 2.27](anim/ex-2.27.gif)
 
-**(a)** Para $\frac{\sin2x}{x}$: $x=0{,}1\Rightarrow1{,}98669$; $x=0{,}01\Rightarrow1{,}99987$; $x=0{,}001\Rightarrow1{,}9999987$. A função é par, então os valores para $-x$ são iguais. O limite parece ser **2**.
-Para $\frac{\sin3x}{x}$: $2{,}95520$; $2{,}99955$; $2{,}9999955$, que parecem tender a **3**.
+**(a)** Para $\frac{\operatorname{sen}2x}{x}$: $x=0{,}1\Rightarrow1{,}98669$; $x=0{,}01\Rightarrow1{,}99987$; $x=0{,}001\Rightarrow1{,}9999987$. A função é par, então os valores para $-x$ são iguais. O limite parece ser **2**.
+Para $\frac{\operatorname{sen}3x}{x}$: $2{,}95520$; $2{,}99955$; $2{,}9999955$, que parecem tender a **3**.
 
 **(b)** Conjectura: o limite é $a$. Prova: com $\theta=ax$, temos $\theta\to0$ quando $x\to0$, e
-$$\frac{\sin ax}{x}=a\cdot\frac{\sin ax}{ax}=a\cdot\frac{\sin\theta}{\theta}\longrightarrow a\cdot1=a .$$
+$$\frac{\operatorname{sen} ax}{x}=a\cdot\frac{\operatorname{sen} ax}{ax}=a\cdot\frac{\operatorname{sen}\theta}{\theta}\longrightarrow a\cdot1=a .$$
 
-**Animação.** O gráfico de $\frac{\sin ax}{x}$ para $a=1,2,3$: o "buraco" em $x=0$ fica exatamente na altura $a$.
+**Animação.** O gráfico de $\frac{\operatorname{sen} ax}{x}$ para $a=1,2,3$: o "buraco" em $x=0$ fica exatamente na altura $a$.
 
 ---
 

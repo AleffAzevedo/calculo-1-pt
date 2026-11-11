@@ -61,7 +61,7 @@ def a1_3(path):
     ax.set_xticks(np.arange(-2, 2.5, 0.5) * np.pi)
     ax.set_xticklabels([r'$-2\pi$', '', r'$-\pi$', '', '0', '', r'$\pi$', '', r'$2\pi$'])
     for k in (-1.5, -0.5, 0.5, 1.5): ax.axvline(k * np.pi, ls='--', color=LARANJA, lw=0.8)
-    ax.set_title(r'$\frac{1}{1-\sin\alpha}+\frac{1}{1+\sin\alpha}$ (curva) e $2\sec^2\alpha$ (pontos)')
+    ax.set_title(r'$\frac{1}{1-\operatorname{sen}\alpha}+\frac{1}{1+\operatorname{sen}\alpha}$ (curva) e $2\sec^2\alpha$ (pontos)')
     a = np.linspace(-2 * np.pi, 2 * np.pi, 1500)
     L = 1 / (1 - np.sin(a)) + 1 / (1 + np.sin(a)); L = segmentos(a, L, 3)
     l1, = ax.plot([], [], color=AZUL, lw=2); p2, = ax.plot([], [], 'o', color=LARANJA, ms=4)
@@ -83,7 +83,7 @@ def a1_4(path):
     ax.set_xlabel('dias após 1º de janeiro'); ax.set_ylabel('horas de luz')
     meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
     ax.set_xticks(np.arange(12) * 30.4); ax.set_xticklabels(meses, fontsize=8)
-    ax.set_title(r'$N(t)=12+3\sin\left[\frac{2\pi}{365}(t-79)\right]$')
+    ax.set_title(r'$N(t)=12+3\operatorname{sen}\left[\frac{2\pi}{365}(t-79)\right]$')
     l, = ax.plot([], [], color=AZUL, lw=2); p, = ax.plot([], [], 'o', color=AZUL)
     txt = ax.text(250, 10, '', fontsize=10)
     t = np.linspace(0, 365, 400); N = 80
@@ -121,7 +121,7 @@ def a1_6(path):
     eixos(ax, (0, 24), (0, 14))
     ax.axhline(11.75, ls='--', color=LARANJA, lw=1); ax.text(0.3, 12.1, '11,75 pés', color=LARANJA, fontsize=9)
     ax.set_xlabel('horas após a meia-noite'); ax.set_ylabel('profundidade (pés)')
-    ax.set_title(r'$D(t)=5\sin\left(\frac{\pi}{6}t-\frac{7\pi}{6}\right)+8$')
+    ax.set_title(r'$D(t)=5\operatorname{sen}\left(\frac{\pi}{6}t-\frac{7\pi}{6}\right)+8$')
     t1 = 7 + 6 * np.arcsin(0.75) / np.pi
     tt = np.linspace(0, 24, 500)
     ax.plot(tt, D(tt), color=AZUL, alpha=0.15)
@@ -140,9 +140,9 @@ def a1_7(path):
     eixos(ax, (-2, 2), (-4, 8))
     x = np.linspace(-2, 2, 400)
     lc, = ax.plot([], [], color=AZUL, lw=1.5, ls='--', label=r'$\cosh kx$')
-    ls_, = ax.plot([], [], color=VERDE, lw=1.5, ls='--', label=r'$\sinh kx$')
+    ls_, = ax.plot([], [], color=VERDE, lw=1.5, ls='--', label=r'$\operatorname{senh} kx$')
     le, = ax.plot([], [], color=LARANJA, lw=3, alpha=0.6, label=r'$e^{kx}$')
-    lsum, = ax.plot([], [], color='black', lw=1.2, label=r'$\cosh kx+\sinh kx$')
+    lsum, = ax.plot([], [], color='black', lw=1.2, label=r'$\cosh kx+\operatorname{senh} kx$')
     ax.legend(loc='upper left', fontsize=9); tt = ax.set_title('')
     ks = np.concatenate([np.linspace(0.3, 2, 40), np.linspace(2, -1, 40)]); N = len(ks)
     def up(i):

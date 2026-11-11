@@ -92,16 +92,16 @@ Distância $=4+4+4=12$ m.
 **Animação.** Em cima, o gráfico de $v(t)$ com as áreas acumuladas (azul positiva, laranja negativa); embaixo, a partícula se movendo na reta.""",
 ),
 dict(id='valor_medio', origem='inspirado na seção 5.2', titulo='Valor médio de uma função',
-enunciado=r"""Calcule o valor médio de $f(x)=\sin x$ em $[0,\pi]$ e encontre todos os $c$ garantidos pelo
+enunciado=r"""Calcule o valor médio de $f(x)=\sen x$ em $[0,\pi]$ e encontre todos os $c$ garantidos pelo
 TVM para integrais.""",
-resposta=r"""$f_{\text{méd}}=\tfrac2\pi\approx0{,}637$; $c=\sin^{-1}\tfrac2\pi\approx0{,}690$ ou $c=\pi-0{,}690\approx2{,}451$.""",
-solucao=r"""$$f_{\text{méd}}=\frac1{\pi-0}\int_0^\pi\sin x\,dx=\frac{[-\cos x]_0^\pi}{\pi}=\frac2\pi\approx0{,}6366 .$$
+resposta=r"""$f_{\text{méd}}=\tfrac2\pi\approx0{,}637$; $c=\arcsen\tfrac2\pi\approx0{,}690$ ou $c=\pi-0{,}690\approx2{,}451$.""",
+solucao=r"""$$f_{\text{méd}}=\frac1{\pi-0}\int_0^\pi\sen x\,dx=\frac{[-\cos x]_0^\pi}{\pi}=\frac2\pi\approx0{,}6366 .$$
 
-**Pontos $c$:** $\sin c=\frac2\pi\Rightarrow c=\sin^{-1}\frac2\pi\approx0{,}6901$ ou $c=\pi-0{,}6901\approx2{,}4515$ (ambos em $[0,\pi]$).
+**Pontos $c$:** $\sen c=\frac2\pi\Rightarrow c=\arcsen\frac2\pi\approx0{,}6901$ ou $c=\pi-0{,}6901\approx2{,}4515$ (ambos em $[0,\pi]$).
 
 **Interpretação geométrica.** O retângulo de base $[0,\pi]$ e altura $\frac2\pi$ tem área $2$, a mesma da região sob o arco do seno. A parte do arco acima do retângulo compensa exatamente os "cantos" vazios.
 
-**Aplicação.** Se uma tensão alternada é $V_p\sin\omega t$, a média de $|V|$ num semiciclo é $\frac2\pi V_p\approx0{,}637V_p$.
+**Aplicação.** Se uma tensão alternada é $V_p\sen\omega t$, a média de $|V|$ num semiciclo é $\frac2\pi V_p\approx0{,}637V_p$.
 
 **Animação.** A altura de um retângulo varia até que sua área iguale a área sob o seno; os pontos $c$ aparecem no fim.""",
 ),
@@ -125,7 +125,7 @@ enunciado=r"""Calcule $\displaystyle\int_{-\pi}^{\pi}\big(x^3\cos x+2\cos x+x\bi
 resposta=r"""$0$.""",
 solucao=r"""Separamos em partes ímpares e pares:
 - $x^3\cos x$ é **ímpar** (ímpar × par) e $x$ é **ímpar**: suas integrais em $[-\pi,\pi]$ são $0$;
-- $2\cos x$ é **par**: $\int_{-\pi}^\pi2\cos x\,dx=2\cdot2\int_0^\pi\cos x\,dx=4[\sin x]_0^\pi=0$.
+- $2\cos x$ é **par**: $\int_{-\pi}^\pi2\cos x\,dx=2\cdot2\int_0^\pi\cos x\,dx=4[\sen x]_0^\pi=0$.
 
 Logo a integral vale $0$.
 
@@ -138,8 +138,8 @@ Logo a integral vale $0$.
 dict(id='pi_arctan', origem='inspirado no Exemplo 5.6', titulo='Calculando $\\pi$ com uma integral',
 enunciado=r"""Mostre que $\displaystyle\int_0^1\frac{4}{1+x^2}\,dx=\pi$ e use a regra do ponto médio com $n=4$ para
 estimar $\pi$.""",
-resposta=r"""$4\tan^{-1}1=\pi$; $M_4\approx3{,}14680$.""",
-solucao=r"""**Exato:** $\int_0^1\frac4{1+x^2}dx=4\left[\tan^{-1}x\right]_0^1=4\cdot\frac\pi4=\pi$.
+resposta=r"""$4\arctg1=\pi$; $M_4\approx3{,}14680$.""",
+solucao=r"""**Exato:** $\int_0^1\frac4{1+x^2}dx=4\left[\arctg x\right]_0^1=4\cdot\frac\pi4=\pi$.
 
 **Ponto médio com $n=4$** ($\Delta x=\frac14$; pontos $\frac18,\frac38,\frac58,\frac78$):
 $$M_4=\frac14\left(\frac{4}{1+\frac1{64}}+\frac{4}{1+\frac9{64}}+\frac{4}{1+\frac{25}{64}}+\frac{4}{1+\frac{49}{64}}\right)\approx\frac14(3{,}93846+3{,}50685+2{,}87640+2{,}26549)\approx3{,}14680 .$$
@@ -166,22 +166,22 @@ Volume final: $1000+5000=6000$ L.
 **Animação.** A área sob $r(t)$ é acumulada (em cima) enquanto o nível do tanque sobe (embaixo).""",
 ),
 dict(id='log_tan', origem='inspirado no Exemplo 5.5', titulo='Integral da tangente e da secante',
-enunciado=r"""Mostre que $\int\tan x\,dx=\ln|\sec x|+C$ e que $\int\sec x\,dx=\ln|\sec x+\tan x|+C$.
+enunciado=r"""Mostre que $\int\tg x\,dx=\ln|\sec x|+C$ e que $\int\sec x\,dx=\ln|\sec x+\tg x|+C$.
 Calcule $\int_0^{\pi/4}\sec x\,dx$.""",
 resposta=r"""$\ln(\sqrt2+1)\approx0{,}8814$.""",
-solucao=r"""**Tangente.** $\int\frac{\sin x}{\cos x}dx$ com $u=\cos x$, $du=-\sin x\,dx$:
+solucao=r"""**Tangente.** $\int\frac{\sen x}{\cos x}dx$ com $u=\cos x$, $du=-\sen x\,dx$:
 $-\int\frac{du}u=-\ln|\cos x|+C=\ln|\sec x|+C$.
 
-**Secante (truque).** Multiplicamos e dividimos por $\sec x+\tan x$:
-$$\int\sec x\,dx=\int\frac{\sec^2x+\sec x\tan x}{\sec x+\tan x}\,dx .$$
-O numerador é exatamente a derivada do denominador! Com $u=\sec x+\tan x$: $\int\frac{du}u=\ln|\sec x+\tan x|+C$.
+**Secante (truque).** Multiplicamos e dividimos por $\sec x+\tg x$:
+$$\int\sec x\,dx=\int\frac{\sec^2x+\sec x\tg x}{\sec x+\tg x}\,dx .$$
+O numerador é exatamente a derivada do denominador! Com $u=\sec x+\tg x$: $\int\frac{du}u=\ln|\sec x+\tg x|+C$.
 
-(Verifique derivando: $\frac{\sec x\tan x+\sec^2x}{\sec x+\tan x}=\sec x$. ✓)
+(Verifique derivando: $\frac{\sec x\tg x+\sec^2x}{\sec x+\tg x}=\sec x$. ✓)
 
 **Valor:** $\int_0^{\pi/4}\sec x\,dx=\ln(\sqrt2+1)-\ln(1+0)=\ln(1+\sqrt2)\approx0{,}8814$.
 
 **Curiosidade.** Essa integral aparece na projeção de Mercator: a distância vertical de um paralelo de latitude $\varphi$ até o equador, no mapa, é proporcional a $\int_0^\varphi\sec t\,dt$.
 
-**Animação.** A região sob $\sec x$ em $[0,\pi/4]$ é preenchida, e o valor acumulado é comparado com $\ln|\sec x+\tan x|$.""",
+**Animação.** A região sob $\sec x$ em $[0,\pi/4]$ é preenchida, e o valor acumulado é comparado com $\ln|\sec x+\tg x|$.""",
 ),
 ]

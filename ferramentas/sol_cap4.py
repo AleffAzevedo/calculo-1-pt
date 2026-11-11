@@ -178,8 +178,8 @@ dict(id='newton', origem='inspirado no Exemplo 4.46', titulo='Método de Newton 
 enunciado=r"""Use o método de Newton com $x_0=1$ para aproximar a solução de $\cos x=x$ com 9 casas
 decimais. Quantas iterações são necessárias?""",
 resposta=r"""$x\approx0{,}739085133$; 3 iterações (a 4ª só confirma).""",
-solucao=r"""**Função.** $f(x)=\cos x-x$, $f'(x)=-\sin x-1$. Iteração:
-$$x_{n+1}=x_n-\frac{\cos x_n-x_n}{-\sin x_n-1}=x_n+\frac{\cos x_n-x_n}{\sin x_n+1}.$$
+solucao=r"""**Função.** $f(x)=\cos x-x$, $f'(x)=-\sen x-1$. Iteração:
+$$x_{n+1}=x_n-\frac{\cos x_n-x_n}{-\sen x_n-1}=x_n+\frac{\cos x_n-x_n}{\sen x_n+1}.$$
 
 | $n$ | $x_n$ |
 |---|---|

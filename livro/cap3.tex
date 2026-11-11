@@ -33,13 +33,13 @@ Q=\frac{f(a+h)-f(a)}{h}
 \fill[black] (axis cs:1,1) circle (2pt) node[below right,font=\footnotesize]{$(a,f(a))$};
 \node[laranja,font=\footnotesize] at (axis cs:2.75,4.1) {tangente};
 \end{axis}\end{tikzpicture}}{As secantes por $(a,f(a))$ e por pontos cada vez mais
-próximos (laranja-claro) tendem à reta tangente (laranja).}
+próximos (verde-claro) tendem à reta tangente (verde).}
 
 \begin{definicao}
 Seja $f$ definida em um intervalo aberto contendo $a$. A \textbf{reta tangente} ao gráfico
 de $f$ em $a$ é a reta que passa por $(a,f(a))$ com inclinação
 \[
-m_{\tan}=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to0}\frac{f(a+h)-f(a)}{h},
+m_{\tg}=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim_{h\to0}\frac{f(a+h)-f(a)}{h},
 \]
 desde que esse limite exista.
 \end{definicao}
@@ -47,10 +47,10 @@ desde que esse limite exista.
 \begin{exemplo}{3.1}{Reta tangente}
 Encontre a reta tangente a $f(x)=x^2$ em $x=3$ e a $g(x)=1/x$ em $x=2$.
 \solucao
-$m_{\tan}=\lim_{x\to3}\dfrac{x^2-9}{x-3}=\lim_{x\to3}(x+3)=6$; a tangente é
+$m_{\tg}=\lim_{x\to3}\dfrac{x^2-9}{x-3}=\lim_{x\to3}(x+3)=6$; a tangente é
 $y-9=6(x-3)$, ou $y=6x-9$.
 
-Para $g$: $m_{\tan}=\lim_{h\to0}\dfrac{\frac1{2+h}-\frac12}{h}
+Para $g$: $m_{\tg}=\lim_{h\to0}\dfrac{\frac1{2+h}-\frac12}{h}
 =\lim_{h\to0}\dfrac{-h}{2(2+h)h}=-\dfrac14$; a tangente é $y-\tfrac12=-\tfrac14(x-2)$, ou
 $y=-\tfrac14x+1$.
 \end{exemplo}
@@ -159,13 +159,13 @@ situações típicas:
 \nextgroupplot[title={(b) tangente vertical: $\sqrt[3]{x}$},ymin=-1.3,ymax=1.3]
 \addplot[domain=0:1.5,samples=200]{x^(1/3)}; \addplot[domain=-1.5:0,samples=200]{-(-x)^(1/3)};
 \draw[laranja,dashed] (axis cs:0,-1.3) -- (axis cs:0,1.3);
-\nextgroupplot[title={(c) oscilação: $x\sin\frac1x$},ymin=-0.5,ymax=0.5,xmin=-0.5,xmax=0.5]
+\nextgroupplot[title={(c) oscilação: $x\sen\frac1x$},ymin=-0.5,ymax=0.5,xmin=-0.5,xmax=0.5]
 \addplot[domain=-0.5:-0.002,samples=1500,thin]{x*sin(deg(1/x))};
 \addplot[domain=0.002:0.5,samples=1500,thin]{x*sin(deg(1/x))};
 \addplot[laranja,dashed,thin,domain=-0.5:0.5]{x}; \addplot[laranja,dashed,thin,domain=-0.5:0.5]{-x};
 \end{groupplot}\end{tikzpicture}}{Funções contínuas em $0$, mas não deriváveis em $0$.
 (a) Os limites laterais do quociente de diferenças são $-1$ e $1$. (b) O quociente tende a
-$+\infty$. (c) O quociente $\sin(1/h)$ oscila e não tem limite.}
+$+\infty$. (c) O quociente $\sen(1/h)$ oscila e não tem limite.}
 
 \begin{exemplo}{3.5}{Uma função por partes derivável}
 Encontre $a$ e $b$ para que $f(x)=\begin{cases}ax+b,&x<3\\x^2,&x\ge3\end{cases}$ seja
@@ -299,13 +299,13 @@ $R(101)-R(100)=1{,}99$.
 
 \begin{teorema}[Derivadas de seno e cosseno]{3.6}
 \[
-\frac{d}{dx}(\sin x)=\cos x,\qquad \frac{d}{dx}(\cos x)=-\sin x .
+\frac{d}{dx}(\sen x)=\cos x,\qquad \frac{d}{dx}(\cos x)=-\sen x .
 \]
 \end{teorema}
 \emph{Prova para o seno.} Pela fórmula da soma,
 \[
-\frac{\sin(x+h)-\sin x}{h}=\sin x\cdot\frac{\cos h-1}{h}+\cos x\cdot\frac{\sin h}{h}
-\ \longrightarrow\ \sin x\cdot0+\cos x\cdot1=\cos x,
+\frac{\sen(x+h)-\sen x}{h}=\sen x\cdot\frac{\cos h-1}{h}+\cos x\cdot\frac{\sen h}{h}
+\ \longrightarrow\ \sen x\cdot0+\cos x\cdot1=\cos x,
 \]
 usando os dois limites trigonométricos do Teorema~2.7. A prova para o cosseno é
 análoga. $\square$
@@ -314,29 +314,29 @@ análoga. $\square$
 \begin{axis}[painel,width=11cm,height=4.4cm,xmin=-6.6,xmax=6.6,ymin=-1.5,ymax=1.5,
   xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$},ytick={-1,1},
   legend style={font=\footnotesize,at={(1,1.05)},anchor=south east},legend columns=2]
-\addplot[domain=-6.6:6.6]{sin(deg(x))}; \addlegendentry{$y=\sin x$}
+\addplot[domain=-6.6:6.6]{sin(deg(x))}; \addlegendentry{$y=\sen x$}
 \addplot[laranja,domain=-6.6:6.6]{cos(deg(x))}; \addlegendentry{$y=\cos x$ (derivada)}
 \foreach \p in {-4.7124,-1.5708,1.5708,4.7124}{\edef\tmp{\noexpand\fill[black] (axis cs:\p,0) circle (1.6pt);}\tmp}
-\end{axis}\end{tikzpicture}}{Onde $\sin x$ tem tangente horizontal (máximos e mínimos), sua
-derivada $\cos x$ se anula (pontos pretos); onde $\sin x$ cresce mais rápido ($x=0$), $\cos x$
+\end{axis}\end{tikzpicture}}{Onde $\sen x$ tem tangente horizontal (máximos e mínimos), sua
+derivada $\cos x$ se anula (pontos pretos); onde $\sen x$ cresce mais rápido ($x=0$), $\cos x$
 vale 1.}
 
-Pela regra do quociente, $\dfrac{d}{dx}\tan x=\dfrac{\cos x\cos x-\sin x(-\sin x)}{\cos^2x}
+Pela regra do quociente, $\dfrac{d}{dx}\tg x=\dfrac{\cos x\cos x-\sen x(-\sen x)}{\cos^2x}
 =\dfrac1{\cos^2x}=\sec^2x$. Do mesmo modo:
 
 \begin{teorema}[Demais funções trigonométricas]{3.7}
 \[
-(\tan x)'=\sec^2x,\qquad (\cot x)'=-\csc^2x,\qquad (\sec x)'=\sec x\tan x,\qquad
-(\csc x)'=-\csc x\cot x .
+(\tg x)'=\sec^2x,\qquad (\cotg x)'=-\cossec^2x,\qquad (\sec x)'=\sec x\tg x,\qquad
+(\cossec x)'=-\cossec x\cotg x .
 \]
 \end{teorema}
 
-\textbf{Derivadas de ordem superior.} As derivadas de $\sin x$ se repetem com período 4:
-$\sin x\to\cos x\to-\sin x\to-\cos x\to\sin x$. Assim,
-$\dfrac{d^{74}}{dx^{74}}\sin x=\dfrac{d^2}{dx^2}\sin x=-\sin x$, pois $74=4\cdot18+2$.
+\textbf{Derivadas de ordem superior.} As derivadas de $\sen x$ se repetem com período 4:
+$\sen x\to\cos x\to-\sen x\to-\cos x\to\sen x$. Assim,
+$\dfrac{d^{74}}{dx^{74}}\sen x=\dfrac{d^2}{dx^2}\sen x=-\sen x$, pois $74=4\cdot18+2$.
 
 \begin{exemplo}{3.10}{Uma massa presa a uma mola}
-A posição de uma massa é $s(t)=2\sin t$ (cm). Então $v(t)=2\cos t$ e $a(t)=-2\sin t=-s(t)$:
+A posição de uma massa é $s(t)=2\sen t$ (cm). Então $v(t)=2\cos t$ e $a(t)=-2\sen t=-s(t)$:
 a aceleração é proporcional ao deslocamento e tem sentido oposto. Em $t=\pi/2$, a massa está
 em $s=2$, parada ($v=0$), com aceleração $-2$ cm/s$^2$, que a puxa de volta.
 \end{exemplo}
@@ -344,7 +344,7 @@ em $s=2$, parada ($v=0$), com aceleração $-2$ cm/s$^2$, que a puxa de volta.
 % ---------------------------------------------------------------------
 \section{A regra da cadeia}
 
-Como derivar $h(x)=\sin(x^3)$ ou $(3x^2+1)^{20}$? São funções compostas, e sua derivada
+Como derivar $h(x)=\sen(x^3)$ ou $(3x^2+1)^{20}$? São funções compostas, e sua derivada
 segue uma regra simples: se $u=g(x)$ varia $g'(x)$ vezes mais rápido que $x$, e $y=f(u)$
 varia $f'(u)$ vezes mais rápido que $u$, então $y$ varia $f'(u)\,g'(x)$ vezes mais rápido que
 $x$.
@@ -363,16 +363,16 @@ Em palavras: \emph{derive a função de fora, mantendo a de dentro, e multipliqu
 derivada da de dentro}. Dois casos frequentes:
 \[
 \frac{d}{dx}\big(g(x)\big)^n=n\big(g(x)\big)^{n-1}g'(x),\qquad
-\frac{d}{dx}\sin\big(g(x)\big)=\cos\big(g(x)\big)\,g'(x),
+\frac{d}{dx}\sen\big(g(x)\big)=\cos\big(g(x)\big)\,g'(x),
 \]
-e analogamente $\frac{d}{dx}\cos u=-\sin u\,u'$, $\frac{d}{dx}\tan u=\sec^2u\,u'$, etc.
+e analogamente $\frac{d}{dx}\cos u=-\sen u\,u'$, $\frac{d}{dx}\tg u=\sec^2u\,u'$, etc.
 
 \begin{exemplo}{3.11}{Usando a regra da cadeia}
 (a) $\dfrac{d}{dx}(3x^2+1)^3=3(3x^2+1)^2\cdot6x=18x(3x^2+1)^2$.
 
-(b) $\dfrac{d}{dx}\sin^3x=3\sin^2x\cos x$.
+(b) $\dfrac{d}{dx}\sen^3x=3\sen^2x\cos x$.
 
-(c) $\dfrac{d}{dx}\cos(5x^2)=-\sin(5x^2)\cdot10x$.
+(c) $\dfrac{d}{dx}\cos(5x^2)=-\sen(5x^2)\cdot10x$.
 
 (d) $\dfrac{d}{dx}\Big[\dfrac{1}{(3x^2+1)^2}\Big]=\dfrac{d}{dx}(3x^2+1)^{-2}=-2(3x^2+1)^{-3}\cdot6x
 =-\dfrac{12x}{(3x^2+1)^3}$.
@@ -381,12 +381,12 @@ e analogamente $\frac{d}{dx}\cos u=-\sin u\,u'$, $\frac{d}{dx}\tan u=\sec^2u\,u'
 \textbf{Composição de três funções.} Para $k(x)=h\big(f(g(x))\big)$, aplicamos a regra duas
 vezes: $k'(x)=h'\big(f(g(x))\big)\cdot f'\big(g(x)\big)\cdot g'(x)$. Por exemplo,
 \[
-\frac{d}{dx}\sin^4(7x-3)=4\sin^3(7x-3)\cdot\cos(7x-3)\cdot7 .
+\frac{d}{dx}\sen^4(7x-3)=4\sen^3(7x-3)\cdot\cos(7x-3)\cdot7 .
 \]
 
 \begin{exemplo}{3.12}{Cadeia e produto juntos}
-$\dfrac{d}{dx}\big[x^2\cos(3x)\big]=2x\cos(3x)+x^2\cdot\big(-\sin(3x)\cdot3\big)
-=2x\cos(3x)-3x^2\sin(3x)$.
+$\dfrac{d}{dx}\big[x^2\cos(3x)\big]=2x\cos(3x)+x^2\cdot\big(-\sen(3x)\cdot3\big)
+=2x\cos(3x)-3x^2\sen(3x)$.
 \end{exemplo}
 
 % ---------------------------------------------------------------------
@@ -431,26 +431,26 @@ obtemos $g'(x)=\frac1n x^{1/n-1}$. Combinando com a regra da cadeia, para todo r
 \]
 Por exemplo, $\dfrac{d}{dx}\sqrt[3]{x^2}=\dfrac{d}{dx}x^{2/3}=\dfrac23x^{-1/3}$.
 
-\textbf{Inversas trigonométricas.} Para $y=\sin^{-1}x$, temos $\sin y=x$ com
+\textbf{Inversas trigonométricas.} Para $y=\arcsen x$, temos $\sen y=x$ com
 $-\frac\pi2\le y\le\frac\pi2$. Pelo teorema, $\dfrac{dy}{dx}=\dfrac1{\cos y}$. Como
-$\cos y\ge0$ nesse intervalo, $\cos y=\sqrt{1-\sin^2y}=\sqrt{1-x^2}$. Do mesmo modo:
+$\cos y\ge0$ nesse intervalo, $\cos y=\sqrt{1-\sen^2y}=\sqrt{1-x^2}$. Do mesmo modo:
 
 \begin{teorema}[Derivadas das inversas trigonométricas]{3.9}
 \[
-\frac{d}{dx}\sin^{-1}x=\frac{1}{\sqrt{1-x^2}},\qquad
-\frac{d}{dx}\cos^{-1}x=\frac{-1}{\sqrt{1-x^2}},\qquad
-\frac{d}{dx}\tan^{-1}x=\frac{1}{1+x^2},
+\frac{d}{dx}\arcsen x=\frac{1}{\sqrt{1-x^2}},\qquad
+\frac{d}{dx}\arccos x=\frac{-1}{\sqrt{1-x^2}},\qquad
+\frac{d}{dx}\arctg x=\frac{1}{1+x^2},
 \]
 \[
-\frac{d}{dx}\cot^{-1}x=\frac{-1}{1+x^2},\qquad
-\frac{d}{dx}\sec^{-1}x=\frac{1}{|x|\sqrt{x^2-1}},\qquad
-\frac{d}{dx}\csc^{-1}x=\frac{-1}{|x|\sqrt{x^2-1}} .
+\frac{d}{dx}\arccotg x=\frac{-1}{1+x^2},\qquad
+\frac{d}{dx}\arcsec x=\frac{1}{|x|\sqrt{x^2-1}},\qquad
+\frac{d}{dx}\arccossec x=\frac{-1}{|x|\sqrt{x^2-1}} .
 \]
 \end{teorema}
 
 \begin{exemplo}{3.14}{Cadeia com inversa trigonométrica}
-$\dfrac{d}{dx}\tan^{-1}(x^2)=\dfrac{2x}{1+x^4}$\qquad e\qquad
-$\dfrac{d}{dx}\big[x\sin^{-1}x\big]=\sin^{-1}x+\dfrac{x}{\sqrt{1-x^2}}$.
+$\dfrac{d}{dx}\arctg(x^2)=\dfrac{2x}{1+x^4}$\qquad e\qquad
+$\dfrac{d}{dx}\big[x\arcsen x\big]=\arcsen x+\dfrac{x}{\sqrt{1-x^2}}$.
 \end{exemplo}
 
 % ---------------------------------------------------------------------
@@ -527,8 +527,8 @@ $\dfrac{d}{dx}b^x=b^x\ln b$,\qquad $\dfrac{d}{dx}\log_bx=\dfrac{1}{x\ln b}$.
 
 (b) $\dfrac{d}{dx}\ln(x^3+3x-4)=\dfrac{3x^2+3}{x^3+3x-4}$.
 
-(c) $\dfrac{d}{dx}\ln\Big(\dfrac{x^2\sin x}{2x+1}\Big)$: primeiro usamos as propriedades do
-logaritmo, $2\ln x+\ln\sin x-\ln(2x+1)$; a derivada é $\dfrac2x+\cot x-\dfrac{2}{2x+1}$.
+(c) $\dfrac{d}{dx}\ln\Big(\dfrac{x^2\sen x}{2x+1}\Big)$: primeiro usamos as propriedades do
+logaritmo, $2\ln x+\ln\sen x-\ln(2x+1)$; a derivada é $\dfrac2x+\cotg x-\dfrac{2}{2x+1}$.
 
 (d) $\dfrac{d}{dx}\,3^{x^2}=3^{x^2}\ln3\cdot2x$.
 \end{exemplo}
@@ -569,10 +569,10 @@ $y'=y\cdot\frac rx=rx^{r-1}$: a regra da potência vale para \emph{todo} expoent
   oscilações).
 \item Regras: $(x^r)'=rx^{r-1}$; $(f\pm g)'=f'\pm g'$; $(fg)'=f'g+fg'$;
   $(f/g)'=(f'g-fg')/g^2$; $(f\circ g)'=f'(g)\,g'$.
-\item Trigonométricas: $(\sin x)'=\cos x$, $(\cos x)'=-\sin x$, $(\tan x)'=\sec^2x$,
-  $(\sec x)'=\sec x\tan x$.
-\item Inversas: $(f^{-1})'(x)=1/f'(f^{-1}(x))$; $(\sin^{-1}x)'=1/\sqrt{1-x^2}$,
-  $(\tan^{-1}x)'=1/(1+x^2)$.
+\item Trigonométricas: $(\sen x)'=\cos x$, $(\cos x)'=-\sen x$, $(\tg x)'=\sec^2x$,
+  $(\sec x)'=\sec x\tg x$.
+\item Inversas: $(f^{-1})'(x)=1/f'(f^{-1}(x))$; $(\arcsen x)'=1/\sqrt{1-x^2}$,
+  $(\arctg x)'=1/(1+x^2)$.
 \item Exponenciais e logaritmos: $(e^x)'=e^x$, $(\ln x)'=1/x$, $(b^x)'=b^x\ln b$.
 \item Movimento: $v=s'$, $a=v'=s''$. Economia: custo, receita e lucro marginais são
   derivadas. Variação aproximada: $f(a+h)\approx f(a)+f'(a)h$.

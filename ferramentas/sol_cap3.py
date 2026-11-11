@@ -71,33 +71,33 @@ $s(0)=0$, $s(2)=20$, $s(4)=16$, $s(5)=20$. Distância $=|20-0|+|16-20|+|20-16|=2
 **Animação.** A partícula anda sobre a reta enquanto o gráfico de $v(t)$ é traçado; a cor indica se ela vai para a frente (azul) ou para trás (laranja).""",
 ),
 dict(id='derivada_seno', origem='inspirado na seção 3.5', titulo='O quociente de diferenças do seno',
-enunciado=r"""Para $h=1$, $0{,}5$ e $0{,}1$, esboce $q_h(x)=\dfrac{\sin(x+h)-\sin x}{h}$ junto com
+enunciado=r"""Para $h=1$, $0{,}5$ e $0{,}1$, esboce $q_h(x)=\dfrac{\sen(x+h)-\sen x}{h}$ junto com
 $\cos x$. O que acontece quando $h\to0$? Prove o resultado.""",
-resposta=r"""$q_h\to\cos x$; usa $\lim\frac{\sin h}h=1$ e $\lim\frac{\cos h-1}h=0$.""",
+resposta=r"""$q_h\to\cos x$; usa $\lim\frac{\sen h}h=1$ e $\lim\frac{\cos h-1}h=0$.""",
 solucao=r"""**Observação.** Para cada $h$, $q_h(x)$ é a inclinação de uma secante. Para $h=1$ a curva já parece uma cossenoide, mas deslocada; para $h=0{,}1$ quase coincide com $\cos x$.
 
-Na verdade, pela identidade $\sin A-\sin B=2\cos\frac{A+B}2\sin\frac{A-B}2$,
-$$q_h(x)=\frac{\sin(h/2)}{h/2}\,\cos\!\left(x+\frac h2\right),$$
-ou seja, $q_h$ é **exatamente** uma cossenoide, com amplitude $\frac{\sin(h/2)}{h/2}<1$ e deslocada de $h/2$ para a esquerda. As duas distorções somem quando $h\to0$.
+Na verdade, pela identidade $\sen A-\sen B=2\cos\frac{A+B}2\sen\frac{A-B}2$,
+$$q_h(x)=\frac{\sen(h/2)}{h/2}\,\cos\!\left(x+\frac h2\right),$$
+ou seja, $q_h$ é **exatamente** uma cossenoide, com amplitude $\frac{\sen(h/2)}{h/2}<1$ e deslocada de $h/2$ para a esquerda. As duas distorções somem quando $h\to0$.
 
 **Prova (como no texto).**
-$$q_h(x)=\sin x\cdot\frac{\cos h-1}{h}+\cos x\cdot\frac{\sin h}{h}\ \xrightarrow{h\to0}\ \sin x\cdot0+\cos x\cdot1=\cos x .$$
+$$q_h(x)=\sen x\cdot\frac{\cos h-1}{h}+\cos x\cdot\frac{\sen h}{h}\ \xrightarrow{h\to0}\ \sen x\cdot0+\cos x\cdot1=\cos x .$$
 
 **Animação.** $h$ diminui de 2 até 0,01, e $q_h$ (azul) se encaixa sobre $\cos x$ (laranja).""",
 ),
 dict(id='cadeia_tangente', origem='inspirado no Exemplo 3.50', titulo='Regra da cadeia e tangente',
-enunciado=r"""Encontre a reta tangente a $y=\sin(x^2)$ em $x=\sqrt{\pi}$.""",
+enunciado=r"""Encontre a reta tangente a $y=\sen(x^2)$ em $x=\sqrt{\pi}$.""",
 resposta=r"""$y=-2\sqrt\pi\,(x-\sqrt\pi)$.""",
-solucao=r"""**Ponto.** $y(\sqrt\pi)=\sin\pi=0$.
+solucao=r"""**Ponto.** $y(\sqrt\pi)=\sen\pi=0$.
 
-**Derivada (cadeia).** Fora: $\sin u$, com derivada $\cos u$. Dentro: $u=x^2$, com derivada $2x$.
+**Derivada (cadeia).** Fora: $\sen u$, com derivada $\cos u$. Dentro: $u=x^2$, com derivada $2x$.
 $$y'=\cos(x^2)\cdot2x\quad\Rightarrow\quad y'(\sqrt\pi)=\cos\pi\cdot2\sqrt\pi=-2\sqrt\pi\approx-3{,}545 .$$
 
 **Tangente.** $y=-2\sqrt\pi\,(x-\sqrt\pi)$.
 
-**Observação.** Perto de $x=\sqrt\pi$, $\sin(x^2)$ oscila cada vez mais rápido à medida que $x$ cresce: o fator $2x$ da regra da cadeia mede justamente essa "aceleração" das oscilações.
+**Observação.** Perto de $x=\sqrt\pi$, $\sen(x^2)$ oscila cada vez mais rápido à medida que $x$ cresce: o fator $2x$ da regra da cadeia mede justamente essa "aceleração" das oscilações.
 
-**Animação.** A tangente percorre a curva $\sin(x^2)$; a inclinação $2x\cos(x^2)$ fica cada vez maior em módulo.""",
+**Animação.** A tangente percorre a curva $\sen(x^2)$; a inclinação $2x\cos(x^2)$ fica cada vez maior em módulo.""",
 ),
 dict(id='inversa', origem='inspirado no Exemplo 3.61', titulo='Derivada de uma inversa sem a fórmula',
 enunciado=r"""Seja $f(x)=x+e^x$. Mostre que $f$ é inversível e calcule $(f^{-1})'(1)$ e a reta

@@ -1,8 +1,12 @@
 \documentclass[11pt,openany]{book}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
+% compilar com XeLaTeX (fonte da marca Nexus BI em fontes/)
 \usepackage{mathpazo}
+\usepackage[no-math]{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\newfontfamily\barlow{BarlowSemiCondensed}[Path=fontes/, Extension=.ttf, Ligatures=TeX,
+  UprightFont=*-Regular, BoldFont=*-Bold,
+  FontFace={m}{n}{*-Medium}, FontFace={sb}{n}{*-SemiBold}]
+\usepackage[brazil]{babel}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage[a4paper,margin=2.3cm,includefoot]{geometry}
@@ -34,26 +38,33 @@
 \usepackage[hidelinks]{hyperref}
 \hypersetup{colorlinks=true,linkcolor=azul,urlcolor=azul!80!black}
 
-\definecolor{azul}{HTML}{1F4E79}
-\definecolor{verde}{HTML}{2E7D32}
-\definecolor{laranja}{HTML}{C55A11}
+% Identidade visual Nexus BI (ver Manual de Identidade Visual):
+%   azul    -> grafite #353535 (cor institucional; texto, títulos, curvas principais)
+%   verde   -> verde-nexus #AFE213 (cor institucional; preenchimentos e destaques)
+%   laranja -> verde-escuro #6E8F0B (derivado do verde-nexus para linhas e símbolos
+%              sobre branco, onde o verde-nexus não tem contraste suficiente)
+% Os nomes antigos foram mantidos para não reescrever as figuras.
+\definecolor{azul}{HTML}{353535}
+\definecolor{verde}{HTML}{AFE213}
+\definecolor{laranja}{HTML}{6E8F0B}
 \definecolor{cinza}{HTML}{595959}
+\colorlet{grafite}{azul}\colorlet{verdenexus}{verde}\colorlet{verdeescuro}{laranja}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.55em}
 \setlist{itemsep=2pt,topsep=3pt}
 
-\titleformat{\chapter}[display]{\normalfont\bfseries\color{azul}}
-  {\large\scshape Capítulo \thechapter}{4pt}{\Huge}
+\titleformat{\chapter}[display]{\normalfont\barlow\bfseries\color{azul}}
+  {\large\color{laranja}CAPÍTULO \thechapter}{2pt}{\Huge}[{\color{verde}\titlerule[2.5pt]}]
 \titlespacing*{\chapter}{0pt}{0pt}{24pt}
-\titleformat{\section}{\normalfont\Large\bfseries\color{azul}}{\thesection}{0.8em}{}
-\titleformat{\subsection}{\normalfont\large\bfseries\color{azul!85!black}}{}{0em}{}
+\titleformat{\section}{\normalfont\barlow\Large\bfseries\color{azul}}{\color{laranja}\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalfont\barlow\large\bfseries\color{azul}}{}{0em}{}
 \titleformat*{\subsubsection}{\normalfont\normalsize\bfseries}
 \setcounter{secnumdepth}{1}
 
 \pagestyle{fancy}\fancyhf{}
-\fancyhead[LE]{\small\color{cinza}\leftmark}
-\fancyhead[RO]{\small\color{cinza}\rightmark}
+\fancyhead[LE]{\small\barlow\color{cinza}\leftmark}
+\fancyhead[RO]{\small\barlow\color{cinza}\rightmark}
 \fancyfoot[C]{\small\thepage}
 \fancyfoot[R]{\scriptsize\color{cinza}Access for free at openstax.org}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}
@@ -62,19 +73,19 @@
 \let\cleardoublepage\clearpage
 
 % ---------- caixas
-\tcbset{base/.style={enhanced,breakable,arc=2pt,boxrule=0.6pt,fonttitle=\bfseries,
+\tcbset{base/.style={enhanced,breakable,arc=2pt,boxrule=0.6pt,fonttitle=\barlow\bfseries,
   left=6pt,right=6pt,top=4pt,bottom=4pt,before skip=8pt,after skip=8pt}}
 \newtcolorbox{definicao}[1][]{base,colback=azul!4,colframe=azul,
   title={\ifx&#1&Definição\else #1\fi}}
 \newtcolorbox{regra}[1]{base,colback=azul!4,colframe=azul,title={#1}}
-\newtcolorbox{teorema}[2][]{base,colback=verde!5,colframe=verde,
+\newtcolorbox{teorema}[2][]{base,colback=verde!7,colframe=verde,coltitle=azul,
   title={Teorema #2\ifx&#1&\else: #1\fi}}
-\newtcolorbox{estrategia}[1]{base,colback=laranja!5,colframe=laranja,
+\newtcolorbox{estrategia}[1]{base,colback=white,colframe=azul,coltitle=verde,
   title={Estratégia: #1}}
 \newtcolorbox{exemplo}[2]{base,colback=white,colframe=cinza,coltitle=black,colbacktitle=cinza!15,
   title={Exemplo #1 --- #2}}
 \newtcolorbox{nota}{base,colback=red!3,colframe=red!55!black,title={Atenção}}
-\newcommand{\solucao}{\par\smallskip{\color{cinza}\textbf{Solução}}\par}
+\newcommand{\solucao}{\par\smallskip{\barlow\color{laranja}\textbf{Solução}}\par}
 \newcommand{\fig}[3][0.62]{\begin{center}\includegraphics[width=#1\linewidth,max height=7.2cm,keepaspectratio]{img/#2}\\[2pt]
   \begin{minipage}{0.9\linewidth}\small\textbf{Figura \thechapter.\stepcounter{figure}\arabic{figure}}\quad #3\end{minipage}\end{center}}
 \newcommand{\figdupla}[4][0.46]{\begin{center}
@@ -87,11 +98,24 @@
   \foreach \i in {1,...,#1}{\textbullet}}}
 \newcommand{\exnum}[2]{\makebox[1.9em][r]{\nivel{#1}}\,\makebox[2.3em][r]{\textbf{#2}}}
 \newcommand{\estrela}{\textcolor{laranja}{$\bigstar$}}
+% notação brasileira das funções trigonométricas e hiperbólicas
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\cotg}{cotg}
+\DeclareMathOperator{\cossec}{cossec}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccotg}{arccotg}
+\DeclareMathOperator{\arccossec}{arccossec}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\tgh}{tgh}
+\DeclareMathOperator{\cotgh}{cotgh}
 \DeclareMathOperator{\sech}{sech}
-\DeclareMathOperator{\csch}{csch}
-\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\cossech}{cossech}
+\DeclareMathOperator{\arcsenh}{arcsenh}
 \DeclareMathOperator{\arccosh}{arccosh}
-\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arctgh}{arctgh}
 \newcommand{\Set}[2]{\{\,#1 \mid #2\,\}}
 
 \begin{document}
@@ -123,7 +147,14 @@ Esta versão não é endossada pela OpenStax nem pela Rice University. Os nomes 
 OpenStax e Rice University são marcas registradas e não fazem parte da licença.
 Esta adaptação é distribuída sob a mesma licença CC BY-NC-SA 4.0, apenas para uso não comercial.
 
-\textbf{Versão 1.0}, novembro de 2026.
+\textbf{Projeto gráfico:} identidade visual da Nexus BI (cores grafite e verde-nexus, padrão
+gráfico e logotipo); títulos em Barlow Semi Condensed, fonte distribuída sob a SIL Open Font
+License. O logotipo e a marca Nexus BI pertencem a seus titulares e não estão cobertos pela
+licença CC BY-NC-SA deste livro.
+
+\textbf{Versão 1.1}, novembro de 2026: notação brasileira para as funções trigonométricas
+($\sen$, $\tg$, $\cotg$, $\cossec$, $\arcsen$, $\arctg$, $\senh$, $\tgh$\dots) e identidade
+visual Nexus BI.
 
 \tableofcontents
 
@@ -138,8 +169,8 @@ Esta adaptação é distribuída sob a mesma licença CC BY-NC-SA 4.0, apenas pa
 
 \appendix
 \renewcommand{\chaptername}{Apêndice}
-\titleformat{\chapter}[display]{\normalfont\bfseries\color{azul}}
-  {\large\scshape Apêndice \thechapter}{4pt}{\Huge}
+\titleformat{\chapter}[display]{\normalfont\barlow\bfseries\color{azul}}
+  {\large\color{laranja}APÊNDICE \thechapter}{2pt}{\Huge}[{\color{verde}\titlerule[2.5pt]}]
 \input{apendice}
 
 \backmatter

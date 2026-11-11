@@ -1,7 +1,7 @@
 % =====================================================================
 \chapter{Técnicas de integração}
 
-A substituição resolve muitas integrais, mas não todas: $\int xe^x\,dx$, $\int\sin^4x\,dx$,
+A substituição resolve muitas integrais, mas não todas: $\int xe^x\,dx$, $\int\sen^4x\,dx$,
 $\int\sqrt{9-x^2}\,dx$ e $\int\frac{dx}{x^2-1}$ pedem outras ferramentas. Este capítulo, adaptado
 do capítulo~3 de \emph{Calculus Volume~2}, reúne as quatro técnicas clássicas (integração por
 partes, integrais trigonométricas, substituição trigonométrica e frações parciais), os métodos
@@ -28,15 +28,15 @@ $\int xe^x\,dx=xe^x-\int e^x\,dx=(x-1)e^x+C$.
 (b) $\int\ln x\,dx$: $u=\ln x$, $dv=dx$:
 $\ x\ln x-\int x\cdot\frac1x\,dx=x\ln x-x+C$.
 
-(c) $\int x^2\sin x\,dx$ pede partes duas vezes:
-$-x^2\cos x+\int2x\cos x\,dx=-x^2\cos x+2x\sin x+2\cos x+C$.
+(c) $\int x^2\sen x\,dx$ pede partes duas vezes:
+$-x^2\cos x+\int2x\cos x\,dx=-x^2\cos x+2x\sen x+2\cos x+C$.
 
-(d) $\int_0^\pi x\sin x\,dx=\big[-x\cos x\big]_0^\pi+\int_0^\pi\cos x\,dx=\pi+0=\pi$.
+(d) $\int_0^\pi x\sen x\,dx=\big[-x\cos x\big]_0^\pi+\int_0^\pi\cos x\,dx=\pi+0=\pi$.
 \end{exemplo}
 
 \textbf{Integrais cíclicas.}\index{integral!ciclica@cíclica} Às vezes a integral original reaparece. Em
-$I=\int e^x\sin x\,dx$, partes duas vezes (sempre com $dv=e^xdx$) dá
-$I=e^x\sin x-e^x\cos x-I$, e daí $I=\tfrac12e^x(\sin x-\cos x)+C$.
+$I=\int e^x\sen x\,dx$, partes duas vezes (sempre com $dv=e^xdx$) dá
+$I=e^x\sen x-e^x\cos x-I$, e daí $I=\tfrac12e^x(\sen x-\cos x)+C$.
 
 \figtikz{\begin{tikzpicture}
 \begin{axis}[painel,width=6.4cm,height=4.6cm,xmin=-0.2,xmax=3.1,ymin=-0.15,ymax=1.3,xtick={1,2.718},xticklabels={$1$,$e$},ytick={1}]
@@ -52,47 +52,47 @@ $e\times1$, ou seja, $\int_1^e\ln x\,dx=e-\int_0^1e^y\,dy=e-(e-1)=1$.}
 % ---------------------------------------------------------------------
 \section{Integrais trigonométricas}\index{integrais trigonometricas@integrais trigonométricas}
 
-\textbf{Potências de seno e cosseno}, $\int\sin^mx\cos^nx\,dx$:
+\textbf{Potências de seno e cosseno}, $\int\sen^mx\cos^nx\,dx$:
 \begin{itemize}
 \item se uma das potências é \emph{ímpar}, separe um fator dela e converta o resto com
-  $\sin^2+\cos^2=1$. Por exemplo, $n$ ímpar: guarde $\cos x\,dx$ e use $u=\sin x$;
+  $\sen^2+\cos^2=1$. Por exemplo, $n$ ímpar: guarde $\cos x\,dx$ e use $u=\sen x$;
 \item se ambas são \emph{pares}, reduza o grau com
-  $\sin^2x=\frac{1-\cos2x}2$, $\cos^2x=\frac{1+\cos2x}2$, $\sin x\cos x=\frac12\sin2x$.
+  $\sen^2x=\frac{1-\cos2x}2$, $\cos^2x=\frac{1+\cos2x}2$, $\sen x\cos x=\frac12\sen2x$.
 \end{itemize}
 
-\textbf{Potências de tangente e secante}, $\int\tan^mx\sec^nx\,dx$: se $n$ é par, guarde
-$\sec^2x\,dx$ e use $u=\tan x$; se $m$ é ímpar, guarde $\sec x\tan x\,dx$ e use $u=\sec x$
-(com $\tan^2=\sec^2-1$). Os demais casos costumam exigir partes, como $\int\sec^3x\,dx$.
+\textbf{Potências de tangente e secante}, $\int\tg^mx\sec^nx\,dx$: se $n$ é par, guarde
+$\sec^2x\,dx$ e use $u=\tg x$; se $m$ é ímpar, guarde $\sec x\tg x\,dx$ e use $u=\sec x$
+(com $\tg^2=\sec^2-1$). Os demais casos costumam exigir partes, como $\int\sec^3x\,dx$.
 
 \textbf{Produtos com frequências diferentes} usam as fórmulas de produto em soma, por exemplo
-$\sin A\cos B=\frac12[\sin(A-B)+\sin(A+B)]$.
+$\sen A\cos B=\frac12[\sen(A-B)+\sen(A+B)]$.
 
 \begin{exemplo}{7.2}{Integrais trigonométricas}
-(a) $\int\sin^3x\cos^2x\,dx=\int(1-\cos^2x)\cos^2x\sin x\,dx
+(a) $\int\sen^3x\cos^2x\,dx=\int(1-\cos^2x)\cos^2x\sen x\,dx
 =-\frac{\cos^3x}3+\frac{\cos^5x}5+C$ \quad ($u=\cos x$).
 
-(b) $\int\cos^2x\,dx=\int\frac{1+\cos2x}2\,dx=\frac x2+\frac{\sin2x}4+C$.
+(b) $\int\cos^2x\,dx=\int\frac{1+\cos2x}2\,dx=\frac x2+\frac{\sen2x}4+C$.
 
-(c) $\int\sin^2x\cos^2x\,dx=\frac14\int\sin^22x\,dx=\frac18\int(1-\cos4x)\,dx
-=\frac x8-\frac{\sin4x}{32}+C$.
+(c) $\int\sen^2x\cos^2x\,dx=\frac14\int\sen^22x\,dx=\frac18\int(1-\cos4x)\,dx
+=\frac x8-\frac{\sen4x}{32}+C$.
 
 (d) $\int\sec^3x\,dx$: partes com $u=\sec x$, $dv=\sec^2x\,dx$ dá
-$\sec x\tan x-\int\sec x\tan^2x\,dx=\sec x\tan x-\int\sec^3x\,dx+\int\sec x\,dx$, logo
-$\int\sec^3x\,dx=\frac12\big(\sec x\tan x+\ln|\sec x+\tan x|\big)+C$.
+$\sec x\tg x-\int\sec x\tg^2x\,dx=\sec x\tg x-\int\sec^3x\,dx+\int\sec x\,dx$, logo
+$\int\sec^3x\,dx=\frac12\big(\sec x\tg x+\ln|\sec x+\tg x|\big)+C$.
 \end{exemplo}
 
 % ---------------------------------------------------------------------
 \section{Substituição trigonométrica}\index{substituicao trigonometrica@substituição trigonométrica}
 
 Raízes de expressões quadráticas desaparecem com a substituição certa, porque
-$1-\sin^2=\cos^2$, $1+\tan^2=\sec^2$ e $\sec^2-1=\tan^2$:
+$1-\sen^2=\cos^2$, $1+\tg^2=\sec^2$ e $\sec^2-1=\tg^2$:
 
 \begin{center}\renewcommand{\arraystretch}{1.3}
 \begin{tabular}{lll}
 \textbf{Expressão} & \textbf{Substituição} & \textbf{Identidade}\\\hline
-$\sqrt{a^2-x^2}$ & $x=a\sin\theta$, $-\frac\pi2\le\theta\le\frac\pi2$ & $a^2-a^2\sin^2\theta=a^2\cos^2\theta$\\
-$\sqrt{a^2+x^2}$ & $x=a\tan\theta$, $-\frac\pi2<\theta<\frac\pi2$ & $a^2+a^2\tan^2\theta=a^2\sec^2\theta$\\
-$\sqrt{x^2-a^2}$ & $x=a\sec\theta$, $0\le\theta<\frac\pi2$ & $a^2\sec^2\theta-a^2=a^2\tan^2\theta$
+$\sqrt{a^2-x^2}$ & $x=a\sen\theta$, $-\frac\pi2\le\theta\le\frac\pi2$ & $a^2-a^2\sen^2\theta=a^2\cos^2\theta$\\
+$\sqrt{a^2+x^2}$ & $x=a\tg\theta$, $-\frac\pi2<\theta<\frac\pi2$ & $a^2+a^2\tg^2\theta=a^2\sec^2\theta$\\
+$\sqrt{x^2-a^2}$ & $x=a\sec\theta$, $0\le\theta<\frac\pi2$ & $a^2\sec^2\theta-a^2=a^2\tg^2\theta$
 \end{tabular}\end{center}
 
 Para voltar à variável $x$, desenhe o triângulo retângulo que traduz a substituição.
@@ -100,11 +100,11 @@ Para voltar à variável $x$, desenhe o triângulo retângulo que traduz a subst
 \figtikz{\begin{tikzpicture}[scale=0.85,font=\small]
 \draw[thick] (0,0) -- (3,0) -- (3,2) -- cycle; \draw (2.75,0) |- (3,0.25);
 \node[below] at (1.5,0) {$\sqrt{a^2-x^2}$}; \node[right] at (3,1) {$x$}; \node[above left] at (1.5,1) {$a$};
-\node at (0.6,0.17) {$\theta$}; \node at (1.5,-0.9) {$x=a\sin\theta$};
+\node at (0.6,0.17) {$\theta$}; \node at (1.5,-0.9) {$x=a\sen\theta$};
 \begin{scope}[xshift=4.8cm]
 \draw[thick] (0,0) -- (3,0) -- (3,2) -- cycle; \draw (2.75,0) |- (3,0.25);
 \node[below] at (1.5,0) {$a$}; \node[right] at (3,1) {$x$}; \node[above left] at (1.5,1) {$\sqrt{a^2+x^2}$};
-\node at (0.6,0.17) {$\theta$}; \node at (1.5,-0.9) {$x=a\tan\theta$};
+\node at (0.6,0.17) {$\theta$}; \node at (1.5,-0.9) {$x=a\tg\theta$};
 \end{scope}
 \begin{scope}[xshift=9.6cm]
 \draw[thick] (0,0) -- (3,0) -- (3,2) -- cycle; \draw (2.75,0) |- (3,0.25);
@@ -114,15 +114,15 @@ Para voltar à variável $x$, desenhe o triângulo retângulo que traduz a subst
 \end{tikzpicture}}{Os três triângulos de referência da substituição trigonométrica.}
 
 \begin{exemplo}{7.3}{Substituição trigonométrica}
-(a) $\int\sqrt{9-x^2}\,dx$: com $x=3\sin\theta$, $dx=3\cos\theta\,d\theta$ e
+(a) $\int\sqrt{9-x^2}\,dx$: com $x=3\sen\theta$, $dx=3\cos\theta\,d\theta$ e
 $\sqrt{9-x^2}=3\cos\theta$:
 \[
-\int9\cos^2\theta\,d\theta=\tfrac92(\theta+\sin\theta\cos\theta)+C
-=\tfrac92\sin^{-1}\tfrac x3+\tfrac x2\sqrt{9-x^2}+C .
+\int9\cos^2\theta\,d\theta=\tfrac92(\theta+\sen\theta\cos\theta)+C
+=\tfrac92\arcsen\tfrac x3+\tfrac x2\sqrt{9-x^2}+C .
 \]
-(b) $\int\frac{dx}{x^2\sqrt{x^2+4}}$: com $x=2\tan\theta$, $dx=2\sec^2\theta\,d\theta$, a
-integral vira $\frac14\int\frac{\cos\theta}{\sin^2\theta}\,d\theta=-\frac1{4\sin\theta}+C$.
-Pelo triângulo, $\sin\theta=\frac x{\sqrt{x^2+4}}$, e o resultado é
+(b) $\int\frac{dx}{x^2\sqrt{x^2+4}}$: com $x=2\tg\theta$, $dx=2\sec^2\theta\,d\theta$, a
+integral vira $\frac14\int\frac{\cos\theta}{\sen^2\theta}\,d\theta=-\frac1{4\sen\theta}+C$.
+Pelo triângulo, $\sen\theta=\frac x{\sqrt{x^2+4}}$, e o resultado é
 $-\frac{\sqrt{x^2+4}}{4x}+C$.
 \end{exemplo}
 
@@ -153,14 +153,14 @@ $\int\frac{dx}{x^2(x+1)}=-\ln|x|-\frac1x+\ln|x+1|+C$.
 
 (c) $\frac{2x^2-x+4}{x^3+4x}=\frac Ax+\frac{Bx+C}{x^2+4}$ dá $A=1$, $B=1$, $C=-1$:
 \[
-\int\frac{2x^2-x+4}{x^3+4x}\,dx=\ln|x|+\tfrac12\ln(x^2+4)-\tfrac12\tan^{-1}\tfrac x2+C .
+\int\frac{2x^2-x+4}{x^3+4x}\,dx=\ln|x|+\tfrac12\ln(x^2+4)-\tfrac12\arctg\tfrac x2+C .
 \]
 \end{exemplo}
 
 % ---------------------------------------------------------------------
 \section{Integração numérica}
 
-Funções como $e^{-x^2}$, $\frac{\sin x}x$ e $\sqrt{1+x^3}$ não têm antiderivada elementar. Com
+Funções como $e^{-x^2}$, $\frac{\sen x}x$ e $\sqrt{1+x^3}$ não têm antiderivada elementar. Com
 $\Delta x=\frac{b-a}n$ e $x_i=a+i\Delta x$:
 \begin{itemize}
 \item \textbf{Regra do trapézio:}\index{regra do trapezio@regra do trapézio}
@@ -228,7 +228,7 @@ Se $0\le f(x)\le g(x)$ para $x\ge a$: se $\int_a^\infty g$ converge, então $\in
 converge; se $\int_a^\infty f$ diverge, então $\int_a^\infty g$ diverge.
 \end{teorema}
 Por exemplo, $\int_1^\infty e^{-x^2}dx$ converge, pois $e^{-x^2}\le e^{-x}$ para $x\ge1$; e
-$\int_1^\infty\frac{1+\sin^2x}{\sqrt x}\,dx$ diverge, pois o integrando é $\ge\frac1{\sqrt x}$.
+$\int_1^\infty\frac{1+\sen^2x}{\sqrt x}\,dx$ diverge, pois o integrando é $\ge\frac1{\sqrt x}$.
 
 % ---------------------------------------------------------------------
 \section*{Resumo do capítulo}\markright{Resumo do capítulo}
@@ -237,8 +237,8 @@ $\int_1^\infty\frac{1+\sin^2x}{\sqrt x}\,dx$ diverge, pois o integrando é $\ge\
 \item Partes: $\int u\,dv=uv-\int v\,du$; $u$ pela ordem LIATE; integrais cíclicas voltam a si
   mesmas.
 \item Trigonométricas: potência ímpar → guarde um fator; pares → ângulo duplo;
-  $\tan^m\sec^n$ → $u=\tan x$ ($n$ par) ou $u=\sec x$ ($m$ ímpar).
-\item Substituição trigonométrica: $a\sin\theta$, $a\tan\theta$, $a\sec\theta$ para
+  $\tg^m\sec^n$ → $u=\tg x$ ($n$ par) ou $u=\sec x$ ($m$ ímpar).
+\item Substituição trigonométrica: $a\sen\theta$, $a\tg\theta$, $a\sec\theta$ para
   $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$, $\sqrt{x^2-a^2}$; volte pelo triângulo.
 \item Frações parciais: divida se for imprópria, fatore, uma parcela por fator (repetidos e
   quadráticos têm forma própria).

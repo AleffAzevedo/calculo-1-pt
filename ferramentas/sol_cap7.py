@@ -19,41 +19,41 @@ $$\int_1^ex\ln x\,dx=\Big[\frac{x^2}2\ln x\Big]_1^e-\int_1^e\frac x2\,dx=\frac{e
 **Animação.** A área sob $\ln x$ (azul) e a área $\int_0^1e^y\,dy$ (laranja) preenchem juntas o retângulo $e\times1$.""",
 ),
 dict(id='ciclica', origem='inspirado na seção 7.1', titulo='Uma integral que volta a si mesma',
-enunciado=r"""Calcule $\int e^x\sin x\,dx$ e depois $\int_0^\pi e^x\sin x\,dx$.""",
-resposta=r"""$\tfrac12e^x(\sin x-\cos x)+C$; $\tfrac{e^\pi+1}2\approx12{,}070$.""",
-solucao=r"""Seja $I=\int e^x\sin x\,dx$.
+enunciado=r"""Calcule $\int e^x\sen x\,dx$ e depois $\int_0^\pi e^x\sen x\,dx$.""",
+resposta=r"""$\tfrac12e^x(\sen x-\cos x)+C$; $\tfrac{e^\pi+1}2\approx12{,}070$.""",
+solucao=r"""Seja $I=\int e^x\sen x\,dx$.
 
-**Primeira vez** ($u=\sin x$, $dv=e^xdx$): $I=e^x\sin x-\int e^x\cos x\,dx$.
+**Primeira vez** ($u=\sen x$, $dv=e^xdx$): $I=e^x\sen x-\int e^x\cos x\,dx$.
 
-**Segunda vez** ($u=\cos x$, $dv=e^xdx$, mantendo a escolha!): $\int e^x\cos x\,dx=e^x\cos x+\int e^x\sin x\,dx=e^x\cos x+I$.
+**Segunda vez** ($u=\cos x$, $dv=e^xdx$, mantendo a escolha!): $\int e^x\cos x\,dx=e^x\cos x+\int e^x\sen x\,dx=e^x\cos x+I$.
 
-**Juntando:** $I=e^x\sin x-e^x\cos x-I$, logo
-$$I=\tfrac12e^x(\sin x-\cos x)+C .$$
+**Juntando:** $I=e^x\sen x-e^x\cos x-I$, logo
+$$I=\tfrac12e^x(\sen x-\cos x)+C .$$
 
 **Atenção.** Se na segunda vez escolhermos $u=e^x$, as partes se desfazem e chegamos a $I=I$. A escolha de $dv$ tem de ser a mesma nas duas etapas.
 
-**Definida:** $\Big[\tfrac12e^x(\sin x-\cos x)\Big]_0^\pi=\tfrac12e^\pi(0+1)-\tfrac12(0-1)=\frac{e^\pi+1}2\approx12{,}070$.
+**Definida:** $\Big[\tfrac12e^x(\sen x-\cos x)\Big]_0^\pi=\tfrac12e^\pi(0+1)-\tfrac12(0-1)=\frac{e^\pi+1}2\approx12{,}070$.
 
-**Conferência derivando:** $\tfrac12\big[e^x(\sin x-\cos x)+e^x(\cos x+\sin x)\big]=e^x\sin x$. ✓
+**Conferência derivando:** $\tfrac12\big[e^x(\sen x-\cos x)+e^x(\cos x+\sen x)\big]=e^x\sen x$. ✓
 
-**Animação.** A área sob $e^x\sin x$ é acumulada de $0$ a $\pi$ e comparada com a fórmula.""",
+**Animação.** A área sob $e^x\sen x$ é acumulada de $0$ a $\pi$ e comparada com a fórmula.""",
 ),
 dict(id='sec3', origem='inspirado no Exemplo 7.2', titulo='A integral da secante ao cubo',
-enunciado=r"""Mostre que $\int\sec^3x\,dx=\frac12\big(\sec x\tan x+\ln|\sec x+\tan x|\big)+C$ e calcule
+enunciado=r"""Mostre que $\int\sec^3x\,dx=\frac12\big(\sec x\tg x+\ln|\sec x+\tg x|\big)+C$ e calcule
 $\int_0^{\pi/4}\sec^3x\,dx$.""",
 resposta=r"""$\tfrac12\big(\sqrt2+\ln(1+\sqrt2)\big)\approx1{,}1478$.""",
-solucao=r"""**Partes:** $u=\sec x$, $dv=\sec^2x\,dx$, então $du=\sec x\tan x\,dx$, $v=\tan x$.
-$$\int\sec^3x\,dx=\sec x\tan x-\int\sec x\tan^2x\,dx .$$
+solucao=r"""**Partes:** $u=\sec x$, $dv=\sec^2x\,dx$, então $du=\sec x\tg x\,dx$, $v=\tg x$.
+$$\int\sec^3x\,dx=\sec x\tg x-\int\sec x\tg^2x\,dx .$$
 
-**Identidade** $\tan^2x=\sec^2x-1$:
-$$\int\sec^3x\,dx=\sec x\tan x-\int\sec^3x\,dx+\int\sec x\,dx .$$
-A integral reapareceu (cíclica). Passando para a esquerda e usando $\int\sec x\,dx=\ln|\sec x+\tan x|$ (capítulo 5):
-$$2\int\sec^3x\,dx=\sec x\tan x+\ln|\sec x+\tan x|+C .$$
+**Identidade** $\tg^2x=\sec^2x-1$:
+$$\int\sec^3x\,dx=\sec x\tg x-\int\sec^3x\,dx+\int\sec x\,dx .$$
+A integral reapareceu (cíclica). Passando para a esquerda e usando $\int\sec x\,dx=\ln|\sec x+\tg x|$ (capítulo 5):
+$$2\int\sec^3x\,dx=\sec x\tg x+\ln|\sec x+\tg x|+C .$$
 
-**Valor:** em $x=\frac\pi4$, $\sec=\sqrt2$, $\tan=1$; em $0$, $\sec=1$, $\tan=0$:
+**Valor:** em $x=\frac\pi4$, $\sec=\sqrt2$, $\tg=1$; em $0$, $\sec=1$, $\tg=0$:
 $$\int_0^{\pi/4}\sec^3x\,dx=\tfrac12\big(\sqrt2+\ln(\sqrt2+1)\big)-\tfrac12(0+\ln1)\approx1{,}1478 .$$
 
-**Onde aparece.** Essa integral surge na substituição $x=a\tan\theta$ em $\int\sqrt{a^2+x^2}\,dx$, por exemplo no comprimento de arco da parábola (outro exercício resolvido desta lista).
+**Onde aparece.** Essa integral surge na substituição $x=a\tg\theta$ em $\int\sqrt{a^2+x^2}\,dx$, por exemplo no comprimento de arco da parábola (outro exercício resolvido desta lista).
 
 **Animação.** A área sob $\sec^3x$ cresce até $\pi/4$; o valor acumulado coincide com a fórmula.""",
 ),
@@ -63,14 +63,14 @@ resposta=r"""$\pi ab$.""",
 solucao=r"""**Montagem.** A metade de cima é $y=\frac ba\sqrt{a^2-x^2}$. Por simetria, a área é quatro vezes a do primeiro quadrante:
 $$A=4\int_0^a\frac ba\sqrt{a^2-x^2}\,dx .$$
 
-**Substituição** $x=a\sin\theta$: $dx=a\cos\theta\,d\theta$, $\sqrt{a^2-x^2}=a\cos\theta$; limites $x=0\mapsto\theta=0$, $x=a\mapsto\theta=\frac\pi2$.
+**Substituição** $x=a\sen\theta$: $dx=a\cos\theta\,d\theta$, $\sqrt{a^2-x^2}=a\cos\theta$; limites $x=0\mapsto\theta=0$, $x=a\mapsto\theta=\frac\pi2$.
 $$A=4\cdot\frac ba\int_0^{\pi/2}a^2\cos^2\theta\,d\theta=4ab\int_0^{\pi/2}\frac{1+\cos2\theta}2\,d\theta=4ab\cdot\frac\pi4=\pi ab .$$
 
 **Conferências.** $a=b=r$ dá $\pi r^2$ (círculo). A elipse é o círculo unitário esticado por $a$ na horizontal e por $b$ na vertical, e áreas se multiplicam por $ab$.
 
 **Exemplo numérico:** $a=3$, $b=2$: $A=6\pi\approx18{,}85$.
 
-**Animação.** O ângulo $\theta$ vai de $-\pi/2$ a $\pi/2$; a faixa vertical em $x=3\sin\theta$ varre a elipse e a área acumulada chega a $6\pi$.""",
+**Animação.** O ângulo $\theta$ vai de $-\pi/2$ a $\pi/2$; a faixa vertical em $x=3\sen\theta$ varre a elipse e a área acumulada chega a $6\pi$.""",
 ),
 dict(id='fracoes', origem='inspirado no Exemplo 7.4', titulo='Frações parciais com fator repetido',
 enunciado=r"""Calcule $\displaystyle\int\frac{5x^2+3x-2}{x^3+2x^2}\,dx$ e depois a integral de $1$ a $2$.""",
@@ -121,8 +121,8 @@ enunciado=r"""Calcule o comprimento de arco de $y=x^2$ para $0\le x\le1$.""",
 resposta=r"""$\tfrac14\big(2\sqrt5+\ln(2+\sqrt5)\big)\approx1{,}4789$.""",
 solucao=r"""**Integral:** $y'=2x$, então $L=\int_0^1\sqrt{1+4x^2}\,dx$. É o caso $\sqrt{a^2+u^2}$, com $u=2x$.
 
-**Substituição** $2x=\tan\theta$: $dx=\frac12\sec^2\theta\,d\theta$, $\sqrt{1+4x^2}=\sec\theta$. Limites: $x=0\mapsto\theta=0$; $x=1\mapsto\theta=\alpha$, com $\tan\alpha=2$, $\sec\alpha=\sqrt5$.
-$$L=\frac12\int_0^\alpha\sec^3\theta\,d\theta=\frac14\Big[\sec\theta\tan\theta+\ln|\sec\theta+\tan\theta|\Big]_0^\alpha=\frac14\big(2\sqrt5+\ln(2+\sqrt5)\big).$$
+**Substituição** $2x=\tg\theta$: $dx=\frac12\sec^2\theta\,d\theta$, $\sqrt{1+4x^2}=\sec\theta$. Limites: $x=0\mapsto\theta=0$; $x=1\mapsto\theta=\alpha$, com $\tg\alpha=2$, $\sec\alpha=\sqrt5$.
+$$L=\frac12\int_0^\alpha\sec^3\theta\,d\theta=\frac14\Big[\sec\theta\tg\theta+\ln|\sec\theta+\tg\theta|\Big]_0^\alpha=\frac14\big(2\sqrt5+\ln(2+\sqrt5)\big).$$
 (Usamos a integral de $\sec^3$ do exercício da secante ao cubo.)
 
 **Valor:** $\frac14(4{,}4721+1{,}4436)\approx1{,}4789$.
@@ -170,18 +170,18 @@ $$\Gamma(x+1)=\int_0^\infty t^xe^{-t}dt=\Big[-t^xe^{-t}\Big]_0^\infty+x\int_0^\i
 
 **Animação.** Para $n=0,1,\dots,5$, a área sob $t^ne^{-t}$ é preenchida e vale $n!$: $1,1,2,6,24,120$.""",
 ),
-dict(id='weierstrass', origem='inspirado na seção 7.4', titulo='A substituição universal $t=\\tan(x/2)$',
-enunciado=r"""Com $t=\tan\frac x2$, mostre que $\cos x=\frac{1-t^2}{1+t^2}$ e $dx=\frac{2\,dt}{1+t^2}$, e calcule
+dict(id='weierstrass', origem='inspirado na seção 7.4', titulo='A substituição universal $t=\\tg(x/2)$',
+enunciado=r"""Com $t=\tg\frac x2$, mostre que $\cos x=\frac{1-t^2}{1+t^2}$ e $dx=\frac{2\,dt}{1+t^2}$, e calcule
 $\displaystyle\int_0^{\pi/2}\frac{dx}{2+\cos x}$.""",
 resposta=r"""$\tfrac{\pi}{3\sqrt3}\approx0{,}6046$.""",
-solucao=r"""**Fórmulas.** $\cos x=\cos^2\frac x2-\sin^2\frac x2=\frac{1-\tan^2(x/2)}{\sec^2(x/2)}=\frac{1-t^2}{1+t^2}$. De $x=2\tan^{-1}t$: $dx=\frac{2\,dt}{1+t^2}$. (Analogamente, $\sin x=\frac{2t}{1+t^2}$.)
+solucao=r"""**Fórmulas.** $\cos x=\cos^2\frac x2-\sen^2\frac x2=\frac{1-\tg^2(x/2)}{\sec^2(x/2)}=\frac{1-t^2}{1+t^2}$. De $x=2\arctg t$: $dx=\frac{2\,dt}{1+t^2}$. (Analogamente, $\sen x=\frac{2t}{1+t^2}$.)
 
 **Transformando:** $2+\cos x=\frac{2(1+t^2)+1-t^2}{1+t^2}=\frac{3+t^2}{1+t^2}$. Limites: $x=0\mapsto t=0$; $x=\frac\pi2\mapsto t=1$.
-$$\int_0^{\pi/2}\frac{dx}{2+\cos x}=\int_0^1\frac{1+t^2}{3+t^2}\cdot\frac{2\,dt}{1+t^2}=\int_0^1\frac{2\,dt}{3+t^2}=\frac2{\sqrt3}\Big[\tan^{-1}\frac t{\sqrt3}\Big]_0^1=\frac2{\sqrt3}\cdot\frac\pi6=\frac\pi{3\sqrt3}.$$
+$$\int_0^{\pi/2}\frac{dx}{2+\cos x}=\int_0^1\frac{1+t^2}{3+t^2}\cdot\frac{2\,dt}{1+t^2}=\int_0^1\frac{2\,dt}{3+t^2}=\frac2{\sqrt3}\Big[\arctg\frac t{\sqrt3}\Big]_0^1=\frac2{\sqrt3}\cdot\frac\pi6=\frac\pi{3\sqrt3}.$$
 
 **Valor:** $\approx0{,}6046$. Conferência: o integrando fica entre $\frac13$ e $\frac12$, então a integral está entre $\frac\pi6\approx0{,}52$ e $\frac\pi4\approx0{,}79$. ✓
 
-**Por que ``universal''.** Toda função racional de $\sin x$ e $\cos x$ vira uma função racional de $t$, que sempre pode ser integrada por frações parciais (embora nem sempre seja o caminho mais curto).
+**Por que ``universal''.** Toda função racional de $\sen x$ e $\cos x$ vira uma função racional de $t$, que sempre pode ser integrada por frações parciais (embora nem sempre seja o caminho mais curto).
 
 **Animação.** As áreas sob $\frac1{2+\cos x}$ em $[0,\pi/2]$ e sob $\frac2{3+t^2}$ em $[0,1]$ são preenchidas juntas e têm sempre o mesmo valor.""",
 ),

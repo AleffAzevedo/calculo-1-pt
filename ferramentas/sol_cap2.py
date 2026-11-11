@@ -15,19 +15,19 @@ $$\lim_{h\to0}\frac{-1}{a(a+h)}=-\frac{1}{a^2}.$$
 
 **Animação.** Com $a=1$, as secantes giram até a tangente de inclinação $-1$ conforme $h\to0$, pela direita e pela esquerda.""",
 ),
-dict(id='2.2', origem='2.2, ex. 35–37', titulo='O limite de $\\sin(ax)/x$',
+dict(id='2.2', origem='2.2, ex. 35–37', titulo='O limite de $\\sen(ax)/x$',
 enunciado=r"""(a) Use tabelas com $x=\pm0{,}1;\ \pm0{,}01;\ \pm0{,}001$ para estimar
-$\lim_{x\to0}\frac{\sin2x}{x}$ e $\lim_{x\to0}\frac{\sin3x}{x}$.
-(b) Conjecture o valor de $\lim_{x\to0}\frac{\sin ax}{x}$ para $a>0$ e prove-o com o
+$\lim_{x\to0}\frac{\sen2x}{x}$ e $\lim_{x\to0}\frac{\sen3x}{x}$.
+(b) Conjecture o valor de $\lim_{x\to0}\frac{\sen ax}{x}$ para $a>0$ e prove-o com o
 Teorema~2.7.""",
-resposta=r"""(a) 2 e 3; (b) $\lim_{x\to0}\frac{\sin ax}{x}=a$.""",
-solucao=r"""**(a)** Para $\frac{\sin2x}{x}$: $x=0{,}1\Rightarrow1{,}98669$; $x=0{,}01\Rightarrow1{,}99987$; $x=0{,}001\Rightarrow1{,}9999987$. A função é par, então os valores para $-x$ são iguais. O limite parece ser **2**.
-Para $\frac{\sin3x}{x}$: $2{,}95520$; $2{,}99955$; $2{,}9999955$, que parecem tender a **3**.
+resposta=r"""(a) 2 e 3; (b) $\lim_{x\to0}\frac{\sen ax}{x}=a$.""",
+solucao=r"""**(a)** Para $\frac{\sen2x}{x}$: $x=0{,}1\Rightarrow1{,}98669$; $x=0{,}01\Rightarrow1{,}99987$; $x=0{,}001\Rightarrow1{,}9999987$. A função é par, então os valores para $-x$ são iguais. O limite parece ser **2**.
+Para $\frac{\sen3x}{x}$: $2{,}95520$; $2{,}99955$; $2{,}9999955$, que parecem tender a **3**.
 
 **(b)** Conjectura: o limite é $a$. Prova: com $\theta=ax$, temos $\theta\to0$ quando $x\to0$, e
-$$\frac{\sin ax}{x}=a\cdot\frac{\sin ax}{ax}=a\cdot\frac{\sin\theta}{\theta}\longrightarrow a\cdot1=a .$$
+$$\frac{\sen ax}{x}=a\cdot\frac{\sen ax}{ax}=a\cdot\frac{\sen\theta}{\theta}\longrightarrow a\cdot1=a .$$
 
-**Animação.** O gráfico de $\frac{\sin ax}{x}$ para $a=1,2,3$: o "buraco" em $x=0$ fica exatamente na altura $a$.""",
+**Animação.** O gráfico de $\frac{\sen ax}{x}$ para $a=1,2,3$: o "buraco" em $x=0$ fica exatamente na altura $a$.""",
 ),
 dict(id='2.3', origem='2.3, ex. 97', titulo='Conjugado com raiz',
 enunciado=r"""Mostre que a substituição direta leva a uma forma indeterminada e calcule

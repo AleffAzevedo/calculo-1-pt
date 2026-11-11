@@ -62,11 +62,11 @@ $3$; $c=\sqrt3$.
 
 </details>
 
-`•` **5.8** Calcule $\dfrac{d}{dx}\displaystyle\int_2^x\frac{\sin t}{t}\,dt$ e $\dfrac{d}{dx}\displaystyle\int_0^{x^3}\sqrt{1+t^2}\,dt$.
+`•` **5.8** Calcule $\dfrac{d}{dx}\displaystyle\int_2^x\frac{\operatorname{sen} t}{t}\,dt$ e $\dfrac{d}{dx}\displaystyle\int_0^{x^3}\sqrt{1+t^2}\,dt$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac{\sin x}x$; $3x^2\sqrt{1+x^6}$.
+$\tfrac{\operatorname{sen} x}x$; $3x^2\sqrt{1+x^6}$.
 
 </details>
 
@@ -106,7 +106,7 @@ $e-1-\tfrac1{\ln2}\approx0{,}276$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac{(2x+1)^8}{16}+C$; $\tfrac13\sin(3x-1)+C$.
+$\tfrac{(2x+1)^8}{16}+C$; $\tfrac13\operatorname{sen}(3x-1)+C$.
 
 </details>
 
@@ -138,11 +138,11 @@ $\tfrac15e^{5x}+C$; $\tfrac13e^{x^3}+C$.
 
 <details><summary>Resposta</summary>
 
-$\sin^{-1}\tfrac x3+C$; $\tfrac14\tan^{-1}\tfrac x4+C$.
+$\operatorname{arcsen}\tfrac x3+C$; $\tfrac14\operatorname{arctg}\tfrac x4+C$.
 
 </details>
 
-`•` **5.18** Calcule $\displaystyle\int_0^{\pi/2}\sin x\cos^3x\,dx$.
+`•` **5.18** Calcule $\displaystyle\int_0^{\pi/2}\operatorname{sen} x\cos^3x\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -218,7 +218,7 @@ $2x\,e^{x^4}-e^{x^2}$.
 
 <details><summary>Resposta</summary>
 
-$\dfrac{\sin x}{1+\cos^2x}$.
+$\dfrac{\operatorname{sen} x}{1+\cos^2x}$.
 
 </details>
 
@@ -238,11 +238,11 @@ Deslocamento 4 m; distância 12 m; $s(4)=6$.
 
 </details>
 
-`••` **5.30** **Valor médio de uma função.** Calcule o valor médio de $f(x)=\sin x$ em $[0,\pi]$ e encontre todos os $c$ garantidos pelo TVM para integrais. ★ [ver solução](#ex-5-30)
+`••` **5.30** **Valor médio de uma função.** Calcule o valor médio de $f(x)=\operatorname{sen} x$ em $[0,\pi]$ e encontre todos os $c$ garantidos pelo TVM para integrais. ★ [ver solução](#ex-5-30)
 
 <details><summary>Resposta</summary>
 
-$f_{\text{méd}}=\tfrac2\pi\approx0{,}637$; $c=\sin^{-1}\tfrac2\pi\approx0{,}690$ ou $c=\pi-0{,}690\approx2{,}451$.
+$f_{\text{méd}}=\tfrac2\pi\approx0{,}637$; $c=\operatorname{arcsen}\tfrac2\pi\approx0{,}690$ ou $c=\pi-0{,}690\approx2{,}451$.
 
 </details>
 
@@ -254,11 +254,11 @@ $\tfrac25(x+2)^{5/2}-\tfrac43(x+2)^{3/2}+C$.
 
 </details>
 
-`••` **5.32** Calcule $\displaystyle\int\frac{\cos x}{\sin^2x}\,dx$ e $\displaystyle\int\sec^2x\,\tan^3x\,dx$.
+`••` **5.32** Calcule $\displaystyle\int\frac{\cos x}{\operatorname{sen}^2x}\,dx$ e $\displaystyle\int\sec^2x\,\operatorname{tg}^3x\,dx$.
 
 <details><summary>Resposta</summary>
 
-$-\csc x+C$; $\tfrac14\tan^4x+C$.
+$-\operatorname{cossec} x+C$; $\tfrac14\operatorname{tg}^4x+C$.
 
 </details>
 
@@ -290,7 +290,7 @@ $\tfrac13(\ln x)^3+C$; $\ln|\ln x|+C$.
 
 <details><summary>Resposta</summary>
 
-$\tan^{-1}(e^x)+C$.
+$\operatorname{arctg}(e^x)+C$.
 
 </details>
 
@@ -306,7 +306,7 @@ $\tfrac\pi6$; $\tfrac\pi3$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac12\tan^{-1}\tfrac{x-3}2+C$.
+$\tfrac12\operatorname{arctg}\tfrac{x-3}2+C$.
 
 </details>
 
@@ -322,7 +322,7 @@ $0$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac12\ln(x^2+1)+3\tan^{-1}x+C$.
+$\tfrac12\ln(x^2+1)+3\operatorname{arctg} x+C$.
 
 </details>
 
@@ -330,7 +330,7 @@ $\tfrac12\ln(x^2+1)+3\tan^{-1}x+C$.
 
 <details><summary>Resposta</summary>
 
-$4\tan^{-1}1=\pi$; $M_4\approx3{,}14680$.
+$4\operatorname{arctg}1=\pi$; $M_4\approx3{,}14680$.
 
 </details>
 
@@ -342,7 +342,7 @@ $6000$ L; em $t=0$; $V(t)=1000+200t-2t^2$, parábola crescente até o vértice e
 
 </details>
 
-`•••` **5.43** **Integral da tangente e da secante.** Mostre que $\int\tan x\,dx=\ln|\sec x|+C$ e que $\int\sec x\,dx=\ln|\sec x+\tan x|+C$. Calcule $\int_0^{\pi/4}\sec x\,dx$. ★ [ver solução](#ex-5-43)
+`•••` **5.43** **Integral da tangente e da secante.** Mostre que $\int\operatorname{tg} x\,dx=\ln|\sec x|+C$ e que $\int\sec x\,dx=\ln|\sec x+\operatorname{tg} x|+C$. Calcule $\int_0^{\pi/4}\sec x\,dx$. ★ [ver solução](#ex-5-43)
 
 <details><summary>Resposta</summary>
 
@@ -374,7 +374,7 @@ Mín. local em $x=2$; inflexão em $x=2+\sqrt5$.
 
 </details>
 
-`•••` **5.47** Calcule $\displaystyle\lim_{x\to0}\frac1{x^3}\int_0^x\sin(t^2)\,dt$.
+`•••` **5.47** Calcule $\displaystyle\lim_{x\to0}\frac1{x^3}\int_0^x\operatorname{sen}(t^2)\,dt$.
 
 <details><summary>Resposta</summary>
 
@@ -382,7 +382,7 @@ $\tfrac13$ (L'Hôpital + TFC).
 
 </details>
 
-`•••` **5.48** Calcule $\displaystyle\int_0^{\pi}|\cos x|\,dx$ e $\displaystyle\int_0^{2\pi}|\sin x-\cos x|\,dx$.
+`•••` **5.48** Calcule $\displaystyle\int_0^{\pi}|\cos x|\,dx$ e $\displaystyle\int_0^{2\pi}|\operatorname{sen} x-\cos x|\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -410,15 +410,15 @@ $-\sqrt{1-x^2}+\tfrac13(1-x^2)^{3/2}+C$.
 
 <details><summary>Resposta</summary>
 
-$\sec^{-1}(e^x)+C$.
+$\operatorname{arcsec}(e^x)+C$.
 
 </details>
 
-`•••` **5.52** Calcule $\displaystyle\int\frac{\sin x}{1+\cos^2x}\,dx$ e $\displaystyle\int\frac{dx}{x\sqrt{x^2-4}}$.
+`•••` **5.52** Calcule $\displaystyle\int\frac{\operatorname{sen} x}{1+\cos^2x}\,dx$ e $\displaystyle\int\frac{dx}{x\sqrt{x^2-4}}$.
 
 <details><summary>Resposta</summary>
 
-$-\tan^{-1}(\cos x)+C$; $\tfrac12\sec^{-1}\tfrac{|x|}2+C$.
+$-\operatorname{arctg}(\cos x)+C$; $\tfrac12\operatorname{arcsec}\tfrac{|x|}2+C$.
 
 </details>
 
@@ -426,7 +426,7 @@ $-\tan^{-1}(\cos x)+C$; $\tfrac12\sec^{-1}\tfrac{|x|}2+C$.
 
 <details><summary>Resposta</summary>
 
-$\sin^{-1}\tfrac{x-2}2+C$.
+$\operatorname{arcsen}\tfrac{x-2}2+C$.
 
 </details>
 
@@ -446,7 +446,7 @@ $56{,}25$ m.
 
 </details>
 
-`•••` **5.56** O valor eficaz (RMS) de $f$ em $[a,b]$ é $\sqrt{\tfrac1{b-a}\int_a^bf^2}$. Calcule o RMS de $f(t)=\sin t$ em $[0,2\pi]$. (Dica: $\sin^2t=\tfrac{1-\cos2t}2$.)
+`•••` **5.56** O valor eficaz (RMS) de $f$ em $[a,b]$ é $\sqrt{\tfrac1{b-a}\int_a^bf^2}$. Calcule o RMS de $f(t)=\operatorname{sen} t$ em $[0,2\pi]$. (Dica: $\operatorname{sen}^2t=\tfrac{1-\cos2t}2$.)
 
 <details><summary>Resposta</summary>
 
@@ -486,11 +486,11 @@ $\tfrac23$; $2\sqrt2$.
 
 </details>
 
-`••••` **5.61** Prove que $\displaystyle\int_0^{\pi/2}\frac{\sin^nx}{\sin^nx+\cos^nx}\,dx=\frac\pi4$ para todo $n>0$. (Dica: $u=\tfrac\pi2-x$.)
+`••••` **5.61** Prove que $\displaystyle\int_0^{\pi/2}\frac{\operatorname{sen}^nx}{\operatorname{sen}^nx+\cos^nx}\,dx=\frac\pi4$ para todo $n>0$. (Dica: $u=\tfrac\pi2-x$.)
 
 <details><summary>Resposta</summary>
 
-A integral $I$ satisfaz $I=\int_0^{\pi/2}\tfrac{\cos^n}{\sin^n+\cos^n}$; some as duas: $2I=\tfrac\pi2$.
+A integral $I$ satisfaz $I=\int_0^{\pi/2}\tfrac{\cos^n}{\operatorname{sen}^n+\cos^n}$; some as duas: $2I=\tfrac\pi2$.
 
 </details>
 
@@ -502,7 +502,7 @@ $\int_a^{ab}\tfrac{dt}t=\int_1^b\tfrac{du}u$ com $t=au$.
 
 </details>
 
-`••••` **5.63** Calcule $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$. (Dica: $x=\tan\theta$ e depois $\theta\mapsto\tfrac\pi4-\theta$.)
+`••••` **5.63** Calcule $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$. (Dica: $x=\operatorname{tg}\theta$ e depois $\theta\mapsto\tfrac\pi4-\theta$.)
 
 <details><summary>Resposta</summary>
 
@@ -663,17 +663,17 @@ Distância $=4+4+4=12$ m.
 
 *Origem: OpenStax, inspirado na seção 5.2.*
 
-> Calcule o valor médio de $f(x)=\sin x$ em $[0,\pi]$ e encontre todos os $c$ garantidos pelo TVM para integrais.
+> Calcule o valor médio de $f(x)=\operatorname{sen} x$ em $[0,\pi]$ e encontre todos os $c$ garantidos pelo TVM para integrais.
 
 ![Animação do exercício 5.30](anim/ex-5.30.gif)
 
-$$f_{\text{méd}}=\frac1{\pi-0}\int_0^\pi\sin x\,dx=\frac{[-\cos x]_0^\pi}{\pi}=\frac2\pi\approx0{,}6366 .$$
+$$f_{\text{méd}}=\frac1{\pi-0}\int_0^\pi\operatorname{sen} x\,dx=\frac{[-\cos x]_0^\pi}{\pi}=\frac2\pi\approx0{,}6366 .$$
 
-**Pontos $c$:** $\sin c=\frac2\pi\Rightarrow c=\sin^{-1}\frac2\pi\approx0{,}6901$ ou $c=\pi-0{,}6901\approx2{,}4515$ (ambos em $[0,\pi]$).
+**Pontos $c$:** $\operatorname{sen} c=\frac2\pi\Rightarrow c=\operatorname{arcsen}\frac2\pi\approx0{,}6901$ ou $c=\pi-0{,}6901\approx2{,}4515$ (ambos em $[0,\pi]$).
 
 **Interpretação geométrica.** O retângulo de base $[0,\pi]$ e altura $\frac2\pi$ tem área $2$, a mesma da região sob o arco do seno. A parte do arco acima do retângulo compensa exatamente os "cantos" vazios.
 
-**Aplicação.** Se uma tensão alternada é $V_p\sin\omega t$, a média de $|V|$ num semiciclo é $\frac2\pi V_p\approx0{,}637V_p$.
+**Aplicação.** Se uma tensão alternada é $V_p\operatorname{sen}\omega t$, a média de $|V|$ num semiciclo é $\frac2\pi V_p\approx0{,}637V_p$.
 
 **Animação.** A altura de um retângulo varia até que sua área iguale a área sob o seno; os pontos $c$ aparecem no fim.
 
@@ -714,7 +714,7 @@ $$\int_0^2x\sqrt{4-x^2}\,dx=-\frac12\int_4^0u^{1/2}du=\frac12\int_0^4u^{1/2}du=\
 
 Separamos em partes ímpares e pares:
 - $x^3\cos x$ é **ímpar** (ímpar × par) e $x$ é **ímpar**: suas integrais em $[-\pi,\pi]$ são $0$;
-- $2\cos x$ é **par**: $\int_{-\pi}^\pi2\cos x\,dx=2\cdot2\int_0^\pi\cos x\,dx=4[\sin x]_0^\pi=0$.
+- $2\cos x$ é **par**: $\int_{-\pi}^\pi2\cos x\,dx=2\cdot2\int_0^\pi\cos x\,dx=4[\operatorname{sen} x]_0^\pi=0$.
 
 Logo a integral vale $0$.
 
@@ -736,7 +736,7 @@ Logo a integral vale $0$.
 
 ![Animação do exercício 5.41](anim/ex-5.41.gif)
 
-**Exato:** $\int_0^1\frac4{1+x^2}dx=4\left[\tan^{-1}x\right]_0^1=4\cdot\frac\pi4=\pi$.
+**Exato:** $\int_0^1\frac4{1+x^2}dx=4\left[\operatorname{arctg} x\right]_0^1=4\cdot\frac\pi4=\pi$.
 
 **Ponto médio com $n=4$** ($\Delta x=\frac14$; pontos $\frac18,\frac38,\frac58,\frac78$):
 $$M_4=\frac14\left(\frac{4}{1+\frac1{64}}+\frac{4}{1+\frac9{64}}+\frac{4}{1+\frac{25}{64}}+\frac{4}{1+\frac{49}{64}}\right)\approx\frac14(3{,}93846+3{,}50685+2{,}87640+2{,}26549)\approx3{,}14680 .$$
@@ -777,23 +777,23 @@ Volume final: $1000+5000=6000$ L.
 
 *Origem: OpenStax, inspirado no Exemplo 5.5.*
 
-> Mostre que $\int\tan x\,dx=\ln|\sec x|+C$ e que $\int\sec x\,dx=\ln|\sec x+\tan x|+C$. Calcule $\int_0^{\pi/4}\sec x\,dx$.
+> Mostre que $\int\operatorname{tg} x\,dx=\ln|\sec x|+C$ e que $\int\sec x\,dx=\ln|\sec x+\operatorname{tg} x|+C$. Calcule $\int_0^{\pi/4}\sec x\,dx$.
 
 ![Animação do exercício 5.43](anim/ex-5.43.gif)
 
-**Tangente.** $\int\frac{\sin x}{\cos x}dx$ com $u=\cos x$, $du=-\sin x\,dx$:
+**Tangente.** $\int\frac{\operatorname{sen} x}{\cos x}dx$ com $u=\cos x$, $du=-\operatorname{sen} x\,dx$:
 $-\int\frac{du}u=-\ln|\cos x|+C=\ln|\sec x|+C$.
 
-**Secante (truque).** Multiplicamos e dividimos por $\sec x+\tan x$:
-$$\int\sec x\,dx=\int\frac{\sec^2x+\sec x\tan x}{\sec x+\tan x}\,dx .$$
-O numerador é exatamente a derivada do denominador! Com $u=\sec x+\tan x$: $\int\frac{du}u=\ln|\sec x+\tan x|+C$.
+**Secante (truque).** Multiplicamos e dividimos por $\sec x+\operatorname{tg} x$:
+$$\int\sec x\,dx=\int\frac{\sec^2x+\sec x\operatorname{tg} x}{\sec x+\operatorname{tg} x}\,dx .$$
+O numerador é exatamente a derivada do denominador! Com $u=\sec x+\operatorname{tg} x$: $\int\frac{du}u=\ln|\sec x+\operatorname{tg} x|+C$.
 
-(Verifique derivando: $\frac{\sec x\tan x+\sec^2x}{\sec x+\tan x}=\sec x$. ✓)
+(Verifique derivando: $\frac{\sec x\operatorname{tg} x+\sec^2x}{\sec x+\operatorname{tg} x}=\sec x$. ✓)
 
 **Valor:** $\int_0^{\pi/4}\sec x\,dx=\ln(\sqrt2+1)-\ln(1+0)=\ln(1+\sqrt2)\approx0{,}8814$.
 
 **Curiosidade.** Essa integral aparece na projeção de Mercator: a distância vertical de um paralelo de latitude $\varphi$ até o equador, no mapa, é proporcional a $\int_0^\varphi\sec t\,dt$.
 
-**Animação.** A região sob $\sec x$ em $[0,\pi/4]$ é preenchida, e o valor acumulado é comparado com $\ln|\sec x+\tan x|$.
+**Animação.** A região sob $\sec x$ em $[0,\pi/4]$ é preenchida, e o valor acumulado é comparado com $\ln|\sec x+\operatorname{tg} x|$.
 
 ---

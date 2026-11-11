@@ -44,29 +44,29 @@ Como $x$ é inteiro, ela precisa vender **167 cupcakes**.
 **Animação.** As retas de custo e de receita se cruzam no ponto de equilíbrio $x\approx166{,}7$; à direita dele, a área entre as retas é o lucro.""",
 ),
 dict(id='1.3', origem='1.3, ex. 153', titulo='Identidade trigonométrica',
-enunciado=r"""Verifique a identidade $\dfrac{1}{1-\sin\alpha}+\dfrac{1}{1+\sin\alpha}=2\sec^2\alpha$.""",
-resposta=r"""Some as frações: o denominador comum é $1-\sin^2\alpha=\cos^2\alpha$.""",
+enunciado=r"""Verifique a identidade $\dfrac{1}{1-\sen\alpha}+\dfrac{1}{1+\sen\alpha}=2\sec^2\alpha$.""",
+resposta=r"""Some as frações: o denominador comum é $1-\sen^2\alpha=\cos^2\alpha$.""",
 solucao=r"""**Estratégia.** Trabalhe com o lado mais complicado (o esquerdo) até chegar ao outro.
 
-$$\frac{1}{1-\sin\alpha}+\frac{1}{1+\sin\alpha}
-=\frac{(1+\sin\alpha)+(1-\sin\alpha)}{(1-\sin\alpha)(1+\sin\alpha)}
-=\frac{2}{1-\sin^2\alpha}=\frac{2}{\cos^2\alpha}=2\sec^2\alpha .$$
+$$\frac{1}{1-\sen\alpha}+\frac{1}{1+\sen\alpha}
+=\frac{(1+\sen\alpha)+(1-\sen\alpha)}{(1-\sen\alpha)(1+\sen\alpha)}
+=\frac{2}{1-\sen^2\alpha}=\frac{2}{\cos^2\alpha}=2\sec^2\alpha .$$
 
-Usamos o produto da soma pela diferença, $(1-s)(1+s)=1-s^2$, e a identidade pitagórica $\sin^2\alpha+\cos^2\alpha=1$.
+Usamos o produto da soma pela diferença, $(1-s)(1+s)=1-s^2$, e a identidade pitagórica $\sen^2\alpha+\cos^2\alpha=1$.
 
-A identidade vale onde os dois lados estão definidos: $\sin\alpha\neq\pm1$, isto é, $\cos\alpha\neq0$.
+A identidade vale onde os dois lados estão definidos: $\sen\alpha\neq\pm1$, isto é, $\cos\alpha\neq0$.
 
 **Animação.** O lado esquerdo (curva) e o lado direito (pontos) coincidem para todo $\alpha$; nas retas tracejadas $\cos\alpha=0$ e nenhum dos lados existe.""",
 ),
 dict(id='1.4', origem='1.3, ex. 180', titulo='Horas de luz do dia',
 enunciado=r"""O número de horas de luz do dia em uma cidade é modelado por
-$N(t)=12+3\sin\!\left[\frac{2\pi}{365}(t-79)\right]$, em que $t$ é o número de dias após
+$N(t)=12+3\sen\!\left[\frac{2\pi}{365}(t-79)\right]$, em que $t$ é o número de dias após
 1º de janeiro.
 (a) Encontre a amplitude e o período.
 (b) Quantas horas de luz há no dia mais longo do ano? E no mais curto?
 (c) Quantas horas de luz há 90 dias após 1º de janeiro?""",
 resposta=r"""(a) Amplitude 3, período 365 dias; (b) 15 h e 9 h; (c) $\approx12{,}56$ h.""",
-solucao=r"""**(a)** Na forma $A\sin(B(t-\alpha))+C$: $A=3$ (amplitude), $B=\frac{2\pi}{365}$, logo o período é
+solucao=r"""**(a)** Na forma $A\sen(B(t-\alpha))+C$: $A=3$ (amplitude), $B=\frac{2\pi}{365}$, logo o período é
 $\frac{2\pi}{B}=365$ dias. A defasagem é $\alpha=79$ (por volta de 20 de março, o equinócio) e o deslocamento vertical, $C=12$.
 
 **(b)** O seno varia entre $-1$ e $1$, então $N$ varia entre $12-3=9$ e $12+3=15$.
@@ -74,7 +74,7 @@ Dia mais longo: **15 horas**. Dia mais curto: **9 horas**.
 
 O máximo ocorre quando $\frac{2\pi}{365}(t-79)=\frac\pi2$, isto é, $t=79+\frac{365}{4}\approx170$ (por volta de 20 de junho).
 
-**(c)** $N(90)=12+3\sin\!\left(\frac{2\pi\cdot11}{365}\right)=12+3\sin(0{,}1894)\approx12+3(0{,}188)\approx12{,}56$ horas.
+**(c)** $N(90)=12+3\sen\!\left(\frac{2\pi\cdot11}{365}\right)=12+3\sen(0{,}1894)\approx12+3(0{,}188)\approx12{,}56$ horas.
 
 **Animação.** O ponto percorre o ano; as linhas tracejadas marcam 9 h e 15 h.""",
 ),
@@ -97,15 +97,15 @@ $$C(85-p)=75p\iff 85C=75p+Cp=p(75+C)\iff p=\frac{85C}{C+75}.$$
 **Animação.** O gráfico de $C$ é refletido em torno da reta $y=x$ para formar o gráfico da inversa. A assíntota vertical $p=85$ de $C$ vira a assíntota horizontal da inversa.""",
 ),
 dict(id='1.6', origem='1.4, ex. 224', titulo='Profundidade da maré',
-enunciado=r"""A profundidade (em pés) da água em um cais é $D(t)=5\sin\!\left(\frac{\pi}{6}t-\frac{7\pi}{6}\right)+8$,
+enunciado=r"""A profundidade (em pés) da água em um cais é $D(t)=5\sen\!\left(\frac{\pi}{6}t-\frac{7\pi}{6}\right)+8$,
 em que $t$ é o número de horas após a meia-noite. Determine o primeiro instante após a
 meia-noite em que a profundidade é 11,75 pés.""",
-resposta=r"""$t=7+\frac6\pi\sin^{-1}(0{,}75)\approx8{,}62$ h, por volta de 8h37.""",
+resposta=r"""$t=7+\frac6\pi\arcsen(0{,}75)\approx8{,}62$ h, por volta de 8h37.""",
 solucao=r"""Queremos $D(t)=11{,}75$:
-$$5\sin\!\left(\tfrac{\pi}{6}t-\tfrac{7\pi}{6}\right)+8=11{,}75\iff \sin\!\left(\tfrac{\pi}{6}(t-7)\right)=0{,}75 .$$
+$$5\sen\!\left(\tfrac{\pi}{6}t-\tfrac{7\pi}{6}\right)+8=11{,}75\iff \sen\!\left(\tfrac{\pi}{6}(t-7)\right)=0{,}75 .$$
 
-Seja $u=\frac\pi6(t-7)$. Para $t\ge0$, $u\ge-\frac{7\pi}{6}$. As soluções de $\sin u=0{,}75$ são
-$u=\sin^{-1}(0{,}75)+2k\pi\approx0{,}8481+2k\pi$ e $u=\pi-0{,}8481+2k\pi\approx2{,}2935+2k\pi$.
+Seja $u=\frac\pi6(t-7)$. Para $t\ge0$, $u\ge-\frac{7\pi}{6}$. As soluções de $\sen u=0{,}75$ são
+$u=\arcsen(0{,}75)+2k\pi\approx0{,}8481+2k\pi$ e $u=\pi-0{,}8481+2k\pi\approx2{,}2935+2k\pi$.
 
 Procuramos o **menor** $u\ge-\frac{7\pi}6\approx-3{,}665$:
 - $0{,}8481-2\pi\approx-5{,}435$ (antes da meia-noite, descartado);
@@ -114,27 +114,27 @@ Procuramos o **menor** $u\ge-\frac{7\pi}6\approx-3{,}665$:
 
 Então $\frac\pi6(t-7)=0{,}8481\Rightarrow t=7+\frac{6(0{,}8481)}{\pi}\approx8{,}62$ h, ou seja, **por volta de 8h37**.
 
-**Cuidado.** A função $\sin^{-1}$ dá apenas *uma* solução (entre $-\frac\pi2$ e $\frac\pi2$). Em problemas com tempo, liste todas as soluções e escolha a que respeita o intervalo pedido.
+**Cuidado.** A função $\arcsen$ dá apenas *uma* solução (entre $-\frac\pi2$ e $\frac\pi2$). Em problemas com tempo, liste todas as soluções e escolha a que respeita o intervalo pedido.
 
 **Animação.** A curva da maré é desenhada a partir da meia-noite até tocar a linha de 11,75 pés.""",
 ),
 dict(id='1.7', origem='1.5, ex. 298', titulo='Expressões hiperbólicas',
 enunciado=r"""Reescreva em termos de exponenciais e simplifique:
-(a) $2\cosh(\ln x)$; (b) $\cosh 4x+\sinh 4x$; (c) $\cosh 2x-\sinh 2x$;
-(d) $\ln(\cosh x+\sinh x)+\ln(\cosh x-\sinh x)$.""",
+(a) $2\cosh(\ln x)$; (b) $\cosh 4x+\senh 4x$; (c) $\cosh 2x-\senh 2x$;
+(d) $\ln(\cosh x+\senh x)+\ln(\cosh x-\senh x)$.""",
 resposta=r"""(a) $x+\frac1x$ ($x>0$); (b) $e^{4x}$; (c) $e^{-2x}$; (d) $0$.""",
-solucao=r"""Use $\cosh u=\frac{e^u+e^{-u}}2$ e $\sinh u=\frac{e^u-e^{-u}}2$.
+solucao=r"""Use $\cosh u=\frac{e^u+e^{-u}}2$ e $\senh u=\frac{e^u-e^{-u}}2$.
 
 **(a)** $2\cosh(\ln x)=e^{\ln x}+e^{-\ln x}=x+\frac1x$, para $x>0$.
 
-**(b)** $\cosh 4x+\sinh 4x=\frac{e^{4x}+e^{-4x}+e^{4x}-e^{-4x}}2=e^{4x}$.
+**(b)** $\cosh 4x+\senh 4x=\frac{e^{4x}+e^{-4x}+e^{4x}-e^{-4x}}2=e^{4x}$.
 
-**(c)** $\cosh 2x-\sinh 2x=\frac{e^{2x}+e^{-2x}-e^{2x}+e^{-2x}}2=e^{-2x}$.
+**(c)** $\cosh 2x-\senh 2x=\frac{e^{2x}+e^{-2x}-e^{2x}+e^{-2x}}2=e^{-2x}$.
 
-**(d)** Pelos itens anteriores, $\cosh x+\sinh x=e^x$ e $\cosh x-\sinh x=e^{-x}$. Logo
-$\ln e^x+\ln e^{-x}=x-x=0$. (Alternativa: o produto é $\cosh^2x-\sinh^2x=1$, e $\ln1=0$.)
+**(d)** Pelos itens anteriores, $\cosh x+\senh x=e^x$ e $\cosh x-\senh x=e^{-x}$. Logo
+$\ln e^x+\ln e^{-x}=x-x=0$. (Alternativa: o produto é $\cosh^2x-\senh^2x=1$, e $\ln1=0$.)
 
-**Animação.** As curvas de $\cosh kx$ e $\sinh kx$ somadas coincidem sempre com $e^{kx}$, enquanto $k$ varia.""",
+**Animação.** As curvas de $\cosh kx$ e $\senh kx$ somadas coincidem sempre com $e^{kx}$, enquanto $k$ varia.""",
 ),
 dict(id='1.8', origem='1.5, ex. 304', titulo='Decaimento do iodo-131',
 enunciado=r"""O iodo-131 decai segundo $Q(t)=Q_0e^{-0{,}08664t}$, com $t$ em dias. Quanto tempo leva
@@ -181,12 +181,12 @@ resposta=r"""$P<20$ para $t\in[0;\,0{,}74)\cup(11{,}26;\,12]$ (início de dez. a
 $P>140$ para $t\in(4{,}95;\,7{,}05)$ (fim de maio ao início de ago.).""",
 solucao=r"""**Menor que 20 mil.**
 $$82{,}5-67{,}5\cos\left(\tfrac\pi6t\right)<20\iff\cos\left(\tfrac\pi6t\right)>\tfrac{62{,}5}{67{,}5}\approx0{,}9259 .$$
-Como $\cos^{-1}(0{,}9259)\approx0{,}3873$ rad, precisamos de $\frac\pi6t<0{,}3873$ ou $\frac\pi6t>2\pi-0{,}3873$, isto é,
+Como $\arccos(0{,}9259)\approx0{,}3873$ rad, precisamos de $\frac\pi6t<0{,}3873$ ou $\frac\pi6t>2\pi-0{,}3873$, isto é,
 $t<0{,}74$ ou $t>11{,}26$ meses: **de por volta de 8 de dezembro a 23 de janeiro**.
 
 **Maior que 140 mil.**
 $$\cos\left(\tfrac\pi6t\right)<-\tfrac{57{,}5}{67{,}5}\approx-0{,}8519 .$$
-Como $\cos^{-1}(-0{,}8519)\approx2{,}5903$ rad, precisamos de $2{,}5903<\frac\pi6t<2\pi-2{,}5903$, isto é,
+Como $\arccos(-0{,}8519)\approx2{,}5903$ rad, precisamos de $2{,}5903<\frac\pi6t<2\pi-2{,}5903$, isto é,
 $4{,}95<t<7{,}05$: **de por volta de 29 de maio a 2 de agosto**.
 
 **Animação.** As faixas sombreadas mostram os períodos abaixo de 20 mil (azul) e acima de 140 mil (laranja).""",

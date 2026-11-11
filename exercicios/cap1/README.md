@@ -70,7 +70,7 @@ $f(x)=2(x-2)^2-3$; vértice $(2,-3)$; zeros $2\pm\sqrt{3/2}$.
 
 </details>
 
-`•` **1.9** Classifique como par, ímpar ou nenhuma: (a) $x^2\cos x$; (b) $x\sin x$; (c) $\dfrac{x}{x^2+1}$; (d) $e^x-e^{-x}$; (e) $x^2+x$.
+`•` **1.9** Classifique como par, ímpar ou nenhuma: (a) $x^2\cos x$; (b) $x\operatorname{sen} x$; (c) $\dfrac{x}{x^2+1}$; (d) $e^x-e^{-x}$; (e) $x^2+x$.
 
 <details><summary>Resposta</summary>
 
@@ -102,7 +102,7 @@ $[-1,4]$; $(-\infty,-3)\cup(1,\infty)$.
 
 </details>
 
-`•` **1.13** Encontre todos os $\theta\in[0,2\pi)$ com $\cos\theta=-\tfrac12$ e todos com $\tan\theta=\sqrt3$.
+`•` **1.13** Encontre todos os $\theta\in[0,2\pi)$ com $\cos\theta=-\tfrac12$ e todos com $\operatorname{tg}\theta=\sqrt3$.
 
 <details><summary>Resposta</summary>
 
@@ -110,7 +110,7 @@ $\tfrac{2\pi}3,\tfrac{4\pi}3$; $\tfrac\pi3,\tfrac{4\pi}3$.
 
 </details>
 
-`•` **1.14** Esboce um período de $y=2\sin\!\big(x-\tfrac\pi4\big)$, marcando amplitude, período, zeros e máximos.
+`•` **1.14** Esboce um período de $y=2\operatorname{sen}\!\big(x-\tfrac\pi4\big)$, marcando amplitude, período, zeros e máximos.
 
 <details><summary>Resposta</summary>
 
@@ -126,7 +126,7 @@ $f^{-1}(x)=\dfrac{2x+1}{x-1}$; $\operatorname{Dom}f^{-1}=\lbrace x\neq1\rbrace $
 
 </details>
 
-`•` **1.16** Calcule, desenhando um triângulo retângulo: $\sin\!\big(\cos^{-1}\tfrac35\big)$, $\tan\!\big(\sin^{-1}(-\tfrac12)\big)$ e $\cos(\tan^{-1}2)$.
+`•` **1.16** Calcule, desenhando um triângulo retângulo: $\operatorname{sen}\!\big(\arccos\tfrac35\big)$, $\operatorname{tg}\!\big(\operatorname{arcsen}(-\tfrac12)\big)$ e $\cos(\operatorname{arctg}2)$.
 
 <details><summary>Resposta</summary>
 
@@ -214,7 +214,7 @@ Domínio $[-2,2]$; imagem $[0,2]$; semicircunferência superior de raio 2.
 
 </details>
 
-`••` **1.27** Resolva $2\sin^2\theta-\sin\theta-1=0$ para $\theta\in[0,2\pi)$.
+`••` **1.27** Resolva $2\operatorname{sen}^2\theta-\operatorname{sen}\theta-1=0$ para $\theta\in[0,2\pi)$.
 
 <details><summary>Resposta</summary>
 
@@ -222,27 +222,27 @@ $\theta=\tfrac\pi2$, $\tfrac{7\pi}6$ e $\tfrac{11\pi}6$.
 
 </details>
 
-`••` **1.28** **Identidade trigonométrica.** Verifique a identidade $\dfrac{1}{1-\sin\alpha}+\dfrac{1}{1+\sin\alpha}=2\sec^2\alpha$. ★ [ver solução](#ex-1-28)
+`••` **1.28** **Identidade trigonométrica.** Verifique a identidade $\dfrac{1}{1-\operatorname{sen}\alpha}+\dfrac{1}{1+\operatorname{sen}\alpha}=2\sec^2\alpha$. ★ [ver solução](#ex-1-28)
 
 <details><summary>Resposta</summary>
 
-Some as frações: o denominador comum é $1-\sin^2\alpha=\cos^2\alpha$.
+Some as frações: o denominador comum é $1-\operatorname{sen}^2\alpha=\cos^2\alpha$.
 
 </details>
 
-`••` **1.29** Verifique a identidade $\dfrac{\tan\theta-\cot\theta}{\sin\theta\cos\theta}=\sec^2\theta-\csc^2\theta$.
+`••` **1.29** Verifique a identidade $\dfrac{\operatorname{tg}\theta-\operatorname{cotg}\theta}{\operatorname{sen}\theta\cos\theta}=\sec^2\theta-\operatorname{cossec}^2\theta$.
 
 <details><summary>Resposta</summary>
 
-Escreva $\tan$ e $\cot$ em senos e cossenos e separe a fração.
+Escreva $\operatorname{tg}$ e $\operatorname{cotg}$ em senos e cossenos e separe a fração.
 
 </details>
 
-`••` **1.30** Escreva $3\cos t+4\sin t$ na forma $A\cos(t-\varphi)$, com $A>0$.
+`••` **1.30** Escreva $3\cos t+4\operatorname{sen} t$ na forma $A\cos(t-\varphi)$, com $A>0$.
 
 <details><summary>Resposta</summary>
 
-$A=5$, $\varphi=\tan^{-1}\tfrac43\approx0{,}927$.
+$A=5$, $\varphi=\operatorname{arctg}\tfrac43\approx0{,}927$.
 
 </details>
 
@@ -262,7 +262,7 @@ Em $[2,\infty)$: $f^{-1}(x)=2+\sqrt x$, $x\ge0$.
 
 </details>
 
-`••` **1.33** Calcule $\cos^{-1}\!\big(\cos\tfrac{5\pi}3\big)$, $\sin^{-1}\!\big(\sin\tfrac{3\pi}4\big)$ e $\tan\!\big(\cos^{-1}\tfrac35\big)$.
+`••` **1.33** Calcule $\arccos\!\big(\cos\tfrac{5\pi}3\big)$, $\operatorname{arcsen}\!\big(\operatorname{sen}\tfrac{3\pi}4\big)$ e $\operatorname{tg}\!\big(\arccos\tfrac35\big)$.
 
 <details><summary>Resposta</summary>
 
@@ -294,7 +294,7 @@ $f^{-1}(2)=1$ e $f^{-1}(10)=2$.
 
 </details>
 
-`••` **1.37** **Expressões hiperbólicas.** Reescreva em termos de exponenciais e simplifique: (a) $2\cosh(\ln x)$; (b) $\cosh 4x+\sinh 4x$; (c) $\cosh 2x-\sinh 2x$; (d) $\ln(\cosh x+\sinh x)+\ln(\cosh x-\sinh x)$. ★ [ver solução](#ex-1-37)
+`••` **1.37** **Expressões hiperbólicas.** Reescreva em termos de exponenciais e simplifique: (a) $2\cosh(\ln x)$; (b) $\cosh 4x+\operatorname{senh} 4x$; (c) $\cosh 2x-\operatorname{senh} 2x$; (d) $\ln(\cosh x+\operatorname{senh} x)+\ln(\cosh x-\operatorname{senh} x)$. ★ [ver solução](#ex-1-37)
 
 <details><summary>Resposta</summary>
 
@@ -326,7 +326,7 @@ $x=\dfrac{\ln2}{\ln3-\ln2}\approx1{,}7095$; $x=16$.
 
 </details>
 
-`•••` **1.41** **Horas de luz do dia.** O número de horas de luz do dia em uma cidade é modelado por $N(t)=12+3\sin\!\left[\frac{2\pi}{365}(t-79)\right]$, em que $t$ é o número de dias após 1º de janeiro. (a) Encontre a amplitude e o período. (b) Quantas horas de luz há no dia mais longo do ano? E no mais curto? (c) Quantas horas de luz há 90 dias após 1º de janeiro? ★ [ver solução](#ex-1-41)
+`•••` **1.41** **Horas de luz do dia.** O número de horas de luz do dia em uma cidade é modelado por $N(t)=12+3\operatorname{sen}\!\left[\frac{2\pi}{365}(t-79)\right]$, em que $t$ é o número de dias após 1º de janeiro. (a) Encontre a amplitude e o período. (b) Quantas horas de luz há no dia mais longo do ano? E no mais curto? (c) Quantas horas de luz há 90 dias após 1º de janeiro? ★ [ver solução](#ex-1-41)
 
 <details><summary>Resposta</summary>
 
@@ -342,11 +342,11 @@ $x=\dfrac{\ln2}{\ln3-\ln2}\approx1{,}7095$; $x=16$.
 
 </details>
 
-`•••` **1.43** **Profundidade da maré.** A profundidade (em pés) da água em um cais é $D(t)=5\sin\!\left(\frac{\pi}{6}t-\frac{7\pi}{6}\right)+8$, em que $t$ é o número de horas após a meia-noite. Determine o primeiro instante após a meia-noite em que a profundidade é 11,75 pés. ★ [ver solução](#ex-1-43)
+`•••` **1.43** **Profundidade da maré.** A profundidade (em pés) da água em um cais é $D(t)=5\operatorname{sen}\!\left(\frac{\pi}{6}t-\frac{7\pi}{6}\right)+8$, em que $t$ é o número de horas após a meia-noite. Determine o primeiro instante após a meia-noite em que a profundidade é 11,75 pés. ★ [ver solução](#ex-1-43)
 
 <details><summary>Resposta</summary>
 
-$t=7+\frac6\pi\sin^{-1}(0{,}75)\approx8{,}62$ h, por volta de 8h37.
+$t=7+\frac6\pi\operatorname{arcsen}(0{,}75)\approx8{,}62$ h, por volta de 8h37.
 
 </details>
 
@@ -370,11 +370,11 @@ $P<20$ para $t\in[0;\,0{,}74)\cup(11{,}26;\,12]$ (início de dez. a fim de jan.)
 
 <details><summary>Resposta</summary>
 
-$f=\tfrac12[f(x)+f(-x)]+\tfrac12[f(x)-f(-x)]$; $e^x=\cosh x+\sinh x$.
+$f=\tfrac12[f(x)+f(-x)]+\tfrac12[f(x)-f(-x)]$; $e^x=\cosh x+\operatorname{senh} x$.
 
 </details>
 
-`•••` **1.47** Encontre todas as soluções de $\sin(2\theta)=\cos\theta$.
+`•••` **1.47** Encontre todas as soluções de $\operatorname{sen}(2\theta)=\cos\theta$.
 
 <details><summary>Resposta</summary>
 
@@ -390,7 +390,7 @@ $f^{-1}(x)=2+\sqrt{x-1}$; domínio $[1,\infty)$, imagem $[2,\infty)$.
 
 </details>
 
-`•••` **1.49** Resolva $y=\sinh x$ para $x$ e mostre que $\sinh^{-1}y=\ln\!\big(y+\sqrt{y^2+1}\big)$.
+`•••` **1.49** Resolva $y=\operatorname{senh} x$ para $x$ e mostre que $\operatorname{arcsenh} y=\ln\!\big(y+\sqrt{y^2+1}\big)$.
 
 <details><summary>Resposta</summary>
 
@@ -454,15 +454,15 @@ $a=2^{1/6}\approx1{,}1225$; $t\approx18{,}4$ meses.
 
 </details>
 
-`•••` **1.57** O ângulo de Mach é $\mu=2\sin^{-1}(1/M)$. Calcule $\mu$ para $M=2$ e $M=1{,}5$, e o número de Mach para $\mu=\pi/6$.
+`•••` **1.57** O ângulo de Mach é $\mu=2\operatorname{arcsen}(1/M)$. Calcule $\mu$ para $M=2$ e $M=1{,}5$, e o número de Mach para $\mu=\pi/6$.
 
 <details><summary>Resposta</summary>
 
-$60^\circ$; $\approx83{,}6^\circ$; $M=1/\sin\tfrac\pi{12}\approx3{,}86$.
+$60^\circ$; $\approx83{,}6^\circ$; $M=1/\operatorname{sen}\tfrac\pi{12}\approx3{,}86$.
 
 </details>
 
-`•••` **1.58** O ângulo de visão de um quadro é $\theta=\tan^{-1}\tfrac{5{,}5}{x}-\tan^{-1}\tfrac{2{,}5}{x}$, com $x$ em pés. Calcule $\theta$ para $x=5$.
+`•••` **1.58** O ângulo de visão de um quadro é $\theta=\operatorname{arctg}\tfrac{5{,}5}{x}-\operatorname{arctg}\tfrac{2{,}5}{x}$, com $x$ em pés. Calcule $\theta$ para $x=5$.
 
 <details><summary>Resposta</summary>
 
@@ -478,11 +478,11 @@ $x=\pm\ln(2+\sqrt3)\approx\pm1{,}317$.
 
 </details>
 
-`•••` **1.60** Mostre que $\cosh(2x)=\cosh^2x+\sinh^2x$ e deduza que $\cosh^2x=\tfrac12(1+\cosh2x)$.
+`•••` **1.60** Mostre que $\cosh(2x)=\cosh^2x+\operatorname{senh}^2x$ e deduza que $\cosh^2x=\tfrac12(1+\cosh2x)$.
 
 <details><summary>Resposta</summary>
 
-Use a fórmula de adição e $\cosh^2x-\sinh^2x=1$.
+Use a fórmula de adição e $\cosh^2x-\operatorname{senh}^2x=1$.
 
 </details>
 
@@ -518,7 +518,7 @@ Se $\log_23=p/q$, então $3^q=2^p$: ímpar = par, absurdo.
 
 </details>
 
-`••••` **1.65** Quantas soluções reais tem a equação $\sin x=\dfrac{x}{10}$? Justifique com um esboço.
+`••••` **1.65** Quantas soluções reais tem a equação $\operatorname{sen} x=\dfrac{x}{10}$? Justifique com um esboço.
 
 <details><summary>Resposta</summary>
 
@@ -585,19 +585,19 @@ Como $x$ é inteiro, ela precisa vender **167 cupcakes**.
 
 *Origem: OpenStax, 1.3, ex. 153.*
 
-> Verifique a identidade $\dfrac{1}{1-\sin\alpha}+\dfrac{1}{1+\sin\alpha}=2\sec^2\alpha$.
+> Verifique a identidade $\dfrac{1}{1-\operatorname{sen}\alpha}+\dfrac{1}{1+\operatorname{sen}\alpha}=2\sec^2\alpha$.
 
 ![Animação do exercício 1.28](anim/ex-1.28.gif)
 
 **Estratégia.** Trabalhe com o lado mais complicado (o esquerdo) até chegar ao outro.
 
-$$\frac{1}{1-\sin\alpha}+\frac{1}{1+\sin\alpha}
-=\frac{(1+\sin\alpha)+(1-\sin\alpha)}{(1-\sin\alpha)(1+\sin\alpha)}
-=\frac{2}{1-\sin^2\alpha}=\frac{2}{\cos^2\alpha}=2\sec^2\alpha .$$
+$$\frac{1}{1-\operatorname{sen}\alpha}+\frac{1}{1+\operatorname{sen}\alpha}
+=\frac{(1+\operatorname{sen}\alpha)+(1-\operatorname{sen}\alpha)}{(1-\operatorname{sen}\alpha)(1+\operatorname{sen}\alpha)}
+=\frac{2}{1-\operatorname{sen}^2\alpha}=\frac{2}{\cos^2\alpha}=2\sec^2\alpha .$$
 
-Usamos o produto da soma pela diferença, $(1-s)(1+s)=1-s^2$, e a identidade pitagórica $\sin^2\alpha+\cos^2\alpha=1$.
+Usamos o produto da soma pela diferença, $(1-s)(1+s)=1-s^2$, e a identidade pitagórica $\operatorname{sen}^2\alpha+\cos^2\alpha=1$.
 
-A identidade vale onde os dois lados estão definidos: $\sin\alpha\neq\pm1$, isto é, $\cos\alpha\neq0$.
+A identidade vale onde os dois lados estão definidos: $\operatorname{sen}\alpha\neq\pm1$, isto é, $\cos\alpha\neq0$.
 
 **Animação.** O lado esquerdo (curva) e o lado direito (pontos) coincidem para todo $\alpha$; nas retas tracejadas $\cos\alpha=0$ e nenhum dos lados existe.
 
@@ -609,22 +609,22 @@ A identidade vale onde os dois lados estão definidos: $\sin\alpha\neq\pm1$, ist
 
 *Origem: OpenStax, 1.5, ex. 298.*
 
-> Reescreva em termos de exponenciais e simplifique: (a) $2\cosh(\ln x)$; (b) $\cosh 4x+\sinh 4x$; (c) $\cosh 2x-\sinh 2x$; (d) $\ln(\cosh x+\sinh x)+\ln(\cosh x-\sinh x)$.
+> Reescreva em termos de exponenciais e simplifique: (a) $2\cosh(\ln x)$; (b) $\cosh 4x+\operatorname{senh} 4x$; (c) $\cosh 2x-\operatorname{senh} 2x$; (d) $\ln(\cosh x+\operatorname{senh} x)+\ln(\cosh x-\operatorname{senh} x)$.
 
 ![Animação do exercício 1.37](anim/ex-1.37.gif)
 
-Use $\cosh u=\frac{e^u+e^{-u}}2$ e $\sinh u=\frac{e^u-e^{-u}}2$.
+Use $\cosh u=\frac{e^u+e^{-u}}2$ e $\operatorname{senh} u=\frac{e^u-e^{-u}}2$.
 
 **(a)** $2\cosh(\ln x)=e^{\ln x}+e^{-\ln x}=x+\frac1x$, para $x>0$.
 
-**(b)** $\cosh 4x+\sinh 4x=\frac{e^{4x}+e^{-4x}+e^{4x}-e^{-4x}}2=e^{4x}$.
+**(b)** $\cosh 4x+\operatorname{senh} 4x=\frac{e^{4x}+e^{-4x}+e^{4x}-e^{-4x}}2=e^{4x}$.
 
-**(c)** $\cosh 2x-\sinh 2x=\frac{e^{2x}+e^{-2x}-e^{2x}+e^{-2x}}2=e^{-2x}$.
+**(c)** $\cosh 2x-\operatorname{senh} 2x=\frac{e^{2x}+e^{-2x}-e^{2x}+e^{-2x}}2=e^{-2x}$.
 
-**(d)** Pelos itens anteriores, $\cosh x+\sinh x=e^x$ e $\cosh x-\sinh x=e^{-x}$. Logo
-$\ln e^x+\ln e^{-x}=x-x=0$. (Alternativa: o produto é $\cosh^2x-\sinh^2x=1$, e $\ln1=0$.)
+**(d)** Pelos itens anteriores, $\cosh x+\operatorname{senh} x=e^x$ e $\cosh x-\operatorname{senh} x=e^{-x}$. Logo
+$\ln e^x+\ln e^{-x}=x-x=0$. (Alternativa: o produto é $\cosh^2x-\operatorname{senh}^2x=1$, e $\ln1=0$.)
 
-**Animação.** As curvas de $\cosh kx$ e $\sinh kx$ somadas coincidem sempre com $e^{kx}$, enquanto $k$ varia.
+**Animação.** As curvas de $\cosh kx$ e $\operatorname{senh} kx$ somadas coincidem sempre com $e^{kx}$, enquanto $k$ varia.
 
 ---
 
@@ -674,11 +674,11 @@ O terremoto de São Francisco foi **cerca de 2500 vezes** mais intenso.
 
 *Origem: OpenStax, 1.3, ex. 180.*
 
-> O número de horas de luz do dia em uma cidade é modelado por $N(t)=12+3\sin\!\left[\frac{2\pi}{365}(t-79)\right]$, em que $t$ é o número de dias após 1º de janeiro. (a) Encontre a amplitude e o período. (b) Quantas horas de luz há no dia mais longo do ano? E no mais curto? (c) Quantas horas de luz há 90 dias após 1º de janeiro?
+> O número de horas de luz do dia em uma cidade é modelado por $N(t)=12+3\operatorname{sen}\!\left[\frac{2\pi}{365}(t-79)\right]$, em que $t$ é o número de dias após 1º de janeiro. (a) Encontre a amplitude e o período. (b) Quantas horas de luz há no dia mais longo do ano? E no mais curto? (c) Quantas horas de luz há 90 dias após 1º de janeiro?
 
 ![Animação do exercício 1.41](anim/ex-1.41.gif)
 
-**(a)** Na forma $A\sin(B(t-\alpha))+C$: $A=3$ (amplitude), $B=\frac{2\pi}{365}$, logo o período é
+**(a)** Na forma $A\operatorname{sen}(B(t-\alpha))+C$: $A=3$ (amplitude), $B=\frac{2\pi}{365}$, logo o período é
 $\frac{2\pi}{B}=365$ dias. A defasagem é $\alpha=79$ (por volta de 20 de março, o equinócio) e o deslocamento vertical, $C=12$.
 
 **(b)** O seno varia entre $-1$ e $1$, então $N$ varia entre $12-3=9$ e $12+3=15$.
@@ -686,7 +686,7 @@ Dia mais longo: **15 horas**. Dia mais curto: **9 horas**.
 
 O máximo ocorre quando $\frac{2\pi}{365}(t-79)=\frac\pi2$, isto é, $t=79+\frac{365}{4}\approx170$ (por volta de 20 de junho).
 
-**(c)** $N(90)=12+3\sin\!\left(\frac{2\pi\cdot11}{365}\right)=12+3\sin(0{,}1894)\approx12+3(0{,}188)\approx12{,}56$ horas.
+**(c)** $N(90)=12+3\operatorname{sen}\!\left(\frac{2\pi\cdot11}{365}\right)=12+3\operatorname{sen}(0{,}1894)\approx12+3(0{,}188)\approx12{,}56$ horas.
 
 **Animação.** O ponto percorre o ano; as linhas tracejadas marcam 9 h e 15 h.
 
@@ -720,15 +720,15 @@ $$C(85-p)=75p\iff 85C=75p+Cp=p(75+C)\iff p=\frac{85C}{C+75}.$$
 
 *Origem: OpenStax, 1.4, ex. 224.*
 
-> A profundidade (em pés) da água em um cais é $D(t)=5\sin\!\left(\frac{\pi}{6}t-\frac{7\pi}{6}\right)+8$, em que $t$ é o número de horas após a meia-noite. Determine o primeiro instante após a meia-noite em que a profundidade é 11,75 pés.
+> A profundidade (em pés) da água em um cais é $D(t)=5\operatorname{sen}\!\left(\frac{\pi}{6}t-\frac{7\pi}{6}\right)+8$, em que $t$ é o número de horas após a meia-noite. Determine o primeiro instante após a meia-noite em que a profundidade é 11,75 pés.
 
 ![Animação do exercício 1.43](anim/ex-1.43.gif)
 
 Queremos $D(t)=11{,}75$:
-$$5\sin\!\left(\tfrac{\pi}{6}t-\tfrac{7\pi}{6}\right)+8=11{,}75\iff \sin\!\left(\tfrac{\pi}{6}(t-7)\right)=0{,}75 .$$
+$$5\operatorname{sen}\!\left(\tfrac{\pi}{6}t-\tfrac{7\pi}{6}\right)+8=11{,}75\iff \operatorname{sen}\!\left(\tfrac{\pi}{6}(t-7)\right)=0{,}75 .$$
 
-Seja $u=\frac\pi6(t-7)$. Para $t\ge0$, $u\ge-\frac{7\pi}{6}$. As soluções de $\sin u=0{,}75$ são
-$u=\sin^{-1}(0{,}75)+2k\pi\approx0{,}8481+2k\pi$ e $u=\pi-0{,}8481+2k\pi\approx2{,}2935+2k\pi$.
+Seja $u=\frac\pi6(t-7)$. Para $t\ge0$, $u\ge-\frac{7\pi}{6}$. As soluções de $\operatorname{sen} u=0{,}75$ são
+$u=\operatorname{arcsen}(0{,}75)+2k\pi\approx0{,}8481+2k\pi$ e $u=\pi-0{,}8481+2k\pi\approx2{,}2935+2k\pi$.
 
 Procuramos o **menor** $u\ge-\frac{7\pi}6\approx-3{,}665$:
 - $0{,}8481-2\pi\approx-5{,}435$ (antes da meia-noite, descartado);
@@ -737,7 +737,7 @@ Procuramos o **menor** $u\ge-\frac{7\pi}6\approx-3{,}665$:
 
 Então $\frac\pi6(t-7)=0{,}8481\Rightarrow t=7+\frac{6(0{,}8481)}{\pi}\approx8{,}62$ h, ou seja, **por volta de 8h37**.
 
-**Cuidado.** A função $\sin^{-1}$ dá apenas *uma* solução (entre $-\frac\pi2$ e $\frac\pi2$). Em problemas com tempo, liste todas as soluções e escolha a que respeita o intervalo pedido.
+**Cuidado.** A função $\operatorname{arcsen}$ dá apenas *uma* solução (entre $-\frac\pi2$ e $\frac\pi2$). Em problemas com tempo, liste todas as soluções e escolha a que respeita o intervalo pedido.
 
 **Animação.** A curva da maré é desenhada a partir da meia-noite até tocar a linha de 11,75 pés.
 
@@ -774,12 +774,12 @@ Resposta: **cerca de 92 horas**. (Conferência: $2^{91{,}7/12}=2^{7{,}64}\approx
 
 **Menor que 20 mil.**
 $$82{,}5-67{,}5\cos\left(\tfrac\pi6t\right)<20\iff\cos\left(\tfrac\pi6t\right)>\tfrac{62{,}5}{67{,}5}\approx0{,}9259 .$$
-Como $\cos^{-1}(0{,}9259)\approx0{,}3873$ rad, precisamos de $\frac\pi6t<0{,}3873$ ou $\frac\pi6t>2\pi-0{,}3873$, isto é,
+Como $\arccos(0{,}9259)\approx0{,}3873$ rad, precisamos de $\frac\pi6t<0{,}3873$ ou $\frac\pi6t>2\pi-0{,}3873$, isto é,
 $t<0{,}74$ ou $t>11{,}26$ meses: **de por volta de 8 de dezembro a 23 de janeiro**.
 
 **Maior que 140 mil.**
 $$\cos\left(\tfrac\pi6t\right)<-\tfrac{57{,}5}{67{,}5}\approx-0{,}8519 .$$
-Como $\cos^{-1}(-0{,}8519)\approx2{,}5903$ rad, precisamos de $2{,}5903<\frac\pi6t<2\pi-2{,}5903$, isto é,
+Como $\arccos(-0{,}8519)\approx2{,}5903$ rad, precisamos de $2{,}5903<\frac\pi6t<2\pi-2{,}5903$, isto é,
 $4{,}95<t<7{,}05$: **de por volta de 29 de maio a 2 de agosto**.
 
 **Animação.** As faixas sombreadas mostram os períodos abaixo de 20 mil (azul) e acima de 140 mil (laranja).

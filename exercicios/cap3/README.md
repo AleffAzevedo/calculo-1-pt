@@ -70,19 +70,19 @@ $\dfrac{2x}{(x^2+1)^2}$.
 
 </details>
 
-`•` **3.9** Derive $y=x^2\sin x$.
+`•` **3.9** Derive $y=x^2\operatorname{sen} x$.
 
 <details><summary>Resposta</summary>
 
-$2x\sin x+x^2\cos x$.
+$2x\operatorname{sen} x+x^2\cos x$.
 
 </details>
 
-`•` **3.10** Derive $y=\dfrac{\tan x}{x}$.
+`•` **3.10** Derive $y=\dfrac{\operatorname{tg} x}{x}$.
 
 <details><summary>Resposta</summary>
 
-$\dfrac{x\sec^2x-\tan x}{x^2}$.
+$\dfrac{x\sec^2x-\operatorname{tg} x}{x^2}$.
 
 </details>
 
@@ -94,11 +94,11 @@ $24x(3x^2-5)^3$.
 
 </details>
 
-`•` **3.12** Derive $y=\sin(4x+1)$ e $y=\cos^2x$.
+`•` **3.12** Derive $y=\operatorname{sen}(4x+1)$ e $y=\cos^2x$.
 
 <details><summary>Resposta</summary>
 
-$4\cos(4x+1)$; $-2\sin x\cos x=-\sin2x$.
+$4\cos(4x+1)$; $-2\operatorname{sen} x\cos x=-\operatorname{sen}2x$.
 
 </details>
 
@@ -114,15 +114,15 @@ $\dfrac{x}{\sqrt{1+x^2}}$.
 
 <details><summary>Resposta</summary>
 
-$-e^{-3x}(3\cos x+\sin x)$.
+$-e^{-3x}(3\cos x+\operatorname{sen} x)$.
 
 </details>
 
-`•` **3.15** Derive $y=\ln(x^2+4)$ e $y=\ln(\sin x)$.
+`•` **3.15** Derive $y=\ln(x^2+4)$ e $y=\ln(\operatorname{sen} x)$.
 
 <details><summary>Resposta</summary>
 
-$\dfrac{2x}{x^2+4}$; $\cot x$.
+$\dfrac{2x}{x^2+4}$; $\operatorname{cotg} x$.
 
 </details>
 
@@ -134,7 +134,7 @@ $2^x\big(3x^2+x^3\ln2\big)$.
 
 </details>
 
-`•` **3.17** Derive $y=\sin^{-1}(2x)$ e $y=\tan^{-1}(3x)$.
+`•` **3.17** Derive $y=\operatorname{arcsen}(2x)$ e $y=\operatorname{arctg}(3x)$.
 
 <details><summary>Resposta</summary>
 
@@ -142,11 +142,11 @@ $\dfrac2{\sqrt{1-4x^2}}$; $\dfrac3{1+9x^2}$.
 
 </details>
 
-`•` **3.18** Calcule $y''$ para $y=x^4-2x^3+x$ e para $y=\sin(2x)$.
+`•` **3.18** Calcule $y''$ para $y=x^4-2x^3+x$ e para $y=\operatorname{sen}(2x)$.
 
 <details><summary>Resposta</summary>
 
-$12x^2-12x$; $-4\sin2x$.
+$12x^2-12x$; $-4\operatorname{sen}2x$.
 
 </details>
 
@@ -198,11 +198,11 @@ $2(x^2+1)^2(2x-1)(8x^2-3x+2)$.
 
 </details>
 
-`••` **3.25** Derive $y=\sin^2(3x)$ e simplifique.
+`••` **3.25** Derive $y=\operatorname{sen}^2(3x)$ e simplifique.
 
 <details><summary>Resposta</summary>
 
-$6\sin3x\cos3x=3\sin6x$.
+$6\operatorname{sen}3x\cos3x=3\operatorname{sen}6x$.
 
 </details>
 
@@ -210,7 +210,7 @@ $6\sin3x\cos3x=3\sin6x$.
 
 <details><summary>Resposta</summary>
 
-$-\dfrac{\sin\sqrt x}{2\sqrt x}$.
+$-\dfrac{\operatorname{sen}\sqrt x}{2\sqrt x}$.
 
 </details>
 
@@ -222,15 +222,15 @@ $e^{-x^2}(1-2x^2)$; $x=\pm\tfrac1{\sqrt2}$.
 
 </details>
 
-`••` **3.28** Derive $y=\ln(\cos x)$ e $y=\ln|\sec x+\tan x|$.
+`••` **3.28** Derive $y=\ln(\cos x)$ e $y=\ln|\sec x+\operatorname{tg} x|$.
 
 <details><summary>Resposta</summary>
 
-$-\tan x$; $\sec x$.
+$-\operatorname{tg} x$; $\sec x$.
 
 </details>
 
-`••` **3.29** Derive $y=\tan^{-1}\sqrt x$.
+`••` **3.29** Derive $y=\operatorname{arctg}\sqrt x$.
 
 <details><summary>Resposta</summary>
 
@@ -238,15 +238,15 @@ $\dfrac1{2\sqrt x\,(1+x)}$.
 
 </details>
 
-`••` **3.30** **O quociente de diferenças do seno.** Para $h=1$, $0{,}5$ e $0{,}1$, esboce $q_h(x)=\dfrac{\sin(x+h)-\sin x}{h}$ junto com $\cos x$. O que acontece quando $h\to0$? Prove o resultado. ★ [ver solução](#ex-3-30)
+`••` **3.30** **O quociente de diferenças do seno.** Para $h=1$, $0{,}5$ e $0{,}1$, esboce $q_h(x)=\dfrac{\operatorname{sen}(x+h)-\operatorname{sen} x}{h}$ junto com $\cos x$. O que acontece quando $h\to0$? Prove o resultado. ★ [ver solução](#ex-3-30)
 
 <details><summary>Resposta</summary>
 
-$q_h\to\cos x$; usa $\lim\frac{\sin h}h=1$ e $\lim\frac{\cos h-1}h=0$.
+$q_h\to\cos x$; usa $\lim\frac{\operatorname{sen} h}h=1$ e $\lim\frac{\cos h-1}h=0$.
 
 </details>
 
-`••` **3.31** **Regra da cadeia e tangente.** Encontre a reta tangente a $y=\sin(x^2)$ em $x=\sqrt{\pi}$. ★ [ver solução](#ex-3-31)
+`••` **3.31** **Regra da cadeia e tangente.** Encontre a reta tangente a $y=\operatorname{sen}(x^2)$ em $x=\sqrt{\pi}$. ★ [ver solução](#ex-3-31)
 
 <details><summary>Resposta</summary>
 
@@ -262,7 +262,7 @@ $y''=(x+2)e^x$; $y^{(n)}=(x+n)e^x$.
 
 </details>
 
-`••` **3.33** Calcule $\dfrac{d^{50}}{dx^{50}}\cos x$ e $\dfrac{d^{99}}{dx^{99}}\sin x$.
+`••` **3.33** Calcule $\dfrac{d^{50}}{dx^{50}}\cos x$ e $\dfrac{d^{99}}{dx^{99}}\operatorname{sen} x$.
 
 <details><summary>Resposta</summary>
 
@@ -318,11 +318,11 @@ $C'(20)=3$; o custo real é $C(21)-C(20)=3{,}01$.
 
 </details>
 
-`••` **3.40** Derive $y=3^{\sin x}$ e $y=\log_2(x^2+1)$.
+`••` **3.40** Derive $y=3^{\operatorname{sen} x}$ e $y=\log_2(x^2+1)$.
 
 <details><summary>Resposta</summary>
 
-$3^{\sin x}\ln3\cos x$; $\dfrac{2x}{(x^2+1)\ln2}$.
+$3^{\operatorname{sen} x}\ln3\cos x$; $\dfrac{2x}{(x^2+1)\ln2}$.
 
 </details>
 
@@ -358,27 +358,27 @@ $y=6x-9$ (tangente em $x=3$) e $y=-2x-1$ (tangente em $x=-1$).
 
 </details>
 
-`•••` **3.45** Prove, pela definição, que $\dfrac{d}{dx}\cos x=-\sin x$.
+`•••` **3.45** Prove, pela definição, que $\dfrac{d}{dx}\cos x=-\operatorname{sen} x$.
 
 <details><summary>Resposta</summary>
 
-Use $\cos(x+h)=\cos x\cos h-\sin x\sin h$ e os limites do Teorema 2.7.
+Use $\cos(x+h)=\cos x\cos h-\operatorname{sen} x\operatorname{sen} h$ e os limites do Teorema 2.7.
 
 </details>
 
-`•••` **3.46** Deduza $\dfrac{d}{dx}\tan^{-1}x=\dfrac1{1+x^2}$ a partir do teorema da derivada da inversa.
+`•••` **3.46** Deduza $\dfrac{d}{dx}\operatorname{arctg} x=\dfrac1{1+x^2}$ a partir do teorema da derivada da inversa.
 
 <details><summary>Resposta</summary>
 
-$y=\tan^{-1}x\Rightarrow y'=\dfrac1{\sec^2y}=\dfrac1{1+\tan^2y}$.
+$y=\operatorname{arctg} x\Rightarrow y'=\dfrac1{\sec^2y}=\dfrac1{1+\operatorname{tg}^2y}$.
 
 </details>
 
-`•••` **3.47** Derive $y=x^{\sin x}$ ($x>0$).
+`•••` **3.47** Derive $y=x^{\operatorname{sen} x}$ ($x>0$).
 
 <details><summary>Resposta</summary>
 
-$x^{\sin x}\Big(\cos x\ln x+\dfrac{\sin x}x\Big)$.
+$x^{\operatorname{sen} x}\Big(\cos x\ln x+\dfrac{\operatorname{sen} x}x\Big)$.
 
 </details>
 
@@ -414,19 +414,19 @@ Em todo $x\neq\pm2$; em $x=2$: $-4$ e $4$; em $x=-2$: $-4$ e $4$.
 
 </details>
 
-`•••` **3.52** Mostre que $(\sinh x)'=\cosh x$, $(\cosh x)'=\sinh x$ e $(\tanh x)'=\operatorname{sech}^2x$.
+`•••` **3.52** Mostre que $(\operatorname{senh} x)'=\cosh x$, $(\cosh x)'=\operatorname{senh} x$ e $(\operatorname{tgh} x)'=\operatorname{sech}^2x$.
 
 <details><summary>Resposta</summary>
 
-Derive as definições com exponenciais; use $\cosh^2-\sinh^2=1$.
+Derive as definições com exponenciais; use $\cosh^2-\operatorname{senh}^2=1$.
 
 </details>
 
-`•••` **3.53** Seja $f(x)=x^2\sin\frac1x$ para $x\neq0$ e $f(0)=0$. Calcule $f'(0)$ pela definição e mostre que $f'$ não é contínua em $0$.
+`•••` **3.53** Seja $f(x)=x^2\operatorname{sen}\frac1x$ para $x\neq0$ e $f(0)=0$. Calcule $f'(0)$ pela definição e mostre que $f'$ não é contínua em $0$.
 
 <details><summary>Resposta</summary>
 
-$f'(0)=0$; $f'(x)=2x\sin\tfrac1x-\cos\tfrac1x$ não tem limite em 0.
+$f'(0)=0$; $f'(x)=2x\operatorname{sen}\tfrac1x-\cos\tfrac1x$ não tem limite em 0.
 
 </details>
 
@@ -446,11 +446,11 @@ $a=e$, no ponto $(1,e)$.
 
 </details>
 
-`•••` **3.56** Derive $y=\sin^{-1}x+\cos^{-1}x$ e conclua uma identidade.
+`•••` **3.56** Derive $y=\operatorname{arcsen} x+\arccos x$ e conclua uma identidade.
 
 <details><summary>Resposta</summary>
 
-$y'=0$, logo $\sin^{-1}x+\cos^{-1}x=\tfrac\pi2$.
+$y'=0$, logo $\operatorname{arcsen} x+\arccos x=\tfrac\pi2$.
 
 </details>
 
@@ -603,18 +603,18 @@ Logo $a=2$ e $b=-1$.
 
 *Origem: OpenStax, inspirado na seção 3.5.*
 
-> Para $h=1$, $0{,}5$ e $0{,}1$, esboce $q_h(x)=\dfrac{\sin(x+h)-\sin x}{h}$ junto com $\cos x$. O que acontece quando $h\to0$? Prove o resultado.
+> Para $h=1$, $0{,}5$ e $0{,}1$, esboce $q_h(x)=\dfrac{\operatorname{sen}(x+h)-\operatorname{sen} x}{h}$ junto com $\cos x$. O que acontece quando $h\to0$? Prove o resultado.
 
 ![Animação do exercício 3.30](anim/ex-3.30.gif)
 
 **Observação.** Para cada $h$, $q_h(x)$ é a inclinação de uma secante. Para $h=1$ a curva já parece uma cossenoide, mas deslocada; para $h=0{,}1$ quase coincide com $\cos x$.
 
-Na verdade, pela identidade $\sin A-\sin B=2\cos\frac{A+B}2\sin\frac{A-B}2$,
-$$q_h(x)=\frac{\sin(h/2)}{h/2}\,\cos\!\left(x+\frac h2\right),$$
-ou seja, $q_h$ é **exatamente** uma cossenoide, com amplitude $\frac{\sin(h/2)}{h/2}<1$ e deslocada de $h/2$ para a esquerda. As duas distorções somem quando $h\to0$.
+Na verdade, pela identidade $\operatorname{sen} A-\operatorname{sen} B=2\cos\frac{A+B}2\operatorname{sen}\frac{A-B}2$,
+$$q_h(x)=\frac{\operatorname{sen}(h/2)}{h/2}\,\cos\!\left(x+\frac h2\right),$$
+ou seja, $q_h$ é **exatamente** uma cossenoide, com amplitude $\frac{\operatorname{sen}(h/2)}{h/2}<1$ e deslocada de $h/2$ para a esquerda. As duas distorções somem quando $h\to0$.
 
 **Prova (como no texto).**
-$$q_h(x)=\sin x\cdot\frac{\cos h-1}{h}+\cos x\cdot\frac{\sin h}{h}\ \xrightarrow{h\to0}\ \sin x\cdot0+\cos x\cdot1=\cos x .$$
+$$q_h(x)=\operatorname{sen} x\cdot\frac{\cos h-1}{h}+\cos x\cdot\frac{\operatorname{sen} h}{h}\ \xrightarrow{h\to0}\ \operatorname{sen} x\cdot0+\cos x\cdot1=\cos x .$$
 
 **Animação.** $h$ diminui de 2 até 0,01, e $q_h$ (azul) se encaixa sobre $\cos x$ (laranja).
 
@@ -626,20 +626,20 @@ $$q_h(x)=\sin x\cdot\frac{\cos h-1}{h}+\cos x\cdot\frac{\sin h}{h}\ \xrightarrow
 
 *Origem: OpenStax, inspirado no Exemplo 3.50.*
 
-> Encontre a reta tangente a $y=\sin(x^2)$ em $x=\sqrt{\pi}$.
+> Encontre a reta tangente a $y=\operatorname{sen}(x^2)$ em $x=\sqrt{\pi}$.
 
 ![Animação do exercício 3.31](anim/ex-3.31.gif)
 
-**Ponto.** $y(\sqrt\pi)=\sin\pi=0$.
+**Ponto.** $y(\sqrt\pi)=\operatorname{sen}\pi=0$.
 
-**Derivada (cadeia).** Fora: $\sin u$, com derivada $\cos u$. Dentro: $u=x^2$, com derivada $2x$.
+**Derivada (cadeia).** Fora: $\operatorname{sen} u$, com derivada $\cos u$. Dentro: $u=x^2$, com derivada $2x$.
 $$y'=\cos(x^2)\cdot2x\quad\Rightarrow\quad y'(\sqrt\pi)=\cos\pi\cdot2\sqrt\pi=-2\sqrt\pi\approx-3{,}545 .$$
 
 **Tangente.** $y=-2\sqrt\pi\,(x-\sqrt\pi)$.
 
-**Observação.** Perto de $x=\sqrt\pi$, $\sin(x^2)$ oscila cada vez mais rápido à medida que $x$ cresce: o fator $2x$ da regra da cadeia mede justamente essa "aceleração" das oscilações.
+**Observação.** Perto de $x=\sqrt\pi$, $\operatorname{sen}(x^2)$ oscila cada vez mais rápido à medida que $x$ cresce: o fator $2x$ da regra da cadeia mede justamente essa "aceleração" das oscilações.
 
-**Animação.** A tangente percorre a curva $\sin(x^2)$; a inclinação $2x\cos(x^2)$ fica cada vez maior em módulo.
+**Animação.** A tangente percorre a curva $\operatorname{sen}(x^2)$; a inclinação $2x\cos(x^2)$ fica cada vez maior em módulo.
 
 ---
 

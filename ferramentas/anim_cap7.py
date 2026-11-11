@@ -44,7 +44,7 @@ def a_partes(path):
 
 
 def a_ciclica(path):
-    _acumula(path, lambda x: np.exp(x) * np.sin(x), 0, np.pi, (np.exp(np.pi) + 1) / 2, '$\\int_0^x e^t\\sin t\\,dt$', (-0.5, 9))
+    _acumula(path, lambda x: np.exp(x) * np.sin(x), 0, np.pi, (np.exp(np.pi) + 1) / 2, '$\\int_0^x e^t\\operatorname{sen} t\\,dt$', (-0.5, 9))
 
 
 def a_sec3(path):

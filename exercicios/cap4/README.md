@@ -46,7 +46,7 @@ Máximo $3$ em $x=0$; mínimo $-1$ em $x=2$.
 
 </details>
 
-`•` **4.6** Encontre os extremos absolutos de $f(x)=\sin x+\cos x$ em $[0,\pi]$.
+`•` **4.6** Encontre os extremos absolutos de $f(x)=\operatorname{sen} x+\cos x$ em $[0,\pi]$.
 
 <details><summary>Resposta</summary>
 
@@ -150,7 +150,7 @@ $x_1=2{,}25$; $x_2\approx2{,}236111$.
 
 </details>
 
-`•` **4.19** Calcule $\int(3x^2-4x+5)\,dx$ e $\int(\sin x+e^x)\,dx$.
+`•` **4.19** Calcule $\int(3x^2-4x+5)\,dx$ e $\int(\operatorname{sen} x+e^x)\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -214,7 +214,7 @@ $dV=80\pi\approx251$ cm³; $6%$.
 
 </details>
 
-`••` **4.27** Use uma aproximação linear para estimar $\sin31^\circ$.
+`••` **4.27** Use uma aproximação linear para estimar $\operatorname{sen}31^\circ$.
 
 <details><summary>Resposta</summary>
 
@@ -246,7 +246,7 @@ Existe pelo TVI; é única porque $f'=3x^2+1>0$ (pelo Rolle, duas raízes exigir
 
 </details>
 
-`••` **4.31** Mostre que $\tan^{-1}x+\tan^{-1}\tfrac1x=\tfrac\pi2$ para $x>0$.
+`••` **4.31** Mostre que $\operatorname{arctg} x+\operatorname{arctg}\tfrac1x=\tfrac\pi2$ para $x>0$.
 
 <details><summary>Resposta</summary>
 
@@ -262,7 +262,7 @@ Mín. local $f(0)=0$; máx. local $f(2)=\tfrac4{e^2}\approx0{,}541$.
 
 </details>
 
-`••` **4.33** Encontre os extremos locais de $f(x)=x-2\sin x$ em $(0,2\pi)$.
+`••` **4.33** Encontre os extremos locais de $f(x)=x-2\operatorname{sen} x$ em $(0,2\pi)$.
 
 <details><summary>Resposta</summary>
 
@@ -278,7 +278,7 @@ $\tfrac12$.
 
 </details>
 
-`••` **4.35** Calcule $\displaystyle\lim_{x\to0}\frac{x-\sin x}{x^3}$.
+`••` **4.35** Calcule $\displaystyle\lim_{x\to0}\frac{x-\operatorname{sen} x}{x^3}$.
 
 <details><summary>Resposta</summary>
 
@@ -294,7 +294,7 @@ $1$.
 
 </details>
 
-`••` **4.37** Calcule $\displaystyle\lim_{x\to\pi/2^-}(\sec x-\tan x)$.
+`••` **4.37** Calcule $\displaystyle\lim_{x\to\pi/2^-}(\sec x-\operatorname{tg} x)$.
 
 <details><summary>Resposta</summary>
 
@@ -322,7 +322,7 @@ $\tfrac{x^2}2-2\ln|x|+C$.
 
 <details><summary>Resposta</summary>
 
-$2\tan^{-1}x-3\sin^{-1}x+C$.
+$2\operatorname{arctg} x-3\operatorname{arcsen} x+C$.
 
 </details>
 
@@ -446,7 +446,7 @@ Par; máx. $(0,1)$; inflexões em $x=\pm\tfrac1{\sqrt2}$; assíntota $y=0$.
 
 </details>
 
-`•••` **4.56** Calcule $\displaystyle\lim_{x\to0}\frac{e^x-1-x}{x^2}$ e $\displaystyle\lim_{x\to\infty}x\Big(\frac\pi2-\tan^{-1}x\Big)$.
+`•••` **4.56** Calcule $\displaystyle\lim_{x\to0}\frac{e^x-1-x}{x^2}$ e $\displaystyle\lim_{x\to\infty}x\Big(\frac\pi2-\operatorname{arctg} x\Big)$.
 
 <details><summary>Resposta</summary>
 
@@ -454,11 +454,11 @@ $\tfrac12$ e $1$.
 
 </details>
 
-`•••` **4.57** Use o TVM para provar que $|\sin a-\sin b|\le|a-b|$ para todos $a,b$.
+`•••` **4.57** Use o TVM para provar que $|\operatorname{sen} a-\operatorname{sen} b|\le|a-b|$ para todos $a,b$.
 
 <details><summary>Resposta</summary>
 
-$\sin a-\sin b=\cos c\,(a-b)$ e $|\cos c|\le1$.
+$\operatorname{sen} a-\operatorname{sen} b=\cos c\,(a-b)$ e $|\cos c|\le1$.
 
 </details>
 
@@ -482,7 +482,7 @@ $f(x)=x^3+x^2+x-1$.
 
 <details><summary>Resposta</summary>
 
-Existência pelo TVI; unicidade porque $g(x)=\cos x-x$ tem $g'=-\sin x-1\le0$, zerando só em pontos isolados.
+Existência pelo TVI; unicidade porque $g(x)=\cos x-x$ tem $g'=-\operatorname{sen} x-1\le0$, zerando só em pontos isolados.
 
 </details>
 
@@ -494,7 +494,7 @@ $g'=0$, logo $g$ é constante $=g(0)=1$.
 
 </details>
 
-`••••` **4.62** A luz vai de $A$ (no ar, velocidade $v_1$) a $B$ (na água, velocidade $v_2$) pelo caminho de tempo mínimo. Deduza a lei de Snell $\dfrac{\sin\theta_1}{v_1}=\dfrac{\sin\theta_2}{v_2}$.
+`••••` **4.62** A luz vai de $A$ (no ar, velocidade $v_1$) a $B$ (na água, velocidade $v_2$) pelo caminho de tempo mínimo. Deduza a lei de Snell $\dfrac{\operatorname{sen}\theta_1}{v_1}=\dfrac{\operatorname{sen}\theta_2}{v_2}$.
 
 <details><summary>Resposta</summary>
 
@@ -510,7 +510,7 @@ Desigualdade entre as médias aritmética e geométrica.
 
 </details>
 
-`••••` **4.64** Calcule $\displaystyle\lim_{x\to0}\Big(\frac1{x^2}-\frac1{\sin^2x}\Big)$.
+`••••` **4.64** Calcule $\displaystyle\lim_{x\to0}\Big(\frac1{x^2}-\frac1{\operatorname{sen}^2x}\Big)$.
 
 <details><summary>Resposta</summary>
 
@@ -522,7 +522,7 @@ $-\tfrac13$.
 
 <details><summary>Resposta</summary>
 
-$13\sqrt{13}\approx46{,}9$ m (minimizando $\tfrac8{\sin\theta}+\tfrac{27}{\cos\theta}$).
+$13\sqrt{13}\approx46{,}9$ m (minimizando $\tfrac8{\operatorname{sen}\theta}+\tfrac{27}{\cos\theta}$).
 
 </details>
 
@@ -787,8 +787,8 @@ O mínimo é **R\$ 15 mil**, atravessando até $\frac43$ km rio abaixo.
 
 ![Animação do exercício 4.45](anim/ex-4.45.gif)
 
-**Função.** $f(x)=\cos x-x$, $f'(x)=-\sin x-1$. Iteração:
-$$x_{n+1}=x_n-\frac{\cos x_n-x_n}{-\sin x_n-1}=x_n+\frac{\cos x_n-x_n}{\sin x_n+1}.$$
+**Função.** $f(x)=\cos x-x$, $f'(x)=-\operatorname{sen} x-1$. Iteração:
+$$x_{n+1}=x_n-\frac{\cos x_n-x_n}{-\operatorname{sen} x_n-1}=x_n+\frac{\cos x_n-x_n}{\operatorname{sen} x_n+1}.$$
 
 | $n$ | $x_n$ |
 |---|---|

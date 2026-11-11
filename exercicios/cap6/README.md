@@ -14,7 +14,7 @@ $\tfrac13$.
 
 </details>
 
-`•` **6.2** Calcule a área entre $y=\sin x$ e $y=\cos x$ para $0\le x\le\tfrac\pi2$ (atenção ao cruzamento).
+`•` **6.2** Calcule a área entre $y=\operatorname{sen} x$ e $y=\cos x$ para $0\le x\le\tfrac\pi2$ (atenção ao cruzamento).
 
 <details><summary>Resposta</summary>
 
@@ -126,7 +126,7 @@ $200\cdot2^{-30/8}\approx14{,}9$ mg.
 
 </details>
 
-`•` **6.16** Mostre que $\dfrac{d}{dx}(x\sinh x-\cosh x)=x\cosh x$ e use isso para calcular $\int_0^1x\cosh x\,dx$.
+`•` **6.16** Mostre que $\dfrac{d}{dx}(x\operatorname{senh} x-\cosh x)=x\cosh x$ e use isso para calcular $\int_0^1x\cosh x\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -134,7 +134,7 @@ $1-e^{-1}\approx0{,}632$.
 
 </details>
 
-`•` **6.17** Calcule $\displaystyle\int\sinh x\cosh^2x\,dx$ e $\displaystyle\int_0^{\ln2}\cosh x\,dx$.
+`•` **6.17** Calcule $\displaystyle\int\operatorname{senh} x\cosh^2x\,dx$ e $\displaystyle\int_0^{\ln2}\cosh x\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -198,7 +198,7 @@ $\int_0^1(e-e^y)\,dy=1$.
 
 </details>
 
-`••` **6.25** Calcule a área total entre $y=\sin x$ e $y=\cos x$ em $[0,2\pi]$.
+`••` **6.25** Calcule a área total entre $y=\operatorname{sen} x$ e $y=\cos x$ em $[0,2\pi]$.
 
 <details><summary>Resposta</summary>
 
@@ -350,11 +350,11 @@ $S=2\pi Rh$; cerca de $6{,}7%$.
 
 </details>
 
-`•••` **6.44** **O cabo suspenso.** Um cabo pende entre dois postes de mesma altura, separados por $40$ m, na forma $y=a\cosh\frac xa$ com $a=20$ m ($-20\le x\le20$). Mostre que o comprimento é $L=2a\sinh\frac{20}a$ e calcule $L$ e a flecha (desnível entre os apoios e o ponto mais baixo). ★ [ver solução](#ex-6-44)
+`•••` **6.44** **O cabo suspenso.** Um cabo pende entre dois postes de mesma altura, separados por $40$ m, na forma $y=a\cosh\frac xa$ com $a=20$ m ($-20\le x\le20$). Mostre que o comprimento é $L=2a\operatorname{senh}\frac{20}a$ e calcule $L$ e a flecha (desnível entre os apoios e o ponto mais baixo). ★ [ver solução](#ex-6-44)
 
 <details><summary>Resposta</summary>
 
-$L=40\sinh1\approx47{,}0$ m; flecha $20(\cosh1-1)\approx10{,}9$ m.
+$L=40\operatorname{senh}1\approx47{,}0$ m; flecha $20(\cosh1-1)\approx10{,}9$ m.
 
 </details>
 
@@ -410,7 +410,7 @@ Cascas: $V=2\pi\int_r^R2x\sqrt{R^2-x^2}\,dx=\tfrac43\pi(R^2-r^2)^{3/2}$ com $h=2
 
 <details><summary>Resposta</summary>
 
-$\sinh(\ln2)=\tfrac34$.
+$\operatorname{senh}(\ln2)=\tfrac34$.
 
 </details>
 
@@ -482,7 +482,7 @@ Compare $\tfrac1t$ com $1$ (e com $\tfrac12$ em $[1,2]$).
 
 <details><summary>Resposta</summary>
 
-$\sinh^{-1}(x+2)+C=\ln\big(x+2+\sqrt{x^2+4x+5}\big)+C$.
+$\operatorname{arcsen} h(x+2)+C=\ln\big(x+2+\sqrt{x^2+4x+5}\big)+C$.
 
 </details>
 
@@ -749,7 +749,7 @@ $$S=2\pi\int_a^{a+h}R\,dx=2\pi Rh .$$
 
 **Interpretação (Arquimedes).** A área é a mesma do cilindro circunscrito na mesma faixa. Perto do ``equador'' a faixa é larga mas pouco inclinada; perto dos polos é estreita mas muito inclinada, e os dois efeitos se compensam exatamente.
 
-**Terra acima de $60^\circ$:** a calota começa à altura $R\sin60^\circ$ e termina em $R$: $h=R(1-\tfrac{\sqrt3}2)\approx0{,}134R$. Fração $=\frac{2\pi Rh}{4\pi R^2}=\frac{1-\sqrt3/2}2\approx0{,}067$, ou seja, $6{,}7\%$.
+**Terra acima de $60^\circ$:** a calota começa à altura $R\operatorname{sen}60^\circ$ e termina em $R$: $h=R(1-\tfrac{\sqrt3}2)\approx0{,}134R$. Fração $=\frac{2\pi Rh}{4\pi R^2}=\frac{1-\sqrt3/2}2\approx0{,}067$, ou seja, $6{,}7\%$.
 
 **Animação.** Uma faixa de largura fixa $h$ desliza do polo ao equador; o valor da área permanece $2\pi Rh$.
 
@@ -761,13 +761,13 @@ $$S=2\pi\int_a^{a+h}R\,dx=2\pi Rh .$$
 
 *Origem: OpenStax, inspirado na seção 6.9.*
 
-> Um cabo pende entre dois postes de mesma altura, separados por $40$ m, na forma $y=a\cosh\frac xa$ com $a=20$ m ($-20\le x\le20$). Mostre que o comprimento é $L=2a\sinh\frac{20}a$ e calcule $L$ e a flecha (desnível entre os apoios e o ponto mais baixo).
+> Um cabo pende entre dois postes de mesma altura, separados por $40$ m, na forma $y=a\cosh\frac xa$ com $a=20$ m ($-20\le x\le20$). Mostre que o comprimento é $L=2a\operatorname{senh}\frac{20}a$ e calcule $L$ e a flecha (desnível entre os apoios e o ponto mais baixo).
 
 ![Animação do exercício 6.44](anim/ex-6.44.gif)
 
-**Comprimento:** $y'=\sinh\frac xa$ e $1+\sinh^2u=\cosh^2u$, logo
-$$L=\int_{-20}^{20}\cosh\frac xa\,dx=a\Big[\sinh\frac xa\Big]_{-20}^{20}=2a\sinh\frac{20}a .$$
-Com $a=20$: $L=40\sinh1=20(e-e^{-1})\approx47{,}01$ m.
+**Comprimento:** $y'=\operatorname{senh}\frac xa$ e $1+\operatorname{senh}^2u=\cosh^2u$, logo
+$$L=\int_{-20}^{20}\cosh\frac xa\,dx=a\Big[\operatorname{senh}\frac xa\Big]_{-20}^{20}=2a\operatorname{senh}\frac{20}a .$$
+Com $a=20$: $L=40\operatorname{senh}1=20(e-e^{-1})\approx47{,}01$ m.
 
 **Flecha:** o ponto mais baixo é $y(0)=a=20$; nos apoios, $y(20)=20\cosh1\approx30{,}86$. Flecha $=20(\cosh1-1)\approx10{,}86$ m.
 

@@ -1,7 +1,8 @@
 % Capa do livro (TikZ, página inteira)
-\definecolor{noite}{HTML}{0A1A33}
-\definecolor{marinho}{HTML}{153A63}
-\definecolor{ouro}{HTML}{E8A33D}
+% identidade Nexus BI: grafite #353535 e verde-nexus #AFE213
+\definecolor{noite}{HTML}{2B2B2B}
+\definecolor{marinho}{HTML}{353535}
+\definecolor{ouro}{HTML}{AFE213}
 \begin{titlepage}
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture,overlay,
@@ -46,15 +47,22 @@
   \node[white,opacity=0.16,scale=1.5] at (14.6,14.6)
     {$\displaystyle\int_a^b f(x)\,dx=F(b)-F(a)$};
   % título
-  \node[anchor=north west,text=ouro,font=\large\scshape] at (2,27.4)
-    {E\,d\,i\,ç\,ã\,o\ \ c\,o\,n\,d\,e\,n\,s\,a\,d\,a\ \ e\,m\ \ p\,o\,r\,t\,u\,g\,u\,ê\,s};
+  \node[anchor=north west,text=ouro,font=\barlow\large] at (2,27.4)
+    {E\,D\,I\,Ç\,Ã\,O\ \ C\,O\,N\,D\,E\,N\,S\,A\,D\,A\ \ E\,M\ \ P\,O\,R\,T\,U\,G\,U\,Ê\,S};
+  \node[anchor=north east] at (19,27.55) {\includegraphics[height=0.9cm]{logo-nexusbi-negativo.pdf}};
   \draw[ouro,line width=1.2pt] (2,26.55) -- (6.5,26.55);
-  \node[anchor=north west,text=white,font=\bfseries,scale=6.4] at (1.75,26.2) {Cálculo\,\textcolor{ouro}{I}};
-  \node[anchor=north west,text=white,opacity=0.9,font=\Large] at (2,21.6)
+  \node[anchor=north west,text=white,font=\barlow\bfseries,scale=7.2] at (1.75,26.2) {Cálculo\,\textcolor{ouro}{I}};
+  \node[anchor=north west,text=white,opacity=0.9,font=\barlow\Large] at (2,21.6)
     {Funções \textperiodcentered{} Limites \textperiodcentered{} Derivadas \textperiodcentered{} Integrais};
+  % faixa com o padrão da marca: o "x" em seta, verde sobre grafite
+  \begin{scope}\clip (0,0) rectangle (21,0.75);
+  \foreach \i in {0,...,22}{\foreach \j in {0,1}{
+    \pgfmathsetmacro{\px}{\i*0.95+\j*0.47-0.4}\pgfmathsetmacro{\py}{\j*0.42-0.12}
+    \fill[ouro,rotate around={-25:(\px,\py)}] (\px,\py) -- ++(0.16,0) -- ++(0.24,0.2) -- ++(-0.24,0.2) -- ++(-0.16,0) -- ++(0.24,-0.2) -- cycle;}}
+  \end{scope}
   % rodapé da capa
   \draw[ouro,line width=0.8pt] (2,1.55) -- (19,1.55);
-  \node[anchor=west,text=white,opacity=0.85,font=\small] at (2,1.05)
+  \node[anchor=west,text=white,opacity=0.85,font=\barlow\small] at (2,1.05)
     {Baseado em \emph{Calculus}, volumes 1 e 2, de Gilbert Strang e Edwin ``Jed'' Herman};
   \node[anchor=east,text=white,opacity=0.6,font=\scriptsize] at (19,1.05)
     {Access for free at openstax.org};

@@ -151,18 +151,18 @@ $$S=2\pi\int_a^{a+h}R\,dx=2\pi Rh .$$
 
 **Interpretação (Arquimedes).** A área é a mesma do cilindro circunscrito na mesma faixa. Perto do ``equador'' a faixa é larga mas pouco inclinada; perto dos polos é estreita mas muito inclinada, e os dois efeitos se compensam exatamente.
 
-**Terra acima de $60^\circ$:** a calota começa à altura $R\sin60^\circ$ e termina em $R$: $h=R(1-\tfrac{\sqrt3}2)\approx0{,}134R$. Fração $=\frac{2\pi Rh}{4\pi R^2}=\frac{1-\sqrt3/2}2\approx0{,}067$, ou seja, $6{,}7\%$.
+**Terra acima de $60^\circ$:** a calota começa à altura $R\sen60^\circ$ e termina em $R$: $h=R(1-\tfrac{\sqrt3}2)\approx0{,}134R$. Fração $=\frac{2\pi Rh}{4\pi R^2}=\frac{1-\sqrt3/2}2\approx0{,}067$, ou seja, $6{,}7\%$.
 
 **Animação.** Uma faixa de largura fixa $h$ desliza do polo ao equador; o valor da área permanece $2\pi Rh$.""",
 ),
 dict(id='catenaria', origem='inspirado na seção 6.9', titulo='O cabo suspenso',
 enunciado=r"""Um cabo pende entre dois postes de mesma altura, separados por $40$ m, na forma $y=a\cosh\frac xa$
-com $a=20$ m ($-20\le x\le20$). Mostre que o comprimento é $L=2a\sinh\frac{20}a$ e calcule $L$ e a flecha
+com $a=20$ m ($-20\le x\le20$). Mostre que o comprimento é $L=2a\senh\frac{20}a$ e calcule $L$ e a flecha
 (desnível entre os apoios e o ponto mais baixo).""",
-resposta=r"""$L=40\sinh1\approx47{,}0$ m; flecha $20(\cosh1-1)\approx10{,}9$ m.""",
-solucao=r"""**Comprimento:** $y'=\sinh\frac xa$ e $1+\sinh^2u=\cosh^2u$, logo
-$$L=\int_{-20}^{20}\cosh\frac xa\,dx=a\Big[\sinh\frac xa\Big]_{-20}^{20}=2a\sinh\frac{20}a .$$
-Com $a=20$: $L=40\sinh1=20(e-e^{-1})\approx47{,}01$ m.
+resposta=r"""$L=40\senh1\approx47{,}0$ m; flecha $20(\cosh1-1)\approx10{,}9$ m.""",
+solucao=r"""**Comprimento:** $y'=\senh\frac xa$ e $1+\senh^2u=\cosh^2u$, logo
+$$L=\int_{-20}^{20}\cosh\frac xa\,dx=a\Big[\senh\frac xa\Big]_{-20}^{20}=2a\senh\frac{20}a .$$
+Com $a=20$: $L=40\senh1=20(e-e^{-1})\approx47{,}01$ m.
 
 **Flecha:** o ponto mais baixo é $y(0)=a=20$; nos apoios, $y(20)=20\cosh1\approx30{,}86$. Flecha $=20(\cosh1-1)\approx10{,}86$ m.
 

@@ -33,7 +33,7 @@ def a2_2(path):
     linhas = []
     for a, c in zip((1, 2, 3), (CINZA, AZUL, LARANJA)):
         l, = ax.plot([], [], color=c, lw=2, label=f'a = {a}'); linhas.append((a, l, c))
-    ax.legend(loc='upper right'); ax.set_title(r'$\dfrac{\sin(ax)}{x}\to a$ quando $x\to0$')
+    ax.legend(loc='upper right'); ax.set_title(r'$\dfrac{\operatorname{sen}(ax)}{x}\to a$ quando $x\to0$')
     N = 60
     def up(i):
         for j, (a, l, c) in enumerate(linhas):

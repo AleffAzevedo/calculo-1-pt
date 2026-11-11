@@ -16,7 +16,13 @@ TITULOS = {1: 'Funções e gráficos', 2: 'Limites', 3: 'Derivadas', 4: 'Aplica�
 PONTOS = {'F': 1, 'M': 2, 'D': 3, 'X': 4}
 
 
+OPERADORES = ['arccossec', 'arccotg', 'arcsenh', 'arccosh', 'arctgh', 'arcsen', 'arcsec', 'arctg',
+              'cossech', 'cossec', 'cotgh', 'cotg', 'senh', 'tgh', 'sen', 'tg']
+
+
 def chaves(s):
+    # o MathJax do GitHub não conhece \sen, \tg etc.: escreve como \operatorname
+    s = re.sub(r'\\(' + '|'.join(OPERADORES) + r')(?![A-Za-z])', r'\\operatorname{\1}', s)
     return s.replace(r'\{', r'\lbrace ').replace(r'\}', r'\rbrace ')
 
 
@@ -77,14 +83,14 @@ def gerar(n, animar=True):
           '## Lista\n']
     for i in itens:
         est = f' ★ [ver solução](#ex-{i["num"].replace(".", "-")})' if i['sol'] else ''
-        tit = f'**{i["titulo"]}.** ' if i['titulo'] else ''
+        tit = f'**{chaves(i["titulo"])}.** ' if i['titulo'] else ''
         md.append(f'`{"•" * PONTOS[i["nivel"]]}` **{i["num"]}** {tit}{tex_para_md(i["enunciado"])}{est}\n')
         md.append(f'<details><summary>Resposta</summary>\n\n{tex_para_md(i["resposta"])}\n\n</details>\n')
     md.append('## Soluções completas\n')
     for i in [i for i in itens if i['sol']]:
         s = i['sol']
         md.append(f'<a id="ex-{i["num"].replace(".", "-")}"></a>\n')
-        md.append(f'### {i["num"]} — {s["titulo"]}\n')
+        md.append(f'### {i["num"]} — {chaves(s["titulo"])}\n')
         md.append(f'*Origem: OpenStax, {s["origem"]}.*\n')
         md.append('> ' + tex_para_md(s['enunciado']) + '\n')
         md.append(f'![Animação do exercício {i["num"]}](anim/ex-{i["num"]}.gif)\n')

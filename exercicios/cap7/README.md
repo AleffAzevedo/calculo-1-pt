@@ -10,7 +10,7 @@ Muitos enunciados são adaptados de *Calculus Volume 1* (OpenStax, CC BY-NC-SA 4
 
 <details><summary>Resposta</summary>
 
-$x\sin x+\cos x+C$; $-(x+1)e^{-x}+C$.
+$x\operatorname{sen} x+\cos x+C$; $-(x+1)e^{-x}+C$.
 
 </details>
 
@@ -22,15 +22,15 @@ $\tfrac{x^2}2\ln x-\tfrac{x^2}4+C$.
 
 </details>
 
-`•` **7.3** Calcule $\displaystyle\int\tan^{-1}x\,dx$ (use $dv=dx$).
+`•` **7.3** Calcule $\displaystyle\int\operatorname{arctg} x\,dx$ (use $dv=dx$).
 
 <details><summary>Resposta</summary>
 
-$x\tan^{-1}x-\tfrac12\ln(1+x^2)+C$.
+$x\operatorname{arctg} x-\tfrac12\ln(1+x^2)+C$.
 
 </details>
 
-`•` **7.4** Calcule $\displaystyle\int_0^{\pi/2}x\sin x\,dx$.
+`•` **7.4** Calcule $\displaystyle\int_0^{\pi/2}x\operatorname{sen} x\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -38,7 +38,7 @@ $1$.
 
 </details>
 
-`•` **7.5** Calcule $\displaystyle\int\sin^3x\,dx$.
+`•` **7.5** Calcule $\displaystyle\int\operatorname{sen}^3x\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -46,31 +46,31 @@ $-\cos x+\tfrac13\cos^3x+C$.
 
 </details>
 
-`•` **7.6** Calcule $\displaystyle\int\cos^2x\,dx$ e $\displaystyle\int_0^\pi\sin^2x\,dx$.
+`•` **7.6** Calcule $\displaystyle\int\cos^2x\,dx$ e $\displaystyle\int_0^\pi\operatorname{sen}^2x\,dx$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac x2+\tfrac{\sin2x}4+C$; $\tfrac\pi2$.
+$\tfrac x2+\tfrac{\operatorname{sen}2x}4+C$; $\tfrac\pi2$.
 
 </details>
 
-`•` **7.7** Calcule $\displaystyle\int\sin^2x\cos^3x\,dx$.
+`•` **7.7** Calcule $\displaystyle\int\operatorname{sen}^2x\cos^3x\,dx$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac13\sin^3x-\tfrac15\sin^5x+C$.
+$\tfrac13\operatorname{sen}^3x-\tfrac15\operatorname{sen}^5x+C$.
 
 </details>
 
-`•` **7.8** Calcule $\displaystyle\int\tan^2x\,dx$ e $\displaystyle\int\sec^4x\,dx$.
+`•` **7.8** Calcule $\displaystyle\int\operatorname{tg}^2x\,dx$ e $\displaystyle\int\sec^4x\,dx$.
 
 <details><summary>Resposta</summary>
 
-$\tan x-x+C$; $\tan x+\tfrac13\tan^3x+C$.
+$\operatorname{tg} x-x+C$; $\operatorname{tg} x+\tfrac13\operatorname{tg}^3x+C$.
 
 </details>
 
-`•` **7.9** Calcule $\displaystyle\int\sin3x\cos2x\,dx$ usando produto em soma.
+`•` **7.9** Calcule $\displaystyle\int\operatorname{sen}3x\cos2x\,dx$ usando produto em soma.
 
 <details><summary>Resposta</summary>
 
@@ -78,7 +78,7 @@ $-\tfrac1{10}\cos5x-\tfrac12\cos x+C$.
 
 </details>
 
-`•` **7.10** Calcule $\displaystyle\int_0^2\sqrt{4-x^2}\,dx$ com $x=2\sin\theta$ e confira com a área de um quarto de círculo.
+`•` **7.10** Calcule $\displaystyle\int_0^2\sqrt{4-x^2}\,dx$ com $x=2\operatorname{sen}\theta$ e confira com a área de um quarto de círculo.
 
 <details><summary>Resposta</summary>
 
@@ -86,7 +86,7 @@ $\pi$.
 
 </details>
 
-`•` **7.11** Calcule $\displaystyle\int\frac{dx}{(x^2+9)^{3/2}}$ com $x=3\tan\theta$.
+`•` **7.11** Calcule $\displaystyle\int\frac{dx}{(x^2+9)^{3/2}}$ com $x=3\operatorname{tg}\theta$.
 
 <details><summary>Resposta</summary>
 
@@ -150,11 +150,11 @@ $4$; diverge (o integrando explode em $x=1$).
 
 </details>
 
-`•` **7.19** Calcule $\displaystyle\int x^2\sin x\,dx$ e confira derivando a resposta.
+`•` **7.19** Calcule $\displaystyle\int x^2\operatorname{sen} x\,dx$ e confira derivando a resposta.
 
 <details><summary>Resposta</summary>
 
-$-x^2\cos x+2x\sin x+2\cos x+C$.
+$-x^2\cos x+2x\operatorname{sen} x+2\cos x+C$.
 
 </details>
 
@@ -162,7 +162,7 @@ $-x^2\cos x+2x\sin x+2\cos x+C$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac12e^x(\sin x+\cos x)+C$.
+$\tfrac12e^x(\operatorname{sen} x+\cos x)+C$.
 
 </details>
 
@@ -174,15 +174,15 @@ $1$; $\tfrac{e^2+1}4\approx2{,}097$.
 
 </details>
 
-`••` **7.22** **Uma integral que volta a si mesma.** Calcule $\int e^x\sin x\,dx$ e depois $\int_0^\pi e^x\sin x\,dx$. ★ [ver solução](#ex-7-22)
+`••` **7.22** **Uma integral que volta a si mesma.** Calcule $\int e^x\operatorname{sen} x\,dx$ e depois $\int_0^\pi e^x\operatorname{sen} x\,dx$. ★ [ver solução](#ex-7-22)
 
 <details><summary>Resposta</summary>
 
-$\tfrac12e^x(\sin x-\cos x)+C$; $\tfrac{e^\pi+1}2\approx12{,}070$.
+$\tfrac12e^x(\operatorname{sen} x-\cos x)+C$; $\tfrac{e^\pi+1}2\approx12{,}070$.
 
 </details>
 
-`••` **7.23** **A integral da secante ao cubo.** Mostre que $\int\sec^3x\,dx=\frac12\big(\sec x\tan x+\ln|\sec x+\tan x|\big)+C$ e calcule $\int_0^{\pi/4}\sec^3x\,dx$. ★ [ver solução](#ex-7-23)
+`••` **7.23** **A integral da secante ao cubo.** Mostre que $\int\sec^3x\,dx=\frac12\big(\sec x\operatorname{tg} x+\ln|\sec x+\operatorname{tg} x|\big)+C$ e calcule $\int_0^{\pi/4}\sec^3x\,dx$. ★ [ver solução](#ex-7-23)
 
 <details><summary>Resposta</summary>
 
@@ -218,7 +218,7 @@ $T_4\approx0{,}742984$; $S_4\approx0{,}746855$; valor $\approx0{,}746824$.
 
 <details><summary>Resposta</summary>
 
-$x^2\sin x+2x\cos x-2\sin x+C$.
+$x^2\operatorname{sen} x+2x\cos x-2\operatorname{sen} x+C$.
 
 </details>
 
@@ -230,23 +230,23 @@ $\tfrac12e^{x^2}(x^2-1)+C$.
 
 </details>
 
-`••` **7.29** Calcule $\displaystyle\int\sin^{-1}x\,dx$ e $\displaystyle\int(\ln x)^2\,dx$.
+`••` **7.29** Calcule $\displaystyle\int\operatorname{arcsen} x\,dx$ e $\displaystyle\int(\ln x)^2\,dx$.
 
 <details><summary>Resposta</summary>
 
-$x\sin^{-1}x+\sqrt{1-x^2}+C$; $x(\ln x)^2-2x\ln x+2x+C$.
+$x\operatorname{arcsen} x+\sqrt{1-x^2}+C$; $x(\ln x)^2-2x\ln x+2x+C$.
 
 </details>
 
-`••` **7.30** Calcule $\displaystyle\int\sin^4x\,dx$.
+`••` **7.30** Calcule $\displaystyle\int\operatorname{sen}^4x\,dx$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac{3x}8-\tfrac{\sin2x}4+\tfrac{\sin4x}{32}+C$.
+$\tfrac{3x}8-\tfrac{\operatorname{sen}2x}4+\tfrac{\operatorname{sen}4x}{32}+C$.
 
 </details>
 
-`••` **7.31** Calcule $\displaystyle\int\tan^3x\sec^3x\,dx$.
+`••` **7.31** Calcule $\displaystyle\int\operatorname{tg}^3x\sec^3x\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -258,7 +258,7 @@ $\tfrac15\sec^5x-\tfrac13\sec^3x+C$.
 
 <details><summary>Resposta</summary>
 
-$\sqrt{x^2-9}-3\sec^{-1}\tfrac x3+C$.
+$\sqrt{x^2-9}-3\operatorname{arcsec}\tfrac x3+C$.
 
 </details>
 
@@ -266,7 +266,7 @@ $\sqrt{x^2-9}-3\sec^{-1}\tfrac x3+C$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac92\sin^{-1}\tfrac x3-\tfrac x2\sqrt{9-x^2}+C$.
+$\tfrac92\operatorname{arcsen}\tfrac x3-\tfrac x2\sqrt{9-x^2}+C$.
 
 </details>
 
@@ -294,7 +294,7 @@ $x-\ln(1+e^x)+C$.
 
 </details>
 
-`••` **7.37** Calcule $S_4$ para $\int_0^\pi\sin x\,dx$. Qual o menor $n$ que garante, pelo teorema, erro de Simpson menor que $10^{-6}$?
+`••` **7.37** Calcule $S_4$ para $\int_0^\pi\operatorname{sen} x\,dx$. Qual o menor $n$ que garante, pelo teorema, erro de Simpson menor que $10^{-6}$?
 
 <details><summary>Resposta</summary>
 
@@ -350,7 +350,7 @@ $\Gamma(n+1)=n!$.
 
 </details>
 
-`•••` **7.44** **A substituição universal $t=\tan(x/2)$.** Com $t=\tan\frac x2$, mostre que $\cos x=\frac{1-t^2}{1+t^2}$ e $dx=\frac{2\,dt}{1+t^2}$, e calcule $\displaystyle\int_0^{\pi/2}\frac{dx}{2+\cos x}$. ★ [ver solução](#ex-7-44)
+`•••` **7.44** **A substituição universal $t=\operatorname{tg}(x/2)$.** Com $t=\operatorname{tg}\frac x2$, mostre que $\cos x=\frac{1-t^2}{1+t^2}$ e $dx=\frac{2\,dt}{1+t^2}$, e calcule $\displaystyle\int_0^{\pi/2}\frac{dx}{2+\cos x}$. ★ [ver solução](#ex-7-44)
 
 <details><summary>Resposta</summary>
 
@@ -366,11 +366,11 @@ $P(t)=\dfrac{1000}{1+9e^{-t/2}}$; $t=2\ln9\approx4{,}39$; crescimento máximo qu
 
 </details>
 
-`•••` **7.46** Calcule $\displaystyle\int e^{2x}\sin3x\,dx$.
+`•••` **7.46** Calcule $\displaystyle\int e^{2x}\operatorname{sen}3x\,dx$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac1{13}e^{2x}(2\sin3x-3\cos3x)+C$.
+$\tfrac1{13}e^{2x}(2\operatorname{sen}3x-3\cos3x)+C$.
 
 </details>
 
@@ -378,11 +378,11 @@ $\tfrac1{13}e^{2x}(2\sin3x-3\cos3x)+C$.
 
 <details><summary>Resposta</summary>
 
-$2\big(\sqrt x\sin\sqrt x+\cos\sqrt x\big)+C$.
+$2\big(\sqrt x\operatorname{sen}\sqrt x+\cos\sqrt x\big)+C$.
 
 </details>
 
-`•••` **7.48** Deduza a fórmula de redução $\int\sin^nx\,dx=-\frac1n\sin^{n-1}x\cos x+\frac{n-1}n\int\sin^{n-2}x\,dx$ e calcule $\int_0^{\pi/2}\sin^6x\,dx$.
+`•••` **7.48** Deduza a fórmula de redução $\int\operatorname{sen}^nx\,dx=-\frac1n\operatorname{sen}^{n-1}x\cos x+\frac{n-1}n\int\operatorname{sen}^{n-2}x\,dx$ e calcule $\int_0^{\pi/2}\operatorname{sen}^6x\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -390,11 +390,11 @@ $\tfrac56\cdot\tfrac34\cdot\tfrac12\cdot\tfrac\pi2=\tfrac{5\pi}{32}$.
 
 </details>
 
-`•••` **7.49** Calcule $\displaystyle\int x\tan^{-1}x\,dx$.
+`•••` **7.49** Calcule $\displaystyle\int x\operatorname{arctg} x\,dx$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac12\big[(x^2+1)\tan^{-1}x-x\big]+C$.
+$\tfrac12\big[(x^2+1)\operatorname{arctg} x-x\big]+C$.
 
 </details>
 
@@ -402,7 +402,7 @@ $\tfrac12\big[(x^2+1)\tan^{-1}x-x\big]+C$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac12\big(\tan^{-1}x+\tfrac x{1+x^2}\big)+C$; $\tfrac\pi8+\tfrac14$.
+$\tfrac12\big(\operatorname{arctg} x+\tfrac x{1+x^2}\big)+C$; $\tfrac\pi8+\tfrac14$.
 
 </details>
 
@@ -418,7 +418,7 @@ $\ln\tfrac{e^x+1}{e^x+2}+C$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac12\ln(x^2+1)+\tfrac12\big(\tan^{-1}x+\tfrac x{1+x^2}\big)+C$.
+$\tfrac12\ln(x^2+1)+\tfrac12\big(\operatorname{arctg} x+\tfrac x{1+x^2}\big)+C$.
 
 </details>
 
@@ -426,7 +426,7 @@ $\tfrac12\ln(x^2+1)+\tfrac12\big(\tan^{-1}x+\tfrac x{1+x^2}\big)+C$.
 
 <details><summary>Resposta</summary>
 
-$\tfrac13\ln|x+1|-\tfrac16\ln(x^2-x+1)+\tfrac1{\sqrt3}\tan^{-1}\tfrac{2x-1}{\sqrt3}+C$.
+$\tfrac13\ln|x+1|-\tfrac16\ln(x^2-x+1)+\tfrac1{\sqrt3}\operatorname{arctg}\tfrac{2x-1}{\sqrt3}+C$.
 
 </details>
 
@@ -434,7 +434,7 @@ $\tfrac13\ln|x+1|-\tfrac16\ln(x^2-x+1)+\tfrac1{\sqrt3}\tan^{-1}\tfrac{2x-1}{\sqr
 
 <details><summary>Resposta</summary>
 
-$2\sqrt x-2\tan^{-1}\sqrt x+C$.
+$2\sqrt x-2\operatorname{arctg}\sqrt x+C$.
 
 </details>
 
@@ -446,7 +446,7 @@ $\tfrac{2}{12n^2}<10^{-4}$: $n\ge41$.
 
 </details>
 
-`•••` **7.56** Calcule $\int_0^\infty e^{-x}\sin x\,dx$.
+`•••` **7.56** Calcule $\int_0^\infty e^{-x}\operatorname{sen} x\,dx$.
 
 <details><summary>Resposta</summary>
 
@@ -490,11 +490,11 @@ $\tfrac1s$; $\tfrac1{s^2}$.
 
 <details><summary>Resposta</summary>
 
-Divida: o quociente é $x^6-4x^5+5x^4-4x^2+4$ e o resto dá $-4\tan^{-1}x$; o integrando é positivo.
+Divida: o quociente é $x^6-4x^5+5x^4-4x^2+4$ e o resto dá $-4\operatorname{arctg} x$; o integrando é positivo.
 
 </details>
 
-`••••` **7.62** Calcule $\displaystyle\int_0^{\pi/2}\ln(\sin x)\,dx$. (Dica: compare com $\int_0^{\pi/2}\ln(\cos x)\,dx$ e use $\sin2x=2\sin x\cos x$.)
+`••••` **7.62** Calcule $\displaystyle\int_0^{\pi/2}\ln(\operatorname{sen} x)\,dx$. (Dica: compare com $\int_0^{\pi/2}\ln(\cos x)\,dx$ e use $\operatorname{sen}2x=2\operatorname{sen} x\cos x$.)
 
 <details><summary>Resposta</summary>
 
@@ -502,11 +502,11 @@ $-\tfrac\pi2\ln2$.
 
 </details>
 
-`••••` **7.63** Prove que $\displaystyle\int_1^\infty\frac{\sin x}x\,dx$ converge (partes com $u=\frac1x$), mas $\int_1^\infty\frac{|\sin x|}x\,dx$ diverge.
+`••••` **7.63** Prove que $\displaystyle\int_1^\infty\frac{\operatorname{sen} x}x\,dx$ converge (partes com $u=\frac1x$), mas $\int_1^\infty\frac{|\operatorname{sen} x|}x\,dx$ diverge.
 
 <details><summary>Resposta</summary>
 
-Partes: $\cos1-\int_1^\infty\tfrac{\cos x}{x^2}dx$, absolutamente convergente; e $|\sin x|\ge\sin^2x=\tfrac{1-\cos2x}2$.
+Partes: $\cos1-\int_1^\infty\tfrac{\cos x}{x^2}dx$, absolutamente convergente; e $|\operatorname{sen} x|\ge\operatorname{sen}^2x=\tfrac{1-\cos2x}2$.
 
 </details>
 
@@ -518,7 +518,7 @@ $t=x^2$; $\Gamma(\tfrac52)=\tfrac32\cdot\tfrac12\sqrt\pi=\tfrac{3\sqrt\pi}4$.
 
 </details>
 
-`••••` **7.65** Sejam $I_n=\int_0^{\pi/2}\sin^nx\,dx$. Mostre que $I_{2n+1}\le I_{2n}\le I_{2n-1}$ e use a fórmula de redução para provar o produto de Wallis $\frac\pi2=\lim_{n\to\infty}\frac{2\cdot2\cdot4\cdot4\cdots2n\cdot2n}{1\cdot3\cdot3\cdot5\cdots(2n-1)(2n+1)}$.
+`••••` **7.65** Sejam $I_n=\int_0^{\pi/2}\operatorname{sen}^nx\,dx$. Mostre que $I_{2n+1}\le I_{2n}\le I_{2n-1}$ e use a fórmula de redução para provar o produto de Wallis $\frac\pi2=\lim_{n\to\infty}\frac{2\cdot2\cdot4\cdot4\cdots2n\cdot2n}{1\cdot3\cdot3\cdot5\cdots(2n-1)(2n+1)}$.
 
 <details><summary>Resposta</summary>
 
@@ -558,26 +558,26 @@ $$\int_1^ex\ln x\,dx=\Big[\frac{x^2}2\ln x\Big]_1^e-\int_1^e\frac x2\,dx=\frac{e
 
 *Origem: OpenStax, inspirado na seção 7.1.*
 
-> Calcule $\int e^x\sin x\,dx$ e depois $\int_0^\pi e^x\sin x\,dx$.
+> Calcule $\int e^x\operatorname{sen} x\,dx$ e depois $\int_0^\pi e^x\operatorname{sen} x\,dx$.
 
 ![Animação do exercício 7.22](anim/ex-7.22.gif)
 
-Seja $I=\int e^x\sin x\,dx$.
+Seja $I=\int e^x\operatorname{sen} x\,dx$.
 
-**Primeira vez** ($u=\sin x$, $dv=e^xdx$): $I=e^x\sin x-\int e^x\cos x\,dx$.
+**Primeira vez** ($u=\operatorname{sen} x$, $dv=e^xdx$): $I=e^x\operatorname{sen} x-\int e^x\cos x\,dx$.
 
-**Segunda vez** ($u=\cos x$, $dv=e^xdx$, mantendo a escolha!): $\int e^x\cos x\,dx=e^x\cos x+\int e^x\sin x\,dx=e^x\cos x+I$.
+**Segunda vez** ($u=\cos x$, $dv=e^xdx$, mantendo a escolha!): $\int e^x\cos x\,dx=e^x\cos x+\int e^x\operatorname{sen} x\,dx=e^x\cos x+I$.
 
-**Juntando:** $I=e^x\sin x-e^x\cos x-I$, logo
-$$I=\tfrac12e^x(\sin x-\cos x)+C .$$
+**Juntando:** $I=e^x\operatorname{sen} x-e^x\cos x-I$, logo
+$$I=\tfrac12e^x(\operatorname{sen} x-\cos x)+C .$$
 
 **Atenção.** Se na segunda vez escolhermos $u=e^x$, as partes se desfazem e chegamos a $I=I$. A escolha de $dv$ tem de ser a mesma nas duas etapas.
 
-**Definida:** $\Big[\tfrac12e^x(\sin x-\cos x)\Big]_0^\pi=\tfrac12e^\pi(0+1)-\tfrac12(0-1)=\frac{e^\pi+1}2\approx12{,}070$.
+**Definida:** $\Big[\tfrac12e^x(\operatorname{sen} x-\cos x)\Big]_0^\pi=\tfrac12e^\pi(0+1)-\tfrac12(0-1)=\frac{e^\pi+1}2\approx12{,}070$.
 
-**Conferência derivando:** $\tfrac12\big[e^x(\sin x-\cos x)+e^x(\cos x+\sin x)\big]=e^x\sin x$. ✓
+**Conferência derivando:** $\tfrac12\big[e^x(\operatorname{sen} x-\cos x)+e^x(\cos x+\operatorname{sen} x)\big]=e^x\operatorname{sen} x$. ✓
 
-**Animação.** A área sob $e^x\sin x$ é acumulada de $0$ a $\pi$ e comparada com a fórmula.
+**Animação.** A área sob $e^x\operatorname{sen} x$ é acumulada de $0$ a $\pi$ e comparada com a fórmula.
 
 ---
 
@@ -587,22 +587,22 @@ $$I=\tfrac12e^x(\sin x-\cos x)+C .$$
 
 *Origem: OpenStax, inspirado no Exemplo 7.2.*
 
-> Mostre que $\int\sec^3x\,dx=\frac12\big(\sec x\tan x+\ln|\sec x+\tan x|\big)+C$ e calcule $\int_0^{\pi/4}\sec^3x\,dx$.
+> Mostre que $\int\sec^3x\,dx=\frac12\big(\sec x\operatorname{tg} x+\ln|\sec x+\operatorname{tg} x|\big)+C$ e calcule $\int_0^{\pi/4}\sec^3x\,dx$.
 
 ![Animação do exercício 7.23](anim/ex-7.23.gif)
 
-**Partes:** $u=\sec x$, $dv=\sec^2x\,dx$, então $du=\sec x\tan x\,dx$, $v=\tan x$.
-$$\int\sec^3x\,dx=\sec x\tan x-\int\sec x\tan^2x\,dx .$$
+**Partes:** $u=\sec x$, $dv=\sec^2x\,dx$, então $du=\sec x\operatorname{tg} x\,dx$, $v=\operatorname{tg} x$.
+$$\int\sec^3x\,dx=\sec x\operatorname{tg} x-\int\sec x\operatorname{tg}^2x\,dx .$$
 
-**Identidade** $\tan^2x=\sec^2x-1$:
-$$\int\sec^3x\,dx=\sec x\tan x-\int\sec^3x\,dx+\int\sec x\,dx .$$
-A integral reapareceu (cíclica). Passando para a esquerda e usando $\int\sec x\,dx=\ln|\sec x+\tan x|$ (capítulo 5):
-$$2\int\sec^3x\,dx=\sec x\tan x+\ln|\sec x+\tan x|+C .$$
+**Identidade** $\operatorname{tg}^2x=\sec^2x-1$:
+$$\int\sec^3x\,dx=\sec x\operatorname{tg} x-\int\sec^3x\,dx+\int\sec x\,dx .$$
+A integral reapareceu (cíclica). Passando para a esquerda e usando $\int\sec x\,dx=\ln|\sec x+\operatorname{tg} x|$ (capítulo 5):
+$$2\int\sec^3x\,dx=\sec x\operatorname{tg} x+\ln|\sec x+\operatorname{tg} x|+C .$$
 
-**Valor:** em $x=\frac\pi4$, $\sec=\sqrt2$, $\tan=1$; em $0$, $\sec=1$, $\tan=0$:
+**Valor:** em $x=\frac\pi4$, $\sec=\sqrt2$, $\operatorname{tg}=1$; em $0$, $\sec=1$, $\operatorname{tg}=0$:
 $$\int_0^{\pi/4}\sec^3x\,dx=\tfrac12\big(\sqrt2+\ln(\sqrt2+1)\big)-\tfrac12(0+\ln1)\approx1{,}1478 .$$
 
-**Onde aparece.** Essa integral surge na substituição $x=a\tan\theta$ em $\int\sqrt{a^2+x^2}\,dx$, por exemplo no comprimento de arco da parábola (outro exercício resolvido desta lista).
+**Onde aparece.** Essa integral surge na substituição $x=a\operatorname{tg}\theta$ em $\int\sqrt{a^2+x^2}\,dx$, por exemplo no comprimento de arco da parábola (outro exercício resolvido desta lista).
 
 **Animação.** A área sob $\sec^3x$ cresce até $\pi/4$; o valor acumulado coincide com a fórmula.
 
@@ -621,14 +621,14 @@ $$\int_0^{\pi/4}\sec^3x\,dx=\tfrac12\big(\sqrt2+\ln(\sqrt2+1)\big)-\tfrac12(0+\l
 **Montagem.** A metade de cima é $y=\frac ba\sqrt{a^2-x^2}$. Por simetria, a área é quatro vezes a do primeiro quadrante:
 $$A=4\int_0^a\frac ba\sqrt{a^2-x^2}\,dx .$$
 
-**Substituição** $x=a\sin\theta$: $dx=a\cos\theta\,d\theta$, $\sqrt{a^2-x^2}=a\cos\theta$; limites $x=0\mapsto\theta=0$, $x=a\mapsto\theta=\frac\pi2$.
+**Substituição** $x=a\operatorname{sen}\theta$: $dx=a\cos\theta\,d\theta$, $\sqrt{a^2-x^2}=a\cos\theta$; limites $x=0\mapsto\theta=0$, $x=a\mapsto\theta=\frac\pi2$.
 $$A=4\cdot\frac ba\int_0^{\pi/2}a^2\cos^2\theta\,d\theta=4ab\int_0^{\pi/2}\frac{1+\cos2\theta}2\,d\theta=4ab\cdot\frac\pi4=\pi ab .$$
 
 **Conferências.** $a=b=r$ dá $\pi r^2$ (círculo). A elipse é o círculo unitário esticado por $a$ na horizontal e por $b$ na vertical, e áreas se multiplicam por $ab$.
 
 **Exemplo numérico:** $a=3$, $b=2$: $A=6\pi\approx18{,}85$.
 
-**Animação.** O ângulo $\theta$ vai de $-\pi/2$ a $\pi/2$; a faixa vertical em $x=3\sin\theta$ varre a elipse e a área acumulada chega a $6\pi$.
+**Animação.** O ângulo $\theta$ vai de $-\pi/2$ a $\pi/2$; a faixa vertical em $x=3\operatorname{sen}\theta$ varre a elipse e a área acumulada chega a $6\pi$.
 
 ---
 
@@ -705,8 +705,8 @@ Logo $S_4$ garante $\int_0^1e^{-x^2}dx\in[0{,}7466;\,0{,}7471]$. O valor real é
 
 **Integral:** $y'=2x$, então $L=\int_0^1\sqrt{1+4x^2}\,dx$. É o caso $\sqrt{a^2+u^2}$, com $u=2x$.
 
-**Substituição** $2x=\tan\theta$: $dx=\frac12\sec^2\theta\,d\theta$, $\sqrt{1+4x^2}=\sec\theta$. Limites: $x=0\mapsto\theta=0$; $x=1\mapsto\theta=\alpha$, com $\tan\alpha=2$, $\sec\alpha=\sqrt5$.
-$$L=\frac12\int_0^\alpha\sec^3\theta\,d\theta=\frac14\Big[\sec\theta\tan\theta+\ln|\sec\theta+\tan\theta|\Big]_0^\alpha=\frac14\big(2\sqrt5+\ln(2+\sqrt5)\big).$$
+**Substituição** $2x=\operatorname{tg}\theta$: $dx=\frac12\sec^2\theta\,d\theta$, $\sqrt{1+4x^2}=\sec\theta$. Limites: $x=0\mapsto\theta=0$; $x=1\mapsto\theta=\alpha$, com $\operatorname{tg}\alpha=2$, $\sec\alpha=\sqrt5$.
+$$L=\frac12\int_0^\alpha\sec^3\theta\,d\theta=\frac14\Big[\sec\theta\operatorname{tg}\theta+\ln|\sec\theta+\operatorname{tg}\theta|\Big]_0^\alpha=\frac14\big(2\sqrt5+\ln(2+\sqrt5)\big).$$
 (Usamos a integral de $\sec^3$ do exercício da secante ao cubo.)
 
 **Valor:** $\frac14(4{,}4721+1{,}4436)\approx1{,}4789$.
@@ -774,22 +774,22 @@ $$\Gamma(x+1)=\int_0^\infty t^xe^{-t}dt=\Big[-t^xe^{-t}\Big]_0^\infty+x\int_0^\i
 
 <a id="ex-7-44"></a>
 
-### 7.44 — A substituição universal $t=\tan(x/2)$
+### 7.44 — A substituição universal $t=\operatorname{tg}(x/2)$
 
 *Origem: OpenStax, inspirado na seção 7.4.*
 
-> Com $t=\tan\frac x2$, mostre que $\cos x=\frac{1-t^2}{1+t^2}$ e $dx=\frac{2\,dt}{1+t^2}$, e calcule $\displaystyle\int_0^{\pi/2}\frac{dx}{2+\cos x}$.
+> Com $t=\operatorname{tg}\frac x2$, mostre que $\cos x=\frac{1-t^2}{1+t^2}$ e $dx=\frac{2\,dt}{1+t^2}$, e calcule $\displaystyle\int_0^{\pi/2}\frac{dx}{2+\cos x}$.
 
 ![Animação do exercício 7.44](anim/ex-7.44.gif)
 
-**Fórmulas.** $\cos x=\cos^2\frac x2-\sin^2\frac x2=\frac{1-\tan^2(x/2)}{\sec^2(x/2)}=\frac{1-t^2}{1+t^2}$. De $x=2\tan^{-1}t$: $dx=\frac{2\,dt}{1+t^2}$. (Analogamente, $\sin x=\frac{2t}{1+t^2}$.)
+**Fórmulas.** $\cos x=\cos^2\frac x2-\operatorname{sen}^2\frac x2=\frac{1-\operatorname{tg}^2(x/2)}{\sec^2(x/2)}=\frac{1-t^2}{1+t^2}$. De $x=2\operatorname{arctg} t$: $dx=\frac{2\,dt}{1+t^2}$. (Analogamente, $\operatorname{sen} x=\frac{2t}{1+t^2}$.)
 
 **Transformando:** $2+\cos x=\frac{2(1+t^2)+1-t^2}{1+t^2}=\frac{3+t^2}{1+t^2}$. Limites: $x=0\mapsto t=0$; $x=\frac\pi2\mapsto t=1$.
-$$\int_0^{\pi/2}\frac{dx}{2+\cos x}=\int_0^1\frac{1+t^2}{3+t^2}\cdot\frac{2\,dt}{1+t^2}=\int_0^1\frac{2\,dt}{3+t^2}=\frac2{\sqrt3}\Big[\tan^{-1}\frac t{\sqrt3}\Big]_0^1=\frac2{\sqrt3}\cdot\frac\pi6=\frac\pi{3\sqrt3}.$$
+$$\int_0^{\pi/2}\frac{dx}{2+\cos x}=\int_0^1\frac{1+t^2}{3+t^2}\cdot\frac{2\,dt}{1+t^2}=\int_0^1\frac{2\,dt}{3+t^2}=\frac2{\sqrt3}\Big[\operatorname{arctg}\frac t{\sqrt3}\Big]_0^1=\frac2{\sqrt3}\cdot\frac\pi6=\frac\pi{3\sqrt3}.$$
 
 **Valor:** $\approx0{,}6046$. Conferência: o integrando fica entre $\frac13$ e $\frac12$, então a integral está entre $\frac\pi6\approx0{,}52$ e $\frac\pi4\approx0{,}79$. ✓
 
-**Por que ``universal''.** Toda função racional de $\sin x$ e $\cos x$ vira uma função racional de $t$, que sempre pode ser integrada por frações parciais (embora nem sempre seja o caminho mais curto).
+**Por que ``universal''.** Toda função racional de $\operatorname{sen} x$ e $\cos x$ vira uma função racional de $t$, que sempre pode ser integrada por frações parciais (embora nem sempre seja o caminho mais curto).
 
 **Animação.** As áreas sob $\frac1{2+\cos x}$ em $[0,\pi/2]$ e sob $\frac2{3+t^2}$ em $[0,1]$ são preenchidas juntas e têm sempre o mesmo valor.
 

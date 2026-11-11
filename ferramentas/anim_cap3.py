@@ -95,7 +95,7 @@ def a_derivada_seno(path):
 def a_cadeia_tangente(path):
     f = lambda x: np.sin(x ** 2); df = lambda x: 2 * x * np.cos(x ** 2)
     xs = np.linspace(0, np.sqrt(np.pi), 60)
-    _tangente_movel(path, f, df, (0, 3), (-1.6, 1.6), r'$y=\sin(x^2)$', xs)
+    _tangente_movel(path, f, df, (0, 3), (-1.6, 1.6), r'$y=\operatorname{sen}(x^2)$', xs)
 
 
 def a_inversa(path):
