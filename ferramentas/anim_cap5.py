@@ -14,7 +14,7 @@ def _riemann(path, f, a, b, ns, exato, titulo, regra='dir', ylim=None):
         dx = (b - a) / n; xs = a + dx * np.arange(n)
         pts = {'dir': xs + dx, 'esq': xs, 'med': xs + dx / 2}[regra]
         for x0, p in zip(xs, pts):
-            ax.add_patch(Rectangle((x0, 0), dx, f(p), fc=LARANJA, ec=LARANJA, alpha=0.3, lw=0.6))
+            ax.add_patch(Rectangle((x0, 0), dx, f(p), fc=LARANJA, ec=LARANJA, alpha=0.51, lw=0.6))
         ax.plot(xx, f(xx), color=AZUL, lw=2); s = (f(pts) * dx).sum()
         ax.set_title(f'{titulo}   n = {n}:  soma = {s:.5f}   (exato {exato:.5f})'.replace('.', ','), fontsize=10)
     salvar(fig, up, N, path, fps=3, pausa_final=4)
@@ -41,7 +41,7 @@ def a_funcao_area(path):
         for p in fills: p.remove()
         fills.clear(); t = np.linspace(0, x, 200); y = f(t)
         fills.append(a1.fill_between(t, 0, y, where=y >= 0, color=AZUL, alpha=0.3))
-        fills.append(a1.fill_between(t, 0, y, where=y < 0, color=LARANJA, alpha=0.4))
+        fills.append(a1.fill_between(t, 0, y, where=y < 0, color=LARANJA, alpha=0.68))
         lg.set_data(xs[:i + 1], g(xs[:i + 1])); pg.set_data([x], [g(x)])
     salvar(fig, up, len(xs), path)
 
@@ -52,7 +52,7 @@ def a_tfc_cadeia(path):
     def up(i):
         x = xs[i]; ax.cla(); eixos(ax, (0.8, 1.8), (0, 25))
         tt = np.linspace(0.8, 1.8, 300); ax.plot(tt, f(tt), color=AZUL, lw=2)
-        t = np.linspace(x, x ** 2, 100); ax.fill_between(t, 0, f(t), color=LARANJA, alpha=0.35)
+        t = np.linspace(x, x ** 2, 100); ax.fill_between(t, 0, f(t), color=LARANJA, alpha=0.59)
         ax.axvline(x, color=VERDE, ls='--', lw=1); ax.axvline(x ** 2, color=VERDE, ls='--', lw=1)
         der = 2 * x * np.exp(x ** 4) - np.exp(x ** 2)
         ax.set_title(f'x = {x:.3f}: faixa de x até x²;  taxa = 2x·e^(x⁴) − e^(x²) = {der:.2f}'.replace('.', ','), fontsize=10)
@@ -63,7 +63,7 @@ def a_deslocamento(path):
     v = lambda t: 3 * (t - 1) * (t - 3); s = lambda t: 2 + t ** 3 - 6 * t ** 2 + 9 * t
     fig, (a1, a2) = plt.subplots(2, 1, figsize=(6.4, 5.2), gridspec_kw={'height_ratios': [2, 1]})
     eixos(a1, (0, 4.1), (-4, 10)); tt = np.linspace(0, 4, 300); a1.plot(tt, v(tt), color=AZUL, lw=2); a1.set_title('v(t) = 3(t−1)(t−3)')
-    a2.set_xlim(0, 8); a2.set_ylim(-1, 1); a2.set_yticks([]); a2.axhline(0, color='black', lw=0.8); a2.set_title('posição s(t)')
+    a2.set_xlim(0, 8); a2.set_ylim(-1, 1); a2.set_yticks([]); a2.axhline(0, color=TINTA, lw=0.8); a2.set_title('posição s(t)')
     pt, = a2.plot([], [], 'o', ms=12, color=AZUL); txt = a2.text(4.5, 0.4, '', fontsize=9); fig.tight_layout()
     ts = np.linspace(0.02, 4, 60); fills = []
     def up(i):
@@ -71,7 +71,7 @@ def a_deslocamento(path):
         for p in fills: p.remove()
         fills.clear(); u = np.linspace(0, t, 200); y = v(u)
         fills.append(a1.fill_between(u, 0, y, where=y >= 0, color=AZUL, alpha=0.3))
-        fills.append(a1.fill_between(u, 0, y, where=y < 0, color=LARANJA, alpha=0.4))
+        fills.append(a1.fill_between(u, 0, y, where=y < 0, color=LARANJA, alpha=0.68))
         pt.set_data([s(t)], [0]); txt.set_text(f't = {t:.2f}  s = {s(t):.2f}'.replace('.', ','))
     salvar(fig, up, len(ts), path)
 
@@ -79,7 +79,7 @@ def a_deslocamento(path):
 def a_valor_medio(path):
     fig, ax = plt.subplots(figsize=(6.4, 4.2)); eixos(ax, (-0.1, 3.3), (0, 1.15))
     xx = np.linspace(0, np.pi, 300); ax.plot(xx, np.sin(xx), color=AZUL, lw=2); ax.fill_between(xx, 0, np.sin(xx), color=AZUL, alpha=0.15)
-    rect = Rectangle((0, 0), np.pi, 0, fc=LARANJA, alpha=0.3, ec=LARANJA); ax.add_patch(rect)
+    rect = Rectangle((0, 0), np.pi, 0, fc=LARANJA, alpha=0.51, ec=LARANJA); ax.add_patch(rect)
     hs = np.concatenate([np.linspace(0.1, 1, 25), np.linspace(1, 2 / np.pi, 20)]); tt = ax.set_title('')
     def up(i):
         h = hs[i]; rect.set_height(h)
@@ -101,7 +101,7 @@ def a_substituicao(path):
         x = xs[i]; u = 4 - x ** 2
         for p in fl: p.remove()
         fl.clear(); t = np.linspace(x, 2, 100); fl.append(a1.fill_between(t, 0, f(t), color=AZUL, alpha=0.3))
-        w = np.linspace(0, u, 100); fl.append(a2.fill_between(w, 0, g(w), color=LARANJA, alpha=0.3))
+        w = np.linspace(0, u, 100); fl.append(a2.fill_between(w, 0, g(w), color=LARANJA, alpha=0.51))
         A = ((4 - x ** 2) ** 1.5) / 3
         tt.set_text(f'áreas acumuladas iguais: {A:.4f}  (total 8/3 ≈ 2,6667)'.replace('.', ','))
     salvar(fig, up, len(xs), path)
@@ -117,7 +117,7 @@ def a_simetria(path):
         for p in fl: p.remove()
         fl.clear(); t = np.linspace(-w, w, 300); y = f(t)
         fl.append(ax.fill_between(t, 0, y, where=y >= 0, color=AZUL, alpha=0.3))
-        fl.append(ax.fill_between(t, 0, y, where=y < 0, color=LARANJA, alpha=0.4))
+        fl.append(ax.fill_between(t, 0, y, where=y < 0, color=LARANJA, alpha=0.68))
     salvar(fig, up, len(ws), path)
 
 
@@ -131,12 +131,12 @@ def a_tanque(path):
     eixos(a1, (0, 52), (0, 220)); a1.set_xlabel('t (min)'); a1.set_title('r(t) = 200 − 4t  (L/min)')
     tt = np.linspace(0, 50, 200); a1.plot(tt, r(tt), color=AZUL, lw=2)
     a2.set_xlim(0, 1); a2.set_ylim(0, 6500); a2.set_xticks([]); a2.set_title('volume (L)')
-    agua = Rectangle((0.15, 0), 0.7, 1000, fc='#7FB3E0'); a2.add_patch(agua); a2.add_patch(Rectangle((0.15, 0), 0.7, 6500, fill=False, ec='black'))
+    agua = Rectangle((0.15, 0), 0.7, 1000, fc='#7FB3E0'); a2.add_patch(agua); a2.add_patch(Rectangle((0.15, 0), 0.7, 6500, fill=False, ec=TINTA))
     txt = a2.text(0.2, 6100, '', fontsize=9); fig.tight_layout(); ts = np.linspace(0.5, 50, 50); fl = []
     def up(i):
         t = ts[i]
         for p in fl: p.remove()
-        fl.clear(); u = np.linspace(0, t, 100); fl.append(a1.fill_between(u, 0, r(u), color=LARANJA, alpha=0.35))
+        fl.clear(); u = np.linspace(0, t, 100); fl.append(a1.fill_between(u, 0, r(u), color=LARANJA, alpha=0.59))
         agua.set_height(V(t)); txt.set_text(f'{V(t):.0f} L')
     salvar(fig, up, len(ts), path)
 
@@ -148,7 +148,7 @@ def a_log_tan(path):
     def up(i):
         w = ws[i]
         for p in fl: p.remove()
-        fl.clear(); t = np.linspace(0, w, 100); fl.append(ax.fill_between(t, 0, 1 / np.cos(t), color=LARANJA, alpha=0.35))
+        fl.clear(); t = np.linspace(0, w, 100); fl.append(ax.fill_between(t, 0, 1 / np.cos(t), color=LARANJA, alpha=0.59))
         val = np.log(1 / np.cos(w) + np.tan(w))
         tt.set_text(f'∫₀^x sec t dt = ln|sec x + tan x| = {val:.4f}'.replace('.', ','))
     salvar(fig, up, len(ws), path)

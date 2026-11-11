@@ -21,7 +21,7 @@ def a_area_cruzam(path):
         for a in arts: a.remove()
         arts.clear(); x = xs[i]; t = np.linspace(-2, x, 300)
         arts.append(ax.fill_between(t, f(t), g(t), where=t <= 0, color=AZUL, alpha=0.25))
-        arts.append(ax.fill_between(t, f(t), g(t), where=t >= 0, color=LARANJA, alpha=0.25))
+        arts.append(ax.fill_between(t, f(t), g(t), where=t >= 0, color=LARANJA, alpha=0.42))
         lo, hi = sorted([f(x), g(x)]); arts.append(ax.add_patch(Rectangle((x - 0.04, lo), 0.08, hi - lo, color=VERDE, alpha=0.8)))
         A = np.trapezoid(np.abs(f(t) - g(t)), t) if x > -2 else 0
         ax.set_title(f'área acumulada = {_br(A)}   (total 8)')
@@ -46,8 +46,8 @@ def _revolve(path, curva, eixo, c, sinal, lims, titulo, regiao=None, n=36):
             X0, Y0, Z0 = coords(s, t, np.full_like(s, ph)); ax.plot(X0, Y0, Z0, color=cor, lw=1.6)
         # eixo de rotação
         L = np.array([lims[0][0], lims[0][1]]) if eixo == 'h' else np.array([lims[2][0], lims[2][1]])
-        if eixo == 'h': ax.plot(L, [c, c], [0, 0], 'k--', lw=1)
-        else: ax.plot([c, c], [0, 0], L, 'k--', lw=1)
+        if eixo == 'h': ax.plot(L, [c, c], [0, 0], 'w--', lw=1)
+        else: ax.plot([c, c], [0, 0], L, 'w--', lw=1)
         ax.set_xlim(*lims[0]); ax.set_ylim(*lims[1]); ax.set_zlim(*lims[2])
         ax.set_xlabel('x'); ax.set_ylabel('y' if eixo == 'h' else 'z'); ax.set_zlabel('z' if eixo == 'h' else 'y')
         ax.view_init(elev=22, azim=-60)
@@ -96,7 +96,7 @@ def a_centroide(path):
         arts.clear(); X = xs[i]; t = np.linspace(0, X, 300); h = t - t ** 2
         A = np.trapezoid(h, t); xb = np.trapezoid(t * h, t) / A; yb = np.trapezoid((t ** 2 - t ** 4) / 2, t) / A
         trilha.append((xb, yb))
-        arts.append(ax.fill_between(t, t ** 2, t, color=LARANJA, alpha=0.3))
+        arts.append(ax.fill_between(t, t ** 2, t, color=LARANJA, alpha=0.51))
         arts.extend(ax.plot(*zip(*trilha), color=CINZA, lw=1))
         arts.extend(ax.plot([xb], [yb], "o", color=VERDE, ms=9))
         ax.set_title(f'centroide da parte varrida: ({_br(xb)}; {_br(yb)})\nfinal: (1/2; 2/5)', fontsize=10)
@@ -126,7 +126,7 @@ def a_bombeamento(path):
         ax.cla(); ax.set_xlim(-4, 4); ax.set_ylim(-0.5, 8); ax.set_aspect('equal'); ax.axis('off')
         h = niv[i]
         ax.add_patch(Polygon([[0, 0], [-h / 2, h], [h / 2, h]], color=AZUL, alpha=0.4))
-        ax.plot([-3, 0, 3], [6, 0, 6], color='black', lw=2); ax.plot([-3, 3], [6, 6], color='black', lw=0.6, ls=':')
+        ax.plot([-3, 0, 3], [6, 0, 6], color=TINTA, lw=2); ax.plot([-3, 3], [6, 6], color=TINTA, lw=0.6, ls=':')
         ax.plot([0, 0], [6, 7], color=CINZA, lw=3); ax.plot([0, 1], [7, 7], color=CINZA, lw=3)
         ax.annotate('', (0.5, 7.0), (0.5, h), arrowprops=dict(arrowstyle='->', color=LARANJA, lw=1.5))
         ax.text(0.65, (h + 7) / 2, f'sobe {_br(7 - h, 2)} m', color=LARANJA, fontsize=9)
@@ -140,10 +140,10 @@ def a_comporta(path):
     def up(i):
         ax.cla(); ax.set_xlim(-4.2, 3.2); ax.set_ylim(-3.4, 0.6); ax.set_aspect('equal'); ax.axis('off')
         ax.fill_between([-4.2, 3.2], -3.4, 0, color=AZUL, alpha=0.08); ax.axhline(0, color=AZUL, lw=1)
-        ax.add_patch(Polygon([[-2, 0], [2, 0], [0, -3]], fc='white', ec='black', lw=1.5))
+        ax.add_patch(Polygon([[-2, 0], [2, 0], [0, -3]], fc='#4A4A4A', ec=TINTA, lw=1.5))
         H = hs[i]
         for h in np.arange(0.05, H, 0.1):
-            w = 4 / 3 * (3 - h); ax.add_patch(Rectangle((-w / 2, -h - 0.05), w, 0.1, color=LARANJA, alpha=0.35, lw=0))
+            w = 4 / 3 * (3 - h); ax.add_patch(Rectangle((-w / 2, -h - 0.05), w, 0.1, color=LARANJA, alpha=0.59, lw=0))
             if abs((h * 10) % 5 - 0.5) < 0.06:
                 ax.annotate('', (-w / 2, -h), (-w / 2 - 0.35 * h - 0.05, -h), arrowprops=dict(arrowstyle='->', color=VERDE))
         F = 9800 * 4 / 3 * (1.5 * H ** 2 - H ** 3 / 3)
@@ -174,7 +174,7 @@ def a_catenaria(path):
     def up(i):
         a = As[i]; ax.cla(); x = np.linspace(-20, 20, 300); y = a * np.cosh(x / a); top = a * np.cosh(20 / a)
         ax.plot(x, y - top, color=AZUL, lw=2.2)
-        ax.plot([-20, -20], [-25, 0], color='black', lw=4); ax.plot([20, 20], [-25, 0], color='black', lw=4)
+        ax.plot([-20, -20], [-25, 0], color=TINTA, lw=4); ax.plot([20, 20], [-25, 0], color=TINTA, lw=4)
         ax.plot([-20, 20], [0, 0], color=CINZA, ls=':')
         ax.set_xlim(-24, 24); ax.set_ylim(-26, 3); ax.set_aspect('equal'); ax.grid(alpha=0.2)
         L = 2 * a * np.sinh(20 / a); fl = top - a

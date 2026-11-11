@@ -6,14 +6,14 @@ from anim_base import *
 
 
 def furo(ax, x, y, cor=AZUL):
-    ax.plot([x], [y], 'o', mfc='white', mec=cor, ms=8, zorder=6)
+    ax.plot([x], [y], 'o', mfc=FUNDO, mec=cor, ms=8, zorder=6)
 
 
 def a2_1(path):
     fig, ax = plt.subplots(figsize=(6.4, 4.2))
     eixos(ax, (0, 3.2), (0, 2.6))
     x = np.linspace(0.3, 3.2, 300); ax.plot(x, 1 / x, color=AZUL, lw=2)
-    ax.plot([1], [1], 'ko', zorder=5)
+    ax.plot([1], [1], 'wo', zorder=5)
     xt = np.linspace(0, 3.2, 10); tang, = ax.plot([], [], ':', color=CINZA, lw=1.5)
     sec, = ax.plot([], [], color=LARANJA, lw=1.8); q, = ax.plot([], [], 'o', color=LARANJA)
     tt = ax.set_title('')
@@ -101,7 +101,7 @@ def a2_6(path):
         x = np.linspace(-w, w, 4000); x = x[x != 0]
         ax.plot(x, x ** 2 * np.cos(1 / x), color=AZUL, lw=1)
         ax.plot(x, x ** 2, '--', color=LARANJA); ax.plot(x, -x ** 2, '--', color=LARANJA)
-        ax.axhline(0, color='black', lw=0.6); ax.axvline(0, color='black', lw=0.6)
+        ax.axhline(0, color=TINTA, lw=0.6); ax.axvline(0, color=TINTA, lw=0.6)
         ax.set_xlim(-w, w); ax.set_ylim(-1.2 * w ** 2, 1.2 * w ** 2)
         ax.set_title(r'$-\theta^2\leq\theta^2\cos(1/\theta)\leq\theta^2$   (zoom ×' + f'{1/w:.0f})')
     salvar(fig, up, N, path)
@@ -142,7 +142,7 @@ def a2_9(path):
     s = 5 - (t - 2) + 1.2 * np.sin(2.2 * (t - 2)) * (t - 2) * (5 - t) / 2.25
     ax.plot([1.5, 5.5], [1.5, 5.5], '--', color=LARANJA, label='$y=t$')
     l, = ax.plot([], [], color=AZUL, lw=2, label='$s(t)$ (exemplo)'); ax.legend(loc='upper right')
-    ax.plot([2, 5], [5, 2], 'ko'); ax.set_title('TVI: $h(t)=s(t)-t$ muda de sinal em $[2,5]$')
+    ax.plot([2, 5], [5, 2], 'wo'); ax.set_title('TVI: $h(t)=s(t)-t$ muda de sinal em $[2,5]$')
     pt, = ax.plot([], [], 'o', color=VERDE, ms=9); N = 60
     idx = np.argmin(np.abs(s - t))
     def up(i):
@@ -163,8 +163,8 @@ def a2_10(path):
     def up(i):
         a, b = passos[min(i // 6, len(passos) - 1)]; ax.cla()
         pad = (b - a) * 0.6; x = np.linspace(a - pad, b + pad, 300)
-        ax.plot(x, g(x), color=AZUL, lw=2); ax.axhline(0, color='black', lw=0.7)
-        ax.axvspan(a, b, color=LARANJA, alpha=0.15)
+        ax.plot(x, g(x), color=AZUL, lw=2); ax.axhline(0, color=TINTA, lw=0.7)
+        ax.axvspan(a, b, color=LARANJA, alpha=0.26)
         ax.plot([a, b], [g(a), g(b)], 'o', color=LARANJA)
         ax.set_title(f'g(x)=2^x − x³ em [{a:.5f}; {b:.5f}]'.replace('.', ','))
     salvar(fig, up, N, path)
@@ -177,8 +177,8 @@ def a2_11(path):
     def up(i):
         e = eps[i]; d = min(1, e / 7); ax.cla()
         w = 5 * d; x = np.linspace(2 - w, 2 + w, 300)
-        ax.axhspan(8 - e, 8 + e, color=LARANJA, alpha=0.15); ax.axvspan(2 - d, 2 + d, color=AZUL, alpha=0.18)
-        ax.plot(x, f(x), color=AZUL, lw=2); ax.plot([2], [8], 'ko')
+        ax.axhspan(8 - e, 8 + e, color=LARANJA, alpha=0.26); ax.axvspan(2 - d, 2 + d, color=AZUL, alpha=0.31)
+        ax.plot(x, f(x), color=AZUL, lw=2); ax.plot([2], [8], 'wo')
         ax.set_xlim(2 - w, 2 + w); ax.set_ylim(8 - 2.5 * e, 8 + 2.5 * e)
         ax.set_title(f'ε = {e:.3f}   δ = min(1, ε/7) = {d:.4f}'.replace('.', ','))
     salvar(fig, up, N, path)

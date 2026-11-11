@@ -9,7 +9,7 @@ def a_escada(path):
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(8, 4))
     ts = np.linspace(0, 9.2, 70); x = lambda t: 0.2 + 0.5 * t
     a1.set_xlim(-0.6, 5.6); a1.set_ylim(-0.6, 5.6); a1.set_aspect('equal'); a1.axis('off')
-    a1.fill_between([-0.4, 0], 0, 5.4, color=CINZA, alpha=0.3); a1.plot([0, 0], [0, 5.4], 'k'); a1.plot([0, 5.5], [0, 0], 'k')
+    a1.fill_between([-0.4, 0], 0, 5.4, color=CINZA, alpha=0.3); a1.plot([0, 0], [0, 5.4], 'w'); a1.plot([0, 5.5], [0, 0], 'w')
     esc, = a1.plot([], [], color=AZUL, lw=4); t1 = a1.text(1.2, 5.3, '', fontsize=9)
     a2.set_xlim(0, 5); a2.set_ylim(0, 2.5); a2.grid(alpha=0.3); a2.set_xlabel('x (m)'); a2.set_title('rapidez do topo |dy/dt| (m/s)')
     a2.axhline(0.5, ls='--', color=CINZA); a2.text(0.2, 0.55, 'rapidez da base', fontsize=8, color=CINZA)
@@ -25,7 +25,7 @@ def a_escada(path):
 def a_sombra(path):
     fig, ax = plt.subplots(figsize=(6.6, 3.6))
     ax.set_xlim(-0.5, 16); ax.set_ylim(-0.3, 6.6); ax.set_aspect('equal'); ax.axis('off')
-    ax.plot([0, 0], [0, 6], color='black', lw=3); ax.plot([0], [6], 'o', color='#E8A33D', ms=12); ax.plot([-0.5, 16], [0, 0], 'k')
+    ax.plot([0, 0], [0, 6], color=TINTA, lw=3); ax.plot([0], [6], 'o', color='#E8A33D', ms=12); ax.plot([-0.5, 16], [0, 0], 'w')
     pes, = ax.plot([], [], color=AZUL, lw=5); som, = ax.plot([], [], color=LARANJA, lw=5, alpha=0.7)
     raio, = ax.plot([], [], ':', color='#E8A33D'); txt = ax.text(6, 5.5, '', fontsize=10)
     ts = np.linspace(0, 6, 60)
@@ -38,8 +38,8 @@ def a_sombra(path):
 
 def a_aviao(path):
     fig, (a1, a2) = plt.subplots(2, 1, figsize=(6.4, 5.4), gridspec_kw={'height_ratios': [1.1, 1]})
-    a1.set_xlim(-12, 12); a1.set_ylim(-0.5, 5.5); a1.set_aspect('equal'); a1.axis('off'); a1.plot([-12, 12], [0, 0], 'k')
-    a1.plot([0], [0], '^', color='black', ms=10); av, = a1.plot([], [], '>', color=AZUL, ms=12); lin, = a1.plot([], [], '--', color=LARANJA)
+    a1.set_xlim(-12, 12); a1.set_ylim(-0.5, 5.5); a1.set_aspect('equal'); a1.axis('off'); a1.plot([-12, 12], [0, 0], 'w')
+    a1.plot([0], [0], '^', color=TINTA, ms=10); av, = a1.plot([], [], '>', color=AZUL, ms=12); lin, = a1.plot([], [], '--', color=LARANJA)
     eixos(a2, (-10, 10), (-700, 700)); a2.set_xlabel('x (km)'); a2.set_title("D'(x) = 600·x/√(x²+16)  (km/h)")
     xx = np.linspace(-10, 10, 300); a2.plot(xx, 600 * xx / np.sqrt(xx ** 2 + 16), color=CINZA, lw=1, ls=':')
     a2.plot([3], [360], 'o', color=VERDE); a2.annotate('360 km/h em x = 3', (3, 360), (4.5, 150), arrowprops=dict(arrowstyle='->'), fontsize=9)
@@ -97,7 +97,7 @@ def a_esboco(path):
     def up(i):
         if i == 5: ax.axhline(0, color=LARANJA, ls='--'); ax.text(3.5, 0.05, 'assíntota y = 0', color=LARANJA, fontsize=9)
         if i == 15:
-            ax.plot([1, -1], [0.5, -0.5], 'ko'); ax.text(1.1, 0.55, 'máx (1, 1/2)', fontsize=9); ax.text(-3.4, -0.6, 'mín (−1, −1/2)', fontsize=9)
+            ax.plot([1, -1], [0.5, -0.5], 'wo'); ax.text(1.1, 0.55, 'máx (1, 1/2)', fontsize=9); ax.text(-3.4, -0.6, 'mín (−1, −1/2)', fontsize=9)
         if i == 25:
             r3 = np.sqrt(3)
             ax.plot([0, r3, -r3], [0, f(r3), f(-r3)], 'o', color=VERDE); ax.text(r3 + 0.1, f(r3) - 0.1, 'inflexão', color=VERDE, fontsize=9)
@@ -124,7 +124,7 @@ def a_cerca(path):
 def a_proximo(path):
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(8.4, 3.9))
     eixos(a1, (-2.6, 2.6), (-0.3, 5)); a1.set_aspect('equal')
-    xx = np.linspace(-2.3, 2.3, 300); a1.plot(xx, xx ** 2, color=AZUL, lw=2); a1.plot([0], [3], 'ks')
+    xx = np.linspace(-2.3, 2.3, 300); a1.plot(xx, xx ** 2, color=AZUL, lw=2); a1.plot([0], [3], 'ws')
     seg, = a1.plot([], [], color=LARANJA); pt, = a1.plot([], [], 'o', color=LARANJA)
     d = lambda x: np.sqrt(x ** 2 + (x ** 2 - 3) ** 2)
     eixos(a2, (-2.3, 2.3), (0, 3.5)); a2.plot(xx, d(xx), color=CINZA, ls=':'); a2.set_title('distância d(x)')
@@ -139,7 +139,7 @@ def a_proximo(path):
 def a_cabo(path):
     fig, (a1, a2) = plt.subplots(2, 1, figsize=(6.4, 5.2), gridspec_kw={'height_ratios': [1, 1.3]})
     a1.set_xlim(-0.3, 3.4); a1.set_ylim(-0.3, 1.4); a1.set_aspect('equal'); a1.axis('off')
-    a1.fill_between([-0.3, 3.4], 0, 1, color='#9EC5E8', alpha=0.6); a1.plot([0], [0], 'ks'); a1.plot([3], [1], 'k^', ms=9)
+    a1.fill_between([-0.3, 3.4], 0, 1, color='#9EC5E8', alpha=0.6); a1.plot([0], [0], 'ws'); a1.plot([3], [1], 'w^', ms=9)
     a1.text(-0.25, -0.25, 'usina', fontsize=8); a1.text(2.8, 1.12, 'fábrica', fontsize=8)
     agua, = a1.plot([], [], color=LARANJA, lw=2); terra, = a1.plot([], [], color=AZUL, lw=2)
     C = lambda x: 5 * np.sqrt(1 + x ** 2) + 4 * (3 - x)
@@ -160,7 +160,7 @@ def a_newton(path):
     def up(i):
         k = min(i // 12, 3); a, b = xs[k], xs[k + 1]; w = max(abs(a - 0.739085) * 2.2, 2e-4)
         ax.cla(); xx = np.linspace(0.739085 - w, 0.739085 + w, 300)
-        ax.plot(xx, f(xx), color=AZUL, lw=2); ax.axhline(0, color='black', lw=0.7)
+        ax.plot(xx, f(xx), color=AZUL, lw=2); ax.axhline(0, color=TINTA, lw=0.7)
         ax.plot(xx, f(a) + df(a) * (xx - a), color=LARANJA, lw=1.4)
         ax.plot([a], [f(a)], 'o', color=LARANJA); ax.plot([b], [0], 'o', color=VERDE)
         ax.set_xlim(xx[0], xx[-1]); ax.set_title(f'x{k} = {a:.9f}  →  x{k+1} = {b:.9f}'.replace('.', ','), fontsize=10)

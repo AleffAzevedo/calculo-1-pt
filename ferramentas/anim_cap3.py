@@ -24,7 +24,7 @@ def a_tangente(path):
     f = lambda x: x ** 2 - 4 * x + 5; df = lambda x: 2 * x - 4
     xs = np.concatenate([np.linspace(-0.5, 3, 50)])
     def extra(ax):
-        ax.plot([3], [2], 'ko')
+        ax.plot([3], [2], 'wo')
     fig_t = None
     def marcar(ax, a, m, tan):
         if abs(a - 3) < 1e-9 and not hasattr(marcar, 'ok'):
@@ -58,7 +58,7 @@ def a_por_partes(path):
         x1 = np.linspace(-1.5, 1, 100); x2 = np.linspace(1, 3, 100)
         ax.plot(x1, x1 ** 2, color=AZUL, lw=2); ax.plot(x2, a * x2 + b, color=LARANJA, lw=2)
         ax.plot(np.linspace(0, 2.5, 10), 1 + 2 * (np.linspace(0, 2.5, 10) - 1), ':', color=CINZA)
-        ax.plot([1], [1], 'ko')
+        ax.plot([1], [1], 'wo')
         ok = '  ✔ sem bico' if abs(a - 2) < 1e-9 else ''
         ax.set_title(f'a = {a:.2f}, b = 1 − a = {b:.2f}{ok}'.replace('.', ','))
     salvar(fig, up, N, path)
@@ -67,7 +67,7 @@ def a_por_partes(path):
 def a_movimento(path):
     s = lambda t: t ** 3 - 9 * t ** 2 + 24 * t; v = lambda t: 3 * t ** 2 - 18 * t + 24
     fig, (a1, a2) = plt.subplots(2, 1, figsize=(6.4, 5.0), gridspec_kw={'height_ratios': [1, 2.2]})
-    a1.set_xlim(-2, 24); a1.set_ylim(-1, 1); a1.set_yticks([]); a1.axhline(0, color='black', lw=0.8)
+    a1.set_xlim(-2, 24); a1.set_ylim(-1, 1); a1.set_yticks([]); a1.axhline(0, color=TINTA, lw=0.8)
     a1.set_title('posição na reta (m)')
     eixos(a2, (0, 5.2), (-6, 26)); a2.set_xlabel('t (s)'); a2.set_title('$v(t)=3(t-2)(t-4)$')
     pt, = a1.plot([], [], 'o', ms=12); tr, = a2.plot([], [], lw=2, color=AZUL)
@@ -127,7 +127,7 @@ def a_implicita(path):
     ax.plot(X, Y, color=AZUL, lw=2); ax.set_title('$x^2-xy+y^2=3$')
     for (a, b) in [(1, 2), (-1, -2)]: ax.plot([a], [b], 'o', color=LARANJA, ms=8)
     for (a, b) in [(2, 1), (-2, -1)]: ax.plot([a], [b], 'o', color=VERDE, ms=8)
-    tan, = ax.plot([], [], color=LARANJA, lw=1.4); p, = ax.plot([], [], 'ko')
+    tan, = ax.plot([], [], color=LARANJA, lw=1.4); p, = ax.plot([], [], 'wo')
     idx = np.linspace(0, len(t) - 2, 70).astype(int)
     def up(i):
         k = idx[i]; a, b = X[k], Y[k]; dx, dy = X[k + 1] - a, Y[k + 1] - b
@@ -149,7 +149,7 @@ def a_xx(path):
 def a_custo_marginal(path):
     C = lambda x: 0.01 * x ** 3 - 0.6 * x ** 2 + 15 * x + 200
     fig, ax = plt.subplots(figsize=(6.4, 4.2)); eixos(ax, (0, 40), (150, 600))
-    xx = np.linspace(0, 40, 300); ax.plot(xx, C(xx), color=AZUL, lw=2); ax.plot([20], [C(20)], 'ko')
+    xx = np.linspace(0, 40, 300); ax.plot(xx, C(xx), color=AZUL, lw=2); ax.plot([20], [C(20)], 'wo')
     ax.set_xlabel('unidades'); ax.set_ylabel('mil R$')
     ax.plot(xx, C(20) + 3 * (xx - 20), color=LARANJA, ls='--', lw=1, label="tangente: C'(20) = 3")
     sec, = ax.plot([], [], color=VERDE, lw=1.6, label='secante'); q, = ax.plot([], [], 'o', color=VERDE)
@@ -166,7 +166,7 @@ def a_tangentes_por_ponto(path):
     f = lambda x: x ** 2; df = lambda x: 2 * x
     xs = np.sort(np.concatenate([np.linspace(-2.5, 4, 68), [-1.0, 3.0]]))
     def extra(ax):
-        ax.plot([1], [-3], 's', color='black', ms=7); ax.text(1.15, -3.4, '(1, −3)')
+        ax.plot([1], [-3], 's', color=TINTA, ms=7); ax.text(1.15, -3.4, '(1, −3)')
     def marcar(ax, a, m, tan):
         passa = abs(f(a) + m * (1 - a) + 3) < 1e-9
         tan.set_color(VERDE if passa else LARANJA); tan.set_linewidth(2.4 if passa else 1.4)

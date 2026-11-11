@@ -18,7 +18,7 @@ def _acumula(path, f, a, b, valor, titulo, ylim, xlim=None, n=60):
     def up(i):
         for p in arts: p.remove()
         arts.clear(); t = np.linspace(a, xs[i], 300)
-        arts.append(ax.fill_between(t, 0, f(t), color=LARANJA, alpha=0.35))
+        arts.append(ax.fill_between(t, 0, f(t), color=LARANJA, alpha=0.59))
         A = np.trapezoid(f(t), t)
         ax.set_title(f'{titulo}\nárea acumulada = {_br(A)}   (valor exato {_br(valor)})', fontsize=10)
     salvar(fig, up, n, path)
@@ -27,7 +27,7 @@ def _acumula(path, f, a, b, valor, titulo, ylim, xlim=None, n=60):
 def a_partes(path):
     e = np.e; fig, ax = plt.subplots(figsize=(6.4, 3.6)); eixos(ax, (-0.1, 3.0), (-0.1, 1.25))
     xx = np.linspace(0.5, 2.9, 300); ax.plot(xx, np.log(xx), color=AZUL, lw=2)
-    ax.plot([0, e, e], [1, 1, 0], 'k--', lw=1); ax.set_aspect('equal'); arts = []; N = 70
+    ax.plot([0, e, e], [1, 1, 0], 'w--', lw=1); ax.set_aspect('equal'); arts = []; N = 70
     def up(i):
         for p in arts: p.remove()
         arts.clear()
@@ -36,7 +36,7 @@ def a_partes(path):
         A1 = x1 * np.log(x1) - x1 + 1; txt = f'∫₁ˣ ln t dt = {_br(A1, 3)}'
         if i >= 35:
             s2 = min((i - 35) / 30, 1); y1 = s2; yy = np.linspace(0, y1, 200)
-            arts.append(ax.fill_betweenx(yy, 0, np.exp(yy), color=LARANJA, alpha=0.35))
+            arts.append(ax.fill_betweenx(yy, 0, np.exp(yy), color=LARANJA, alpha=0.59))
             txt += f'    ∫₀ʸ eᵘ du = {_br(np.exp(y1) - 1, 3)}'
             if s2 >= 1: txt += '\nsoma = e ≈ 2,718 (retângulo)'
         ax.set_title(txt, fontsize=10)
@@ -58,7 +58,7 @@ def a_elipse(path):
     def up(i):
         for p in arts: p.remove()
         arts.clear(); T = ths[i]; x1 = a * np.sin(T); x = np.linspace(-a, x1, 300); y = b / a * np.sqrt(np.clip(a * a - x * x, 0, None))
-        arts.append(ax.fill_between(x, -y, y, color=LARANJA, alpha=0.35))
+        arts.append(ax.fill_between(x, -y, y, color=LARANJA, alpha=0.59))
         y1 = b / a * np.sqrt(max(a * a - x1 * x1, 0)); arts.extend(ax.plot([x1, x1], [-y1, y1], color=VERDE, lw=3))
         A = a * b * (T + np.sin(T) * np.cos(T) + np.pi / 2)
         ax.set_title(f'θ = {_br(np.degrees(T), 0)}°,  x = 3 sen θ = {_br(x1, 2)}:  área = {_br(A, 3)}  (6π ≈ 18,850)', fontsize=10)
@@ -91,7 +91,7 @@ def a_simpson(path):
         n = ns[i]; ax.cla(); eixos(ax, (-0.05, 1.08), (0, 1.12)); ax.plot(xx, f(xx), color=AZUL, lw=2)
         p = np.linspace(0, 1, n + 1); h = 1 / n
         for j in range(n):
-            ax.add_patch(Polygon([[p[j], 0], [p[j], f(p[j])], [p[j + 1], f(p[j + 1])], [p[j + 1], 0]], fc=LARANJA, ec=LARANJA, alpha=0.3))
+            ax.add_patch(Polygon([[p[j], 0], [p[j], f(p[j])], [p[j + 1], f(p[j + 1])], [p[j + 1], 0]], fc=LARANJA, ec=LARANJA, alpha=0.51))
         T = h * (f(p).sum() - (f(0) + f(1)) / 2); w = np.array([1] + [4 if j % 2 else 2 for j in range(1, n)] + [1]); S = h / 3 * (w * f(p)).sum()
         ax.set_title(f'n = {n}:  T = {_br(T, 6)} (erro {abs(T - exato):.1e})\nS = {_br(S, 6)} (erro {abs(S - exato):.1e});  exato 0,746824'.replace('e-0', 'e-'), fontsize=10)
     salvar(fig, up, len(ns), path, fps=1, pausa_final=3)
@@ -126,7 +126,7 @@ def a_gama(path):
     fig.subplots_adjust(top=0.85)
     def up(n):
         ax.cla(); top = max(1.0, n ** n * np.exp(-n)) * 1.15; eixos(ax, (0, 16), (0, top))
-        y = t ** n * np.exp(-t); ax.plot(t, y, color=AZUL, lw=2); ax.fill_between(t, 0, y, color=LARANJA, alpha=0.35)
+        y = t ** n * np.exp(-t); ax.plot(t, y, color=AZUL, lw=2); ax.fill_between(t, 0, y, color=LARANJA, alpha=0.59)
         ax.set_title(f'$\\Gamma({n + 1})=\\int_0^\\infty t^{{{n}}}e^{{-t}}\\,dt={factorial(n)}={n}!$', fontsize=12)
     salvar(fig, up, N, path, fps=1, pausa_final=2)
 
@@ -141,7 +141,7 @@ def a_weierstrass(path):
         for p in arts: p.remove()
         arts.clear(); T = ts[i]; X = 2 * np.arctan(T)
         u = np.linspace(0, X, 200); v = np.linspace(0, T, 200)
-        arts.append(a1.fill_between(u, 0, f(u), color=LARANJA, alpha=0.35)); arts.append(a2.fill_between(v, 0, g(v), color=LARANJA, alpha=0.35))
+        arts.append(a1.fill_between(u, 0, f(u), color=LARANJA, alpha=0.59)); arts.append(a2.fill_between(v, 0, g(v), color=LARANJA, alpha=0.59))
         fig.suptitle(f't = tan(x/2) = {_br(T, 2)}:  as duas áreas valem {_br(np.trapezoid(g(v), v))}\n(total π/(3√3) ≈ 0,6046)', fontsize=10)
     salvar(fig, up, len(ts), path)
 

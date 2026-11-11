@@ -13,7 +13,7 @@ def a1_1(path):
     ax.axhline(3, ls=':', color=CINZA, lw=1)
     xs1 = np.linspace(-10, -4.05, 300); xs2 = np.linspace(-3.95, 6, 300)
     ax.plot(xs1, f(xs1), color=AZUL, alpha=0.25); ax.plot(xs2, f(xs2), color=AZUL, alpha=0.25)
-    ax.plot([0], [0], 'o', mfc='white', mec=AZUL, ms=8, zorder=5)
+    ax.plot([0], [0], 'o', mfc=FUNDO, mec=AZUL, ms=8, zorder=5)
     ax.set_title(r'$(f\circ g)(x)=\dfrac{3x}{x+4}$,  $x\neq0,\,-4$')
     ax.text(-3.8, 10.5, 'assíntota $x=-4$', color=LARANJA, fontsize=9)
     ax.text(0.3, -1.3, 'buraco em $x=0$', color=AZUL, fontsize=9)
@@ -49,7 +49,7 @@ def a1_2(path):
         if m.any():
             fill.append(ax.fill_between(x[m], C(x[m]), R(x[m]), color=VERDE, alpha=0.2))
             if not hasattr(up, 'm'):
-                ax.plot([xe], [C(xe)], 'ko'); ax.annotate('equilíbrio\n$x\\approx166{,}7$', (xe, C(xe)), (60, 330),
+                ax.plot([xe], [C(xe)], 'wo'); ax.annotate('equilíbrio\n$x\\approx166{,}7$', (xe, C(xe)), (60, 330),
                     arrowprops=dict(arrowstyle='->'), fontsize=9); up.m = 1
             txt.set_text('lucro'); txt.set_color(VERDE)
     salvar(fig, up, N, path)
@@ -76,7 +76,7 @@ def a1_3(path):
 def a1_4(path):
     fig, ax = plt.subplots(figsize=(6.4, 4.2))
     N_ = lambda t: 12 + 3 * np.sin(2 * np.pi / 365 * (t - 79))
-    eixos(ax, (0, 365), (6, 17)); ax.axhline(6, color='black')
+    eixos(ax, (0, 365), (6, 17)); ax.axhline(6, color=TINTA)
     ax.axhline(15, ls='--', color=LARANJA, lw=1); ax.axhline(9, ls='--', color=LARANJA, lw=1)
     ax.text(5, 15.3, 'dia mais longo: 15 h', color=LARANJA, fontsize=9)
     ax.text(5, 8.3, 'dia mais curto: 9 h', color=LARANJA, fontsize=9)
@@ -142,7 +142,7 @@ def a1_7(path):
     lc, = ax.plot([], [], color=AZUL, lw=1.5, ls='--', label=r'$\cosh kx$')
     ls_, = ax.plot([], [], color=VERDE, lw=1.5, ls='--', label=r'$\operatorname{senh} kx$')
     le, = ax.plot([], [], color=LARANJA, lw=3, alpha=0.6, label=r'$e^{kx}$')
-    lsum, = ax.plot([], [], color='black', lw=1.2, label=r'$\cosh kx+\operatorname{senh} kx$')
+    lsum, = ax.plot([], [], color=TINTA, lw=1.2, label=r'$\cosh kx+\operatorname{senh} kx$')
     ax.legend(loc='upper left', fontsize=9); tt = ax.set_title('')
     ks = np.concatenate([np.linspace(0.3, 2, 40), np.linspace(2, -1, 40)]); N = len(ks)
     def up(i):
@@ -211,11 +211,11 @@ def a1_11(path):
     ax.set_title(r'$P(t)=82{,}5-67{,}5\cos\left(\frac{\pi}{6}t\right)$')
     ax.axhline(20, ls='--', color=AZUL, lw=0.8); ax.axhline(140, ls='--', color=LARANJA, lw=0.8)
     a = np.arccos(62.5 / 67.5) * 6 / np.pi; b = np.arccos(-57.5 / 67.5) * 6 / np.pi
-    l, = ax.plot([], [], color='black', lw=2); N = 70; st = {}
+    l, = ax.plot([], [], color=TINTA, lw=2); N = 70; st = {}
     def up(i):
         T = 12 * (i + 1) / N; t = np.linspace(0, T, 300); l.set_data(t, P(t))
         if T > 12 - b and 'o' not in st:
-            st['o'] = 1; ax.axvspan(b, 12 - b, color=LARANJA, alpha=0.15)
+            st['o'] = 1; ax.axvspan(b, 12 - b, color=LARANJA, alpha=0.26)
             ax.text(5.1, 148, '> 140 mil', color=LARANJA, fontsize=9)
         if T > 12 - a and 'b' not in st:
             st['b'] = 1; ax.axvspan(0, a, color=AZUL, alpha=0.15); ax.axvspan(12 - a, 12, color=AZUL, alpha=0.15)

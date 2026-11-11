@@ -22,7 +22,7 @@ respostas. Os marcados com ★ têm solução completa e animação do gráfico 
 | 7 | Técnicas de integração | ✅ | [65 exercícios, 11 resolvidos](exercicios/cap7/README.md) |
 | A | Formulário (apêndice) | ✅ | — |
 
-Versão **1.1** (novembro de 2026): 108 páginas, 455 exercícios, todas as figuras em português, apêndice de fórmulas e índice remissivo. Notação brasileira (sen, tg, arcsen…) e projeto gráfico com a identidade visual da **Nexus BI** (fonte Barlow Semi Condensed, em `livro/fontes/`, sob a SIL OFL). A marca Nexus BI não é coberta pela licença CC BY-NC-SA.
+Versão **1.1** (novembro de 2026): 108 páginas, 455 exercícios, todas as figuras em português, apêndice de fórmulas e índice remissivo. Notação brasileira (sen, tg, arcsen…) e projeto gráfico com a identidade visual da **Nexus BI** (fonte Barlow Semi Condensed, em `livro/fontes/`, sob a SIL OFL). As animações seguem a mesma identidade (fundo grafite, curvas brancas, destaques em verde-nexus). A marca Nexus BI não é coberta pela licença CC BY-NC-SA.
 
 Cada solução completa segue o mesmo roteiro: a **estratégia**, a resolução passo a passo, um
 comentário sobre erros comuns ou interpretações e uma **animação** do gráfico do problema.
